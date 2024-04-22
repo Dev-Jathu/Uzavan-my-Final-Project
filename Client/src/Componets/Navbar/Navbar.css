@@ -29,6 +29,7 @@ button{
   
   .container {
     max-width: 1300px;
+    height: 80px;
     margin: 0 auto;
     padding: 10px 20px;
     display: flex;
@@ -42,8 +43,9 @@ button{
   }
   
   .logoimg img {
-    width: 50px;
+    width: 60px;
     height: auto;
+    margin-top: 10px;
   }
   
   .logoname h2 {

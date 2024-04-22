@@ -4,7 +4,7 @@ import AboutPage from '../Pages/About/About'
 import Service from '../Pages/Service/Service'
 import Contact from '../Pages/Contact/Contact'
 import Signin from '../Pages/Signin/Signin'
-import Signup from '../Pages/Signup/Signup'
+import Signup from '../Pages/Signup/Signupfarmer/Signup'
 import Admin from '../Pages/Admin/Admin'
 import WhoYou from '../Pages/selection/Who'
 
