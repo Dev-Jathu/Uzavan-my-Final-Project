@@ -1,0 +1,46 @@
+#bgphot{
+    max-width: 1200px;
+    margin-top: 60px;
+   margin-left: 360px;
+   height: 700px;
+   box-shadow: 3px 3px 5px;
+   border-radius: 5px;
+
+
+   
+}
+#prebutton{
+    /* background-color: black; */
+    margin-top: 800px;
+    height: 50px;
+    padding-left: 50px;
+    margin-left: 480px;
+
+}
+#nextbutton{
+    /* background-color: black; */
+    margin-top: 800px;
+   margin-left: -480px;
+   height: 50px;
+   padding-left: 50px;
+
+
+}
+#bgvideo{
+    max-width: 1200px;
+   height: 700px;
+   margin-top: 60px;
+
+
+}
+h1{
+    font-size: 55px;
+    background-color: aliceblue;
+    width: 800px;
+    height: 300px;
+    margin-top: -300px;
+}
+#para{
+    z-index: -auto;
+
+}

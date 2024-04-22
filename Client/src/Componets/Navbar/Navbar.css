@@ -1,0 +1,87 @@
+:root{
+    --backgroundcolor:#f3f4f6;
+    --Buttons--backgroundcolor:#15803d;
+}
+body{
+    background-color: #f3f4f6;
+}
+button{
+    background-color:var(--Buttons--backgroundcolor);
+    color: rgb(255, 255, 255);
+    width: 100px;
+    height: 30px;
+    border: none;
+    font-size: 20px;
+    border-radius: 5px;
+}
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  /* Navbar styles */
+  .main {
+    background-color: #ffffff; 
+    box-shadow: 1px 1px 10px;
+    border-radius: 5px;
+  }
+  
+  .container {
+    max-width: 1300px;
+    margin: 0 auto;
+    padding: 10px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .logo {
+    display: flex;
+    align-items: center;
+  }
+  
+  .logoimg img {
+    width: 50px;
+    height: auto;
+  }
+  
+  .logoname h2 {
+    color: #000000;
+    margin-left: 10px;
+  }
+  
+  .Navlings {
+    display: flex;
+    align-items: center;
+  }
+  
+  .navname a{
+    color: #000000; 
+    text-decoration: none;
+    margin-right: 20px; 
+    font-size: 22px;
+  }
+  
+  /* Media queries for responsiveness */
+  @media screen and (max-width: 768px) {
+    .container {
+      flex-direction: column;
+      padding: 10px;
+    }
+  
+    .Navlings {
+      margin-top: 20px;
+    }
+  
+    .navname {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+  
+    .navname a,
+    .navname button {
+      margin: 5px 0;
+    }
+  }
+  
