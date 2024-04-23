@@ -4,7 +4,7 @@
 }
 .Signup{
     max-width: 1400px;
-    height: 870px;
+    height: 900px;
     background-color: white;
     margin-top: 20px;
     margin-left: 270px;
@@ -13,7 +13,7 @@
 }
 .signpic{
     width: 700px;
-    height: 870px;
+    height: 900px;
     margin-left: -20px;
     border-top-left-radius: 15px;
     border-bottom-left-radius:15px;
@@ -74,7 +74,7 @@
     margin-left: -320px;
 }
     
-.signlogo{
+.signlogofarmer{
     font-size: 32px;
     margin-top: 30px;
     margin-left: -35px;

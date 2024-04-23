@@ -1,7 +1,7 @@
 import React from "react";
 import Form from "../../Componets/Form/Form";
 import Button from "../../Componets/Button/Button";
-import Photo from "../..//Assets/loginpage.jpg";
+import Photo from "../..//Assets/uzavan19.jpg";
 import Gphoto from '../../Assets/Gphoto.png'
 import Logo from "../../Assets/uzavan.png"
 import "./Signin.css";

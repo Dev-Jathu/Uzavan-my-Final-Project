@@ -3,7 +3,7 @@
     --Buttons--backgroundcolor:#15803d;
 }
 .maincontainer{
-    max-width: 1200px;
+    max-width: 1050px;
     height: 700px;
     background-color: white;
     margin-top: 110px;
@@ -73,8 +73,10 @@
 }
 .pic{
     height: 700px;
+    /* width: 600px; */
     border-top-right-radius: 15px;
     border-bottom-right-radius:15px;
+    margin-left: -170px;
  
 }
 .Form{

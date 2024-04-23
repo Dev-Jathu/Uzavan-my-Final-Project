@@ -1,0 +1,110 @@
+.subsign{
+    display: grid;
+    grid-template-columns: 700px 700px;
+}
+.Signupmachin{
+    max-width: 1400px;
+    height: 1000px;
+    background-color: white;
+    margin-top: 20px;
+    margin-left: 270px;
+    border-radius: 15px;
+    box-shadow: 2px 2px 10px rgb(155, 155, 155);
+}
+.signpicmachin{
+    width: 800px;
+    height: 1000px;
+    margin-left: -10px;
+    border-top-left-radius: 15px;
+    border-bottom-left-radius:15px;
+ 
+}
+.inputName{
+    width: 400px;
+    height: 45px;
+    border-radius: 15px;
+    border:#f3f4f6 ;
+    box-shadow: 1px 1px 6px rgb(155, 155, 155);
+    padding: 20px;
+    color: black;
+    margin-top: 5px;
+    letter-spacing: 1px;
+}
+.signup{
+    width: 400px;
+    height: 45px;
+    margin-top: 12px;
+    border-radius: 15px;
+    box-shadow: 1px 1px 6px rgb(155, 155, 155);
+
+
+}
+.Name{
+    font-size: 18px;
+    margin-left: -302px;
+    margin-top: 10px
+
+}
+.Addres{
+    font-size: 18px;
+    margin-left: -320px;
+}
+.nic{
+    font-size: 18px;
+    margin-left: -285px;
+}
+.date{
+    font-size: 18px;
+    margin-left: -275px;
+}
+.emaill{
+    font-size: 18px;
+    margin-left: -345px;
+}
+.passwordd{
+    font-size: 18px;
+    margin-left: -308px;
+}
+.tel{
+    font-size: 18px;
+    margin-left: -230px;
+}
+.address{
+    font-size: 18px;
+    margin-left: -320px;
+}
+.vehile{
+    font-size: 18px;
+    margin-left: -230px;
+    margin-top: 15px;
+}
+    
+.signlogo{
+    font-size: 25px;
+    margin-top: 30px;
+    margin-left: 35px;
+    font-weight: bold;
+    letter-spacing: 2px;
+}
+.signinling{
+    margin-top: 20px;
+    font-size: 18px;
+}
+span1{
+    margin-left: -175px;
+    font-size: 18px;
+}
+.selectvehile{
+    width: 400px;
+    height: 45px;
+    padding: 5px;
+    margin-top: 5px;
+    border-radius: 15px;
+    background-color: white;
+    box-shadow: 1px 1px 1px rgb(155, 155, 155);
+
+
+}
+.signformmachin{
+    margin-left: 80px;
+}

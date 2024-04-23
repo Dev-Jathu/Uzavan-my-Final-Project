@@ -12,7 +12,7 @@ function Signup() {
           <img src={Photo} className="signpic" />
         </div>
         <div className="signform">
-          <h5 className="signlogo">Welcome to Farmers</h5>
+          <h5 className="signlogofarmer">Welcome to Farmers</h5>
           <span1> Please enter your details.</span1>
           <Form
             class="Name"
