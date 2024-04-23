@@ -1,10 +1,10 @@
 import './Service.css';
 import React from 'react'
-import Signupfarmer from '../../Pages/Signup/Signupfarmer/Signup'
+import Signup from '../Signup/Signupfarmer/Signup';
 function Service() {
   return (
     <div>
-      <Signupfarmer/>
+      <Signup/>
     </div>
   )
 }

@@ -43,7 +43,7 @@ function Signin() {
          <a href="#"> <Button class="signgoogle" name="Sign in with Google" /></a>
           <img src={Gphoto} alt="Google Photo" className="Gphoto" />
           <h4 className="hedontacc">
-          Don’t have an account? <a href="#" className="signuppagelink">Sign up free!</a>
+          Don't have an account? <a href="#" className="signuppagelink">Sign up free!</a>
           </h4>
 
         </div>

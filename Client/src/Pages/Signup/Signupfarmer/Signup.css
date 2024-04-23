@@ -1,110 +1,91 @@
-:root{
-    --backgroundcolor:#f3f4f6;
-    --Buttons--backgroundcolor:#15803d;
+.subsign{
+    display: grid;
+    grid-template-columns: 700px 700px;
 }
-.maincontainer{
-    max-width: 1200px;
-    height: 700px;
+.Signup{
+    max-width: 1400px;
+    height: 870px;
     background-color: white;
-    margin-top: 110px;
-    margin-left: 350px;
+    margin-top: 20px;
+    margin-left: 270px;
     border-radius: 15px;
     box-shadow: 2px 2px 10px rgb(155, 155, 155);
-
-
 }
-.Grid{
-    display: grid;
-    grid-template-columns: 600px 604px
-
+.signpic{
+    width: 700px;
+    height: 870px;
+    margin-left: -20px;
+    border-top-left-radius: 15px;
+    border-bottom-left-radius:15px;
+ 
 }
-.logoimg{
-    height: 80px;
-    margin-left: 50px;
-}
-.flexlogo{
-    display: flex;
-}
-.logonameh3{
-    font-size: 38px;
-    margin-top: 12px;
-}
-.email{
-    margin-left: -280px;
-    font-size: 18px;
-    margin-top:20px;
-
-}
-.password{
-    margin-left: -240px;
-    margin-top: 10px;
-    font-size: 18px;
-
-}
-.inpput{
-    width: 330px;
-    height: 45px;
+.inputName{
+    width: 400px;
+    height: 30px;
     border-radius: 15px;
     border:#f3f4f6 ;
     box-shadow: 1px 1px 6px rgb(155, 155, 155);
-    padding: 10px;
+    padding: 20px;
     color: black;
     margin-top: 5px;
+    letter-spacing: 1px;
 }
-.login{
-    width: 330px;
+.signup{
+    width: 400px;
     height: 45px;
+    margin-top: 12px;
     border-radius: 15px;
-    margin-top: 30px;
     box-shadow: 1px 1px 6px rgb(155, 155, 155);
 
 
 }
-.signgoogle{
-    width: 330px;
-    height: 45px;
-    border-radius: 15px;
-    margin-top: 15px;
-    background-color: white;
-    color: black;
-    box-shadow: 1px 1px 6px rgb(155, 155, 155);
-
+.Name{
+    font-size: 18px;
+    margin-left: -302px;
+    margin-top: 10px
 
 }
-.pic{
-    height: 700px;
-    border-top-right-radius: 15px;
-    border-bottom-right-radius:15px;
- 
+.Addres{
+    font-size: 18px;
+    margin-left: -320px;
 }
-.Form{
-    padding-top: 20px;
+.nic{
+    font-size: 18px;
+    margin-left: -285px;
 }
-.loginh2{
-    text-transform:uppercase;
-    font-weight: 500;
-    font-size: 35px;
+.date{
+    font-size: 18px;
+    margin-left: -275px;
+}
+.emaill{
+    font-size: 18px;
+    margin-left: -345px;
+}
+.passwordd{
+    font-size: 18px;
+    margin-left: -308px;
+}
+.tel{
+    font-size: 18px;
+    margin-left: -230px;
+}
+.address{
+    font-size: 18px;
+    margin-left: -320px;
+}
+    
+.signlogo{
+    font-size: 32px;
     margin-top: 30px;
-    margin-left: -55px;
+    margin-left: -35px;
+    font-weight: bold;
+    letter-spacing: 2px;
 }
-.Gphoto{
-    margin-top: -70px;
-    margin-left: -250px;
+.signinling{
+    margin-top: 20px;
+    font-size: 18px;
 }
-.remember{
-    margin-top:20px;
-    margin-left: 5px;
-}
-.rememberme{
-    margin-left: 7px;
-}
-.forget{
-   padding-left: 50px;
-}
-.hedontacc{
-    font-size: 12px;
-}
-.signuppagelink{
-    color:var(--Buttons--backgroundcolor);
-    font-style: none;
+span1{
+    margin-left: -175px;
+    font-size: 18px;
 }
