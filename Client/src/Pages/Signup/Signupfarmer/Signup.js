@@ -35,7 +35,7 @@ function Signup() {
             name="Telephone Number"
             type="number"
             classinput="inputName"
-            place="Enter your NIC Number"
+            place="Enter your TP Number"
             required
           />
           <Form
@@ -68,13 +68,13 @@ function Signup() {
             name="Password"
             type="password"
             classinput="inputName"
-            place="********"
+            place="Password"
             required
           />
           <Button class="signup" name="Signup" />
           <h6 className="signinling">
             Already have an account?{" "}
-            <a href="#" className="signinlink">
+            <a href="/Signin" className="signinlink">
               Sign in!
             </a>
           </h6>

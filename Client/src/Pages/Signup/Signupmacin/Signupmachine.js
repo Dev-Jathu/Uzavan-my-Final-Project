@@ -2,7 +2,9 @@ import "./Signupmachin.css";
 import React from "react";
 import Form from "../../../Componets/Form/Form";
 import Button from "../../../Componets/Button/Button";
-import Photo from "../../../Assets/uzavan16.jpg";
+import Photo from "../../../Assets/machin.jpg";
+import Logoname from '../../../Assets/name.png';
+
 
 function Signupmachine() {
   return (
@@ -75,18 +77,23 @@ function Signupmachine() {
             name="Password"
             type="password"
             classinput="inputName"
-            place="********"
+            place="Password"
             required
           />
           <Button class="signup" name="Signup" />
           <h6 className="signinling">
             Already have an account?{" "}
-            <a href="#" className="signinlink">
+            <a href="Signin" className="signinlink">
               Sign in!
             </a>
           </h6>
         </div>
       </div>
+      <div className="logonamemachin">
+<img src={Logoname} className="mchinlogo"/>
+
+      </div>
+
     </div>
   );
 }

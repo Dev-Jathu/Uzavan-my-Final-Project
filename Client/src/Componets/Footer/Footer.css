@@ -1,0 +1,208 @@
+:root{
+    --Navbar--backgroundcolor:#222933;
+    --Buttons--backgroundcolor:#15803d;
+    --backgroundcolor:#f3f4f6;
+
+
+}
+.footermain{
+    background-color: var(--Navbar--backgroundcolor);
+    width: 100%;
+    height: 450px;
+
+}
+.footergrid{
+    display: grid;
+    grid-template-rows: 100px 100px 100px;
+}
+#editicon{
+    font-size: 28px;
+    margin-top: 10px;
+    padding-left: 25px;
+    color: black;
+
+}
+#editicon:hover{
+    color: var(--Buttons--backgroundcolor);
+
+   
+}
+.connect{
+    font-size: 28px;
+    font-weight: 600;
+    margin-left: -20px;
+    margin-top: 2px;
+}
+.footicon{
+    margin-left:150px;
+
+}
+.Footlogopara{
+    font-size: 22px;
+    width: 10px;
+    text-align: left;
+}
+.Footlogopara{
+   display: grid;
+   grid-template-rows: 200px 100px;
+  width: 400px;
+   margin-left: 200px;
+
+
+}
+.footpara{
+    width: 380px;
+   margin-left: 170px;
+   margin-top: -14px;
+
+}
+.Footlogo img{
+    margin-left: -50px;
+}
+.Footerlings{
+    margin-top: -80px;
+
+}
+.footpara{
+    color: var(--backgroundcolor);
+}
+.footlogo img{
+    height: 60px;
+    margin-top: 100px;
+    margin-left: 110px;
+}
+.footlname{
+    color: var(--backgroundcolor);
+    font-size: 32px;
+    font-weight: 500;
+    margin-top: -55px;
+    margin-left: 170px;
+}
+
+.footnavling a {
+    
+    color: var(--backgroundcolor);
+    text-decoration: none;
+  
+   
+    
+}
+.shortling{
+    padding-top: 20px;
+    /* margin-top: 20px; */
+    
+}
+.footnavling{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+   
+}
+.footnavling a:hover{
+    color: var(--Buttons--backgroundcolor);
+    font-weight: 400;
+}
+.footsubgrid{
+    display: grid;
+    grid-template-columns: 600px 300px 300px 340px;
+}
+.navlingtitle{
+    font-size: 32px;
+    color: var(--backgroundcolor);
+    margin-top: -100px;
+}
+.footerh1{
+    color: var(--backgroundcolor);
+    font-size: 32px;
+    margin-top: -100px;
+}
+.servicelink a{
+    text-decoration: none;
+    color:var(--backgroundcolor);
+    
+}
+.servicelink a:hover{
+    color: var(--Buttons--backgroundcolor);
+}
+.servicelink{
+    margin-top: 30px;
+    font-weight: 300;
+   
+
+}
+
+.contacttitle{
+    color: var(--backgroundcolor);
+    font-size: 32px;
+    margin-top: -100px;
+}
+.addrespanel i {
+    color: var(--backgroundcolor);
+    padding-top: 40px;
+    font-size: 14px;
+
+  }
+  
+  .addrespanel span {
+    text-transform: lowercase;
+    color: var(--backgroundcolor);
+    margin-left: 10px;
+  }
+  
+:root {
+    --navbar-background-color: #222933;
+    --buttons-background-color: #15803d;
+    --background-color: #f3f4f6;
+  }
+  
+  .footermain {
+    margin-top: 20px;
+    background-color: var(--navbar-background-color);
+    width: 100%;
+    height: 400px;
+    padding: 20px;
+  }
+  
+  .footergrid {
+    margin-left: -55px;
+    display: grid;
+    grid-template-rows: auto; 
+  }
+  
+  .footlings {
+    display: flex;
+    justify-content: center; 
+     height: 50px;
+    max-width: 50%;
+    margin-top: 20px;
+    text-align: center;
+    margin-left: 120px;
+
+    
+  }
+ 
+  .connect {
+    font-size: 28px;
+    font-weight: 600;
+    width: 100%;
+    margin: auto 10px;
+  }
+  
+  .footicon {
+    display: flex;
+    align-items: center; 
+    margin-left: auto; 
+  }
+  
+  #editicon {
+    font-size: 30px;
+    margin: 0 5px;
+    color: rgb(255, 255, 255);
+  }
+  
+  #editicon:hover {
+    color: var(--buttons-background-color);
+  }
+  
+  
+  

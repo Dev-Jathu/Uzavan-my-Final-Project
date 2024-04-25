@@ -1,18 +1,20 @@
 :root{
     --backgroundcolor:#f3f4f6;
     --Buttons--backgroundcolor:#15803d;
+    --Navbar--backgroundcolor:#222933;
 }
 body{
     background-color: #f3f4f6;
 }
-button{
+.button1{
     background-color:var(--Buttons--backgroundcolor);
     color: rgb(255, 255, 255);
     width: 100px;
-    height: 30px;
+    height: 35px;
     border: none;
     font-size: 20px;
     border-radius: 5px;
+    margin-left: 300px;
 }
 * {
     margin: 0;
@@ -23,18 +25,24 @@ button{
   /* Navbar styles */
   .main {
     background-color: #ffffff; 
-    box-shadow: 1px 1px 10px;
+    box-shadow: 2px 2px 5px ;
     border-radius: 5px;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
   }
   
   .container {
-    max-width: 1400px;
+    max-width: 100%;
     height: 80px;
     margin: 0 auto;
     padding: 10px 20px;
     display: flex;
     justify-content: space-between;
     align-items: center;
+    background-color: #1f2937;
+
   }
   
   .logo {
@@ -46,11 +54,12 @@ button{
     width: 60px;
     height: auto;
     margin-top: 10px;
+    margin-left: 170px;
   }
   
   .logoname h2 {
-    color: #000000;
-    margin-left: 10px;
+    color: #ffffff;
+    margin-left: 5px;
   }
   
   .Navlings {
@@ -59,12 +68,23 @@ button{
   }
   
   .navname a{
-    color: #000000; 
+    color: #ffffff; 
     text-decoration: none;
     margin-right: 20px; 
-    font-size: 22px;
+    font-size: 23px;
+    /* padding: 5px; */
+    padding-left: 20px;
+
   }
-  
+  .navname a:hover{
+    color: var(--Buttons--backgroundcolor);
+    transition: .2s;
+    font-weight: bold;
+  }
+  .navname{
+    margin-left: -1130px;
+  }
+
   /* Media queries for responsiveness */
   @media screen and (max-width: 768px) {
     .container {

@@ -20,7 +20,7 @@ export default function Navbar() {
                 <a href='/About'>About</a>
                 <a href='/Service'>Service</a>
                 <a href='/Contact'>Contact</a>
-               <a href=""><button >Join</button></a> 
+               <a href="/join"><button className="button1" >Join</button></a> 
             </div>
         </div>
       </div>

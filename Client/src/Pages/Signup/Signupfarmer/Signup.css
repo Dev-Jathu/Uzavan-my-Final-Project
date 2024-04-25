@@ -1,19 +1,24 @@
+:root{
+    --backgroundcolor:#f3f4f6;
+    --Buttons--backgroundcolor:#15803d;
+}
 .subsign{
     display: grid;
     grid-template-columns: 700px 700px;
 }
 .Signup{
-    max-width: 1400px;
-    height: 900px;
+    max-width: 1350px;
+    height: 880px;
     background-color: white;
     margin-top: 20px;
-    margin-left: 270px;
+    margin-left: 290px;
     border-radius: 15px;
     box-shadow: 2px 2px 10px rgb(155, 155, 155);
+    
 }
 .signpic{
     width: 700px;
-    height: 900px;
+    height: 880px;
     margin-left: -20px;
     border-top-left-radius: 15px;
     border-bottom-left-radius:15px;
@@ -33,11 +38,13 @@
 .signup{
     width: 400px;
     height: 45px;
-    margin-top: 12px;
+    margin-top: 20px;
     border-radius: 15px;
     box-shadow: 1px 1px 6px rgb(155, 155, 155);
-
-
+    background-color:var(--Buttons--backgroundcolor);
+    border: none;
+    color: white;
+    font-size: 18px;
 }
 .Name{
     font-size: 18px;
@@ -88,4 +95,7 @@
 span1{
     margin-left: -175px;
     font-size: 18px;
+}
+.signform{
+    margin-left: -50px;
 }

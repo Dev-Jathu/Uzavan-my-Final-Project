@@ -1,34 +1,50 @@
-#bgphot{
-    max-width: 1200px;
-    margin-top: 60px;
-   margin-left: 360px;
-   height: 700px;
-   box-shadow: 3px 3px 5px;
-   border-radius: 5px;
+:root{
+    --Navbar--backgroundcolor:#222933;
+    --Buttons--backgroundcolor:#15803d;
+    --backgroundcolor:#f3f4f6;
 
+
+
+}
+#bgphot{
+  width: 100%;
+  height: 100vh;
+  object-fit: cover;
+  opacity: 0.85;
+}
+
+#prebutton{
+    /* background-color: var(--backgroundcolor); */
+    margin-top: 200px;
+    height: 800px;
+    padding-left:90px;
+    margin-left: -188px;
+    margin-top: 64px;
+   border-top-left-radius: 10px;
+   border-bottom-left-radius: 10px;
+   display: none;
 
    
-}
-#prebutton{
-    /* background-color: black; */
-    margin-top: 800px;
-    height: 50px;
-    padding-left: 50px;
-    margin-left: 480px;
 
 }
 #nextbutton{
-    /* background-color: black; */
-    margin-top: 800px;
-   margin-left: -480px;
-   height: 50px;
-   padding-left: 50px;
+    /* background-color: var(--backgroundcolor); */
+    margin-top: 200px;
+    height: 800px;
+    padding-left:90px;
+    margin-left: 188px;
+    margin-top: 64px;
+   border-top-right-radius: 10px;
+   border-bottom-right-radius: 10px;
+   display: none;
+
+
 
 
 }
 #bgvideo{
     max-width: 1200px;
-   height: 700px;
+   height: 800px;
    margin-top: 60px;
 
 
@@ -42,5 +58,60 @@ h1{
 }
 #para{
     z-index: -auto;
+
+}
+#carouselExampleAutoplaying{
+    margin-top: 80px;
+    margin-left: 5px;
+    height: 100vh;
+}
+.h6{
+    font-size: 40px;
+    top: 0;
+    width: 100%;
+    z-index: -1000;
+    
+}
+/* Home.css */
+
+.parahome {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1; /* Ensure the text is in front of the images */
+  }
+  .welcome{
+    font-size: 38px;
+    
+  }
+  
+  .parahome .h6 {
+    margin-left: -700px;
+    text-align: left;
+    width: 500px;
+    font-size: 65px;
+    background: linear-gradient(to left, rgb(72, 175, 110), rgb(0, 0, 0));
+    -webkit-background-clip: text; /* For Safari/Chrome */
+    background-clip: text;
+    color: transparent; /* Hides the actual text */
+    line-height: 110px;
+    font-weight: 600;
+    margin-top: -100px;
+}
+
+  
+.homebutton{
+    width: 200px;
+    height: 60px;
+    border: none;
+    background-color: var(--Buttons--backgroundcolor);
+    color: var(--backgroundcolor);
+    box-shadow: 1px 1px 10px rgb(93, 176, 129);
+    font-size: 24px;
+    font-weight: bold;
+    margin-left: -1170px;
+    margin-top: 20px;
+    border-radius: 5px;
 
 }

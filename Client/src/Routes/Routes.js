@@ -5,8 +5,9 @@ import Service from '../Pages/Service/Service'
 import Contact from '../Pages/Contact/Contact'
 import Signin from '../Pages/Signin/Signin'
 import Signup from '../Pages/Signup/Signupfarmer/Signup'
+import Signupmachine from '../Pages/Signup/Signupmacin/Signupmachine'
 import Admin from '../Pages/Admin/Admin'
-import WhoYou from '../Pages/selection/Who'
+import WhoYou from '../Pages/who/Who'
 
 export default function RoutesTable() {
     return (
@@ -17,9 +18,11 @@ export default function RoutesTable() {
                 <Route path='/Service' element={<Service/>}/>
                 <Route path='/Contact' element={<Contact/>}/>
                 <Route path='/Signin' element={<Signin/>}/>
-                <Route path='/Signup' element={<Signup/>}/>
+                <Route path='/Signupfarmer' element={<Signup/>}/>
+                <Route path='/Signupmachin' element={<Signupmachine/>}/>
                 <Route path='/Admin' element={<Admin/>}/>
-                <Route path='/Select' element={<WhoYou/>}/>
+                <Route path='/join' element={<WhoYou/>}/>
+                
             </Routes>
         </div>
     );

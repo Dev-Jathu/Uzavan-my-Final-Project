@@ -1,14 +1,10 @@
 import './Service.css';
 import React from 'react'
-import Signup from '../Signup/Signupfarmer/Signup';
-import Signupmachine from '../Signup/Signupmacin/Signupmachine';
-import Signin from '../Signin/Signin';
+import Navbar from '../../Componets/Navbar/Navbar';
 function Service() {
   return (
     <div>
-      <Signin/>
-      <Signup/>
-      <Signupmachine/>
+      <Navbar/>
     </div>
   )
 }
