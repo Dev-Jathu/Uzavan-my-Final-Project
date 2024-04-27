@@ -5,13 +5,17 @@ import Backgroundpgoto from "../../Assets/final.jpg";
 import Backgroundpgoto2 from "../../Assets/final.jpg";
 import Footer from "../../Componets/Footer/Footer";
 import Button from '../../Componets/Button/Button'
+import About from "../About/About";
+import Contact from "../Contact/Contact";
+
 function Home() {
   return (
     <div>
       <div>
         <Navbar />
       </div>
-      <div
+      <div 
+      className="mainhome"
         id="carouselExampleAutoplaying"
         class="carousel slide"
         data-bs-ride="carousel"
@@ -61,13 +65,14 @@ function Home() {
           <span class="visually-hidden">Next</span>
         </button>
         <div className="parahome">
-          <h6 className="h6"><span className="welcome">Welcome To Uzavan!</span><br/>We are ready to serve  your Time</h6>
+          <h6 className="h6"><span className="welcome">Welcome To Uzhavan!</span><br/>We are ready to serve  your Time</h6>
           <Button class='homebutton' name='Learn more'/>
   
           
         </div>
       </div>
-      
+      <About/>
+      <Contact/>
       <Footer />
     </div>
   );

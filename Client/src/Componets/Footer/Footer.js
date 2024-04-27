@@ -10,11 +10,11 @@ export default function Footer() {
           <div className="Footlogopara">
             <div className="footlogo">
               <img src={Logo} />
-              <p className="footlname">Uzavan</p>
+              <p className="footlname">Uzhavan</p>
             </div>
             <div className="footsubgrid">
               <div className="footpara">
-                Hi Welcome To the Uzavan Website. <br />
+                Hi Welcome To the Uzhavan Website. <br />
                 This website focus on connect machinery's owners to Farmer.Thank
                 you!
               </div>
@@ -33,9 +33,8 @@ export default function Footer() {
                   <div className="servicelink">
                     <a href="#">Tractor</a>
                     <br />
-                    <a href="#">Tractor</a>
+                    <a href="#" className="paddie">Paddie Cropper</a>
                     <br />
-                    <a href="#">Tractor</a>
                   </div>
                 </div>
               </div>

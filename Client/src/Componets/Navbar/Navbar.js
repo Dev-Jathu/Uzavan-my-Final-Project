@@ -11,7 +11,7 @@ export default function Navbar() {
             <img src={Logo} id="logoimage" />
           </div>
           <div className="logoname">
-            <h2>Uzavan</h2>
+            <h2>Uzhavan</h2>
           </div>
         </div>
         <div className="Navlings">

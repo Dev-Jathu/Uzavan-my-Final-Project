@@ -82,7 +82,8 @@ h1{
     z-index: 1; /* Ensure the text is in front of the images */
   }
   .welcome{
-    font-size: 38px;
+    font-size: 40px;
+
     
   }
   
@@ -95,7 +96,7 @@ h1{
     -webkit-background-clip: text; /* For Safari/Chrome */
     background-clip: text;
     color: transparent; /* Hides the actual text */
-    line-height: 110px;
+    line-height: 80px;
     font-weight: 600;
     margin-top: -100px;
 }
@@ -110,8 +111,8 @@ h1{
     box-shadow: 1px 1px 10px rgb(93, 176, 129);
     font-size: 24px;
     font-weight: bold;
-    margin-left: -1170px;
-    margin-top: 20px;
+    margin-left: -1175px;
+    margin-top: 40px;
     border-radius: 5px;
 
 }

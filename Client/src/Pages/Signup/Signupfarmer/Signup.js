@@ -46,14 +46,6 @@ function Signup() {
             place="Enter your Address"
             required
           />
-          <Form
-            class="date"
-            name="Date-of-Birth"
-            type="date"
-            classinput="inputName"
-            place="Enter your Name"
-            required
-          />
             <Form
             class="emaill"
             name="Email"
@@ -69,6 +61,14 @@ function Signup() {
             type="password"
             classinput="inputName"
             place="Password"
+            required
+          />
+           <Form
+            class="passworddd"
+            name="Confirm Password"
+            type="password"
+            classinput="inputName"
+            place="Confirm Password"
             required
           />
           <Button class="signup" name="Signup" />

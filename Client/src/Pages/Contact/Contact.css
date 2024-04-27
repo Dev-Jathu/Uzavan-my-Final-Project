@@ -1,0 +1,225 @@
+:root{
+    --backgroundcolor:#f3f4f6;
+    --Buttons--backgroundcolor:#15803d;
+    --Navbar--backgroundcolor:#222933;
+}
+.maingrid{
+    display: grid;
+    grid-template-rows: 300px 600px;
+    margin-top: 100px;
+    height: 100vh;
+    
+}
+.gridaddresspanel{
+    display: grid;
+    grid-template-columns: 350px 580px 420px;
+    column-gap: 10px;
+   background-color: #15803d;
+    color:white;
+    width: 64%;
+    height: 280px;
+    box-shadow: 1px 1px 2px;
+    margin-left: 350px;
+    border: none;
+    opacity: .9;
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+}
+#addressedit{
+    margin-left: -50px;
+    margin-top: 30px;
+    
+}
+.Phone{
+    margin-left: -120px;
+    margin-top: 30px;
+}
+.addresspanel{
+    height: 600px;
+}
+#mailabout{
+    margin-top: 50px;
+}
+#icoedit{
+    font-size: 40px;
+    /* background-color:whitesmoke; */
+    border-radius: 50%;
+    height: 60px;
+    width: 60px;
+    margin-top: 10px;
+}
+#icoedit1{
+    font-size: 45px;
+    /* background-color:whitesmoke; */
+    border-radius: 50%;
+    height: 50px;
+    width: 50px;
+    margin-top: -15px;
+
+}
+.subadress{
+    font-size: 25px;
+    font-weight: bold;
+}
+.subadress1{
+    font-size: 25px;
+    font-weight: bold;
+}
+.subadress2{
+    font-size: 25px;
+    font-weight: bold;
+    margin-top: 8px;
+}
+.subadresspara{
+    font-weight: 600;
+}
+.subadresspara1{
+    font-weight: 600;
+
+}
+.subadresspara2{
+    font-weight: 600;
+
+
+}
+.ContactName{
+    font-size: 22px;
+    margin-left: -280px;
+    font-weight: 500;
+
+}
+.ContactAddress{
+    font-size: 22px;
+    margin-left: -230px;
+    font-weight: 500;
+
+
+
+}
+.ContactEmail{
+    font-size: 22px;
+    margin-left: -235px;
+    font-weight: 500;
+
+}
+.Contactphone{
+    font-size: 22px;
+    margin-left: -15px;
+    margin-top: 20px;
+    font-weight: 500;
+
+}
+.Contactmassage{
+    font-size: 22px;
+    margin-left: 400px;
+    margin-top: 20px;
+    font-weight: 500;
+
+}
+.inputContactName{
+    height: 50px;
+    width: 350px;
+    border-radius: 5px;
+    box-shadow: 1px .5px 3px;
+    border: none;
+    padding: 15px;
+    font-size: 18px;
+    margin-top: 10px;
+}
+.inputContactAddress{
+     height: 50px;
+     width: 350px;
+     border-radius: 5px;
+     box-shadow: 1px .5px 3px;
+     border: none;
+    padding: 15px;
+    font-size: 18px;
+    margin-top: 10px;
+    margin-left: 30px;
+
+}
+.inputContactemail{
+    height: 50px;
+    width: 350px;
+    border-radius: 5px;
+    box-shadow: 1px .5px 3px;
+    border: none;
+    padding: 15px;
+    font-size: 18px;
+    margin-top: 10px;
+    margin-left: 150px;
+
+}
+.inputContactPhone{
+    height: 50px;
+    width: 350px;
+    border-radius: 5px;
+    box-shadow: 1px .5px 3px;
+    border: none;
+    padding: 15px;
+    font-size: 18px;
+    margin-top: 10px;
+    margin-left: 150px;
+
+}
+.inputContactmassage{
+    height:100px;
+    width: 730px;
+    border-radius: 5px;
+    border: none;
+    padding: 15px;
+    font-size: 18px;
+    box-shadow: 1px .5px 3px;
+    margin-top: 10px;
+    margin-left: 820px;
+    
+
+}
+.nameadd{
+    display: flex;
+    margin-left: 820px;
+}
+.mailphone{
+    display: flex;
+    margin-left: 670px;
+
+}
+.contactbutton{
+    width: 250px;
+    height: 50px;
+    background-color: var(--Buttons--backgroundcolor);
+    border-radius: 10px;
+    margin-top: 55px;
+    color: var(--backgroundcolor);
+    font-size: 25px;
+    box-shadow: 1px 1px 5px black;
+    border: none;
+    margin-left: 560px;
+
+
+}
+.piccontact2{
+    height: 550px;
+    /* width:400px; */
+    margin-left: 328px;
+    margin-top: 20px;
+    color: white;
+    background-color:var(--Navbar--backgroundcolor);
+    box-shadow: 1px 1px 5px black;
+
+}
+
+.contactphotogrid{
+    /* margin-left: -50px; */
+    display:grid ;
+    grid-template-columns: 740px 600px;
+    
+    margin-top: -30px;
+    
+}
+.massagepanel{
+    margin-left: -730px;
+    margin-top: 30px
+
+    
+};

@@ -8,7 +8,7 @@
 }
 .Signup{
     max-width: 1350px;
-    height: 880px;
+    height: 900px;
     background-color: white;
     margin-top: 20px;
     margin-left: 290px;
@@ -18,7 +18,7 @@
 }
 .signpic{
     width: 700px;
-    height: 880px;
+    height: 900px;
     margin-left: -20px;
     border-top-left-radius: 15px;
     border-bottom-left-radius:15px;
@@ -71,6 +71,11 @@
 .passwordd{
     font-size: 18px;
     margin-left: -308px;
+}
+.passworddd{
+    font-size: 18px;
+    margin-left: -240px;
+
 }
 .tel{
     font-size: 18px;
