@@ -16,8 +16,6 @@ const startServer = async () => {
         app.use(express.json());
         app.use('/user', userRoutes)
         
-        
-        
     }
     catch(err){
         console.log(err)

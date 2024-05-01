@@ -4,7 +4,7 @@
 }
 .Signupmachin{
     max-width: 1400px;
-    height: 1000px;
+    height: 900px;
     background-color: white;
     margin-top: 10px;
     margin-left: 270px;
@@ -13,7 +13,7 @@
 }
 .signpicmachin{
     width: 800px;
-    height: 1000px;
+    height: 900px;
     margin-left: -10px;
     border-top-left-radius: 15px;
     border-bottom-left-radius:15px;
@@ -110,5 +110,6 @@ span1{
 }
 .mchinlogo{
     margin-left: -1000px;
-    margin-top: -1700px;
+    margin-top: -1500px;
+    opacity: .7;
 }

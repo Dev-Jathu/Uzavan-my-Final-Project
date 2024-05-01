@@ -7,38 +7,39 @@
     display: grid;
     grid-template-rows: 300px 600px;
     margin-top: 100px;
-    height: 100vh;
+    height: 130vh;
+    padding-top: 100px;
     
 }
 .gridaddresspanel{
     display: grid;
     grid-template-columns: 350px 580px 420px;
     column-gap: 10px;
-   background-color: #15803d;
+   background-color: var(--Navbar--backgroundcolor);
     color:white;
     width: 64%;
-    height: 280px;
+    height: 200px;
     box-shadow: 1px 1px 2px;
     margin-left: 350px;
     border: none;
     opacity: .9;
-    border-top-left-radius: 15px;
-    border-top-right-radius: 15px;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
 }
 #addressedit{
     margin-left: -50px;
-    margin-top: 30px;
+    margin-top: 10px;
     
 }
 .Phone{
     margin-left: -120px;
-    margin-top: 30px;
+    margin-top: 10px;
 }
 .addresspanel{
     height: 600px;
 }
 #mailabout{
-    margin-top: 50px;
+    margin-top: 30px;
 }
 #icoedit{
     font-size: 40px;
@@ -105,14 +106,14 @@
 .Contactphone{
     font-size: 22px;
     margin-left: -15px;
-    margin-top: 20px;
+    margin-top: 10px;
     font-weight: 500;
 
 }
 .Contactmassage{
     font-size: 22px;
-    margin-left: 400px;
-    margin-top: 20px;
+    margin-left: 372px;
+    margin-top: 10px;
     font-weight: 500;
 
 }
@@ -163,7 +164,7 @@
 
 }
 .inputContactmassage{
-    height:100px;
+    height:80px;
     width: 730px;
     border-radius: 5px;
     border: none;
@@ -189,37 +190,83 @@
     height: 50px;
     background-color: var(--Buttons--backgroundcolor);
     border-radius: 10px;
-    margin-top: 55px;
+    margin-top: 100px;
     color: var(--backgroundcolor);
     font-size: 25px;
     box-shadow: 1px 1px 5px black;
     border: none;
-    margin-left: 560px;
+    margin-left: 520px;
 
 
 }
-.piccontact2{
-    height: 550px;
+.piclastcontact{
+    height: 250px;
+    width: 400px;
     /* width:400px; */
-    margin-left: 328px;
-    margin-top: 20px;
-    color: white;
-    background-color:var(--Navbar--backgroundcolor);
+    /* margin-left:px; */
+    margin-top: -10px;
+    opacity: .8;
+    /* color: white; */
+    /* background-color:var(--Navbar--backgroundcolor); */
     box-shadow: 1px 1px 5px black;
+    border-top-right-radius: 20px;
+    display: none;
 
 }
 
 .contactphotogrid{
     /* margin-left: -50px; */
     display:grid ;
-    grid-template-columns: 740px 600px;
-    
-    margin-top: -30px;
+    grid-template-columns: 440px 600px;
+    margin-left: 350px;
+    margin-top: -100px;
     
 }
-.massagepanel{
-    margin-left: -730px;
-    margin-top: 30px
+.contactabout{
 
-    
-};
+text-align: left;
+}
+.HEADINGCONTACT{
+    font-size: 42px;
+    text-align: center;
+    margin-top: 30px;
+    color: var(--Navbar--backgroundcolor);
+    font-weight: 600;
+    margin-left: -180px;
+}
+.contactpara{
+    font-size: 18px;
+    margin-top: 10px;
+    letter-spacing: .5px;
+    line-height: 30px;
+    font-weight: 600;
+    margin-left: px;
+}
+.photocontact{
+    /* background-color: #15803d; */
+    height: 520px;
+   
+}
+.massagepanel{
+    margin-left: -770px;
+    margin-top: 20px;
+
+}
+.map {
+    /* box-shadow: 1px 1px 10px; */
+    justify-content: center;
+    margin-top: -280PX;
+    margin-left: -330px;
+}
+
+ @media screen and (max-width: 450px){
+.totalcontact{
+    display: none;
+}
+
+
+}
+
+  
+
+

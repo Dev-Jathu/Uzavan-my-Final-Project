@@ -3,12 +3,12 @@ import Navbar from "../../Componets/Navbar/Navbar";
 import "./Contact.css";
 import Form from "../../Componets/Form/Form";
 import Button from "../../Componets/Button/Button";
-import ContactPic from '../../Assets/contactt.jpg'
+import ContactPic from "../../Assets/machin8.jpg";
 
 export default function Contact() {
   return (
     <div className="totalcontact">
-      <div className="maingrid">
+      <div className="maingrid" id="Contactid">
         <div className="addresspanel">
           <div className="gridaddresspanel">
             <div className="address" id="addressedit">
@@ -35,7 +35,16 @@ export default function Contact() {
         </div>
         <div className="contactphotogrid">
           <div className="photocontact">
-            <img src={ContactPic} className="piccontact2"/>
+            <div className="contactabout">
+              <p className="HEADINGCONTACT">Message Us</p>
+
+              <p className="contactpara">
+                Lot's of machinery's Owner Profile Here.All profile Are Verified
+                For our Best Team. The Machinery's owner Connected To Our
+                farmers. If you have eny Doubt You can Contact me!Thank you.{" "}
+              </p>
+              <img src={ContactPic} className="piclastcontact" />
+            </div>
           </div>
           <div className="massagepanel">
             <div className="contact details">
@@ -71,12 +80,23 @@ export default function Contact() {
               <Form
                 class="Contactmassage"
                 name="Massage"
-                type="text"
+                type="textarea" // Changed type to "textarea"
                 classinput="inputContactmassage"
                 place="Type Your Massage"
                 required
               />
+
               <Button class="contactbutton" name="Send Massage" />
+            </div>
+            <div class="map">
+              <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d63093.79259309366!2d80.44436334408775!3d8.751965622375431!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3afc150e0fc66c73%3A0x37b6b473c8b4d008!2sVavuniya!5e0!3m2!1sen!2slk!4v1707315340836!5m2!1sen!2slk"
+                width="380"
+                height="290"
+                allowfullscreen=""
+                loading="lazy"
+                referrerpolicy="no-referrer-when-downgrade"
+              ></iframe>
             </div>
           </div>
         </div>

@@ -1,5 +1,6 @@
 import React from "react";
 import "./Footer.css";
+import { HashLink as Link } from "react-router-hash-link";
 import Logo from "../../Assets/uzavan.png";
 
 export default function Footer() {
@@ -20,12 +21,16 @@ export default function Footer() {
               </div>
               <div className="footnavling">
                 <p className="navlingtitle">Quick links</p>
-                <a href="/" className="shortling">
-                  Home
-                </a>
-                <a href="/About" className="shortling">About</a>
-                <a href="/Service" className="shortling">Service</a>
-                <a href="/Contact" className="shortling">Contact</a>
+                <Link to="#carouselExampleAutoplaying" className="shortling">Home</Link>
+            <Link to="#Aboutid" className="shortling" smooth>
+              About
+            </Link>
+            <Link to="#Serviceid" className="shortling"smooth>
+              Service
+            </Link>
+                <Link to="#Contactid"  className="shortling" smooth>
+              Contact
+            </Link>
               </div>
               <div className="Service">
                 <div className="services">
@@ -33,7 +38,9 @@ export default function Footer() {
                   <div className="servicelink">
                     <a href="#">Tractor</a>
                     <br />
-                    <a href="#" className="paddie">Paddie Cropper</a>
+                    <a href="#" className="paddie">
+                      Paddie Cropper
+                    </a>
                     <br />
                   </div>
                 </div>

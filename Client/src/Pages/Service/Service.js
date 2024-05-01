@@ -1,12 +1,59 @@
-import './Service.css';
-import React from 'react'
-import Navbar from '../../Componets/Navbar/Navbar';
+import "./Service.css";
+import React from "react";
+import pic from "../../../src/Assets/final.jpg";
+import pic1 from "../../../src/Assets/new3.jpg";
+import pic2 from "../../../src/Assets/new1.jpg";
 function Service() {
   return (
-    <div>
-      <Navbar/>
+    <div id="Serviceid">
+      <p className="hedingservice">Our Services !</p>
+      <p className="paraservise">
+        Welcome to Our Uzhavan Website. We are Focus on main Agriculture
+        Machinery's.In this menu have 3 Option. Do you want more details click
+        the Learn more button.Thankyou!
+      </p>
+      <div className="cards">
+        <div class="card"  id="card">
+          <img src={pic} class="card-img-top" className='pic2'alt="..." />
+          <div class="card-body">
+            <h5 class="card-title"id="cardtitle">Tractor</h5>
+            <p class="card-text" id='cardtext'>
+           This filed only Have the Tractor Click The Learn More Botton For more details.
+            </p>
+            <a href="Learnmore" class="btn btn-primary" id="buttoncard">
+              Learn More
+            </a>
+          </div>
+        </div>
+        <div class="card" id="card">
+          <img src={pic1} class="card-img-top" alt="..."  className="pic2"/>
+          <div class="card-body">
+            <h5 class="card-title" id="cardtitle">paddy Harvester</h5>
+            <p class="card-text"id='cardtext' >
+            This filed only Have the Paddy Harvester Click The Learn More Botton For more details.
+
+            </p>
+            <a href="Harvester" class="btn btn-primary"id="buttoncard">
+            Learn More
+            </a>
+          </div>
+        </div>
+        <div class="card" id="card">
+          <img src={pic2} class="card-img-top" alt="..."   id='pic2'className="pic2"/>
+          <div class="card-body">
+            <h5 class="card-title" id="cardtitle" className="cardtitle">Tsunami machine</h5>
+            <p class="card-text"id='cardtext'>
+            This filed only Have the Tsunami Click The Learn More Botton For more details.
+
+            </p>
+            <a href="Tsunami" class="btn btn-primary"id="buttoncard">
+            Learn More
+            </a>
+          </div>
+        </div>
+      </div>
     </div>
-  )
+  );
 }
 
-export default Service
+export default Service;

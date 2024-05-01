@@ -1,0 +1,58 @@
+:root{
+    --backgroundcolor:#f3f4f6;
+    --Buttons--backgroundcolor:#15803d;
+    --Navbar--backgroundcolor:#222933;
+}
+.card{
+    width: 400px;
+    box-shadow: 1px 1px 5px;
+}
+.cardstractor{
+    display: grid;
+    grid-template-columns: 400px 400px 400px 400px;
+    grid-gap: 50px;
+    margin-top: 100px;
+    justify-content: center;
+    margin-left: -50px;
+
+}
+.track1{
+    height: 265px;
+    background-color: #222933;
+}
+.card{
+    margin-left: 20px;
+}
+#cardtexttractor{
+    text-align: left;
+}
+#cardtitletractor{
+    text-align: left;
+    font-size: 25px;
+}
+#buttoncardtractor{
+    background-color: var(--Buttons--backgroundcolor);
+    width: 150px;
+    margin-left: -5px;
+    border: none;
+}
+#buttoncardtractor1{
+    background-color: var(--Buttons--backgroundcolor);
+    margin-left: 30px;
+    width: 150px;
+    border: none;
+
+
+}
+#button11{
+    margin-left: 50px;
+}
+#drop{
+    background-color: var(--Buttons--background);
+    margin-left: 550px;
+    width: 200px;
+}
+#menu{
+    background-color:var(--Navbar--backgroundcolor);
+}
+

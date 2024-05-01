@@ -19,7 +19,7 @@ function Signup() {
             name="Full Name"
             type="text"
             classinput="inputName"
-            place="Enter your First Name"
+            place="Enter your Full Name"
             required
           />
           <Form
@@ -36,14 +36,6 @@ function Signup() {
             type="number"
             classinput="inputName"
             place="Enter your TP Number"
-            required
-          />
-          <Form
-            class="address"
-            name="Address"
-            type="email"
-            classinput="inputName"
-            place="Enter your Address"
             required
           />
             <Form

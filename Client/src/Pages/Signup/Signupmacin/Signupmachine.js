@@ -21,7 +21,7 @@ function Signupmachine() {
             name="Full Name"
             type="text"
             classinput="inputName"
-            place="Enter your First Name"
+            place="Enter your Full Name"
             required
           />
           <Form
@@ -46,14 +46,6 @@ function Signupmachine() {
             type="email"
             classinput="inputName"
             place="Enter your Address"
-            required
-          />
-          <Form
-            class="date"
-            name="Date-of-Birth"
-            type="date"
-            classinput="inputName"
-            place="Enter your Name"
             required
           />
           <label for="Vehile type" className="vehile">Choose Your Vehile</label><br/>
@@ -91,6 +83,7 @@ function Signupmachine() {
       </div>
       <div className="logonamemachin">
 <img src={Logoname} className="mchinlogo"/>
+
 
       </div>
 

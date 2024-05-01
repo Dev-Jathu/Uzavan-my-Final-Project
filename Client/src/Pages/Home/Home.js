@@ -6,7 +6,10 @@ import Backgroundpgoto2 from "../../Assets/final.jpg";
 import Footer from "../../Componets/Footer/Footer";
 import Button from '../../Componets/Button/Button'
 import About from "../About/About";
+import Service from '../Service/Service'
 import Contact from "../Contact/Contact";
+
+
 
 function Home() {
   return (
@@ -72,6 +75,7 @@ function Home() {
         </div>
       </div>
       <About/>
+      <Service/>
       <Contact/>
       <Footer />
     </div>

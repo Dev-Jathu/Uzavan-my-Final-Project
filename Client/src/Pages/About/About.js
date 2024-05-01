@@ -11,10 +11,10 @@ import Logoabout2 from "../../Assets/uzavan17.1.jpg";
 import Logoabout3 from "../../Assets/TOP.jpg";
 import Button from "../../Componets/Button/Button";
 
-export default function About() {
+export default function Ababoutfinalout() {
   return (
-    <>
-      <div className="aboutfinal">
+    <div className="mainfinal">
+      <div className="aboutfinal" id="Aboutid">
         <p className="why">Why Choose Us!</p>
 
         <div className="fullabout">
@@ -22,7 +22,7 @@ export default function About() {
             <div className="subdiv">
               <div className="logosabout">
                 <div className="photoabout">
-                  <img src={Servicelogo2} className="picabout" />
+                  <img src={Servicelogo2} className="picabout" id="resicon" />
                 </div>
                 <div className="gridparaabout">
                   <p className="shortpara">Best Service</p>
@@ -39,7 +39,7 @@ export default function About() {
           <div className="subdivdiv">
             <div className="logosabout1">
               <div className="photoabout1">
-                <img src={Servicelogo3} className="picabout1" />
+                <img src={Servicelogo3} className="picabout1" id="resicon" />
               </div>
               <div className="gridparaabout">
                 <p className="shortpara1">Verified Profile</p>
@@ -55,7 +55,7 @@ export default function About() {
           <div className="subdives">
             <div className="logosabout2">
               <div className="photoabout2">
-                <img src={Servicelogo1} className="picabout2" />
+                <img src={Servicelogo1} className="picabout2" id="resicon"/>
               </div>
               <div className="gridparaabout">
                 <p className="shortpara2">Review & Rating</p>
@@ -71,7 +71,7 @@ export default function About() {
           <div className="subdives3">
             <div className="logosabout3">
               <div className="photoabout3">
-                <img src={Servicelogo} className="picabout3" />
+                <img src={Servicelogo} className="picabout3" id="resicon"/>
               </div>
               <div className="gridparaabout">
                 <p className="shortpara3">Customer Service</p>
@@ -87,10 +87,10 @@ export default function About() {
           <div className="subdives4">
             <div className="logosabout4">
               <div className="photoabout4">
-                <img src={Servicelogo4} className="picabout4" />
+                <img src={Servicelogo4} className="picabout4" id="resicon"/>
               </div>
               <div className="gridparaabout">
-                <p className="shortpara4">Voice Massage</p>
+                <p className="shortpara4">Message</p>
               </div>
               <div>
                 <p className="headingabout4 ">
@@ -117,8 +117,8 @@ export default function About() {
           </div>
           <div className="paraaboutpage">
             <p className="headingaboutsub">Uzhavan The Best Agriculture Machinery’s Here!</p>
-            <p className="headingaboutsub1">In this websites Show Three Varities Of Machinery's Here For farmers Need!</p>
-            <p className="headingaboutsub2">Lot's of machinery's Owner Profile Here.All profile Are Verified For our Best Team.In this websites Show Three Varities Of Machinery's Here Connected To Our farmers Do you Check Our MAchinery's profile Click The Go Service Button </p>
+            <p className="headingaboutsub1">In this websites Show Three Varities Of Machinery's  For farmers Needs!</p>
+            <p className="headingaboutsub2">Lot's of machinery's Owner Profile Here.All profile Are Verified For our Best Team. The  Machinery's owner Connected To Our farmers. Do you Check Our Service Collection Click The Go Service Button </p>
             <p className="headingaboutsub2">Connect WIth Our Social Network</p>
             <div className="footlings1">
                 <a href="#">
@@ -136,8 +136,9 @@ export default function About() {
               </div>
             <Button name="Go Service" class='goservice'/>
           </div>
+          
         </div>
       </div>
-    </>
+      </div>
   );
 }

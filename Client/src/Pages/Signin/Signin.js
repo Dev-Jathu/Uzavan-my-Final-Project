@@ -13,7 +13,7 @@ function Signin() {
         <div className="Form">
           <div className="flexlogo">
           <img src={Logo} className="logoimg"/>
-          <h3 className="logonameh3">Uzavan</h3>
+          <h3 className="logonameh3">Uzhavan</h3>
 
           </div>
           <h2 className="loginh2">Welcome back</h2>

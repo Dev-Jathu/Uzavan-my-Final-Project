@@ -1,0 +1,174 @@
+:root{
+    --backgroundcolor:#f3f4f6;
+    --Buttons--backgroundcolor:#15803d;
+    --Navbar--backgroundcolor:#222933;
+}
+#Serviceid{
+    padding-top: 60px;
+    height: 100vh;
+}
+.hedingservice{
+    font-size: 65px;
+    margin-left: -800px;
+    margin-top: 50px;
+    letter-spacing: 2px;
+    font-weight: bold;
+    color: rgb(85, 84, 84);
+}
+.paraservise{
+    font-size: 26px;
+    width: 65%;
+    text-align: left;
+    margin-left: 360px;
+}
+.card{
+    width: 400px;
+}
+.cards{
+    display: flex;
+    padding-left: 320px;
+    padding-top: 100px;
+}
+.pic2{
+    height: 265px;
+    background-color: #222933;
+}
+.card{
+    margin-left: 20px;
+}
+#cardtext{
+    text-align: left;
+}
+#cardtitle{
+    text-align: left;
+    font-size: 25px;
+}
+#buttoncard{
+    background-color: var(--Buttons--backgroundcolor);
+    width: 150px;
+    margin-left: -215px;
+}
+@media screen and (max-width: 850px) {
+    .hedingservice{
+        font-size: 48px;
+        margin-left: -400px;
+        margin-top: 20px;
+        letter-spacing: 2px;
+        font-weight: bold;
+        color: rgb(85, 84, 84);
+    }
+    .paraservise{
+        font-size: 22px;
+        width: 85%;
+        text-align: left;
+        margin-left:40px;
+    }
+    .card{
+        width: 400px;
+        height: 400px;
+    }
+    .cards{
+        display: flex;
+        padding-left: 320px;
+        padding-top: 100px;
+    }
+    .pic2{
+        height: 220px;
+        background-color: #222933;
+    }
+    .cardtitle{
+        /* background-color: #15803d; */
+        margin-top: -18px;
+        width: 240px;
+    }
+    .card{
+        margin-left: 20px;
+    }
+    #cardtext{
+        text-align: left;
+    }
+    #cardtitle{
+        text-align: left;
+        font-size: 25px;
+    }
+    #buttoncard{
+        background-color: var(--Buttons--backgroundcolor);
+        width: 150px;
+        margin-left: 10px;
+    }
+    #card{
+        /* background-color: #15803d; */
+        margin-left: -100px;
+        height: 300px;
+    }
+    #Serviceid{
+        height: 110vh;
+    }
+
+}
+
+@media screen and (max-width: 450px){
+
+    .hedingservice{
+        font-size: 36px;
+        margin-left: -100px;
+        margin-top: 20px;
+        letter-spacing: 2px;
+        font-weight: bold;
+        color: rgb(85, 84, 84);
+    }
+    .paraservise{
+        font-size: 20px;
+        width: 85%;
+        text-align: left;
+        margin-left:40px;
+    }
+    .card{
+        width: 100px;
+        height: 350px;
+    }
+    .cards{
+
+        display: grid;
+        grid-row-gap: 20px;
+
+        padding-left: 5px;
+        padding-top: 100px;
+    }
+    .pic2{
+        height: 200px;
+        background-color: #222933;
+    }
+    .cardtitle{
+        /* background-color: #15803d; */
+        margin-top: -18px;
+        width: 240px;
+    }
+    .card{
+        margin-left: 20px;
+    }
+    #cardtext{
+        text-align: left;
+    }
+    #cardtitle{
+        text-align: left;
+        font-size: 25px;
+    }
+    #buttoncard{
+        background-color: var(--Buttons--backgroundcolor);
+        width: 120px;
+        margin-left: -10px;
+        margin-top: -10px;
+    }
+    #card{
+        /* background-color: #15803d; */
+        margin-left: 42px;
+        height: 400px;
+        width: 330px;
+    }
+    #Serviceid{
+        height: 200vh;
+    }
+
+}
+  
