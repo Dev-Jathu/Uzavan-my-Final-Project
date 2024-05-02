@@ -55,7 +55,7 @@ function tractor() {
               Some quick example text to build on the card title and make up the
               bulk of the card's content.
             </p>
-            <a href="#" class="btn btn-primary" id="buttoncardtractor">
+            <a href="view" class="btn btn-primary" id="buttoncardtractor">
               View
             </a>
             <a href="#" class="btn btn-primary" id="buttoncardtractor1">
@@ -105,7 +105,7 @@ function tractor() {
               Some quick example text to build on the card title and make up the
               bulk of the card's content.
             </p>
-            <a href="#" class="btn btn-primary" id="buttoncardtractor">
+            <a href="view" class="btn btn-primary" id="buttoncardtractor">
               View
             </a>
             <a href="#" class="btn btn-primary" id="buttoncardtractor1">

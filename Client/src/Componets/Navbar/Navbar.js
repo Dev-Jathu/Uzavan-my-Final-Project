@@ -41,11 +41,12 @@ export default function Navbar() {
             </Link>
           </div>
           <div className="butres">
-            <a href="/join">
+            <a href="/farmerpage">
               <button className="button1" id="button10">
                 Join
               </button>
             </a>
+            
           </div>
         </div>
       </div>

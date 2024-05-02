@@ -201,5 +201,10 @@ body{
   margin-left: 380px;
   display: flex;
  }
+ #copylog1{
+  font-size: 22px;
+  color: white;
+  padding-left: 20px;
+ }
     
   }
