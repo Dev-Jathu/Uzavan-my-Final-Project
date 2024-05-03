@@ -1,10 +1,34 @@
 import "./Signup.css";
-import React from "react";
+import React, { useState } from "react";
 import Form from "../../../Componets/Form/Form";
 import Button from "../../../Componets/Button/Button";
 import Photo from "../../../Assets/loginpage.jpg";
+import axios from "axios";
+import { useNavigate } from "react-router-dom";
 
 function Signup() {
+  const [Name, setName] = useState();
+  const [NIC, setNIC] = useState();
+  const [TelNo, setTelNo] = useState();
+  const [Email, setEmail] = useState();
+  const [Password, setPassword] = useState();
+  const navigate=useNavigate()
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    const userdata = { Name, NIC, TelNo, Email, Password };
+    console.log(userdata);
+    axios
+      .post("http://localhost:3001/register", userdata)
+      .then((result) => {console.log(result)
+      
+        navigate("/Signin")
+      }
+    
+    )
+      .catch((err) => console.log(err));
+  };
+
   return (
     <div className="Signup">
       <div className="subsign">
@@ -14,56 +38,72 @@ function Signup() {
         <div className="signform">
           <h5 className="signlogofarmer">Welcome to Farmers</h5>
           <span1> Please enter your details.</span1>
-          <Form
-            class="Name"
-            name="Full Name"
-            type="text"
-            classinput="inputName"
-            place="Enter your Full Name"
-            required
-          />
-          <Form
-            class="nic"
-            name="NIC Number"
-            type="number"
-            classinput="inputName"
-            place="Enter your NIC Number"
-            required
-          />
-          <Form
-            class="tel"
-            name="Telephone Number"
-            type="number"
-            classinput="inputName"
-            place="Enter your TP Number"
-            required
-          />
-            <Form
-            class="emaill"
-            name="Email"
-            type="email"
-            classinput="inputName"
-            place="Enter your Email"
-            required
-          />
-          
-          <Form
-            class="passwordd"
-            name="Password"
-            type="password"
-            classinput="inputName"
-            place="Password"
-            required
-          />
-           <Form
-            class="passworddd"
-            name="Confirm Password"
-            type="password"
-            classinput="inputName"
-            place="Confirm Password"
-            required
-          />
-          <Button class="signup" name="Signup" />
+
+          <form onSubmit={handleSubmit}>
+            <label className="Name">Full Name</label>
+            <br />
+            <input
+              type="text"
+              className="inputName"
+              placeholder="Enter your Full Name"
+              required
+              onChange={(e) => setName(e.target.value)}
+            />
+            <br></br>
+
+            <label className="nic">NIC Number</label>
+            <br />
+            <input
+              type="text"
+              className="inputName"
+              placeholder="Your Nic Number"
+              required
+              onChange={(e) => setNIC(e.target.value)}
+            />
+            <br></br>
+            <label className="phone">Phone Number</label>
+            <br />
+            <input
+              type="number"
+              className="inputName"
+              placeholder="Your Phone Number"
+              required
+              onChange={(e) => setTelNo(e.target.value)}
+            />
+            <br></br>
+            <label className="emaill">Email</label>
+            <br />
+
+            <input
+              type="text"
+              className="inputName"
+              placeholder="Enter your Email"
+              required
+              onChange={(e) => setEmail(e.target.value)}
+            />
+            <br></br>
+            <label className="passwordd">Password</label>
+            <br />
+
+            <input
+              type="text"
+              className="inputName"
+              placeholder="Create password"
+              required
+              onChange={(e) => setPassword(e.target.value)}
+            />
+            <br></br>
+            <label className="passworddd">Confirm Password</label>
+            <br />
+            <input
+              type="text"
+              className="inputName"
+              placeholder="Create password"
+              required
+            
+            />
+            <Button class="signup" name="Signup" />
+          </form>
           <h6 className="signinling">
             Already have an account?{" "}
             <a href="/Signin" className="signinlink">

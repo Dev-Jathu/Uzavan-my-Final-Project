@@ -258,7 +258,9 @@ text-align: left;
     margin-top: -280PX;
     margin-left: -330px;
 }
-
+.succesfull{
+    margin-top: 100px;
+}
  @media screen and (max-width: 450px){
 .totalcontact{
     display: none;

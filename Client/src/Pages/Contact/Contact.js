@@ -1,6 +1,5 @@
 import React from "react";
-import Navbar from "../../Componets/Navbar/Navbar";
-import "./Contact.css";
+import './Contact.css'
 import Form from "../../Componets/Form/Form";
 import Button from "../../Componets/Button/Button";
 import ContactPic from "../../Assets/machin8.jpg";
@@ -73,7 +72,7 @@ export default function Contact() {
                   type="number"
                   classinput="inputContactPhone"
                   place="Enter Phone number"
-                  required
+                  required 
                 />
               </div>
 

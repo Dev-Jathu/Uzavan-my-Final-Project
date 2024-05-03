@@ -17,16 +17,8 @@ const getUser = (req, res) => {
 
 const createUser = (req, res) => {
   // Logic to create a user
-  const user = new User({
-    Name: req.body.Name,
-    NIC: req.body.NIC,
-    TelNo: req.body.TelNo,
-    Address: req.body.Address,
-    Email: req.body.Email,
-    Password: req.body.Password,
-  });
-  user
-    .save()
+  const user = new User(req.body)
+  user.save()
     .then(() => {
       res.status(201).json({ message: "User created successfully" });
     })
@@ -34,6 +26,7 @@ const createUser = (req, res) => {
       res.status(500).json({ message: "Something went wrong" });
     });
 };
+
 
 // Logic to update user
 

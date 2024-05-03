@@ -1,8 +1,9 @@
-const mongoose = require("mongoose")
+const mongoose = require ("mongoose")
 const schema = new mongoose.Schema({
 Name:{
     type : String,
-    require :true
+    require :true,
+    unique :true
 },
 NIC:{
     type : String,
@@ -13,10 +14,7 @@ TelNo:{
     require : true
 
 },
-Address:{
-    type : String,
-    require : true
-},
+
 Email:{
     type : String,
     require : true
