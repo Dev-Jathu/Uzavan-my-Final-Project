@@ -1,8 +1,7 @@
 import "./Signup.css";
 import React, { useState } from "react";
-import Form from "../../../Componets/Form/Form";
-import Button from "../../../Componets/Button/Button";
 import Photo from "../../../Assets/loginpage.jpg";
+import Button from '../../../Componets/Button/Button'
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
 
@@ -105,7 +104,7 @@ function Signup() {
             <Button class="signup" name="Signup" />
           </form>
           <h6 className="signinling">
-            Already have an account?{" "}
+            Already have an account?
             <a href="/Signin" className="signinlink">
               Sign in!
             </a>

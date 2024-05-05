@@ -1,6 +1,5 @@
 import React from "react";
 import { useState } from "react";
-import Form from "../../Componets/Form/Form";
 import Button from "../../Componets/Button/Button";
 import Photo from "../..//Assets/uzavan19.jpg";
 import Gphoto from "../../Assets/Gphoto.png";
@@ -12,19 +11,29 @@ import { useNavigate } from "react-router-dom";
 function Signin() {
   const [Email, setEmail] = useState();
   const [Password, setPassword] = useState();
-  const navigate=useNavigate()
+  const navigate = useNavigate();
+
+  axios.defaults.withCredentials = true;
 
   const handleSubmit = (e) => {
     e.preventDefault();
     const userdata = { Email, Password };
     console.log(userdata);
     axios
-      .post("http://localhost:3001/Signin",userdata)
+      .post("http://localhost:3001/Signin", userdata)
       .then((result) => {
         console.log(result);
         if (result.data === "Success") {
-          navigate('/home')
+          navigate("/home");
         }
+        else if (result.data === "Success"){
+          navigate("/Machine")
+        }
+        else{
+          alert("user not found")
+        }
+       
+        
       })
       .catch((err) => console.log(err));
   };
@@ -44,11 +53,11 @@ function Signin() {
             <label className="email">Email</label>
             <br></br>
 
-
             <input
               type="text"
               className="inpput"
               placeholder="Enter Your emaill"
+              required
               onChange={(e) => setEmail(e.target.value)}
             />
             <br></br>
@@ -59,11 +68,10 @@ function Signin() {
               type="password"
               className="inpput"
               placeholder="Enter your password"
+              required
               onChange={(e) => setPassword(e.target.value)}
             />
             <br></br>
-
-
 
             <div className="remember">
               <input type="checkbox" value="lsRememberMe" id="rememberMe" />

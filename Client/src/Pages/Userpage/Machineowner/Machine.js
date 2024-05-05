@@ -3,9 +3,23 @@ import { HashLink as Link } from "react-router-hash-link";
 import Logo from "../../../Assets/uzavan.png";
 import Backgroundpgoto3 from "../../../Assets/macine.mp4";
 import Button from '../../../Componets/Button/Button';
+import axios from "axios";
 import './Machine.css'
+import { useEffect } from "react";
 
 function Machine() {
+  axios.defaults.withCredentials=true;
+  useEffect(() => {
+    axios
+      .get("http://localhost:3001/Machine")
+      .then((result) => {
+        console.log(result);
+        if (result.data !== "Successmachine") {
+        }
+      })
+
+      .catch((err) => console.log(err));
+  }, []);
   return (
     <div>
       <div>

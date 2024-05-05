@@ -1,0 +1,71 @@
+:root{
+    --backgroundcolor:#f3f4f6;
+    --Buttons--backgroundcolor:#15803d;
+    --Navbar--backgroundcolor:#222933;
+}
+.boss{
+    font-size: 42px;
+    color: white;
+    font-weight: 500;
+    margin-top: 10px;
+    margin-left: 180px;
+}
+.bossimg{
+    height: 60px;
+    background-color: white;
+    border-radius: 50%;
+    margin-left: 20px;
+}
+.sidbarboss{
+    height: 100vh;
+    width: 300px;
+    margin-top: -910px;
+    background-color:rgb(2, 0, 36);
+    box-shadow: 1px 1px 5px;
+}
+.sidbarboss{
+    text-align: left;
+    font-size: 22px;
+}
+.dash{
+    width: 200px;
+    border-radius: 10px;
+    height: 40px;
+    margin-left: 40px;
+    margin-top: 40px;
+    box-shadow: 2px 3px 0px white; 
+}
+.dash:hover{
+    background-color: #15803d;
+}
+.sidetext{
+    font-size: 55px;
+    color: white;
+    text-align: center;
+    padding-top: 50px;
+}
+span5{
+    font-size: 28px;
+}
+.footboss{
+    background-color: #15803d;
+    font-size: 7px;
+    width: 80%;
+    height: 100vh;
+    margin-left: 320px;
+    margin-top: 10px;
+}
+.footlogoboss{
+    height: 260px;
+    margin-top: 50px;
+    margin-left: 20px;
+}
+#logoadmin{
+    margin-left: -200px;
+}
+.content{
+    background-color: #15803d;
+    height: 100vh;
+    width: 90%;
+    margin-left: 320px;
+}

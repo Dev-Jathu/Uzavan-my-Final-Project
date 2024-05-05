@@ -14,6 +14,8 @@ import Tsunami from '../Pages/Service/Tsunami/Tsunami'
 import View from '../Pages/Service/Tractor/view/view'
 import Farmer from '../Pages/Userpage/Farmer/farmer'
 import Machine from "../Pages/Userpage/Machineowner/Machine";
+import FarmerDetails from "../Pages/Admin/Farmer/Farmer";
+import MachineryDetails from "../Pages/Admin/Machinery/Machinery";
 
 export default function RoutesTable() {
     return (
@@ -34,6 +36,9 @@ export default function RoutesTable() {
                 <Route path='/Tsunami' element={<Tsunami/>}/>
                 <Route path='/view' element={<View/>}/>
                 <Route path='/home' element={<Farmer/>}/>
+                <Route path='/FarmerDetails' element={<FarmerDetails/>}/>
+                <Route path='/MachineryDetails' element={<MachineryDetails/>}/>
+                <Route path='/Machine' element={<Machine/>}/>
 
             </Routes>
         </div>
