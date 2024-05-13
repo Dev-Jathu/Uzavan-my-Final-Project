@@ -33,6 +33,7 @@ function MachineryDetails() {
       <div className="content">
         
         </div>
+        
      
       
     <div className="sidbarboss">

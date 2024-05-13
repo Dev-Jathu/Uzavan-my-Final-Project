@@ -16,6 +16,8 @@ import Farmer from '../Pages/Userpage/Farmer/farmer'
 import Machine from "../Pages/Userpage/Machineowner/Machine";
 import FarmerDetails from "../Pages/Admin/Farmer/Farmer";
 import MachineryDetails from "../Pages/Admin/Machinery/Machinery";
+import Profile from "../Componets/Addprofileui.js/profile";
+import ProfileView from "../Pages/Userpage/Profile/profile.view";
 
 export default function RoutesTable() {
     return (
@@ -39,6 +41,10 @@ export default function RoutesTable() {
                 <Route path='/FarmerDetails' element={<FarmerDetails/>}/>
                 <Route path='/MachineryDetails' element={<MachineryDetails/>}/>
                 <Route path='/Machine' element={<Machine/>}/>
+                <Route path='/Addprofile' element={<Profile/>}/>
+                <Route path='/Viewrofile' element={<ProfileView/>}/>
+
+
 
             </Routes>
         </div>

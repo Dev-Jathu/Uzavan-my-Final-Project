@@ -1,12 +1,50 @@
-#h6{
-    margin-top: 0px;
-    font-weight: bold;
-    color: linear-gradient(to right, #000000, #ffffff);
+:root{
+    --Navbar--backgroundcolor:#222933;
+    --Buttons--backgroundcolor:#15803d;
+    --backgroundcolor:#f3f4f6;
 
 }
+
+#h6 {
+    width: 1600px;
+    margin-top: -130px;
+    font-weight: bold;
+    -webkit-text-fill-color: rgb(255, 255, 255); /* Text fill color for Safari */
+    -webkit-text-stroke-width: 1.5px; /* Border width */
+    -webkit-text-stroke-color: black; /* Border color */
+    font-size: 88px;
+    margin-left: 190px;
+    line-height: 100px;
+    
+
+}
+
 #welcome{
-    font-size: 58px;
- width: 100%;
+    font-size: 88px;
+    text-align: center;
+    width: 100%;
+    margin-left: 200px
+    
+}
+
+#para{
+    margin-top: -100px;
+}
+.homebutton1{
+    width: 200px;
+    height: 60px;
+    color: var(--backgroundcolor);
+    background-color: var(--Buttons--backgroundcolor);
+    font-size: 24px;
+    font-weight: bold;
+    margin-top: 30px;
+    border: none;
+    box-shadow: 1px 1px 5px rgba(95, 158, 160, 0);
+    margin-left: 30px;
+}
+.homebutton1:hover{
+    background-color: #000000;
+    color: white;
 }
 .butresfarmer{
     margin-left: 500px;

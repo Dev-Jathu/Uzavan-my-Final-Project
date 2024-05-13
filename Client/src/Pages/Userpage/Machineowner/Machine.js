@@ -1,25 +1,13 @@
 import React from "react";
 import { HashLink as Link } from "react-router-hash-link";
 import Logo from "../../../Assets/uzavan.png";
-import Backgroundpgoto3 from "../../../Assets/macine.mp4";
-import Button from '../../../Componets/Button/Button';
+import Backgroundpgoto3 from "../../../Assets/newmachine.jpg";
+import Button from "../../../Componets/Button/Button";
 import axios from "axios";
-import './Machine.css'
+import "./Machine.css";
 import { useEffect } from "react";
 
 function Machine() {
-  axios.defaults.withCredentials=true;
-  useEffect(() => {
-    axios
-      .get("http://localhost:3001/Machine")
-      .then((result) => {
-        console.log(result);
-        if (result.data !== "Successmachine") {
-        }
-      })
-
-      .catch((err) => console.log(err));
-  }, []);
   return (
     <div>
       <div>
@@ -50,9 +38,9 @@ function Machine() {
                 </Link>
               </div>
               <div className="butresfarmer">
-                <a href="#">
+                <Link to="/Viewrofile">
                   <i class="fa-solid fa-user" id="userprofile"></i>
-                </a>
+                </Link>
               </div>
             </div>
           </div>
@@ -66,9 +54,7 @@ function Machine() {
       >
         <div class="carousel-inner">
           <div class="carousel-item active">
-            <video
-              autoPlay
-              loop
+            <img
               src={Backgroundpgoto3}
               class="d-block w-100"
               alt="..."
@@ -110,7 +96,9 @@ function Machine() {
             <br />
             We are ready to serve your Time
           </h6>
-          <Button class="homebutton" name="Add Service" />
+          <Link to="/Addprofile">
+            <Button class="homebutton2" name="Add Service" />
+          </Link>
         </div>
       </div>
       <div id="Serviceid">
@@ -152,7 +140,7 @@ function Machine() {
                     <div className="services">
                       <p className="footerh1">Our Services</p>
                       <div className="servicelink">
-                        <a href="/Learnmore">Tractor</a>
+                        <a href="/Learnmore1">Tractor</a>
                         <br />
                         <a href="/Harvester" className="paddie">
                           Paddie Cropper

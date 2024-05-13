@@ -14,29 +14,27 @@ function Signin() {
   const navigate = useNavigate();
 
   axios.defaults.withCredentials = true;
-
+  
   const handleSubmit = (e) => {
     e.preventDefault();
     const userdata = { Email, Password };
     console.log(userdata);
+    
     axios
-      .post("http://localhost:3001/Signin", userdata)
+      .post("http://localhost:3003/farmerLogin/sigIn", userdata)
       .then((result) => {
         console.log(result);
         if (result.data === "Success") {
           navigate("/home");
+        } else if (result.data === "Successmachine") {
+          navigate("/Machine");
+        } else if (result.data === "Admin_Success") {
+          navigate("/Admin");
         }
-        else if (result.data === "Success"){
-          navigate("/Machine")
-        }
-        else{
-          alert("user not found")
-        }
-       
-        
       })
       .catch((err) => console.log(err));
-  };
+};
+
 
   return (
     <div className="maincontainer">

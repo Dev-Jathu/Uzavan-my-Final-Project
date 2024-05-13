@@ -17,30 +17,30 @@
     margin-left: 20px;
 }
 .sidbarboss{
-    height: 100vh;
-    width: 300px;
-    margin-top: -910px;
-    background-color:rgb(2, 0, 36);
-    box-shadow: 1px 1px 5px;
+    height: fit-content;
+    width: 400px;
+    margin-top: -1760px;
+    /* background-color:rgb(2, 0, 36);bach */
+    box-shadow: 1px 1px 10px;
 }
 .sidbarboss{
     text-align: left;
     font-size: 22px;
 }
 .dash{
-    width: 200px;
+    width: 250px;
     border-radius: 10px;
     height: 40px;
-    margin-left: 40px;
+    margin-left: 70px;
     margin-top: 40px;
-    box-shadow: 2px 3px 0px white; 
+    box-shadow: 2px 3px 5px rgb(148, 147, 147); 
 }
 .dash:hover{
     background-color: #15803d;
 }
 .sidetext{
     font-size: 55px;
-    color: white;
+    color: var(--Navbar--backgroundcolor);
     text-align: center;
     padding-top: 50px;
 }
@@ -56,16 +56,118 @@ span5{
     margin-top: 10px;
 }
 .footlogoboss{
-    height: 260px;
-    margin-top: 50px;
-    margin-left: 20px;
+    height: 280px;
+    margin-top: 60px;
+    margin-left: 55px;
 }
 #logoadmin{
     margin-left: -200px;
 }
 .content{
-    background-color: #15803d;
-    height: 100vh;
+    background-color: #ffffff;
+    height: 200vh;
     width: 90%;
     margin-left: 320px;
+}
+.gridcount{
+    display: grid;
+    grid-template-columns: 500px 500px 500px;
+}
+.fcount{
+    font-size: 30px;
+}
+.Farmercount{
+    text-align: center;
+    margin-left: 200px;
+    margin-top: 70px;
+}
+#addlogo{
+    font-size: 38px;
+}
+table{
+    border-collapse: collapse;
+    border: 2px solid black;
+  border-radius: 90px;
+}
+th{
+    width: 200px;
+    text-align: center;
+    padding: 15px;
+    background-color:rgb(36, 113, 163);
+    color: whitesmoke;
+    font-size: 22px;
+    font-weight: bold;
+    
+}
+td{
+    border: 2px solid;
+    background-color: whitesmoke;
+    padding: 10px;
+    
+}
+.tabledata{
+    border: none;
+    background-color: transparent;
+    margin-top: -30px;
+   margin-left: 30px;
+   border-bottom: none;
+   border-radius: none;
+   
+}
+.edit{
+    width: 100px;
+    height: 35px;
+    border-radius: 20px;
+    letter-spacing: 2px;
+    color: whitesmoke;
+    font-weight: bold;
+    background-color:var(--Navbar--backgroundcolor);
+
+}
+.delete{
+    width: 100px;
+    height: 35px;
+    border-radius: 20px;
+    letter-spacing: 2px;
+    color: whitesmoke;
+    background-color: rgb(236, 61, 61);
+    font-weight: bold;
+}
+.Notecontainer{
+    margin-top: 120px;
+    margin-left: 130px;
+}
+
+#content{
+    margin-top: 100px;
+    
+}
+#sidebarboss{
+    width: 100%;
+    margin-top: 100px;
+    background-color: #15803d;
+}
+#kj{
+    margin-top: -549px;
+    
+}
+.alighnfarmer{
+    /* background-color: #15803d; */
+    margin-top: 100px;
+    margin-left: 420px;
+}
+.detailsfarm{
+    font-size: 36px;
+    margin-left: -1200px;
+    margin-top: -50px;
+    
+}
+.alighnforadmin{
+    height: 200vh;
+    background-color: #15803d;
+
+
+}
+.Notecontainer{
+    margin-top: 30px;
 }

@@ -1,5 +1,5 @@
 import React, { useEffect } from "react";
-import Backgroundpgoto3 from "../../../Assets/FARMER5.mp4";
+import Backgroundpgoto3 from "../../../Assets/newfarmer1.jpg";
 import Button from "../../../Componets/Button/Button";
 import Logo from "../../../Assets/uzavan.png";
 import pic from "../../../Assets/final.jpg";
@@ -10,18 +10,6 @@ import "./farmer.css";
 import axios from "axios";
 
 function Farmer() {
-  axios.defaults.withCredentials=true;
-  useEffect(() => {
-    axios
-      .get("http://localhost:3001/home")
-      .then((result) => {
-        console.log(result);
-        if (result.data !== "Success") {
-        }
-      })
-
-      .catch((err) => console.log(err));
-  }, []);
 
   return (
     <div>
@@ -69,9 +57,7 @@ function Farmer() {
       >
         <div class="carousel-inner">
           <div class="carousel-item active">
-            <video
-              autoPlay
-              loop
+            <img
               src={Backgroundpgoto3}
               class="d-block w-100"
               alt="..."
@@ -105,15 +91,15 @@ function Farmer() {
           ></span>
           <span class="visually-hidden">Next</span>
         </button>
-        <div className="parahome">
+        <div className="parahome" hd='para'>
           <h6 className="h6" id="h6">
             <span className="welcome" id="welcome">
               Welcome To Uzhavan!
             </span>
             <br />
-            We are ready to serve your Time
+            We are ready to save your Time
           </h6>
-          <Button class="homebutton" name="Find Machine" />
+          <Button id='farmerbutton' class="homebutton1" name="Find Machine" />
         </div>
       </div>
       <div id="Serviceid">
