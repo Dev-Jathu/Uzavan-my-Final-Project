@@ -46,6 +46,7 @@ export default function Navbar() {
                 Join
               </button>
             </a>
+            
           </div>
         </div>
       </div>

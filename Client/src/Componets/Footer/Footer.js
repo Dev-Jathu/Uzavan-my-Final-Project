@@ -36,12 +36,16 @@ export default function Footer() {
                 <div className="services">
                   <p className="footerh1">Our Services</p>
                   <div className="servicelink">
-                    <a href="#">Tractor</a>
+                    <a href="/Learnmore">Tractor</a>
                     <br />
-                    <a href="#" className="paddie">
+                    <a href="/Harvester" className="paddie">
                       Paddie Cropper
                     </a>
+                    
                     <br />
+                    <a href="/Tsunami" className="paddie">
+                      Tsunami Machine
+                    </a>
                   </div>
                 </div>
               </div>
@@ -64,7 +68,7 @@ export default function Footer() {
                 </div>
               </div>
               <div className="footlings">
-                <a href="#">
+                <a href="machinepage">
                   <i class="fa-brands fa-facebook" id="editicon"></i>
                 </a>
                 <a href="#">

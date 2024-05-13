@@ -1,24 +1,52 @@
-const connectDB=require('./DB/connect')
-const express = require('express');
-const userRoutes = require('./Routes/FarmersRoutes');
+const mongoose = require("mongoose");
+const connectDB = require("./DB/Database");
+const express = require("express");
+const cors = require("cors");
+const cookieParser = require("cookie-parser");
+const userRoutes=require('./userRoutes/routes')
+const MachineRoutes = require('./userRoutes/machineRoutes')
+const LoginRoutes=require('./userRoutes/loginRoutes')
+const AdminRoutes = require('./userRoutes/adminRoutes')
 
-cors = require('cors');
+//app assignd
 const app = express();
-const PORT = 3001;
-app.use(cors());
 app.use(express.json());
+app.use(cookieParser());
+app.use(
+  cors({
+    origin: ["http://localhost:3000"],
+    methods: ["GET", "POST"],
+    credentials: true,
+  })
+);
+
 const startServer = async () => {
-    try{
-        await connectDB();
-        app.listen(PORT, ()=>{
-            console.log(`Server is running on the port ${PORT}`)
-        })
-        app.use(express.json());
-        app.use('/user', userRoutes)
-        
-    }
-    catch(err){
-        console.log(err)
-    }
-}
+  try {
+    //mongodb connecting
+    await connectDB();
+
+    //database connection
+    app.listen(process.env.PORT, () => {
+      console.log(`Server is running on the port ${process.env.PORT}`);
+    });
+
+    //call for farmer create
+    app.use('/farmer',userRoutes)
+
+    //call for machinerys create
+    app.use('/machinery',MachineRoutes)
+
+    //call for login
+    app.use('/farmerLogin',LoginRoutes)
+
+    //call for admin
+    app.use('/Admin',AdminRoutes)
+
+
+
+
+  } catch (err) {
+    console.log(err);
+  }
+};
 startServer();
