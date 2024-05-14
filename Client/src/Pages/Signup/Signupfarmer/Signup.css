@@ -10,7 +10,7 @@
     max-width: 1350px;
     height: 810px;
     background-color: white;
-    margin-top: 50px;
+    margin-top: 90px;
     margin-left: 290px;
     border-radius: 15px;
     box-shadow: 2px 2px 10px rgb(155, 155, 155);
@@ -32,11 +32,12 @@
     box-shadow: 1px 1px 6px rgb(155, 155, 155);
     padding: 20px;
     color: black;
-    margin-top: 5px;
+    margin-top: -5px;
     letter-spacing: 1px;
 }
 .signup{
     width: 400px;
+    font-weight: 600;
     height: 45px;
     margin-top: 20px;
     border-radius: 15px;
@@ -44,7 +45,7 @@
     background-color:var(--Buttons--backgroundcolor);
     border: none;
     color: white;
-    font-size: 18px;
+    font-size: 20px;
 }
 .Name{
     font-size: 18px;
@@ -117,4 +118,20 @@ span1{
 }
 .signform{
     margin-left: -50px;
+}
+.eye{
+margin-left: -32px;
+background-color: transparent;
+border: none;
+}
+#inputnameeye{
+    margin-left: -15px;
+    border: none;
+}
+#eyeinside{
+font-size: 19px;
+
+}
+#enterdet{
+    font-size: 18px;
 }

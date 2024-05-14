@@ -4,16 +4,16 @@
 }
 .Signupmachin{
     max-width: 1400px;
-    height: 900px;
+    height: 920px;
     background-color: white;
-    margin-top: 10px;
+    margin-top: 100px;
     margin-left: 270px;
     border-radius: 15px;
     box-shadow: 2px 2px 10px rgb(155, 155, 155);
 }
 .signpicmachin{
-    width: 800px;
-    height: 900px;
+    width: 770px;
+    height: 920px;
     margin-left: -10px;
     border-top-left-radius: 15px;
     border-bottom-left-radius:15px;
@@ -68,10 +68,13 @@
 .tel{
     font-size: 18px;
     margin-left: -230px;
+    margin-top: 10px;
 }
 .address{
     font-size: 18px;
     margin-left: -320px;
+    margin-top: 10px;
+
 }
 .vehile{
     font-size: 18px;
@@ -106,7 +109,8 @@ span1{
 
 }
 .signformmachin{
-    margin-left: 80px;
+    margin-left: 65px;
+
 }
 .mchinlogo{
     margin-left: -1000px;
