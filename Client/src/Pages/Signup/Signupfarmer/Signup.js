@@ -2,9 +2,10 @@ import "./Signup.css";
 import React, { useState } from "react";
 import Photo from "../../../Assets/loginpage.jpg";
 import Button from "../../../Componets/Button/Button";
-// import { useNavigate } from "react-router-dom";
-import { toast, ToastContainer } from "react-toastify";
-import "react-toastify/dist/ReactToastify.css";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faEye, faEyeSlash } from "@fortawesome/free-solid-svg-icons";
+import { Link } from "react-router-dom";
+import Logo from '../../../Assets/uzavan.png'
 
 function Signup() {
   const [Name, setName] = useState("");
@@ -12,44 +13,47 @@ function Signup() {
   const [TelNo, setTelNo] = useState("");
   const [Email, setEmail] = useState("");
   const [Password, setPassword] = useState("");
-  // const navigate = useNavigate();
-  const notify = () => {
-    toast.success("Your data saved successfully");
-  };
+  const [ConfirmPassword, setConfirmPassword] = useState("");
+  const [errors, setErrors] = useState({});
+  const [showPassword, setShowPassword] = useState(false);
 
-  const errorNotify = () => {
-    toast.error("Failed to save data");
-  };
+  const validateForm = () => {
+    // Validation with immediate alert on error.
+    if (!Name.trim()) {
+      alert("Name is required");
+      return false;
+    }
+    if (!NIC.trim() || NIC.length < 10 || NIC.length > 12) {
+      alert("NIC must be exactly 10 or 12 characters long");
+      return false;
+    }
+    if (!TelNo.trim() || !/^\d{10}$/.test(TelNo.trim())) {
+      alert("Phone Number should contain exactly 10 digits");
+      return false;
+    }
+    if (!Email.trim() || !/\S+@\S+\.\S+/.test(Email.trim())) {
+      alert("Invalid Email format");
+      return false;
+    }
+    if (!Password) {
+      alert("enter your Password");
+    } else if (!/(?=.*[a-z])(?=.*[A-Z])(?=.*\d).{8,}/.test(Password)) {
+      alert("Enter a Valid Password (Using Capital_letter,number,@&%$#)");
+    }
 
-  // const handleSubmit = async (e) => {
-  //   e.preventDefault();
-  //   const userdata = { Name, NIC, TelNo, Email, Password };
-  //   // try {
-  //     const response = await fetch("http://localhost:3003/farmer/register", {
-  //       method: "POST",
-  //       headers: {
-  //         "Content-Type": "application/json",
-  //       },
-  //       body: JSON.stringify(userdata),
-  //     }).then(
-  //       console.log('shadklhsakjd'),
-  //       alert("your daanujnjncslm")
-  //       // notify() // Notify on successful registration
-  //     )
-  //     .catch(error => console.error("failed to saved",error))
-  //     // if (!response) {
-  //     //   console.log("failed to save data");
-  //     // }
-  //     // errorNotify();
-  //   // } catch (error) {
-  //   //   console.log("Error:", error);
-  //   //   errorNotify();
-  //   // }
-  // };
-  
+    if (!ConfirmPassword.trim() || Password.trim() !== ConfirmPassword.trim()) {
+      alert("Passwords do not match");
+      return false;
+    }
+    return true; // No errors, form is valid
+  };
   const handleSubmit = async (e) => {
     e.preventDefault();
-    
+
+    if (!validateForm()) {
+      return;
+    }
+
     const userdata = { Name, NIC, TelNo, Email, Password };
     try {
       const response = await fetch("http://localhost:3003/farmer/register", {
@@ -60,30 +64,77 @@ function Signup() {
         body: JSON.stringify(userdata),
       });
       if (!response.ok) {
-        throw new Error("Failed to register. Server responded with status: " + response.status);
+        throw new Error(
+          "Failed to register. Server responded with status: " + response.status
+        );
       }
       const result = await response.json();
       console.log(result);
-      
+
       alert("Registration successful da venna!");
     } catch (error) {
-      console.error("Failed to register", error); // Changed the error message here
-      alert("Registration failed da venna!"); // Adjusted the alert message here
+      console.error("Failed to register", error);
+      alert("Registration failed da venna!");
     }
   };
-  
-  
+
   return (
     <>
-      {/* <ToastContainer /> */}
+    <div className="main">
+      <div className="container">
+        <div className="logo">
+          <div className="logoimg">
+            <img src={Logo} id="logoimage" />
+          </div>
+          <div className="logoname">
+            <h2>Uzhavan</h2>
+          </div>
+        </div>
+        <div className="Navlings">
+          <div className="navname">
+            <Link to="/">Home</Link>
+            <Link to="/about" smooth>
+              About
+            </Link>
+            <Link to="/service" smooth>
+              Service
+            </Link>
+            
+            <Link to="/contact" smooth>
+              Contact
+            </Link>
+          </div>
+          <div className="navnamecopy">
+            <Link to="#carouselExampleAutoplaying"><i class="fa-solid fa-house" id="copylog"></i></Link>
+            <Link to="#Aboutid" smooth>
+            <i class="fa-solid fa-user-tag" id="copylog"></i>
+            </Link>
+            <Link to="#Serviceid" smooth>
+            <i class="fa-solid fa-briefcase"id="copylog"></i>
+            </Link>
+            <Link to="#Contactid" smooth>
+            <i class="fa-solid fa-address-book"id="copylog"></i>
+            </Link>
+          </div>
+          <div className="butres">
+            <a href="/join">
+              <button className="button1" id="button10">
+                Join
+              </button>
+            </a>
+            
+          </div>
+        </div>
+      </div>
+    </div>
       <div className="Signup">
         <div className="subsign">
           <div className="Signphot">
-            <img src={Photo} className="signpic" />
+            <img src={Photo} className="signpic" alt="Login" />
           </div>
           <div className="signform">
             <h5 className="signlogofarmer">Welcome to Farmers</h5>
-            <span1> Please enter your details.</span1>
+            <span id="enterdet">Please enter your details.</span>
 
             <form onSubmit={handleSubmit}>
               <label className="Name">Full Name</label>
@@ -92,10 +143,12 @@ function Signup() {
                 type="text"
                 className="inputName"
                 placeholder="Enter your Full Name"
-                required
+                value={Name}
                 onChange={(e) => setName(e.target.value)}
+                required
               />
-              <br></br>
+              {/* {errors.name && <span className="error">{errors.name}</span>} */}
+              <br />
 
               <label className="nic">NIC Number</label>
               <br />
@@ -103,50 +156,91 @@ function Signup() {
                 type="text"
                 className="inputName"
                 placeholder="Your Nic Number"
-                required
+                value={NIC}
                 onChange={(e) => setNIC(e.target.value)}
+                required
+                maxLength={12}
               />
-              <br></br>
+              {/* {errors.nic && <span className="error">{errors.nic}</span>} */}
+              <br />
+
               <label className="phone">Phone Number</label>
               <br />
               <input
-                type="number"
+                type="tel"
                 className="inputName"
                 placeholder="Your Phone Number"
-                required
+                value={TelNo}
                 onChange={(e) => setTelNo(e.target.value)}
+                required
+                maxLength={12}
               />
-              <br></br>
-              <label className="emaill">Email</label>
+
+              {/* {errors.telNo && <span className="error">{errors.telNo}</span>} */}
               <br />
 
+              <label className="emaill">Email</label>
+              <br />
               <input
                 type="email"
                 className="inputName"
                 placeholder="Enter your Email"
-                required
+                value={Email}
                 onChange={(e) => setEmail(e.target.value)}
+                required
               />
-              <br></br>
-              <label className="passwordd">Password</label>
+              {/* {errors.email && <span className="error">{errors.email}</span>} */}
               <br />
 
-              <input
+              <label className="passwordd">Password</label>
+              <br />
+              {/* <input
                 type="password"
                 className="inputName"
                 placeholder="Create password"
-                required
+                value={Password}
                 onChange={(e) => setPassword(e.target.value)}
+                required
+              /> */}
+              <input
+                type={showPassword ? "text" : "password"}
+                className="inputName"
+                id="inputnameeye"
+                placeholder="Create password"
+                value={Password}
+                onChange={(e) => setPassword(e.target.value)}
+                required
               />
-              <br></br>
+              <button
+                className="eye"
+                onClick={() => setShowPassword(!showPassword)}
+              >
+                {/* <FontAwesomeIcon icon={showPassword ? faEyeSlash : faEye} /> */}
+                {/* <FontAwesomeIcon icon="fa-regular fa-eye"  /> */}
+                <i class="fa-regular fa-eye" id="eyeinside"></i>
+              </button>
+
+              {/* {errors.password && (
+                <span className="error">{errors.password}</span>
+              )} */}
+              <br />
+
               <label className="passworddd">Confirm Password</label>
               <br />
               <input
-                type="text"
+                type="password"
                 className="inputName"
-                placeholder="Create password"
+                placeholder="Confirm password"
+                value={ConfirmPassword}
+                onChange={(e) => setConfirmPassword(e.target.value)}
                 required
               />
+              {/* {errors.confirmPassword && (
+                <span className="error">{errors.confirmPassword}</span>
+              )} */}
+              <br />
+              <br />
+
               <Button class="signup" name="Signup" />
             </form>
             <h6 className="signinling">
