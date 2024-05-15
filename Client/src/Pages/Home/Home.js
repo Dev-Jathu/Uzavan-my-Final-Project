@@ -28,7 +28,7 @@ function Home() {
             <img
               src={Backgroundpgoto}
               class="d-block w-100"
-              alt="..."
+              alt="background photo"
               id="bgphot"
             />
           </div>
@@ -68,7 +68,7 @@ function Home() {
           <span class="visually-hidden">Next</span>
         </button>
         <div className="parahome">
-          <h6 className="h6"><span className="welcome">Welcome To Uzhavan!</span><br/>We are ready to serve  your Time</h6>
+          <h6 className="h6"><span className="welcome">Welcome To Uzhavan!</span><br/>We are ready to save  your Time</h6>
           <Button class='homebutton' name='Learn more'/>
   
           

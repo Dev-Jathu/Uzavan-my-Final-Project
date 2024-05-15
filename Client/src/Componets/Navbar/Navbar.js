@@ -41,11 +41,11 @@ export default function Navbar() {
             </Link>
           </div>
           <div className="butres">
-            <a href="/join">
+            <Link to="/join">
               <button className="button1" id="button10">
                 Join
               </button>
-            </a>
+            </Link>
             
           </div>
         </div>

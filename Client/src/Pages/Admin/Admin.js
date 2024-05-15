@@ -7,6 +7,8 @@ import React, { useState, useEffect } from "react";
 
 function Admin() {
   const [users, setUsers] = useState([]);
+  const [currentPage, setCurrentPage] = useState(1);
+  const [itemsPerPage, setItemsPerPage] = useState(8);
   useEffect(() => {
     fetchUsers();
   }, []);
@@ -27,24 +29,52 @@ function Admin() {
     }
 
     if (window.confirm(`Are you sure you want to delete this user?`)) {
-      fetch(`http://localhost:3003/farmerLogin/delete/${id}`, {
+      fetch(`http://localhost:3003/farmer/delete/${id}`, {
         method: "DELETE",
       })
-        .then((response) => response.json())
-        .then((data) => {
-          alert(data.message || "User deleted successfully");
-          fetchUsers(); // Refresh list to show remaining users
-        })
-        .catch((error) => {
-          console.error("Error:", error);
-          alert("Failed to delete the user.");
-        });
+      .then(response => {
+        if (!response.ok) {
+          throw new Error('Network error');
+        }
+        return response.json();
+      })
+      .then(data => {
+        alert(data.message || "User deleted successfully");
+        fetchUsers(); // Refresh list to show remaining users
+      })
+      .catch(error => {
+        console.error("Error:", error);
+        alert("Failed to delete the user.");
+      });
     }
+  } 
+
+  //pagination 
+  const indexOfLastItem = currentPage * itemsPerPage;
+  const indexOfFirstItem = indexOfLastItem - itemsPerPage;
+  const currentItems = users.slice(indexOfFirstItem, indexOfLastItem);
+  const totalPages = Math.ceil(users.length / itemsPerPage);
+
+  const handlePageChange = (pageNumber) => {
+      setCurrentPage(pageNumber);
   };
 
+  const renderPageNumbers = () => {
+      const pageNumbers = [];
+      for (let i = 1; i <= totalPages; i++) {
+          pageNumbers.push(i);
+      }
+      return pageNumbers.map(number => (
+          <button className='pagenumber' key={number} onClick={() => handlePageChange(number)} disabled={currentPage === number}>
+              {number}
+          </button>
+      ));
+  };
+
+  
   return (
     <div id="alighnforadmin">
-      <div className="main">
+      <div className="main11">
         <div className="container">
           <div className="logo" id="logoadmin">
             <div className="logoimg">
@@ -80,7 +110,7 @@ function Admin() {
             </div>
           </div>
           <div className="Notecontainer">
-            <table border={1}>
+            <table>
               <tr>
                 <th>Name</th>
                 <th> Address</th>
@@ -91,12 +121,14 @@ function Admin() {
                 <th> Delete</th>
               </tr>
               <tbody>
-                {users.map((user) => (
-                  <tr>
+                {currentItems.map((user) => (
+                  <tr key={user._id}>
                     <td>{user.Name}</td>
                     <td>{user.NIC}</td>
                     <td>{user.TelNo}</td>
                     <td>{user.Email}</td>
+                    <td>{user.TelNo}</td>
+
 
                     <td>
                       <Button class="edit" name="Verify" />
@@ -113,6 +145,9 @@ function Admin() {
                 ))}
               </tbody>
             </table>
+            <div className="pagination">
+                    {renderPageNumbers()}
+                </div>
           </div>
         </div>
 

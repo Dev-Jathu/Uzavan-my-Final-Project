@@ -97,10 +97,10 @@ function Signupmachine() {
       const result = await response.json();
       console.log(result);
 
-      alert("Registration successful da venna!");
+      alert("Registration successful!");
     } catch (error) {
       console.error("Failed to register", error); // Changed the error message here
-      alert("Registration failed da venna!"); // Adjusted the alert message here
+      alert("Registration failed!"); // Adjusted the alert message here
     }
   };
 
