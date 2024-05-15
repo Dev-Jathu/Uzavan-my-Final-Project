@@ -36,16 +36,16 @@ export default function Footer() {
                 <div className="services">
                   <p className="footerh1">Our Services</p>
                   <div className="servicelink">
-                    <a href="/Learnmore">Tractor</a>
+                    <Link to="/Learnmore">Tractor</Link>
                     <br />
-                    <a href="/Harvester" className="paddie">
+                    <Link to="/Harvester" className="paddie">
                       Paddie Cropper
-                    </a>
+                    </Link>
                     
                     <br />
-                    <a href="/Tsunami" className="paddie">
+                    <Link to="/Tsunami" className="paddie">
                       Tsunami Machine
-                    </a>
+                    </Link>
                   </div>
                 </div>
               </div>

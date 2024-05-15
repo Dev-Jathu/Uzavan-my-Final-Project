@@ -71,10 +71,10 @@ function Signup() {
       const result = await response.json();
       console.log(result);
 
-      alert("Registration successful da venna!");
+      alert("Registration successful!");
     } catch (error) {
       console.error("Failed to register", error);
-      alert("Registration failed da venna!");
+      alert("Registration failed!");
     }
   };
 

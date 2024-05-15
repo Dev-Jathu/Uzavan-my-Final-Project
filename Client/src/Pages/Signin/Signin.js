@@ -45,7 +45,7 @@ function Signin() {
             <h3 className="logonameh3">Uzhavan</h3>
           </div>
           <h2 className="loginh2">Welcome back</h2>
-          <span>Welcome back! Please enter your details.</span>
+          <span className="yourdetasign">Welcome back! Please enter your details.</span>
           <br></br>
           <form onSubmit={handleSubmit}>
             <label className="email">Email</label>

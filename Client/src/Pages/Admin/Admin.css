@@ -4,11 +4,11 @@
     --Navbar--backgroundcolor:#222933;
 }
 .boss{
-    font-size: 42px;
+    font-size: 35px;
     color: white;
     font-weight: 500;
     margin-top: 10px;
-    margin-left: 180px;
+    margin-left: 400px;
 }
 .bossimg{
     height: 60px;
@@ -17,9 +17,9 @@
     margin-left: 20px;
 }
 .sidbarboss{
-    height: fit-content;
+    height: 100vh;
     width: 400px;
-    margin-top: -1760px;
+    margin-top: -875px;
     /* background-color:rgb(2, 0, 36);bach */
     box-shadow: 1px 1px 10px;
 }
@@ -39,12 +39,12 @@
     background-color: #15803d;
 }
 .sidetext{
-    font-size: 55px;
+    font-size: 45px;
     color: var(--Navbar--backgroundcolor);
     text-align: center;
-    padding-top: 50px;
+    padding-top: 130px;
 }
-span5{
+span{
     font-size: 28px;
 }
 .footboss{
@@ -65,13 +65,15 @@ span5{
 }
 .content{
     background-color: #ffffff;
-    height: 200vh;
-    width: 90%;
-    margin-left: 320px;
+    height: 91vh;
+    width: 79%;
+    margin-left: 400px;
 }
 .gridcount{
     display: grid;
     grid-template-columns: 500px 500px 500px;
+    margin-left: -100px;
+    margin-top: -5px;
 }
 .fcount{
     font-size: 30px;
@@ -135,7 +137,9 @@ td{
 }
 .Notecontainer{
     margin-top: 120px;
-    margin-left: 130px;
+    margin-left: 80px;
+    width: 1350px;
+    border:none;
 }
 
 #content{
@@ -143,7 +147,7 @@ td{
     
 }
 #sidebarboss{
-    width: 100%;
+    width: 90%;
     margin-top: 100px;
     background-color: #15803d;
 }
@@ -163,11 +167,21 @@ td{
     
 }
 .alighnforadmin{
-    height: 200vh;
+    height: 100vh;
     background-color: #15803d;
 
 
 }
 .Notecontainer{
     margin-top: 30px;
+}
+
+.pagenumber{
+    background-color: var(--Navbar--backgroundcolor);
+    color: white;
+    width: 40px;
+    height:40px;
+    border-radius: 60%;
+    margin-top: 10px;
+    
 }
