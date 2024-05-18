@@ -16,7 +16,7 @@ function Profile() {
     const Productdata = { Name, Address, rate, VehileTypes, About };
     console.log(Productdata);
     axios
-      .post("http://localhost:3001/profileAdd", Productdata)
+      .post("http://localhost:3003/profile/createService", Productdata)
       .then((result) => {
         alert(
           

@@ -3,6 +3,8 @@ import React from "react";
 import pic from "../../../src/Assets/final.jpg";
 import pic1 from "../../../src/Assets/new3.jpg";
 import pic2 from "../../../src/Assets/new1.jpg";
+import { HashLink as Link } from "react-router-hash-link";
+
 function Service() {
   return (
     <div id="Serviceid">
@@ -20,9 +22,9 @@ function Service() {
             <p class="card-text" id='cardtext'>
            This filed only Have the Tractor Click The Learn More Botton For more details.
             </p>
-            <a href="Learnmore" class="btn btn-primary" id="buttoncard">
+            <Link to="Learnmore" class="btn btn-primary" id="buttoncard">
               Learn More
-            </a>
+            </Link>
           </div>
         </div>
         <div class="card" id="card">
@@ -33,9 +35,9 @@ function Service() {
             This filed only Have the Paddy Harvester Click The Learn More Botton For more details.
 
             </p>
-            <a href="Harvester" class="btn btn-primary"id="buttoncard">
+            <Link to="Harvester" class="btn btn-primary"id="buttoncard">
             Learn More
-            </a>
+            </Link>
           </div>
         </div>
         <div class="card" id="card">
@@ -46,9 +48,9 @@ function Service() {
             This filed only Have the Tsunami Click The Learn More Botton For more details.
 
             </p>
-            <a href="Tsunami" class="btn btn-primary"id="buttoncard">
+            <Link to="Tsunami" class="btn btn-primary"id="buttoncard">
             Learn More
-            </a>
+            </Link>
           </div>
         </div>
       </div>

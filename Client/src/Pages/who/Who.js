@@ -4,6 +4,8 @@ import React from "react";
 import Farmer from "../../Assets/login2.png";
 import Machin from "../../Assets/login1.png";
 import Logo from "../../Assets/name.png";
+import { HashLink as Link } from "react-router-hash-link";
+
 
 function Who() {
   return (
@@ -12,16 +14,16 @@ function Who() {
         <div className="buttonforwho">
           <div className="selectbutton">
             <p className="selectyourrole">Select Your Role!</p>
-            <a href="/Signupfarmer">
+            <Link to="/Signupfarmer">
               <Button class="Farmer" name="Sign as a Farmer" />
-            </a>
+            </Link>
             <img src={Farmer} alt="Google Photo" className="farmer" />
           </div>
           <div className="selectbutton1">
-            <a href="/Signupmachin">
+            <Link to="/Signupmachin">
               {" "}
               <Button class="machin" name="Sign as a machin Owner" />
-            </a>
+            </Link>
             <img src={Machin} alt="Google Photo" className="farmer" />
           </div>
         </div>
@@ -31,9 +33,9 @@ function Who() {
           <p className="parawelcome">
             To keep connecting with us. Please login with your personal info.
           </p>
-          <a href="/Signin">
+          <Link to="/Signin">
             <Button name="Login" class="loginwho" />
-          </a>
+          </Link>
         </div>
       </div>
     </div>
