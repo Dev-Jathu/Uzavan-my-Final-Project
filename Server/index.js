@@ -7,6 +7,7 @@ const userRoutes=require('./userRoutes/routes')
 const MachineRoutes = require('./userRoutes/machineRoutes')
 const LoginRoutes=require('./userRoutes/loginRoutes')
 const AdminRoutes = require('./userRoutes/adminRoutes')
+const CreateService = require('./userRoutes/ServiceaddRoutes')
 
 //app assignd
 const app = express();
@@ -15,7 +16,7 @@ app.use(cookieParser());
 app.use(
   cors({
     origin: ["http://localhost:3000"],
-    methods: ["GET", "POST"],
+    methods: ["GET", "POST","PATCH","DELETE","PUT"],
     credentials: true,
   })
 );
@@ -41,6 +42,9 @@ const startServer = async () => {
 
     //call for admin
     app.use('/Admin',AdminRoutes)
+
+    //call for service add list
+    app.use('/profile',CreateService)
 
 
 

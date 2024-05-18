@@ -7,6 +7,8 @@ import Logo from "../../Assets/uzavan.png";
 import "./Signin.css";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
+import { HashLink as Link } from "react-router-hash-link";
+
 
 function Signin() {
   const [Email, setEmail] = useState();
@@ -92,9 +94,9 @@ function Signin() {
           <img src={Gphoto} alt="Google Photo" className="Gphoto" />
           <h4 className="hedontacc">
             Don't have an account?{" "}
-            <a href="/join" className="signuppagelink">
+            <Link to="/join" className="signuppagelink">
               Sign up free!
-            </a>
+            </Link>
           </h4>
         </div>
         <div className="photo">

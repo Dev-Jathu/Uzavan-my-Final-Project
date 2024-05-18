@@ -10,13 +10,13 @@ import { Link } from "react-router-dom";
 import Logo from '../../../Assets/uzavan.png'
 
 function Signupmachine() {
-  const [Name, setName] = useState();
-  const [NIC, setNIC] = useState();
-  const [TelNo, setTelNo] = useState();
-  const [Address, setAddress] = useState();
-  const [VehicleTypes, setVehileTypes] = useState();
-  const [Email, setEmail] = useState();
-  const [Password, setPassword] = useState();
+  const [Name, setName] = useState("");
+  const [NIC, setNIC] = useState("");
+  const [TelNo, setTelNo] = useState("");
+  const [Address, setAddress] = useState("");
+  const [VehicleTypes, setVehileTypes] = useState("");
+  const [Email, setEmail] = useState("");
+  const [Password, setPassword] = useState("");
   const [ConfirmPassword, setConfirmPassword] = useState("");
   const navigate = useNavigate();
 
@@ -95,6 +95,14 @@ function Signupmachine() {
         );
       }
       const result = await response.json();
+      setName("");
+      setNIC("");
+      setTelNo("");
+      setEmail("");
+      setPassword("");
+      setConfirmPassword("");
+      setAddress("");
+      setVehileTypes("")
       console.log(result);
 
       alert("Registration successful!");
@@ -144,11 +152,11 @@ function Signupmachine() {
             </Link>
           </div>
           <div className="butres">
-            <a href="/join">
+            <Link to="/join">
               <button className="button1" id="button10">
                 Join
               </button>
-            </a>
+            </Link>
             
           </div>
         </div>

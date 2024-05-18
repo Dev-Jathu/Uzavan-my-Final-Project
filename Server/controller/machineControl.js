@@ -16,3 +16,13 @@ const bcrypt = require("bcrypt");
       })
       .catch((err) => console.log(err.message));
   };
+
+  //get farmer all details
+exports.getAllMachine = async (req, res) => {
+  try {
+    const getMachine = await machineryModel.find();
+    res.status(200).send(getMachine);
+  } catch (error) {
+    res.status(500).send(error);
+  }
+};

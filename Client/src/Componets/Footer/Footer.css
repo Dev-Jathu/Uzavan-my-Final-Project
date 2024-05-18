@@ -104,7 +104,7 @@
 }
 .footsubgrid{
     display: grid;
-    grid-template-columns: 600px 300px 300px 340px;
+    grid-template-columns: 600px 300px 300px 300px;
 }
 .navlingtitle{
     font-size: 32px;
@@ -147,6 +147,7 @@
     text-transform: lowercase;
     color: var(--backgroundcolor);
     margin-left: 10px;
+    font-size: 20px;
   }
   
 :root {
@@ -203,5 +204,15 @@
   #editicon:hover {
     color: var(--buttons-background-color);
   }
-  
-  
+  .gmailfoot{
+    font-size: 20px;
+    margin-top: -35px;
+    margin-left: 30px;
+    color: var(--background-color);
+  }
+  #call{
+    margin-top: -12px;
+  }
+  #lock{
+    margin-top: -10px;
+  }

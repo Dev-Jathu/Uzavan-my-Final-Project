@@ -1,0 +1,116 @@
+:root {
+    --backgroundcolor: #f3f4f6;
+    --Buttons--backgroundcolor: #15803d;
+    --Navbar--backgroundcolor: #222933;
+}
+
+.card {
+    width: 350px;
+    box-shadow: 1px 1px 5px;
+    margin-left: 50px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    padding: 15px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.cardstractor {
+    /* display: grid; */
+    grid-template-columns: repeat(4, 400px);
+    grid-gap: 50px;
+    margin-top: 100px;
+    justify-content: center;
+    margin-left: -50px;
+}
+
+.track1 {
+    height: 265px;
+    background-color: #222933;
+    width: 100%;
+}
+
+#cardtexttractor {
+    text-align: left;
+}
+
+#cardtitletractor {
+    text-align: left;
+    font-size: 25px;
+}
+
+#buttoncardtractor,
+#buttoncardtractor1 {
+    background-color: var(--Buttons--backgroundcolor);
+    width: 150px;
+    border: none;
+}
+
+#button11 {
+    margin-left: 50px;
+}
+
+#drop {
+    background-color: var(--backgroundcolor);
+    margin-left: 550px;
+    width: 200px;
+    color: #000;
+}
+
+#menu {
+    background-color: var(--Navbar--backgroundcolor);
+}
+
+.dropdown-item {
+    color: white;
+}
+
+#tracticon {
+    color: white;
+}
+
+.cards-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+}
+
+.pagination-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 20px 0;
+}
+
+.page-info {
+    margin-bottom: 10px;
+    font-size: 16px;
+    text-align: center;
+}
+
+.pagination-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
+
+.pagenumber {
+    margin: 0 5px;
+    padding: 10px 10px;
+    font-size: 16px;
+    cursor: pointer;
+    background-color: #fff;
+    color: #000;
+    border: 1px solid #0e0737;
+    border-radius: 5px;
+}
+
+.pagenumber.active {
+    background-color:#15803d;
+    color: #fff;
+}
+
+.error-message {
+    text-align: center;
+    color: red;
+}

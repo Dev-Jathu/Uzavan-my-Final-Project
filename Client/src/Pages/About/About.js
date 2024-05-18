@@ -10,6 +10,8 @@ import Logoabout1 from "../../Assets/uzavan17.jpg";
 import Logoabout2 from "../../Assets/uzavan17.1.jpg";
 import Logoabout3 from "../../Assets/TOP.jpg";
 import Button from "../../Componets/Button/Button";
+import { HashLink as Link } from "react-router-hash-link";
+
 
 export default function Ababoutfinalout() {
   return (
@@ -121,18 +123,18 @@ export default function Ababoutfinalout() {
             <p className="headingaboutsub2">Lot's of machinery's Owner Profile Here.All profile Are Verified For our Best Team. The  Machinery's owner Connected To Our farmers. Do you Check Our Service Collection Click The Go Service Button </p>
             <p className="headingaboutsub2">Connect WIth Our Social Network</p>
             <div className="footlings1">
-                <a href="#">
+                <Link to="https://www.facebook.com/people/Uzhavan/61559226045426/">
                   <i class="fa-brands fa-facebook" id="editicon1"></i>
-                </a>
-                <a href="#">
+                </Link>
+                <Link to="#">
                   <i class="fa-brands fa-instagram" id="editicon1"></i>
-                </a>
-                <a href="#">
+                </Link>
+                <Link to="#">
                   <i class="fa-brands fa-youtube" id="editicon1"></i>
-                </a>
-                <a href="#">
+                </Link>
+                <Link to="#">
                   <i class="fa-brands fa-google" id="editicon1"></i>
-                </a>
+                </Link>
               </div>
             <Button name="Go Service" class='goservice'/>
           </div>

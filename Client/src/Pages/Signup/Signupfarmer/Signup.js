@@ -63,12 +63,22 @@ function Signup() {
         },
         body: JSON.stringify(userdata),
       });
+
+
       if (!response.ok) {
         throw new Error(
           "Failed to register. Server responded with status: " + response.status
         );
       }
       const result = await response.json();
+        setName("");
+        setNIC("");
+        setTelNo("");
+        setEmail("");
+        setPassword("");
+        setConfirmPassword("");
+
+
       console.log(result);
 
       alert("Registration successful!");
@@ -117,11 +127,11 @@ function Signup() {
             </Link>
           </div>
           <div className="butres">
-            <a href="/join">
+            <Link to="/join">
               <button className="button1" id="button10">
                 Join
               </button>
-            </a>
+            </Link>
             
           </div>
         </div>

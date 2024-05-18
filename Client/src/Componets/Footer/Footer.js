@@ -55,15 +55,15 @@ export default function Footer() {
                 </div>
                 <div className="addrespanel">
                   <div>
-                    <i class="fa-solid fa-house"></i>{" "}
+                    <i class="fa-solid fa-house" id="lock"></i>{" "}
                     <span>Vavuniya, Sri Lanka</span>
                   </div>
                   <div>
                     <i class="fa-solid fa-envelope"></i>{" "}
-                    <span>jathusansujan@gmail.com</span>
+                    <p className="gmailfoot">uzhavan@gmail.com</p>
                   </div>
                   <div>
-                    <i class="fa-solid fa-phone"></i> <span>+94 762464317</span>
+                    <i class="fa-solid fa-phone" id="call"></i> <span id="number">+94 762464317</span>
                   </div>
                 </div>
               </div>

@@ -41,9 +41,9 @@ function Farmer() {
                 </Link>
               </div>
               <div className="butresfarmer">
-                <a href="#">
+                <Link to="#">
                   <i class="fa-solid fa-user" id="userprofile"></i>
-                </a>
+                </Link>
               </div>
             </div>
           </div>
@@ -120,9 +120,9 @@ function Farmer() {
                 This filed only Have the Tractor Click The Learn More Botton For
                 more details.
               </p>
-              <a href="Learnmore" class="btn btn-primary" id="buttoncard">
+              <Link to="Learnmore" class="btn btn-primary" id="buttoncard">
                 Learn More
-              </a>
+              </Link>
             </div>
           </div>
           <div class="card" id="card">
@@ -135,9 +135,9 @@ function Farmer() {
                 This filed only Have the Paddy Harvester Click The Learn More
                 Botton For more details.
               </p>
-              <a href="Harvester" class="btn btn-primary" id="buttoncard">
+              <Link to="Harvester" class="btn btn-primary" id="buttoncard">
                 Learn More
-              </a>
+              </Link>
             </div>
           </div>
           <div class="card" id="card">
@@ -156,9 +156,9 @@ function Farmer() {
                 This filed only Have the Tsunami Click The Learn More Botton For
                 more details.
               </p>
-              <a href="Tsunami" class="btn btn-primary" id="buttoncard">
+              <Link to="Tsunami" class="btn btn-primary" id="buttoncard">
                 Learn More
-              </a>
+              </Link>
             </div>
           </div>
         </div>
@@ -179,29 +179,29 @@ function Farmer() {
                 </div>
                 <div className="footnavling" id="farfoot">
                   <p className="navlingtitle">Quick links</p>
-                  <a href="/" className="shortling">
+                  <Link to="/" className="shortling">
                     Home
-                  </a>
-                  <a href="about" className="shortling" smooth>
+                  </Link>
+                  <Link to="about" className="shortling" smooth>
                     About
-                  </a>
-                  <a href="contact" className="shortling" smooth>
+                  </Link>
+                  <Link to="contact" className="shortling" smooth>
                     Contact
-                  </a>
+                  </Link>
                 </div>
                 <div className="Service">
                   <div className="services">
                     <p className="footerh1">Our Services</p>
                     <div className="servicelink">
-                      <a href="/Learnmore">Tractor</a>
+                      <Link to="/Learnmore">Tractor</Link>
                       <br />
-                      <a href="/Harvester" className="paddie">
+                      <Link to="/Harvester" className="paddie">
                         Paddie Cropper
-                      </a>
+                      </Link>
                       <br />
-                      <a href="/Tsunami" className="paddie">
+                      <Link to="/Tsunami" className="paddie">
                         Tsunami Machine
-                      </a>
+                      </Link>
                     </div>
                   </div>
                 </div>
@@ -225,18 +225,18 @@ function Farmer() {
                   </div>
                 </div>
                 <div className="footlings">
-                  <a href="#">
+                  <Link to="#">
                     <i class="fa-brands fa-facebook" id="editicon"></i>
-                  </a>
-                  <a href="#">
+                  </Link>
+                  <Link to="#">
                     <i class="fa-brands fa-instagram" id="editicon"></i>
-                  </a>
-                  <a href="#">
+                  </Link>
+                  <Link to="#">
                     <i class="fa-brands fa-youtube" id="editicon"></i>
-                  </a>
-                  <a href="#">
+                  </Link>
+                  <Link to="#">
                     <i class="fa-brands fa-google" id="editicon"></i>
-                  </a>
+                  </Link>
                 </div>
               </div>
             </div>
