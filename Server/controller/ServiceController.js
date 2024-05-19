@@ -119,8 +119,8 @@ const ServiceModel = require("../model/servicemodel");
 
 // Register for machinery_owners service list
 exports.createService = (req, res) => {
-  const { Name, Address, vehicleType, isVerified, TelYourService, District, PhoneNumber } = req.body; // Destructure parameters from request body
-  ServiceModel.create({ Name, Address, vehicleType, isVerified, TelYourService, District, PhoneNumber }) // Pass an object directly
+  const { Name, Address, vehicleType, isVerified, TelYourService, District, PhoneNumber,ImageURL } = req.body; // Destructure parameters from request body
+  ServiceModel.create({ Name, Address, vehicleType, isVerified, TelYourService, District, PhoneNumber,ImageURL }) // Pass an object directly
     .then(Service => res.json(Service))
     .catch(err => res.json(err));
 }

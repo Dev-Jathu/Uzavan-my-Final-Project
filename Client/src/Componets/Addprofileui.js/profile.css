@@ -7,13 +7,13 @@
 .gridprofile{
     display: grid;
     grid-template-columns: 500px 500px;
-    background: url('../../Assets/back.jpg');
+    background-color: white;
     width: 800px;
-    height: 480px;
+    height: 520px;
     margin-top: 80px;
-    margin-left: 450px;
+    margin-left: 550px;
     border-radius: 10px;
-    
+    box-shadow: 1px 1px 10px;
 }
 .profilename{
     height: 49px;
@@ -80,7 +80,7 @@
     background-color: white;
     margin-top: 40px;
     margin-left: -65px;
-    box-shadow: 1px 1px 3px ;
+    box-shadow: .5px .5px 1px ;
     border-radius: 10px;
 
 }
@@ -89,3 +89,79 @@
     margin-left: -70px;
 
 }
+
+/* .file-upload-container {
+    position: relative;
+    display: inline-block;
+    margin-top: 50px;
+  }
+  .file-upload-label {
+    display: inline-block;
+    padding: 5px 10px;
+    background-color: #979BA0;
+    color: #fff;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  .upload-icon {
+    font-size: 20px;
+    margin-right: 5px;
+   
+   
+  }
+
+  .profilename1 {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    cursor: pointer;
+  }
+  .uploaded-image {
+    display: block;
+    margin-top: 10px;
+    max-width: 100%;
+    max-height: 200px;
+  }  */
+
+
+  .file-upload-container {
+    position: relative;
+    display: inline-block;
+    margin-top: 50px;
+  }
+  .file-upload-label {
+    display: inline-block;
+    padding: 5px 10px;
+    /* background-color: #979BA0; */
+    color: #000000;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  .upload-icon {
+    font-size: 20px;
+    margin-right: 5px;
+  }
+  .profilename1 {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    cursor: pointer;
+  }
+  .uploaded-image {
+    display: block;
+    margin-top: -50px;
+    max-width: 100%;
+    max-height: 280px;
+  }
+  .file-upload-container.uploaded .upload-icon {
+    display: none;
+  }
+  
+
+   

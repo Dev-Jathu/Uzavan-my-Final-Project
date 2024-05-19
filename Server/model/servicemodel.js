@@ -70,11 +70,14 @@ const schema = new mongoose.Schema(
     TelYourService: {
       type: String,
     },
-
-    isVerified: {
-      type: Boolean,
-      default: false,
+    ImageURL: {
+      type: String, 
     },
+
+      isVerified: {
+        type: Boolean,
+        default: false,
+      },
   },
   {
     timestamps: true,

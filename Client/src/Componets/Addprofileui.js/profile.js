@@ -19,7 +19,7 @@
 //       .post("http://localhost:3003/profile/createService", Productdata)
 //       .then((result) => {
 //         alert(
-          
+
 //           "your service is added Successfully.Waiting For Veryfication process!"
 //         );
 //       })
@@ -70,7 +70,7 @@
 //               <option value="Tractor">Tractor</option>
 //               <option value="paddyCropper">Paddy cropper</option>
 //               <option value="TsunamiMachine">Tsunami</option>
-              
+
 //             </select>
 //             <br />
 //             <input
@@ -99,7 +99,6 @@
 // export default Profile;
 
 
-import Button from "../Button/Button";
 import "./profile.css";
 import React, { useState } from "react";
 
@@ -111,6 +110,7 @@ function Profile() {
   const [District, setDistrict] = useState("");
   const [Rate, setRate] = useState("");
   const [TelYourService, setTelYourService] = useState("");
+  const [ImageURL, setImageURL] = useState("");
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -121,31 +121,92 @@ function Profile() {
       vehicleType,
       District,
       Rate,
-      TelYourService
+      TelYourService,
+      ImageURL,
     };
     console.log(ProductData);
 
     fetch("http://localhost:3003/profile/createService", {
       method: "POST",
       headers: {
-        "Content-Type": "application/json"
+        "Content-Type": "application/json",
       },
-      body: JSON.stringify(ProductData)
+      body: JSON.stringify(ProductData),
     })
-      .then(response => {
+      .then((response) => {
         if (!response.ok) {
           throw new Error("Network response was not ok");
         }
         return response.json();
       })
-      .then(result => {
-        alert("Your service is added Successfully. Waiting for verification process!");
-        console.log(result)
+      .then((result) => {
+        alert(
+          "Your service is added Successfully. Waiting for verification process!"
+        );
+        console.log(result);
+        setName("");
+        setAddress("");
+        setPhoneNumber("");
+        setVehicleType("");
+        setDistrict("");
+        setRate("");
+        setTelYourService("");
+        setImageURL("");
+        
       })
-      .catch(error => {
+      .catch((error) => {
         alert(error.message);
       });
   };
+  // const handleImageUpload = (e) => {
+  //   const file = e.target.files[0];
+  //   const reader = new FileReader();
+  //   reader.onload = function (event) {
+  //     const uploadedImage = event.target.result;
+  //     const imageElement = document.querySelector(".uploaded-image");
+  //     if (imageElement) {
+  //       imageElement.src = uploadedImage;
+  //     }
+  //   };
+  //   reader.readAsDataURL(file);
+  // };
+
+  // function handleImageUpload(event) {
+  //   const file = event.target.files[0];
+  //   if (file) {
+  //     const reader = new FileReader();
+  //     reader.onload = function (e) {
+  //       const uploadedImage = document.getElementById('uploaded-image');
+  //       uploadedImage.src = e.target.result;
+
+  //       const fileUploadContainer = document.getElementById('file-upload-container');
+  //       fileUploadContainer.classList.add('uploaded');
+  //     }
+  //     reader.readAsDataURL(file);
+  //   }
+  // }
+
+  function handleImageUpload(e) {
+    const file = e.target.files[0];
+    if (file) {
+      const reader = new FileReader();
+      reader.onload = function (e) {
+        const uploadedImage = document.getElementById("uploaded-image");
+        uploadedImage.src = e.target.result;
+
+        const fileUploadContainer = document.getElementById(
+          "file-upload-container"
+        );
+        fileUploadContainer.classList.add("uploaded");
+      };
+      reader.readAsDataURL(file);
+    }
+  }
+
+  function triggerFileUpload() {
+    const fileUploadInput = document.getElementById("file-upload");
+    fileUploadInput.click();
+  }
 
   return (
     <div>
@@ -224,11 +285,36 @@ function Profile() {
               required
             ></textarea>
             <div className="buttonprofile">
-              <Button name="Add Profile" className="profadd" />
+              <button className="profadd">Add Service</button>
             </div>
           </form>
         </div>
-        <div className="boxright"></div>
+        <div className="boxright">
+          <div className="file-upload-container" id="file-upload-container">
+            <label htmlFor="file-upload" className="file-upload-label">
+              <span className="upload-icon">+</span>
+              <input
+                id="file-upload"
+                type="file"
+                className="profilename1"
+              //   onChange={handleImageUpload}
+              // onChange={(e) => setImageURL(e.target.value)}
+              onChange={(e) => {
+                handleImageUpload(e); // Pass the event object to handleImageUpload
+    setImageURL(e.target.value);
+            }}
+            
+
+              />
+            </label>
+            <img
+              src="#"
+              alt="Uploaded Image"
+              className="uploaded-image"
+              id="uploaded-image"
+            />
+          </div>
+        </div>
       </div>
     </div>
   );
