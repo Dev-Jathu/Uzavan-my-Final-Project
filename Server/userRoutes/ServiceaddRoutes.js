@@ -10,6 +10,7 @@ router.get('/serviceView',ServiceControl.getService)
 router.put('/update/:id', ServiceControl.updateUser);
 router.patch('/verified/:id', ServiceControl.patchUsers);
 router.patch('/delete/:id', ServiceControl.deleteService);
+router.get('/serviceView/:id',ServiceControl.onegetService)
 
 
 

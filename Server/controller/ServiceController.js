@@ -119,8 +119,8 @@ const ServiceModel = require("../model/servicemodel");
 
 // Register for machinery_owners service list
 exports.createService = (req, res) => {
-  const { Name, Address, vehicleType, isVerified, TelYourService, District, PhoneNumber,ImageURL } = req.body; // Destructure parameters from request body
-  ServiceModel.create({ Name, Address, vehicleType, isVerified, TelYourService, District, PhoneNumber,ImageURL }) // Pass an object directly
+  const { Name, Address, vehicleType, isVerified, TelYourService, District, PhoneNumber,ImageURL,Rate } = req.body; // Destructure parameters from request body
+  ServiceModel.create({ Name, Address, vehicleType, isVerified, TelYourService, District, PhoneNumber,ImageURL,Rate }) // Pass an object directly
     .then(Service => res.json(Service))
     .catch(err => res.json(err));
 }
@@ -134,6 +134,20 @@ exports.getService = async (req, res) => {
     res.status(500).send(error);
   }
 };
+
+// get details for id
+
+exports.onegetService= async (req, res) => {
+  try {
+    const service = await ServiceModel.findById(req.params.id);
+    if (!service) {
+      return res.status(404).send({ error: 'Service not found' });
+    }
+    res.status(200).send(service);
+  } catch (error) {
+    res.status(500).send(error);
+  }
+}
 
 // Update service
 exports.updateUser = async (req, res) => {

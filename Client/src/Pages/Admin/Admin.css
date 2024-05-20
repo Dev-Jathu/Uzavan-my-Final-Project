@@ -35,8 +35,22 @@
     margin-top: 40px;
     box-shadow: 2px 3px 5px rgb(148, 147, 147); 
 }
+.dash1{
+    width: 10px;
+    border-radius: 10px;
+    height: 40px;
+    margin-left: 70px;
+    margin-top: 40px;
+    box-shadow: 2px 3px 5px rgb(148, 147, 147); 
+}
 .dash:hover{
     background-color: #15803d;
+}
+.copyrights{
+    font-size: 18px;
+    margin-top: 55px;
+    margin-left: 40px;
+   
 }
 .sidetext{
     font-size: 45px;
@@ -56,9 +70,9 @@ span{
     margin-top: 10px;
 }
 .footlogoboss{
-    height: 280px;
+    height: 80px;
     margin-top: 60px;
-    margin-left: 55px;
+    margin-left: 39px;
 }
 #logoadmin{
     margin-left: -200px;

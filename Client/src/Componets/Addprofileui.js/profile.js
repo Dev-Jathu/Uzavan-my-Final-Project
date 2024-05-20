@@ -98,9 +98,10 @@
 // }
 // export default Profile;
 
-
 import "./profile.css";
 import React, { useState } from "react";
+// import Navbarforcard from '../card/navbarforcard/navbarforcard'
+
 
 function Profile() {
   const [Name, setName] = useState("");
@@ -152,7 +153,6 @@ function Profile() {
         setRate("");
         setTelYourService("");
         setImageURL("");
-        
       })
       .catch((error) => {
         alert(error.message);
@@ -210,6 +210,7 @@ function Profile() {
 
   return (
     <div>
+      {/* <Navbarforcard/> */}
       <div className="gridprofile">
         <div className="inputprofile">
           <form onSubmit={handleSubmit}>
@@ -224,6 +225,10 @@ function Profile() {
             <br />
             <input
               type="text"
+              orm
+              action="/upload"
+              method="post"
+              enctype="multipart/form-data"
               className="profilename"
               placeholder="Address"
               value={Address}
@@ -292,19 +297,17 @@ function Profile() {
         <div className="boxright">
           <div className="file-upload-container" id="file-upload-container">
             <label htmlFor="file-upload" className="file-upload-label">
-              <span className="upload-icon">+</span>
+              <span className="upload-icon"> + </span>
               <input
                 id="file-upload"
                 type="file"
                 className="profilename1"
-              //   onChange={handleImageUpload}
-              // onChange={(e) => setImageURL(e.target.value)}
-              onChange={(e) => {
-                handleImageUpload(e); // Pass the event object to handleImageUpload
-    setImageURL(e.target.value);
-            }}
-            
-
+                //   onChange={handleImageUpload}
+                // onChange={(e) => setImageURL(e.target.value)}
+                onChange={(e) => {
+                  handleImageUpload(e); // Pass the event object to handleImageUpload
+                  setImageURL(e.target.value);
+                }}
               />
             </label>
             <img

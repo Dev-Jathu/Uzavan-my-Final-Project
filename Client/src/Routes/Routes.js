@@ -17,7 +17,8 @@ import FarmerDetails from "../Pages/Admin/Farmer/Farmer";
 import MachineryDetails from "../Pages/Admin/Machinery/Machinery";
 import Profile from "../Componets/Addprofileui.js/profile";
 import ProfileView from "../Pages/Userpage/Profile/profile.view";
-
+import Tracctorhire from '../Componets/card/Hire/Tractorhire'
+import Payment from '../Componets/payment/paymentFront'
 export default function RoutesTable() {
     return (
         <div className="routesTable">
@@ -38,9 +39,11 @@ export default function RoutesTable() {
                 <Route path='/home' element={<Farmer/>}/>
                 <Route path='/FarmerDetails' element={<FarmerDetails/>}/>
                 <Route path='/MachineryDetails' element={<MachineryDetails/>}/>
-                <Route path='/Machine' element={<Machine/>}/>
+                {/* <Route path='/Machine' element={<Machine/>}/> */}
                 <Route path='/Addprofile' element={<Profile/>}/>
                 <Route path='/Viewrofile' element={<ProfileView/>}/>
+                <Route path='/hirepage/:id' element={<Tracctorhire/>}/>
+                <Route path='/payments' element={<Payment/>}/>
 
 
 
