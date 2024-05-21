@@ -1,9 +1,30 @@
 import "./Navbar.css";
-import React from "react";
 import Logo from "../../Assets/uzavan.png";
 import { HashLink as Link } from "react-router-hash-link";
+import React, { useState,useEffect } from "react";
+
 
 export default function Navbar() {
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
+  const handleLogout = () => {
+    setIsLoggedIn(false);
+    localStorage.removeItem("token");
+    window.location.href = "/";
+  }
+
+  // Function to check if the user is logged in
+  const checkLoggedIn = () => {
+    // Check if the token exists in localStorage or anywhere else
+    const token = localStorage.getItem("token");
+    if (token) {
+      setIsLoggedIn(true);
+    }
+  };
+
+  // Call the checkLoggedIn function when the component mounts
+  useEffect(() => {
+    checkLoggedIn();
+  }, []);
   return (
     <div className="main">
       <div className="container" id="containernav">
@@ -41,11 +62,17 @@ export default function Navbar() {
             </Link>
           </div>
           <div className="butres">
-            <Link to="/join">
-              <button className="button1" id="button10">
-                Join
-              </button>
-            </Link>
+             {isLoggedIn ? (
+  <button className="button1" id="button10" onClick={handleLogout}>
+  Logout
+</button>
+) : (
+<Link to="/join">
+  <button className="button1" id="button10">
+    Join
+  </button>
+</Link>
+)}
             
           </div>
         </div>
@@ -53,3 +80,5 @@ export default function Navbar() {
     </div>
   );
 }
+
+

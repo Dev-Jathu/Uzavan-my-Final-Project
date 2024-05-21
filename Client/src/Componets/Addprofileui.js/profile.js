@@ -283,6 +283,7 @@ function Profile() {
             />
             <br />
             <textarea
+            maxLength={110}
               className="profilename2"
               placeholder="Tell About You"
               value={TelYourService}

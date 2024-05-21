@@ -17,7 +17,7 @@ const bcrypt = require("bcrypt");
       .catch((err) => console.log(err.message));
   };
 
-  //get farmer all details
+  //get machine all details
 exports.getAllMachine = async (req, res) => {
   try {
     const getMachine = await machineryModel.find();
@@ -26,3 +26,17 @@ exports.getAllMachine = async (req, res) => {
     res.status(500).send(error);
   }
 };
+
+//update machine 
+exports.updateMachine = async (req, res) => {
+  try {
+     const { id } = req.params;
+     await machineryModel.findByIdAndUpdate(id, req.body);
+     const Machine = await machineryModel.findById(id);
+     res.status(200).json(Machine);
+  }
+  catch (err) {
+     console.error("Error updating admin:", err);
+     res.status(500).json({ error: "Internal Server Error" });
+  }
+}

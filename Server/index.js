@@ -10,6 +10,7 @@ const LoginRoutes = require("./userRoutes/loginRoutes");
 const AdminRoutes = require("./userRoutes/adminRoutes");
 const CreateService = require("./userRoutes/ServiceaddRoutes");
 const UploadRoute = require("./middleware/upload");
+const BookingRoutes =require("./userRoutes/BookingRoutes")
 
 //app assignd
 const app = express();
@@ -54,6 +55,9 @@ const startServer = async () => {
 
     //call for payment
     await paymentServer();
+
+    //call for booking
+    app.use ("/Booking",BookingRoutes)
 
     
   } catch (err) {

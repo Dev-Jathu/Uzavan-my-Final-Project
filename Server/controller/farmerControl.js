@@ -45,7 +45,19 @@ exports.deleteFarmer = async (req, res) => {
   }
 };
 
-
+//Farmer update
+exports.updateFarmer = async (req, res) => {
+  try {
+     const { id } = req.params;
+     await FarmerModel.findByIdAndUpdate(id, req.body);
+     const Farmer = await FarmerModel.findById(id);
+     res.status(200).json(Farmer);
+  }
+  catch (err) {
+     console.error("Error updating admin:", err);
+     res.status(500).json({ error: "Internal Server Error" });
+  }
+}
 
 
 

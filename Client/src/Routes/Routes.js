@@ -19,6 +19,7 @@ import Profile from "../Componets/Addprofileui.js/profile";
 import ProfileView from "../Pages/Userpage/Profile/profile.view";
 import Tracctorhire from '../Componets/card/Hire/Tractorhire'
 import Payment from '../Componets/payment/paymentFront'
+import Booking from '../Componets/booking/booking'
 export default function RoutesTable() {
     return (
         <div className="routesTable">
@@ -44,6 +45,7 @@ export default function RoutesTable() {
                 <Route path='/Viewrofile' element={<ProfileView/>}/>
                 <Route path='/hirepage/:id' element={<Tracctorhire/>}/>
                 <Route path='/payments' element={<Payment/>}/>
+                <Route path='/Booking' element={<Booking/>}/>
 
 
 

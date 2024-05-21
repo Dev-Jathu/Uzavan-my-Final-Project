@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
-import images from '../../../Assets/now1.png';
-import logo from '../../../Assets/name.png';
-import './Tractorhire.css';
-import Navbarcard from '../navbarforcard/navbarforcard'
+import images from "../../../Assets/now1.png";
+import logo from "../../../Assets/name.png";
+import "./Tractorhire.css";
+import Navbarcard from "../navbarforcard/navbarforcard";
 
 function HireHarvestor() {
   const { id } = useParams();
@@ -13,7 +13,9 @@ function HireHarvestor() {
   useEffect(() => {
     const fetchUser = async () => {
       try {
-        const response = await fetch(`http://localhost:3003/profile/serviceView/${id}`);
+        const response = await fetch(
+          `http://localhost:3003/profile/serviceView/${id}`
+        );
         if (!response.ok) {
           throw new Error(`HTTP error! status: ${response.status}`);
         }
@@ -38,51 +40,65 @@ function HireHarvestor() {
 
   return (
     <>
-    
-    
-    <div>
-      
-      <div className="card mb-3" id="hirecard">
-        <div className="row g-0">
-          <div className="col-md-4">
-            <img src={images} className="img-fluid rounded-start" id="hireimg" alt="..." />
-          </div>
-          <div className="col-md-8">
-            <div className="card-body">
-              <h5 className="card-title" id="hirecardtitle">Machinery Details</h5>
-              <p id="Hirename">Name &nbsp;&nbsp;&nbsp;&nbsp;: &nbsp;&nbsp;&nbsp; {user.Name}</p>
-              <p id="Hirename">Address : &nbsp;&nbsp;&nbsp;&nbsp;{user.Address}</p>
-              <p id="Hirename">District &nbsp;&nbsp;&nbsp;:&nbsp;&nbsp;&nbsp;&nbsp;{user.District}</p>
-              <p className="card-text" id="hirecardtex">
-                {/* This is a wider card with supporting text below as a natural
-                lead-in to additional content. This content is a little bit
-                longer. This is a wider card with supporting text below as a natural
-                lead-in to additional content. This content is a little bit
-                longer. */}
-                {user.TelYourService}
-              </p>
-              <p className="card-text">
-                <small className="text-body-secondary" id="hirethanks">
-                  I will give you a Great service. Thank You.
-                </small>
-              </p>
-              <div className="hire2buttons">
-                <button id="hirecardbutton">Hire</button>
-                <button id="connectbutton">Let's Connect</button>
+      <div>
+        <div className="card mb-3" id="hirecard">
+          <div className="row g-0">
+            <div className="col-md-4">
+              <img
+                src={images}
+                className="img-fluid rounded-start"
+                id="hireimg"
+                alt="..."
+              />
+            </div>
+            <div className="col-md-8">
+              <div className="card-body">
+                <h5 className="card-title" id="hirecardtitle">
+                  Machinery Details
+                </h5>
+                <p id="Hirename">
+                  Name &nbsp;&nbsp;&nbsp;&nbsp;: &nbsp;&nbsp;&nbsp; {user.Name}
+                </p>
+                <p id="Hirename">
+                  Address : &nbsp;&nbsp;&nbsp;&nbsp;{user.Address}
+                </p>
+                <p id="Hirename">
+                  District &nbsp;&nbsp;&nbsp;:&nbsp;&nbsp;&nbsp;&nbsp;
+                  {user.District}
+                </p>
+                <p className="card-text" id="hirecardtex">
+                  {user.TelYourService}
+                </p>
+                <p className="card-text">
+                  <small className="text-body-secondary" id="hirethanks">
+                    I will give you a Great service. Thank You.
+                  </small>
+                </p>
+                {/* <div className="hire2buttons">
+                  <Link to="/Booking">
+                    
+                    <button id="hirecardbutton">Hire</button>
+                  </Link>
+                  <button id="connectbutton">Let's Connect</button>
+                </div> */}
+                <Link
+                  to={{
+                    pathname: "/Booking",
+                    state: { id: user.id, name: user.Name },
+                  }}
+                >
+                  <button id="hirecardbutton">Hire</button>
+                </Link>
+                <img src={logo} id="hirelogo" />
               </div>
-              <img src={logo} id="hirelogo" />
             </div>
           </div>
         </div>
+
+        <Navbarcard />
       </div>
-      
-<Navbarcard/>
-    </div>
-    
     </>
-    
   );
 }
 
 export default HireHarvestor;
-

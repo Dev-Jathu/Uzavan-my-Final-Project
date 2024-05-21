@@ -5,34 +5,35 @@
 }
 
 #hirecard{
-    height: 700px;
-    width: 1200px;
+    height: 600px;
+    width: 1000px;
     margin-top: 150px;
-    margin-left: 350px;
+    margin-left: 450px;
     box-shadow: 1px 1px 10px ;
     border: none;
 }
 #hireimg{
 margin-top: -10px;
-height: 350px;
-width: 320px;
+height: 520px;
+width: 400px;
 /* width: 0px; */
-margin-top: 50px;
-margin-left: 100px;
+margin-top: 25px;
+margin-left: 10px;
 border-radius: 10px;
 }
 #hirecardtitle{
     font-size: 35px;
     margin-left: -125px;
-    margin-top: 40px;
+    margin-top: 50px;
 }
 #cardbody{
     margin-left: 100px;
+    margin-top: -50px;
 }
 #hirecardtex{
     text-align: left;
     margin-left: 150px;
-    margin-top: 50px;
+    margin-top: 30px;
     width: 500px;
 
 
@@ -43,12 +44,12 @@ border-radius: 10px;
 #Hirename{
     text-align: left;
     margin-left: 155px;
-    margin-top: 20px;
-    font-size: 25px;
+    margin-top: 10px;
+    font-size: 20px;
 }
 #hiredeatails{
-    margin-top: 50px;
-    margin-left: -50px;
+    margin-top: 30px;
+    margin-left: -120px;
 }
 #hirethanks{
     margin-left: -110px;
@@ -82,6 +83,7 @@ border-radius: 10px;
 }
 .hire2buttons{
     margin-left: -80px;
+    margin-top: 45px;
 }
 #connectbutton:hover{
     background-color: #000000;

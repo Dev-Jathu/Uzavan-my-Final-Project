@@ -344,6 +344,7 @@ function FarmerDetails () {
           </button>
       ));
   };
+  const FarmerUsersCount = users.length;
 
   
   return (
@@ -372,16 +373,10 @@ function FarmerDetails () {
           <div className="gridcount">
             <div className="Farmercount">
               <p className="fcount">Farmercount</p>
-              <i class="fa-solid fa-user" id="addlogo"></i>
+              {/* <i class="fa-solid fa-user" id="addlogo"></i> */}
+              {FarmerUsersCount}
             </div>
-            <div className="Farmercount">
-              <p className="fcount">Machinery Count</p>
-              <i class="fa-solid fa-user" id="addlogo"></i>
-            </div>
-            <div className="Farmercount">
-              <p className="fcount">Total Booking</p>
-              <i class="fa-solid fa-user" id="addlogo"></i>
-            </div>
+           
           </div>
           <div className="Notecontainer" id="machin">
            

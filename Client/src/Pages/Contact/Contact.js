@@ -78,14 +78,14 @@ export default function Contact() {
 
               <Form
                 class="Contactmassage"
-                name="Massage"
+                name="Message"
                 type="textarea" // Changed type to "textarea"
                 classinput="inputContactmassage"
-                place="Type Your Massage"
+                place="Type Your Message"
                 required
               />
 
-              <Button class="contactbutton" name="Send Massage" />
+              <Button class="contactbutton" name="Send Message" />
             </div>
             <div class="map">
               <iframe

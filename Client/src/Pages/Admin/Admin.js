@@ -961,6 +961,8 @@ import Boss from "../../Assets/boss.png";
 
 function Admin() {
   const [users, setUsers] = useState([]);
+  const [machinery, setMachinery] = useState([]);
+  const [Farmer, setFarmer] = useState([]);
   const [currentPage, setCurrentPage] = useState(1);
   const [itemsPerPage, setItemsPerPage] = useState(6);
   const navigate = useNavigate();
@@ -968,7 +970,13 @@ function Admin() {
     localStorage.removeItem("token");
     navigate("/signin");
   };
+  useEffect(() => {
+    fetchMachine();
+  }, []);
 
+  useEffect(() => {
+    fetchFarmer();
+  }, []);
   useEffect(() => {
     const token = localStorage.getItem("token");
     if (!token) {
@@ -1078,6 +1086,27 @@ function Admin() {
       </button>
     ));
   };
+    // Total count of service users
+    const serviceUsersCount = users.length;
+
+    //machinery details
+    const fetchMachine = () => {
+      fetch("http://localhost:3003/machinery/MachineView")
+        .then((response) => response.json())
+        .then((data) => setMachinery(data))
+        .catch((error) => console.error("Failed to fetch machinery:", error));
+    };
+  
+    const machineryUsersCount = machinery.length;
+ //Farmer details
+ const fetchFarmer = () => {
+  fetch("http://localhost:3003/farmer/farmerView")
+    .then((response) => response.json())
+    .then((data) => setFarmer(data))
+    .catch((error) => console.error("Failed to fetch users:", error));
+
+};
+const FarmerUsersCount = Farmer.length;
 
   return (
     <div id="alighnforadmin">
@@ -1104,15 +1133,19 @@ function Admin() {
           <div className="gridcount">
             <div className="Farmercount">
               <p className="fcount">Farmer Count</p>
-              <i className="fa-solid fa-user" id="addlogo"></i>
+              {/* <i className="fa-solid fa-user" id="addlogo"></i> */}
+              {FarmerUsersCount}
             </div>
             <div className="Farmercount">
               <p className="fcount">Machinery Count</p>
-              <i className="fa-solid fa-user" id="addlogo"></i>
+              {/* <i className="fa-solid fa-user" id="addlogo"></i> */}
+              {machineryUsersCount}
             </div>
             <div className="Farmercount">
-              <p className="fcount">Total Booking</p>
-              <i className="fa-solid fa-user" id="addlogo"></i>
+              <p className="fcount">Service Profile</p>
+              {/* <i className="fa-solid fa-user" id="addlogo"></i> */}
+              {serviceUsersCount}
+
             </div>
           </div>
           <div className="Notecontainer">
