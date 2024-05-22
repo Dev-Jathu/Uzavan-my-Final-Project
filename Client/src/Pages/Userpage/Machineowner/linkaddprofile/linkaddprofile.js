@@ -1,18 +1,9 @@
-// import React, { useEffect } from "react";
-import Backgroundpgoto3 from "../../../Assets/newfarmer1.jpg";
-import Button from "../../../Componets/Button/Button";
-import Logo from "../../../Assets/uzavan.png";
-import pic from "../../../Assets/final.jpg";
-import pic1 from "../../../Assets/new3.jpg";
-import pic2 from "../../../Assets/new1.jpg";
-// import { HashLink as Link } from "react-router-hash-link";
 import React, { useState, useEffect } from "react";
 import { Link, useNavigate } from "react-router-dom";
-
-import "./farmer.css";
 import axios from "axios";
+import Logo from "../../../../Assets/uzavan.png";
 
-function Farmer() {
+function LinkAddProfile() {
   const [users, setUsers] = useState([]);
   const [machinery, setMachinery] = useState([]);
   const [Farmer, setFarmer] = useState([]);
@@ -53,6 +44,7 @@ function Farmer() {
       </button>
     ));
   };
+
   return (
     <div id="alighnforadmin" className="machinealigh">
       <div className="main11">
@@ -73,8 +65,8 @@ function Farmer() {
         </div>
         <div className="content" id="content">
           <div className="Notecontainer" id="notecontainer">
-            <p className="verification" id="verification">Waiting for your Confirmation!</p>
-            <table>
+            <p className="verification" id="verification">Add your Service!</p>
+            {/* <table className="tablemachine">
               <thead>
                 <tr>
                   <th>Name</th>
@@ -96,14 +88,17 @@ function Farmer() {
                   </button>
                 </td>
               </tbody>
-            </table>
+            </table> */}
             <div className="pagination">{renderPageNumbers()}</div>
           </div>
         </div>
         <div className="sidbarboss" id="sidbarmachine">
-          <p className="sidetext">
+          <p className="sidetext" >
+            <div id="sidetext">
             Uzhavan <br />
             <span5>The Connector</span5>
+            </div>
+         
           </p>
           <Link to="#">
             <button className="dash">Add Profile</button>
@@ -125,7 +120,6 @@ function Farmer() {
       </div>
     </div>
   );
-
 }
 
-export default Farmer;
+export default LinkAddProfile;

@@ -11,7 +11,6 @@ import WhoYou from '../Pages/who/Who'
 import Tractor from '../Pages/Service/Tractor/tractor'
 import Harvestor from "../Pages/Service/Harvestor/Harvestor";
 import Tsunami from '../Pages/Service/Tsunami/Tsunami'
-import Farmer from '../Pages/Userpage/Farmer/farmer'
 import Machine from "../Pages/Userpage/Machineowner/Machine";
 import FarmerDetails from "../Pages/Admin/Farmer/Farmer";
 import MachineryDetails from "../Pages/Admin/Machinery/Machinery";
@@ -20,6 +19,8 @@ import ProfileView from "../Pages/Userpage/Profile/profile.view";
 import Tracctorhire from '../Componets/card/Hire/Tractorhire'
 import Payment from '../Componets/payment/paymentFront'
 import Booking from '../Componets/booking/booking'
+import Farmerpage from "../Pages/Userpage/Farmer/farmer";
+import LinkAddProfile from '../Pages/Userpage/Machineowner/linkaddprofile/linkaddprofile';
 export default function RoutesTable() {
     return (
         <div className="routesTable">
@@ -37,7 +38,7 @@ export default function RoutesTable() {
                 <Route path='/Learnmore' element={<Tractor/>}/>
                 <Route path='/Harvester' element={<Harvestor/>}/>
                 <Route path='/Tsunami' element={<Tsunami/>}/>
-                <Route path='/home' element={<Farmer/>}/>
+                <Route path='/Farmerpage' element={<Farmerpage/>}/>
                 <Route path='/FarmerDetails' element={<FarmerDetails/>}/>
                 <Route path='/MachineryDetails' element={<MachineryDetails/>}/>
                 {/* <Route path='/Machine' element={<Machine/>}/> */}
@@ -46,6 +47,7 @@ export default function RoutesTable() {
                 <Route path='/hirepage/:id' element={<Tracctorhire/>}/>
                 <Route path='/payments' element={<Payment/>}/>
                 <Route path='/Booking' element={<Booking/>}/>
+                <Route path='/LinkAddProfile' element={<LinkAddProfile/>}/>
 
 
 

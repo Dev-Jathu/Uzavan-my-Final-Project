@@ -1,5 +1,5 @@
 import React from "react";
-import './Contact.css'
+import "./Contact.css";
 import Form from "../../Componets/Form/Form";
 import Button from "../../Componets/Button/Button";
 import ContactPic from "../../Assets/machin8.jpg";
@@ -47,45 +47,49 @@ export default function Contact() {
           </div>
           <div className="massagepanel">
             <div className="contact details">
-              <div className="nameadd">
-                <Form
-                  class="ContactName"
-                  name="Name"
+              {/* <div className="nameadd"> */}
+              <form>
+                <label className="ContactName"> Name</label>
+                <br />
+
+                <input
                   type="text"
-                  classinput="inputContactName"
-                  place="Enter your Full Name"
+                  className="inputContactName"
+                  placeholder="Enter your Full Name"
                   required
                 />
-                <Form
-                  class="ContactAddress"
-                  name="Address"
+                <br />
+                <label className="ContactAddress"> Address</label>
+                <br />
+                <input
                   type="text"
-                  classinput="inputContactAddress"
-                  place="Enter your Address"
+                  className="inputContactAddress"
+                  placeholder="Enter your Address"
                   required
                 />
-              </div>
-              <div className="mailphone">
-                <Form
-                  class="Contactphone"
-                  name="Contact Number"
+                <br />
+                <label className="Contactphone"> Contact Number</label>
+                <br />
+                <input
                   type="number"
-                  classinput="inputContactPhone"
-                  place="Enter Phone number"
-                  required 
+                  className="inputContactPhone"
+                  placeholder="Enter Phone number"
+                  required
                 />
-              </div>
+                <br />
+                <label className="Contactmassage"> Message</label>
+                <br />
 
-              <Form
-                class="Contactmassage"
-                name="Message"
-                type="textarea" // Changed type to "textarea"
-                classinput="inputContactmassage"
-                place="Type Your Message"
-                required
-              />
+                <textarea
+                  className="inputContactmassage"
+                  placeholder="Type Your Message"
+                  maxLength={200}
+                  required
+                />
 
-              <Button class="contactbutton" name="Send Message" />
+                {/* <Button class="contactbutton" name="Send Message" /> */}
+                <button className="contactbutton">Send Message</button>
+              </form>
             </div>
             <div class="map">
               <iframe

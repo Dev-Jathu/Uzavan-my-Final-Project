@@ -85,13 +85,14 @@
 }
 .ContactName{
     font-size: 22px;
-    margin-left: -280px;
+    margin-left: 345px;
     font-weight: 500;
 
 }
 .ContactAddress{
     font-size: 22px;
-    margin-left: -230px;
+    margin-left: 370px;
+    margin-top: 20px;
     font-weight: 500;
 
 
@@ -105,7 +106,7 @@
 }
 .Contactphone{
     font-size: 22px;
-    margin-left: -15px;
+    margin-left: 460px;
     margin-top: 10px;
     font-weight: 500;
 
@@ -126,6 +127,7 @@
     padding: 15px;
     font-size: 18px;
     margin-top: 10px;
+    margin-left: 630px;
 }
 .inputContactAddress{
      height: 50px;
@@ -136,7 +138,7 @@
     padding: 15px;
     font-size: 18px;
     margin-top: 10px;
-    margin-left: 30px;
+    margin-left: 630px;
 
 }
 .inputContactemail{
@@ -160,19 +162,19 @@
     padding: 15px;
     font-size: 18px;
     margin-top: 10px;
-    margin-left: 150px;
+    margin-left: 630px;
 
 }
 .inputContactmassage{
-    height:80px;
-    width: 730px;
+    height:120px;
+    width: 350px;
     border-radius: 5px;
     border: none;
     padding: 15px;
     font-size: 18px;
     box-shadow: 1px .5px 3px;
     margin-top: 10px;
-    margin-left: 820px;
+    margin-left: 620px;
     
 
 }
@@ -186,16 +188,16 @@
 
 }
 .contactbutton{
-    width: 250px;
+    width: 350px;
     height: 50px;
     background-color: var(--Buttons--backgroundcolor);
     border-radius: 10px;
-    margin-top: 100px;
+    margin-top: 20px;
     color: var(--backgroundcolor);
     font-size: 25px;
     box-shadow: 1px 1px 5px black;
     border: none;
-    margin-left: 520px;
+    margin-left: 620px;
 
 
 }
@@ -217,7 +219,7 @@
 .contactphotogrid{
     /* margin-left: -50px; */
     display:grid ;
-    grid-template-columns: 440px 600px;
+    grid-template-columns: 560px 600px;
     margin-left: 350px;
     margin-top: -100px;
     
@@ -232,7 +234,7 @@ text-align: left;
     margin-top: 30px;
     color: var(--Navbar--backgroundcolor);
     font-weight: 600;
-    margin-left: -180px;
+    margin-left: 80px;
 }
 .contactpara{
     font-size: 18px;
@@ -240,7 +242,7 @@ text-align: left;
     letter-spacing: .5px;
     line-height: 30px;
     font-weight: 600;
-    margin-left: px;
+    margin-left: 200px;
 }
 .photocontact{
     /* background-color: #15803d; */
@@ -248,15 +250,15 @@ text-align: left;
    
 }
 .massagepanel{
-    margin-left: -770px;
-    margin-top: 20px;
+    margin-left: -600px;
+    margin-top: 30px;
 
 }
 .map {
     /* box-shadow: 1px 1px 10px; */
     justify-content: center;
-    margin-top: -280PX;
-    margin-left: -330px;
+    margin-top: -290PX;
+    margin-left: -350px;
 }
 .succesfull{
     margin-top: 100px;

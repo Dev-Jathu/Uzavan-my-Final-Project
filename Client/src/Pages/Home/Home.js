@@ -8,6 +8,7 @@ import Button from '../../Componets/Button/Button'
 import About from "../About/About";
 import Service from '../Service/Service'
 import Contact from "../Contact/Contact";
+import { Link } from "react-router-dom";
 
 
 
@@ -20,8 +21,8 @@ function Home() {
       <div 
       className="mainhome"
         id="carouselExampleAutoplaying"
-        class="carousel slide"
-        data-bs-ride="carousel"
+        
+       
       >
         <div class="carousel-inner">
           <div class="carousel-item active">
@@ -41,7 +42,7 @@ function Home() {
             />
           </div>
         </div>
-        <button
+        {/* <button
           class="carousel-control-prev"
           type="button"
           data-bs-target="#carouselExampleAutoplaying"
@@ -66,10 +67,13 @@ function Home() {
             id="nextbutton"
           ></span>
           <span class="visually-hidden">Next</span>
-        </button>
+        </button> */}
         <div className="parahome">
           <h6 className="h6"><span className="welcome">Welcome To Uzhavan!</span><br/>We are ready to save  your Time</h6>
-          <Button class='homebutton' name='Learn more'/>
+          <Link to='#Serviceid'>
+          <button className='homebutton'> Learn more </button>
+
+          </Link>
   
           
         </div>
