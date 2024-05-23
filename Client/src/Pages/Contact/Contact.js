@@ -28,7 +28,7 @@ export default function Contact() {
             <div className="email" id="mailabout">
               <i class="fa-regular fa-envelope" id="icoedit1"></i>
               <p className="subadress2">EMAIL</p>
-              <p className="subadresspara2">uzhavantheconnector@gmail.com</p>
+              <p className="subadresspara2">uzhavan@gmail.com</p>
             </div>
           </div>
         </div>

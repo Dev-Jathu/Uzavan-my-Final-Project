@@ -175,6 +175,39 @@ function Tsunami() {
                       Vavuniya
                     </button>
                   </li>
+                  <li>
+                    <button
+                      className="dropdown-item"
+                      onClick={() => handleDistrictChange("Mullaitivu")}
+                    >
+                      Mullaitivu
+                    </button>
+                  </li>
+                  <li>
+                    <button
+                      className="dropdown-item"
+                      onClick={() => handleDistrictChange("Kilinochchi")}
+                    >
+                      Kilinochchi
+                    </button>
+                  </li>
+                  
+                  <li>
+                    <button
+                      className="dropdown-item"
+                      onClick={() => handleDistrictChange("Jaffna")}
+                    >
+                      Jaffna
+                    </button>
+                  </li>
+                  <li>
+                    <button
+                      className="dropdown-item"
+                      onClick={() => handleDistrictChange("Mannar")}
+                    >
+                      Mannar
+                    </button>
+                  </li>
                   {/* Other district options */}
                   <li>
                     <button

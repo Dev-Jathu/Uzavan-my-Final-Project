@@ -1,83 +1,50 @@
-// const mongoose = require("mongoose");
-// const schema = new mongoose.Schema(
-//   {
-//     Name: {
-//       type: String,
-//       // required: true,
-//     },
-//     Address: {
-//       type: String,
-//       // required: true,
-//     },
-//     // telNo:{
-//     //   type: Number,
-//     // },
-//     Telephone: {
-//       type: Number,
-//     },
-//     RateAcre: {
-//       type: String,
-//       // required: true,
-//     },
-//     VehileTypes: {
-//       type: String,
-//       enum: ["Tractor", "paddyCropper", "TsunamiMachine"],
-//     },
-
-//     District: {
-//       type: String,
-//       enum: ["Vavuniya", "Mullaitivu", "Kilinochchi", "Jaffna", "Mannar"],
-//     },
-
-//     Message: {
-//       type: String,
-//       // required: true,
-//     },
-//     isVerified: {
-//       type: Boolean,
-//       default: false,
-//     },
-//   },
-//   { timestamps: true }
-// );
-// const Service = mongoose.model("service_list", schema);
-// module.exports = Service;
-
 const mongoose = require("mongoose");
+
 const schema = new mongoose.Schema(
   {
+    // MachineryId: {
+    //   type: String,
+    //   required: true, // Corrected 'require' to 'required' and set it to true
+    // },
     Name: {
       type: String,
+      required: true, // Assuming Name should be required
     },
     Address: {
       type: String,
+      required: true, // Assuming Address should be required
     },
     PhoneNumber: {
       type: Number,
       unique: true,
+      required: true, // Assuming PhoneNumber should be required
     },
     vehicleType: {
       type: String,
       enum: ["Tractor", "paddyCropper", "TsunamiMachine"],
+      required: true, // Assuming vehicleType should be required
     },
     District: {
       type: String,
       enum: ["Vavuniya", "Mullaitivu", "Kilinochchi", "Jaffna", "Mannar"],
+      required: true, // Assuming District should be required
     },
     Rate: {
       type: String,
+      required: true, // Assuming Rate should be required
     },
     TelYourService: {
       type: String,
+      required: true, // Assuming TelYourService should be required
     },
     ImageURL: {
-      type: String, 
+      type: String,
+      required: true,
     },
-
-      isVerified: {
-        type: Boolean,
-        default: false,
-      },
+    isVerified: {
+      type: Boolean,
+      default: false,
+    },
   },
   {
     timestamps: true,

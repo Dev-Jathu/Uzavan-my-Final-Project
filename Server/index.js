@@ -9,7 +9,6 @@ const MachineRoutes = require("./userRoutes/machineRoutes");
 const LoginRoutes = require("./userRoutes/loginRoutes");
 const AdminRoutes = require("./userRoutes/adminRoutes");
 const CreateService = require("./userRoutes/ServiceaddRoutes");
-const UploadRoute = require("./middleware/upload");
 const BookingRoutes =require("./userRoutes/BookingRoutes")
 
 //app assignd
@@ -48,10 +47,6 @@ const startServer = async () => {
 
     //call for service add list
     app.use("/profile", CreateService);
-
-    //call for cloudinary
-    app.use("/cloud", UploadRoute);
-
 
     //call for payment
     await paymentServer();

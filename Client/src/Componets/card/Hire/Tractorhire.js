@@ -202,13 +202,14 @@ function Hire() {
     return <p>Loading...</p>;
   }
 
+
   return (
     <div>
       <Navbarforcard />
       <div className="card mb-3" id="hirecard">
         <div className="row g-0">
           <div className="col-md-4">
-            <img src={images} id="hireimg" alt="..." />
+            <img src={user.ImageURL}  id="hireimg" alt="..." />
           </div>
           <div className="col-md-8">
             <div className="card-body" id="cardbody">

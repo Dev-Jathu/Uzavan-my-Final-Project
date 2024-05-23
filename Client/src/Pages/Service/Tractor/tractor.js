@@ -203,7 +203,7 @@ function Tractor() {
     <div>
       <div className="main">
         <div className="container">
-          <div className="logo">
+          <div className="logo" id='traclogo'>
             <div className="logoimg">
               <img src={Logo} id="logoimage" alt="Logo" />
             </div>
@@ -213,7 +213,7 @@ function Tractor() {
           </div>
           <div className="Navlings">
             <div className="navname">
-              <div className="dropdown">
+              <div className="dropdown" id="droptrac"> 
                 <button
                   className="btn btn-secondary dropdown-toggle"
                   type="button"
@@ -230,6 +230,40 @@ function Tractor() {
                       onClick={() => handleDistrictChange("Vavuniya")}
                     >
                       Vavuniya
+                    </button>
+                  </li>
+                
+                  <li>
+                    <button
+                      className="dropdown-item"
+                      onClick={() => handleDistrictChange("Mullaitivu")}
+                    >
+                      Mullaitivu
+                    </button>
+                  </li>
+                  <li>
+                    <button
+                      className="dropdown-item"
+                      onClick={() => handleDistrictChange("Kilinochchi")}
+                    >
+                      Kilinochchi
+                    </button>
+                  </li>
+                  
+                  <li>
+                    <button
+                      className="dropdown-item"
+                      onClick={() => handleDistrictChange("Jaffna")}
+                    >
+                      Jaffna
+                    </button>
+                  </li>
+                  <li>
+                    <button
+                      className="dropdown-item"
+                      onClick={() => handleDistrictChange("Mannar")}
+                    >
+                      Mannar
                     </button>
                   </li>
                   {/* Other district options */}

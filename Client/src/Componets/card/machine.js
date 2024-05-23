@@ -130,7 +130,7 @@ function Card({ selectedDistrict }) {
             {currentItems.map((user) => (
               <div className="card" key={user._id}>
                 <img
-                  src="#"
+                  src={user.ImageURL} 
                   className="card-img-top track1"
                   alt="Machine owner photo"
                 />

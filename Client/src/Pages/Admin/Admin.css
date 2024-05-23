@@ -59,6 +59,14 @@
     margin-left: 40px;
    
 }
+#confirmmodel{
+    margin-top: -800px;
+    background-color: #ffffff;
+    width: 400px;
+    box-shadow: 1px 1px 5px;
+    margin-left: 900px;
+
+}
 .sidetext{
     font-size: 45px;
     color: var(--Navbar--backgroundcolor);
