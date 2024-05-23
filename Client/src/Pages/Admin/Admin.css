@@ -27,8 +27,23 @@
     text-align: left;
     font-size: 22px;
 }
+#sidbarmachine{
+    margin-top: -830px;
+    height: 91.0vh;
+}
 .dash{
     width: 250px;
+    border-radius: 10px;
+    height: 40px;
+    margin-left: 70px;
+    margin-top: 40px;
+    box-shadow: 2px 3px 5px rgb(148, 147, 147); 
+}
+#dash{
+    font-size: 22px;
+}
+.dash1{
+    width: 10px;
     border-radius: 10px;
     height: 40px;
     margin-left: 70px;
@@ -38,11 +53,28 @@
 .dash:hover{
     background-color: #15803d;
 }
+.copyrights{
+    font-size: 18px;
+    margin-top: 55px;
+    margin-left: 40px;
+   
+}
+#confirmmodel{
+    margin-top: -800px;
+    background-color: #ffffff;
+    width: 400px;
+    box-shadow: 1px 1px 5px;
+    margin-left: 900px;
+
+}
 .sidetext{
     font-size: 45px;
     color: var(--Navbar--backgroundcolor);
     text-align: center;
     padding-top: 130px;
+}
+#sidetext{
+    margin-top: -20px;
 }
 span{
     font-size: 28px;
@@ -56,18 +88,26 @@ span{
     margin-top: 10px;
 }
 .footlogoboss{
-    height: 280px;
+    height: 80px;
     margin-top: 60px;
-    margin-left: 55px;
+    margin-left: 39px;
 }
 #logoadmin{
     margin-left: -200px;
+}
+#machinealigh{
+    background-color: #15803d;
+    height: 95vh;
 }
 .content{
     background-color: #ffffff;
     height: 91vh;
     width: 79%;
     margin-left: 400px;
+   
+}
+#content{
+    margin-top: -150px;
 }
 .gridcount{
     display: grid;
@@ -153,7 +193,7 @@ td{
 }
 
 #content{
-    margin-top: 100px;
+    margin-top: -50px;
     
 }
 #sidebarboss{
@@ -186,6 +226,8 @@ td{
     margin-top: 30px;
 }
 
+
+
 .pagenumber{
     background-color: var(--Navbar--backgroundcolor);
     color: white;
@@ -210,4 +252,39 @@ td{
     margin-left: -950px;
     margin-top: 50px;
 
+}
+#verification{
+    padding-top: 120px;
+    /* margin-left: -300px; */
+}
+.tablemachine{
+    margin-top: 50px;
+    margin-left: 110px;
+}
+
+.messagemachine{
+    width: 200px;
+    height: 30px;
+}
+
+.Confirm{
+    width: 120px;
+    height: 40px;
+    margin-top: 0px;
+    margin-left: 10px;
+    background-color:var(--Buttons--backgroundcolor);
+    color: white;
+    border: none;
+    font-size: 20px;
+
+
+}
+#cancel{
+    background-color: red;
+    color: white;
+    border: none;
+    font-size: 20px;
+}
+.verifycationconfirm{
+    width: 320px;
 }

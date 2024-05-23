@@ -11,6 +11,9 @@
     height: 450px;
 
 }
+#footermain{
+    margin-top: 250px;
+}
 .footergrid{
     display: grid;
     grid-template-rows: 100px 100px 100px;

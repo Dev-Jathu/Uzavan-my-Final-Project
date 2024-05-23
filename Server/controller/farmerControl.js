@@ -5,11 +5,11 @@ const bcrypt = require("bcrypt");
 
 //create farmer
 exports.createfarmer = (req, res) => {
-  const { Name, NIC, TelNo, Email, Password } = req.body;
+  const { Name, NIC, TelNo, Email, Password,FarmerId } = req.body;
   bcrypt
     .hash(Password, 10)
     .then((hash) => {
-      FarmerModel.create({ Name, NIC, TelNo, Email, Password: hash })
+      FarmerModel.create({ Name, NIC, TelNo, Email, FarmerId,Password: hash })
         .then((Farmers) => res.json(Farmers))
         .catch((err) => res.json(err));
     })
@@ -45,7 +45,19 @@ exports.deleteFarmer = async (req, res) => {
   }
 };
 
-
+//Farmer update
+exports.updateFarmer = async (req, res) => {
+  try {
+     const { id } = req.params;
+     await FarmerModel.findByIdAndUpdate(id, req.body);
+     const Farmer = await FarmerModel.findById(id);
+     res.status(200).json(Farmer);
+  }
+  catch (err) {
+     console.error("Error updating admin:", err);
+     res.status(500).json({ error: "Internal Server Error" });
+  }
+}
 
 
 

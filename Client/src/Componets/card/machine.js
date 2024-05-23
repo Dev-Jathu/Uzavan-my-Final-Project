@@ -56,6 +56,8 @@
 
 import React, { useState, useEffect } from "react";
 import "./Card.css";
+import { Link } from "react-router-dom";
+
 
 function Card({ selectedDistrict }) {
   const [users, setUsers] = useState([]);
@@ -128,7 +130,7 @@ function Card({ selectedDistrict }) {
             {currentItems.map((user) => (
               <div className="card" key={user._id}>
                 <img
-                  src="#"
+                  src={user.ImageURL} 
                   className="card-img-top track1"
                   alt="Machine owner photo"
                 />
@@ -140,13 +142,20 @@ function Card({ selectedDistrict }) {
                     <p className="Addresscard">{user.Address}</p>
                     <p className="districtCard">{user.District}</p>
                   </div>
-                  <a
+                  {/* <a
                     href="#"
                     className="btn btn-primary"
                     id="buttoncardtractor1"
                   >
                     Hire
-                  </a>
+                  </a> */}
+                   <Link
+                    to={`/hirepage/${user._id}`}
+                    className="btn btn-primary"
+                    id="buttoncardtractor1"
+                  >
+                    Hire
+                  </Link>
                 </div>
               </div>
             ))}

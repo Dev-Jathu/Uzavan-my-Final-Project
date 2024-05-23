@@ -30,7 +30,7 @@ function Service() {
         <div class="card" id="card">
           <img src={pic1} class="card-img-top" alt="..."  className="pic2"/>
           <div class="card-body">
-            <h5 class="card-title" id="cardtitle">paddy Harvester</h5>
+            <h5 class="card-title" id="cardtitle">paddy Harvestor</h5>
             <p class="card-text"id='cardtext' >
             This filed only Have the Paddy Harvester Click The Learn More Botton For more details.
 

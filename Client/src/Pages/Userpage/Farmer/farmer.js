@@ -1,251 +1,131 @@
-import React, { useEffect } from "react";
+// import React, { useEffect } from "react";
 import Backgroundpgoto3 from "../../../Assets/newfarmer1.jpg";
 import Button from "../../../Componets/Button/Button";
 import Logo from "../../../Assets/uzavan.png";
 import pic from "../../../Assets/final.jpg";
 import pic1 from "../../../Assets/new3.jpg";
 import pic2 from "../../../Assets/new1.jpg";
-import { HashLink as Link } from "react-router-hash-link";
+// import { HashLink as Link } from "react-router-hash-link";
+import React, { useState, useEffect } from "react";
+import { Link, useNavigate } from "react-router-dom";
+
 import "./farmer.css";
 import axios from "axios";
 
 function Farmer() {
+  const [users, setUsers] = useState([]);
+  const [machinery, setMachinery] = useState([]);
+  const [Farmer, setFarmer] = useState([]);
+  const [currentPage, setCurrentPage] = useState(1);
+  const [itemsPerPage, setItemsPerPage] = useState(6);
+  const navigate = useNavigate(); // Hook for navigation
 
-  return (
-    <div>
-      <div>
-        <div className="main">
-          <div className="container">
-            <div className="logo">
-              <div className="logoimg">
-                <img src={Logo} id="logoimage" />
-              </div>
-              <div className="logoname">
-                <h2>Uzhavan</h2>
-              </div>
-            </div>
-            <div className="Navlings">
-              <div className="navname" id="navnamefarmer">
-                <Link to="#carouselExampleAutoplaying">Home</Link>
+  // Function to handle logout
+  const handleLogout = () => {
+    // Remove JWT token from local storage or wherever it's stored
+    localStorage.removeItem("jwtToken");
+    // Navigate to the home page
+    navigate("/signin");
+  };
 
-                <Link to="#Serviceid" smooth>
-                  Service
-                </Link>
-              </div>
-              <div className="navnamecopy">
-                <Link to="#carouselExampleAutoplaying">
-                  <i class="fa-solid fa-house" id="copylog1"></i>
-                </Link>
-                <Link to="#Aboutid" smooth>
-                  <i class="fa-solid fa-user-tag" id="copylog1"></i>
-                </Link>
-              </div>
-              <div className="butresfarmer">
-                <Link to="#">
-                  <i class="fa-solid fa-user" id="userprofile"></i>
-                </Link>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div
-        className="mainhome"
-        id="carouselExampleAutoplaying"
-        class="carousel slide"
-        data-bs-ride="carousel"
+  const indexOfLastItem = currentPage * itemsPerPage;
+  const indexOfFirstItem = indexOfLastItem - itemsPerPage;
+  const currentItems = users.slice(indexOfFirstItem, indexOfLastItem);
+  const totalPages = Math.ceil(users.length / itemsPerPage);
+
+  const handlePageChange = (pageNumber) => {
+    setCurrentPage(pageNumber);
+  };
+
+  const renderPageNumbers = () => {
+    const pageNumbers = [];
+    for (let i = 1; i <= totalPages; i++) {
+      pageNumbers.push(i);
+    }
+    return pageNumbers.map((number) => (
+      <button
+        className="pagenumber"
+        key={number}
+        onClick={() => handlePageChange(number)}
+        disabled={currentPage === number}
       >
-        <div class="carousel-inner">
-          <div class="carousel-item active">
-            <img
-              src={Backgroundpgoto3}
-              class="d-block w-100"
-              alt="..."
-              id="bgphot"
-            />
-          </div>
-        </div>
-        <button
-          class="carousel-control-prev"
-          type="button"
-          data-bs-target="#carouselExampleAutoplaying"
-          data-bs-slide="prev"
-        >
-          <span
-            class="carousel-control-prev-icon"
-            aria-hidden="true"
-            id="prebutton"
-          ></span>
-          <span class="visually-hidden">Previous</span>
-        </button>
-        <button
-          class="carousel-control-next"
-          type="button"
-          data-bs-target="#carouselExampleAutoplaying"
-          data-bs-slide="next"
-        >
-          <span
-            class="carousel-control-next-icon"
-            aria-hidden="true"
-            id="nextbutton"
-          ></span>
-          <span class="visually-hidden">Next</span>
-        </button>
-        <div className="parahome" hd='para'>
-          <h6 className="h6" id="h6">
-            <span className="welcome" id="welcome">
-              Welcome To Uzhavan!
-            </span>
-            <br />
-            We are ready to save your Time
-          </h6>
-          <Button id='farmerbutton' class="homebutton1" name="Find Machine" />
-        </div>
-      </div>
-      <div id="Serviceid">
-        <p className="hedingservice">Our Services !</p>
-        <p className="paraservise">
-          Welcome to Our Uzhavan Website. We are Focus on main Agriculture
-          Machinery's.In this menu have 3 Option. Do you want more details click
-          the Learn more button.Thankyou!
-        </p>
-        <div className="cards">
-          <div class="card" id="card">
-            <img src={pic} class="card-img-top" className="pic2" alt="..." />
-            <div class="card-body">
-              <h5 class="card-title" id="cardtitle">
-                Tractor
-              </h5>
-              <p class="card-text" id="cardtext">
-                This filed only Have the Tractor Click The Learn More Botton For
-                more details.
-              </p>
-              <Link to="Learnmore" class="btn btn-primary" id="buttoncard">
-                Learn More
-              </Link>
+        {number}
+      </button>
+    ));
+  };
+  return (
+    <div id="alighnforadmin" className="machinealigh">
+      <div className="main11">
+        <div className="container">
+          <div className="logo" id="logoadmin">
+            <div className="logoimg">
+              <img src={Logo} id="logoimage" alt="Uzhavan Logo" />
+            </div>
+            <div className="logoname">
+              <h2>Uzhavan</h2>
             </div>
           </div>
-          <div class="card" id="card">
-            <img src={pic1} class="card-img-top" alt="..." className="pic2" />
-            <div class="card-body">
-              <h5 class="card-title" id="cardtitle">
-                paddy Harvester
-              </h5>
-              <p class="card-text" id="cardtext">
-                This filed only Have the Paddy Harvester Click The Learn More
-                Botton For more details.
-              </p>
-              <Link to="Harvester" class="btn btn-primary" id="buttoncard">
-                Learn More
-              </Link>
-            </div>
-          </div>
-          <div class="card" id="card">
-            <img
-              src={pic2}
-              class="card-img-top"
-              alt="..."
-              id="pic2"
-              className="pic2"
-            />
-            <div class="card-body">
-              <h5 class="card-title" id="cardtitle" className="cardtitle">
-                Tsunami machine
-              </h5>
-              <p class="card-text" id="cardtext">
-                This filed only Have the Tsunami Click The Learn More Botton For
-                more details.
-              </p>
-              <Link to="Tsunami" class="btn btn-primary" id="buttoncard">
-                Learn More
-              </Link>
+          <div className="Navlings">
+            <div className="navname">
+              <p className="boss">Welcome Back! </p>
             </div>
           </div>
         </div>
-      </div>
-      <div className="footermain">
-        <div className="footergrid">
-          <div className="Footerlings">
-            <div className="Footlogopara">
-              <div className="footlogo">
-                <img src={Logo} />
-                <p className="footlname">Uzhavan</p>
-              </div>
-              <div className="footsubgrid">
-                <div className="footpara">
-                  Hi Welcome To the Uzhavan Website. <br />
-                  This website focus on connect machinery's owners to
-                  Farmer.Thank you!
-                </div>
-                <div className="footnavling" id="farfoot">
-                  <p className="navlingtitle">Quick links</p>
-                  <Link to="/" className="shortling">
-                    Home
-                  </Link>
-                  <Link to="about" className="shortling" smooth>
-                    About
-                  </Link>
-                  <Link to="contact" className="shortling" smooth>
-                    Contact
-                  </Link>
-                </div>
-                <div className="Service">
-                  <div className="services">
-                    <p className="footerh1">Our Services</p>
-                    <div className="servicelink">
-                      <Link to="/Learnmore">Tractor</Link>
-                      <br />
-                      <Link to="/Harvester" className="paddie">
-                        Paddie Cropper
-                      </Link>
-                      <br />
-                      <Link to="/Tsunami" className="paddie">
-                        Tsunami Machine
-                      </Link>
-                    </div>
-                  </div>
-                </div>
-                <div className="footcontact">
-                  <div className="contactfoot">
-                    <p className="contacttitle">Contact Us</p>
-                  </div>
-                  <div className="addrespanel">
-                    <div>
-                      <i class="fa-solid fa-house"></i>{" "}
-                      <span>Vavuniya, Sri Lanka</span>
-                    </div>
-                    <div>
-                      <i class="fa-solid fa-envelope"></i>{" "}
-                      <span>jathusansujan@gmail.com</span>
-                    </div>
-                    <div>
-                      <i class="fa-solid fa-phone"></i>{" "}
-                      <span>+94 762464317</span>
-                    </div>
-                  </div>
-                </div>
-                <div className="footlings">
-                  <Link to="#">
-                    <i class="fa-brands fa-facebook" id="editicon"></i>
-                  </Link>
-                  <Link to="#">
-                    <i class="fa-brands fa-instagram" id="editicon"></i>
-                  </Link>
-                  <Link to="#">
-                    <i class="fa-brands fa-youtube" id="editicon"></i>
-                  </Link>
-                  <Link to="#">
-                    <i class="fa-brands fa-google" id="editicon"></i>
-                  </Link>
-                </div>
-              </div>
-            </div>
+        <div className="content" id="content">
+          <div className="Notecontainer" id="notecontainer">
+            <p className="verification" id="verification">Waiting for your Confirmation!</p>
+            <table>
+              <thead>
+                <tr>
+                  <th>Name</th>
+                  <th>Address</th>
+                  <th>District</th>
+                  <th>Acre Count</th>
+                  <th>Verifycation</th>
+                </tr>
+              </thead>
+              <tbody>
+                <td>kjhbekfb</td>
+                <td>sinnathampanai</td>
+                <td>vavuniya</td>
+                <td>2 Acre</td>
+                <td className="verifycationconfirm">
+                  <button className="Confirm">Confirm</button>
+                  <button className="Confirm" id="cancel">
+                    Cancel
+                  </button>
+                </td>
+              </tbody>
+            </table>
+            <div className="pagination">{renderPageNumbers()}</div>
           </div>
-          <div className="Footercopyright"></div>
+        </div>
+        <div className="sidbarboss" id="sidbarmachine">
+          <p className="sidetext">
+            Uzhavan <br />
+            <span5>The Connector</span5>
+          </p>
+          <Link to="#">
+            <button className="dash">Add Profile</button>
+          </Link>
+          <Link to="#">
+            <button className="dash">Service</button>
+          </Link>
+          <br />
+          <Link to="#">
+            <button className="dash">Order</button>
+          </Link>
+          <br />
+          {/* Logout button with onClick event */}
+          <button className="dash" onClick={handleLogout}>Logout</button>
+          <p className="copyrights">
+            &copy; 2024 Uzhavan. All rights reserved.
+          </p>{" "}
         </div>
       </div>
     </div>
   );
+
 }
 
 export default Farmer;

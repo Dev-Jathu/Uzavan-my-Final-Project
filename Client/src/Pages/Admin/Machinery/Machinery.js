@@ -203,7 +203,8 @@ function MachineryDetails() {
       </button>
     ));
   };
-
+ // Total count of Machinery users
+ const MachineryUsersCount = users.length;
   return (
     <div id="alighnforadmin">
       <div className="main11">
@@ -227,18 +228,14 @@ function MachineryDetails() {
         </div>
         <div className="content">
           <div className="gridcount">
-            <div className="Farmercount">
-              <p className="fcount">Farmercount</p>
-              <i class="fa-solid fa-user" id="addlogo"></i>
-            </div>
+            
             <div className="Farmercount">
               <p className="fcount">Machinery Count</p>
-              <i class="fa-solid fa-user" id="addlogo"></i>
+              {/* <i class="fa-solid fa-user" id="addlogo"></i> */}
+              {MachineryUsersCount}
+
             </div>
-            <div className="Farmercount">
-              <p className="fcount">Total Booking</p>
-              <i class="fa-solid fa-user" id="addlogo"></i>
-            </div>
+           
           </div>
           <div className="Notecontainer" id="machin">
             <table>

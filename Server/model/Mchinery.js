@@ -41,6 +41,9 @@
 const mongoose = require("mongoose");
 const schema = new mongoose.Schema(
   {
+    MachineryId: {
+      type:mongoose.Types.ObjectId,
+    },
     Name: {
       type: String,
     },

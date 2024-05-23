@@ -1,0 +1,95 @@
+:root{
+    --Navbar--backgroundcolor:#222933;
+    --Buttons--backgroundcolor:#15803d;
+    --backgroundcolor:#f3f4f6;
+}
+
+#hirecard{
+    height: 600px;
+    width: 1000px;
+    margin-top: 150px;
+    margin-left: 450px;
+    box-shadow: 1px 1px 10px ;
+    border: none;
+}
+#hireimg{
+margin-top: -10px;
+height: 520px;
+width: 400px;
+/* width: 0px; */
+margin-top: 25px;
+margin-left: 10px;
+border-radius: 10px;
+}
+#hirecardtitle{
+    font-size: 35px;
+    margin-left: -125px;
+    margin-top: 50px;
+}
+#cardbody{
+    margin-left: 100px;
+    margin-top: -50px;
+}
+#hirecardtex{
+    text-align: left;
+    margin-left: 150px;
+    margin-top: 30px;
+    width: 500px;
+
+
+}
+#thankpage{
+    margin-top: 30px;
+}
+#Hirename{
+    text-align: left;
+    margin-left: 155px;
+    margin-top: 10px;
+    font-size: 20px;
+}
+#hiredeatails{
+    margin-top: 30px;
+    margin-left: -120px;
+}
+#hirethanks{
+    margin-left: -110px;
+    font-size: 17px;
+    
+}
+
+#hirecardbutton{
+    width: 180px;
+    height: 40px;
+    background-color: var(--Buttons--backgroundcolor);
+    border: none;
+    box-shadow: 1px 1px 5px;
+    margin-top: 40px;
+    margin-left: 10px;
+    font-size: 20px;
+    cursor: pointer;
+}
+#hirecardbutton:hover{
+    background-color: #000000;
+    color: white;
+}
+#connectbutton{
+    width: 180px;
+    height: 40px;
+    background-color: var(--Buttons--backgroundcolor);
+    border: none;
+    box-shadow: 1px 1px 5px;
+    margin-left: 20px;
+    font-size: 20px;
+}
+.hire2buttons{
+    margin-left: -80px;
+    margin-top: 45px;
+}
+#connectbutton:hover{
+    background-color: #000000;
+    color: white;
+}
+#hirelogo{
+    margin-left: -600px;
+    margin-top: -190px;
+}

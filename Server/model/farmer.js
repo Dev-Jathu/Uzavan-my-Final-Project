@@ -32,6 +32,9 @@ const mongoose = require("mongoose");
 
 const schema = new mongoose.Schema(
   {
+    FarmerId: {
+      type:String,
+    },
     Name: {
       type: String,
     },
