@@ -2,10 +2,10 @@ const mongoose = require("mongoose");
 
 const schema = new mongoose.Schema(
   {
-    // MachineryId: {
-    //   type: String,
-    //   required: true, // Corrected 'require' to 'required' and set it to true
-    // },
+    MachineryId: {
+      type: String,
+      required: true, // Corrected 'require' to 'required' and set it to true
+    },
     Name: {
       type: String,
       required: true, // Assuming Name should be required

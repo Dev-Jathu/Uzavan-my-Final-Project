@@ -34,10 +34,10 @@ function footerforcard() {
                   </Link>
                 </div>
                 <div className="Service">
-                  <div className="services">
+                  <div className="services" id='service'>
                     <p className="footerh1">Our Services</p>
                     <div className="servicelink">
-                      <Link to="/Learnmore">Tractor</Link>
+                      <Link to="/Learnmore" className="paddie">Tractor</Link>
                       <br />
                       <Link to="/Harvester" className="paddie">
                         Paddie Cropper

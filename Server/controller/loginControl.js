@@ -204,7 +204,7 @@ exports.Loginfarmer = (req, res) => {
     if (farmer) {
       bcrypt.compare(Password, farmer.Password).then((isMatch) => {
         if (isMatch) {
-          const token = jwt.sign({ Email: farmer.Email, role: "user" }, process.env.JWT, {
+          const token = jwt.sign({ Email: farmer.Email, role: "user",Name:farmer.Name,id :farmer._id }, process.env.JWT, {
             expiresIn: "1d",
           });
           res.json({ token, role: "user" });
@@ -219,7 +219,7 @@ exports.Loginfarmer = (req, res) => {
           bcrypt.compare(Password, machinery.Password).then((isMatch) => {
             if (isMatch) {
               const token = jwt.sign(
-                { Email: machinery.Email, role: "machine_user" },
+                { Email: machinery.Email, role: "machine_user",Name:machinery.Name, id: machinery._id },
                 process.env.JWT,
                 { expiresIn: "1d" }
               );

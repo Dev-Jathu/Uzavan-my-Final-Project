@@ -23,12 +23,16 @@
     /* background-color:rgb(2, 0, 36);bach */
     box-shadow: 1px 1px 10px;
 }
+.addserviceinmachinepage{
+    margin-left: -300px;
+    margin-top: -50px;
+}
 .sidbarboss{
     text-align: left;
     font-size: 22px;
 }
 #sidbarmachine{
-    margin-top: -830px;
+    margin-top: -827px;
     height: 91.0vh;
 }
 .dash{
@@ -41,6 +45,7 @@
 }
 #dash{
     font-size: 22px;
+    margin-left: 70px;
 }
 .dash1{
     width: 10px;
@@ -52,6 +57,11 @@
 }
 .dash:hover{
     background-color: #15803d;
+}
+#logout:hover{
+    background-color: #ee3c3c;
+
+
 }
 .copyrights{
     font-size: 18px;
@@ -107,7 +117,7 @@ span{
    
 }
 #content{
-    margin-top: -150px;
+    margin-top: -180px;
 }
 .gridcount{
     display: grid;
@@ -276,8 +286,6 @@ td{
     color: white;
     border: none;
     font-size: 20px;
-
-
 }
 #cancel{
     background-color: red;

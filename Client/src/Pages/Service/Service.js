@@ -12,7 +12,7 @@ function Service() {
       <p className="paraservise">
         Welcome to Our Uzhavan Website. We are Focus on main Agriculture
         Machinery's.In this menu have 3 Option. Do you want more details click
-        the Learn more button.Thankyou!
+        the Search button.Thankyou!
       </p>
       <div className="cards">
         <div class="card"  id="card">
@@ -20,10 +20,10 @@ function Service() {
           <div class="card-body">
             <h5 class="card-title"id="cardtitle">Tractor</h5>
             <p class="card-text" id='cardtext'>
-           This filed only Have the Tractor Click The Learn More Botton For more details.
+           This filed only Have the Tractor Click The Search button For more details.
             </p>
-            <Link to="Learnmore" class="btn btn-primary" id="buttoncard">
-              Learn More
+            <Link to="/Learnmore" class="btn btn-primary" id="buttoncard">
+              Search
             </Link>
           </div>
         </div>
@@ -32,11 +32,11 @@ function Service() {
           <div class="card-body">
             <h5 class="card-title" id="cardtitle">paddy Harvestor</h5>
             <p class="card-text"id='cardtext' >
-            This filed only Have the Paddy Harvester Click The Learn More Botton For more details.
+            This filed only Have the Paddy Harvester Click The Search Botton For more details.
 
             </p>
-            <Link to="Harvester" class="btn btn-primary"id="buttoncard">
-            Learn More
+            <Link to="/Harvester" class="btn btn-primary"id="buttoncard">
+            Search
             </Link>
           </div>
         </div>
@@ -45,11 +45,11 @@ function Service() {
           <div class="card-body">
             <h5 class="card-title" id="cardtitle" className="cardtitle">Tsunami machine</h5>
             <p class="card-text"id='cardtext'>
-            This filed only Have the Tsunami Click The Learn More Botton For more details.
+            This filed only Have the Tsunami Click The Search Botton For more details.
 
             </p>
-            <Link to="Tsunami" class="btn btn-primary"id="buttoncard">
-            Learn More
+            <Link to="/Tsunami" class="btn btn-primary"id="buttoncard">
+            Search
             </Link>
           </div>
         </div>

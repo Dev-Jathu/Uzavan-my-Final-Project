@@ -45,7 +45,8 @@ exports.createService = async (req, res) => {
           console.error(err);
           return res.status(500).send('An error occurred while uploading the image.');
       }
-      const {             
+      const {   
+        MachineryId,          
           Name,
           Address,
           PhoneNumber,
@@ -61,6 +62,7 @@ exports.createService = async (req, res) => {
               ImageURL = req.file.path; // Assuming CloudinaryStorage returns the path of the uploaded image
           }
           const Service = new ServiceModel({
+            MachineryId,
               Name,
               Address,
               PhoneNumber,

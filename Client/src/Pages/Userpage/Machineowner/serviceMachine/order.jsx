@@ -1,20 +1,16 @@
-// import React, { useEffect } from "react";
-import Backgroundpgoto3 from "../../../Assets/newfarmer1.jpg";
-import Button from "../../../Componets/Button/Button";
-import Logo from "../../../Assets/uzavan.png";
-import pic from "../../../Assets/final.jpg";
-import pic1 from "../../../Assets/new3.jpg";
-import pic2 from "../../../Assets/new1.jpg";
-import {jwtDecode} from 'jwt-decode';
 
-// import { HashLink as Link } from "react-router-hash-link";
 import React, { useState, useEffect } from "react";
 import { Link, useNavigate } from "react-router-dom";
-
-import "./farmer.css";
 import axios from "axios";
+import Logo from "../../../../Assets/uzavan.png";
+import {jwtDecode} from 'jwt-decode';
 
-function Farmer() {
+// import StripeCheckout from "react-stripe-checkout";
+
+  
+
+
+function Order() {
   const [users, setUsers] = useState([]);
   const [machinery, setMachinery] = useState([]);
   const [Farmer, setFarmer] = useState([]);
@@ -37,6 +33,7 @@ function Farmer() {
   const currentItems = users.slice(indexOfFirstItem, indexOfLastItem);
   const totalPages = Math.ceil(users.length / itemsPerPage);
 
+
   const handlePageChange = (pageNumber) => {
     setCurrentPage(pageNumber);
   };
@@ -58,7 +55,46 @@ function Farmer() {
     ));
   };
 
+  const [product, setProduct] = useState({
+    name: "Uzhavan",
+    price: 100,
+    productBy: "uki",
+  });
 
+  useEffect(() => {
+    const token = localStorage.getItem("token");
+    if (!token) {
+      navigate("/signin"); // Redirect to login if token is not present
+    } else {
+      // Optionally, verify token with backend if needed
+    }
+  }, [navigate]);
+
+  const makePayment = (token) => {
+    const body = {
+      token,
+      product,
+    };
+    const headers = {
+      "Content-Type": "application/json",
+      Authorization: `Bearer ${localStorage.getItem("token")}`,
+    };
+
+    return fetch("http://localhost:3000/payment", {
+      method: "POST",
+      headers,
+      body: JSON.stringify(body),
+    })
+      .then((response) => {
+        console.log("Response:", response);
+        const { status } = response;
+        console.log("Status:", status);
+        if (status === 200) {
+          navigate("/Addprofile"); // Navigate to Addprofile if the payment is successful
+        }
+      })
+      .catch((error) => console.log(error));
+  };
   useEffect(() => {
     const token = localStorage.getItem('token');
     if (!token) {
@@ -95,7 +131,7 @@ function Farmer() {
         <div className="content" id="content">
           <div className="Notecontainer" id="notecontainer">
             <p className="verification" id="verification">Waiting for your Confirmation!</p>
-            <table>
+            <table className="tablemachine">
               <thead>
                 <tr>
                   <th>Name</th>
@@ -122,16 +158,38 @@ function Farmer() {
           </div>
         </div>
         <div className="sidbarboss" id="sidbarmachine">
-          <p className="sidetext">
+          <p className="sidetext" >
+            <div id="sidetext">
             Uzhavan <br />
             <span5>The Connector</span5>
-          </p>
+            </div>
          
-          <Link to="/">
+          </p>
+          <Link to="/LinkAddProfile">
+          {/* <StripeCheckout
+                stripeKey="pk_test_51PILqiEp6JPeXInZx8QfmFl1DToJ5gg5bAXgIH6JMHKpkPeS7RaxnWq3rGGzLdyz35RtgFaO1XlOsTsJtPAC91Oc00KBUr8fEI"
+                token={makePayment}
+                name="Buy Uzhavan"
+                amount={product.price * 100}
+              >
+            <button className="dash" id="dash">Add Profile</button>
+              </StripeCheckout> */}
+            <button className="dash" id="dash">Add Profile</button>
+
+          </Link>
+         
+          <Link to="/MachineService">
+            <button className="dash">Service</button>
+          </Link>
+          <br />
+          <Link to="/MachineOrder">
+            <button className="dash">Order</button>
+          </Link>
+          <br />
+          <Link to="/Machineservicehome">
             <button className="dash">Home</button>
           </Link>
-        
-          <br />
+          <br/>
           {/* Logout button with onClick event */}
           <button className="dash" onClick={handleLogout}>Logout</button>
           <p className="copyrights">
@@ -141,7 +199,6 @@ function Farmer() {
       </div>
     </div>
   );
-
 }
 
-export default Farmer;
+export default Order;
