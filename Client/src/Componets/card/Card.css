@@ -31,6 +31,22 @@
 
 #cardtexttractor {
     text-align: left;
+    /* height: 200px; */
+}
+#cardtexttractor1 {
+    text-align: left;
+    height: 200px;
+}
+.editmachine{
+    font-size: 18px;
+    background-color: var(--Buttons--backgroundcolor);
+    color: white;
+    font-weight: bold;
+    width: 130px;
+    height: 35px;
+    border: hidden;
+    box-shadow: 1px 1px 10px;
+    border-radius: 2px;
 }
 
 #cardtitletractor {
@@ -39,7 +55,7 @@
 }
 
 #buttoncardtractor,
-#buttoncardtractor1 {
+#buttoncardtractor2 {
     background-color: var(--Buttons--backgroundcolor);
     width: 150px;
     border: none;

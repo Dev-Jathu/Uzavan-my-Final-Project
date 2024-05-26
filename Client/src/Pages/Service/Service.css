@@ -49,6 +49,12 @@
     width: 150px;
     margin-left: 5px;
 }
+#cloudedit{
+    /* width: 300px; */
+    /* height: 250px; */
+    /* margin-left: 10px; */
+    border-radius: 10px;
+}
 
 @media screen and (max-width: 850px) {
     .hedingservice{
@@ -172,5 +178,8 @@
         height: 200vh;
     }
 
+}
+#paramachinecard{
+    height: 100px;
 }
   

@@ -2,14 +2,12 @@ const mongoose = require("mongoose");
 const schema = new mongoose.Schema(
   {
     MachineryId: {
-      type:mongoose.Types.ObjectId,
-      ref:"Machine_Owner",
-      require:true,
+      type: String,
+      // required: true,
     },
     FarmerId: {
-      type:mongoose.Types.ObjectId,
-      ref:"farmer_Detail",
-      require:true,
+      type: String,
+      // required: true,
     },
     Name: {
       type: "string",

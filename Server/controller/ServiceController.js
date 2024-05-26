@@ -85,26 +85,51 @@ exports.createService = async (req, res) => {
 
 
 // Get details for service list
+// exports.getService = async (req, res) => {
+//   try {
+//     const services = await ServiceModel.find();
+//     if (services.length > 0) {
+//         // Map each service to include the Cloudinary image URL
+//         const servicesWithImages = services.map(service => {
+//             return {
+//                 ...service._doc, // Include all existing service fields
+//                 ImageURL: service.ImageURL // Assuming ImageURL stores the Cloudinary URL
+//             };
+//         });
+//         res.status(200).json(servicesWithImages);
+//     } else {
+//         res.status(404).send('No services found.');
+//     }
+// } catch (error) {
+//     console.error(error);
+//     res.status(500).send('An error occurred while retrieving the services.');
+// }
+
+// };
+// Get details for service list with optional MachineryId filter
 exports.getService = async (req, res) => {
+  const { MachineryId } = req.query;
   try {
-    const services = await ServiceModel.find();
-    if (services.length > 0) {
-        // Map each service to include the Cloudinary image URL
-        const servicesWithImages = services.map(service => {
-            return {
-                ...service._doc, // Include all existing service fields
-                ImageURL: service.ImageURL // Assuming ImageURL stores the Cloudinary URL
-            };
-        });
-        res.status(200).json(servicesWithImages);
+    let services;
+    if (MachineryId) {
+      services = await ServiceModel.find({ MachineryId });
     } else {
-        res.status(404).send('No services found.');
+      services = await ServiceModel.find();
     }
-} catch (error) {
+    
+    if (services.length > 0) {
+      const servicesWithImages = services.map(service => ({
+        ...service._doc,
+        ImageURL: service.ImageURL
+      }));
+      res.status(200).json(servicesWithImages);
+    } else {
+      res.status(404).send('No services found.');
+    }
+  } catch (error) {
     console.error(error);
     res.status(500).send('An error occurred while retrieving the services.');
-}
-
+  }
 };
 
 // get details for id
@@ -173,3 +198,18 @@ exports.patchUsers = async (req, res) => {
       });
   }
 };
+
+exports.services = async (req,res) => {
+  const token = req.headers.authorization.split(' ')[1];
+  
+  try {
+    const decoded = jwt.verify(token, process.env.JWT); // Use your JWT secret key
+    const userId = decoded.id; // Assuming the token contains user ID
+
+    const services = await ServiceModel.find({ userId: _id }); // Fetch services for the user
+    res.json(services);
+  } catch (error) {
+    console.error('Error fetching services:', error);
+    res.status(500).send('Server error');
+  }
+}

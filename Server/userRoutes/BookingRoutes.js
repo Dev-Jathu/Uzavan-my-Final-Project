@@ -1,11 +1,15 @@
 const express = require("express");
 const router = express.Router();
-const BookingControl = require("../controller/BookingControl");
+const bookingController = require("../controller/BookingControl");
 
 //routes using controller function
 
-router.post("/BookMachine", BookingControl.createBooking);
-router.get("/Book/view", BookingControl.getBooking);
+
+router.post('/BookMachine', bookingController.createBooking);
+router.get('/Booking', bookingController.getBooking);
+router.get('/Booking/:id', bookingController.getBookingById);
+router.put('/Booking/:id', bookingController.updateBooking);
+router.delete('/Booking/:id', bookingController.deleteBooking);
 
 
 module.exports = router;

@@ -264,7 +264,7 @@ td{
 
 }
 #verification{
-    padding-top: 120px;
+    padding-top: 50px;
     /* margin-left: -300px; */
 }
 .tablemachine{
@@ -295,4 +295,8 @@ td{
 }
 .verifycationconfirm{
     width: 320px;
+}
+
+#cardmachine{
+    margin-top: 5px;
 }

@@ -17,26 +17,26 @@
 //     res.status(500).send(error);
 //   }
 // };
-const BookingModel = require("../model/booking");
+// const BookingModel = require("../model/booking");
 
-// Register for machinery owner's service list
-exports.createBooking = (req, res) => {
-  const { Name, Address, District, PhoneNumber, AcreCount, Message, MachineryId, FarmerId } = req.body;
+// // Register for machinery owner's service list
+// exports.createBooking = (req, res) => {
+//   const { Name, Address, District, PhoneNumber, AcreCount, Message, MachineryId, FarmerId } = req.body;
 
-  BookingModel.create({ Name, Address, District, PhoneNumber, AcreCount, Message, MachineryId, FarmerId })
-    .then(service => res.status(201).json(service))
-    .catch(err => res.status(500).json({ error: err.message }));
-};
+//   BookingModel.create({ Name, Address, District, PhoneNumber, AcreCount, Message, MachineryId, FarmerId })
+//     .then(service => res.status(201).json(service))
+//     .catch(err => res.status(500).json({ error: err.message }));
+// };
 
-// Get details for service list
-exports.getBooking = async (req, res) => {
-  try {
-    const bookings = await BookingModel.find().populate('MachineryId').populate('FarmerId');
-    res.status(200).json(bookings);
-  } catch (error) {
-    res.status(500).json({ error: error.message });
-  }
-};
+// // Get details for service list
+// exports.getBooking = async (req, res) => {
+//   try {
+//     const bookings = await BookingModel.find().populate('MachineryId').populate('FarmerId');
+//     res.status(200).json(bookings);
+//   } catch (error) {
+//     res.status(500).json({ error: error.message });
+//   }
+// };
 
 // Import required modules
 // const BookingModel = require("../model/booking");
@@ -82,3 +82,67 @@ exports.getBooking = async (req, res) => {
 //     res.status(500).json({ error: "Internal Server Error" });
 //   }
 // };
+
+const BookingModel = require("../model/booking");
+
+// Create a new booking
+exports.createBooking = (req, res) => {
+  const { Name, Address, District, PhoneNumber, AcreCount, Message, MachineryId, FarmerId } = req.body;
+
+  BookingModel.create({ Name, Address, District, PhoneNumber, AcreCount, Message, MachineryId, FarmerId })
+    .then(service => res.status(201).json(service))
+    .catch(err => res.status(500).json({ error: err.message }));
+};
+
+// Get all bookings
+exports.getBooking = async (req, res) => {
+  try {
+    const bookings = await BookingModel.find().populate('MachineryId').populate('FarmerId');
+    res.status(200).json(bookings);
+  } catch (error) {
+    res.status(500).json({ error: error.message });
+  }
+};
+
+// Get a single booking by ID
+exports.getBookingById = async (req, res) => {
+  const { id } = req.params;
+  try {
+    const booking = await BookingModel.findById(id).populate('MachineryId').populate('FarmerId');
+    if (!booking) {
+      return res.status(404).json({ error: 'Booking not found' });
+    }
+    res.status(200).json(booking);
+  } catch (error) {
+    res.status(500).json({ error: error.message });
+  }
+};
+
+// Update a booking by ID
+exports.updateBooking = async (req, res) => {
+  const { id } = req.params;
+  const { Name, Address, District, PhoneNumber, AcreCount, Message, MachineryId, FarmerId } = req.body;
+  try {
+    const booking = await BookingModel.findByIdAndUpdate(id, { Name, Address, District, PhoneNumber, AcreCount, Message, MachineryId, FarmerId }, { new: true });
+    if (!booking) {
+      return res.status(404).json({ error: 'Booking not found' });
+    }
+    res.status(200).json(booking);
+  } catch (error) {
+    res.status(500).json({ error: error.message });
+  }
+};
+
+// Delete a booking by ID
+exports.deleteBooking = async (req, res) => {
+  const { id } = req.params;
+  try {
+    const booking = await BookingModel.findByIdAndDelete(id);
+    if (!booking) {
+      return res.status(404).json({ error: 'Booking not found' });
+    }
+    res.status(200).json({ message: 'Booking deleted successfully' });
+  } catch (error) {
+    res.status(500).json({ error: error.message });
+  }
+};
