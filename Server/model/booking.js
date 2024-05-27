@@ -1,19 +1,21 @@
 const mongoose = require("mongoose");
-const schema = new mongoose.Schema(
+
+const bookingSchema = new mongoose.Schema(
   {
     MachineryId: {
       type: String,
-      // required: true,
+
     },
     FarmerId: {
       type: String,
-      // required: true,
+
+
     },
     Name: {
-      type: "string",
+      type: String,
     },
     Address: {
-      type: "string",
+      type: String,
     },
     District: {
       type: String,
@@ -32,5 +34,5 @@ const schema = new mongoose.Schema(
   { timestamps: true }
 );
 
-const Booking = mongoose.model("Booking", schema);
+const Booking = mongoose.model("Booking", bookingSchema);
 module.exports = Booking;

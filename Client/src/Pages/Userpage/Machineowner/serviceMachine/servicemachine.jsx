@@ -704,10 +704,10 @@ function ServiveMachine() {
                             Name : {user.Name}
                           </h5>
                           <div className="card-text" id="cardtexttractor1">
-                            <p className="Addresscard">Address&nbsp;&nbsp;&nbsp;&nbsp; :&nbsp;&nbsp; {user.Address}</p>
+                            {/* <p className="Addresscard">Address&nbsp;&nbsp;&nbsp;&nbsp; :&nbsp;&nbsp; {user.Address}</p> */}
                             <p className="districtCard">District&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;:&nbsp;&nbsp; {user.District}</p>
                             <p className="districtCard">Type&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;:&nbsp;&nbsp; {user.vehicleType}</p>
-                            <p className="districtCard" > Rate &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;:&nbsp;&nbsp;{user.Rate}</p>
+                            {/* <p className="districtCard" > Rate &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;:&nbsp;&nbsp;{user.Rate}</p> */}
                             {/* <p className="districtCard" id='paramachinecard'>{user.TelYourService}</p> */}
                           </div>
                           <button className="editmachine">Edit</button>
