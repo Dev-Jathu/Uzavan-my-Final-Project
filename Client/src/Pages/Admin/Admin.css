@@ -30,9 +30,11 @@
 .sidbarboss{
     text-align: left;
     font-size: 22px;
+    margin-top: -795px;
+    height: 91vh;
 }
 #sidbarmachine{
-    margin-top: -827px;
+    margin-top: -800px;
     height: 91.0vh;
 }
 .dash{
@@ -81,10 +83,10 @@
     font-size: 45px;
     color: var(--Navbar--backgroundcolor);
     text-align: center;
-    padding-top: 130px;
+    padding-top: 80px;
 }
 #sidetext{
-    margin-top: -20px;
+    margin-top: 10px;
 }
 span{
     font-size: 28px;
@@ -203,7 +205,7 @@ td{
 }
 
 #content{
-    margin-top: -50px;
+    margin-top: -55px;
     
 }
 #sidebarboss{
@@ -238,6 +240,7 @@ td{
 
 
 
+
 .pagenumber{
     background-color: var(--Navbar--backgroundcolor);
     color: white;
@@ -264,7 +267,7 @@ td{
 
 }
 #verification{
-    padding-top: 120px;
+    padding-top: 80px;
     /* margin-left: -300px; */
 }
 .tablemachine{
@@ -298,5 +301,5 @@ td{
 }
 
 #cardmachine{
-    margin-top: 50px;
+    margin-top: 55px;
 }

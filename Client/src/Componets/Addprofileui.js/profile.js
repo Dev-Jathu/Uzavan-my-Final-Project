@@ -797,7 +797,7 @@ function Profile() {
         alert("Your service is added successfully. Waiting for verification process!");
         console.log(result);
         setUserId("");
-        setName("");
+        // setName("");
         setAddress("");
         setPhoneNumber("");
         setVehicleType("");

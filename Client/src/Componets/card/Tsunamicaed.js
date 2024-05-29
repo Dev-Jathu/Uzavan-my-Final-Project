@@ -251,7 +251,7 @@ function TsunamiCard({ selectedDistrict }) {
                   <Link
                     to={`/hirepage/${user._id}`}
                     className="btn btn-primary"
-                    id="buttoncardtractor1"
+                    id="buttoncardtractor2"
                   >
                     Hire
                   </Link>

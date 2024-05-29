@@ -7,6 +7,7 @@ const bookingController = require("../controller/BookingControl");
 
 router.post('/BookMachine', bookingController.createBooking);
 router.get('/Bookingview', bookingController.getBooking);
+router.get('/:id/owner', bookingController.getOwnerName);
 
 
 module.exports = router;

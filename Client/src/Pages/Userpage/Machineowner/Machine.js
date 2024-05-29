@@ -195,12 +195,12 @@ import Logo from '../../../Assets/uzavan.png';
 
 function Machine() {
   const [users, setUsers] = useState([]);
-  const [machinery, setMachinery] = useState([]);
-  const [Farmer, setFarmer] = useState([]);
-  const [username, setUsername] = useState(""); // State to hold username
   const [currentPage, setCurrentPage] = useState(1);
   const [itemsPerPage, setItemsPerPage] = useState(6);
-  const navigate = useNavigate(); // Hook for navigation
+  const [username, setUsername] = useState("");
+  const [userid, setUserid] = useState("");
+
+  const navigate = useNavigate();
 
   // Function to handle logout
   const handleLogout = () => {
@@ -236,11 +236,7 @@ function Machine() {
     ));
   };
 
-  const [product, setProduct] = useState({
-    name: 'Uzhavan',
-    price: 100,
-    productBy: 'uki',
-  });
+
 
   useEffect(() => {
     const token = localStorage.getItem('token');
@@ -251,40 +247,31 @@ function Machine() {
       try {
         const decodedToken = jwtDecode(token);
         setUsername(decodedToken.Name); // Set the username from the token
-        console.log('User Email:', decodedToken.Email);
-        console.log('User role:', decodedToken.role);
-        console.log('User Name:', decodedToken.Name);
-        console.log('User machine id:', decodedToken.id);
+        setUserid(decodedToken.id);
+        fetchUsers(decodedToken.Name, token);
       } catch (error) {
         console.error('Error decoding token:', error);
       }
     }
   }, [navigate]);
 
-  const makePayment = (token) => {
-    const body = {
-      token,
-      product,
-    };
-    const headers = {
-      'Content-Type': 'application/json',
-      Authorization: `Bearer ${localStorage.getItem('token')}`,
-    };
-
-    return fetch('http://localhost:3000/payment', {
-      method: 'POST',
-      headers,
-      body: JSON.stringify(body),
-    })
-      .then((response) => {
-        console.log('Response:', response);
-        const { status } = response;
-        console.log('Status:', status);
-        if (status === 200) {
-          navigate('/Addprofile'); // Navigate to Addprofile if the payment is successful
-        }
+  const fetchUsers = (ownerName, token) => {
+    axios
+      .get("http://localhost:3003/Booking/Bookingview", {
+        headers: { Authorization: `Bearer ${token}` },
       })
-      .catch((error) => console.log(error));
+      .then((response) => {
+        const filteredUsers = response.data.filter(
+          (user) => user.OwnerName === ownerName
+        );
+        setUsers(filteredUsers);
+      })
+      .catch((error) => {
+        console.error("Failed to fetch users:", error);
+        if (error.response && error.response.status === 401) {
+          navigate("/signin");
+        }
+      });
   };
 
   return (
@@ -301,7 +288,7 @@ function Machine() {
           </div>
           <div className="Navlings">
             <div className="navname">
-              <p className="boss">Welcome Back!  {username}</p>
+              <p className="boss">Welcome Back! {username}</p>
             </div>
           </div>
         </div>
@@ -315,20 +302,22 @@ function Machine() {
                   <th>Address</th>
                   <th>District</th>
                   <th>Acre Count</th>
-                  <th>Verifycation</th>
+                  <th>Verification</th>
                 </tr>
               </thead>
               <tbody>
-                <td>kjhbekfb</td>
-                <td>sinnathampanai</td>
-                <td>vavuniya</td>
-                <td>2 Acre</td>
-                <td className="verifycationconfirm">
-                  <button className="Confirm">Confirm</button>
-                  <button className="Confirm" id="cancel">
-                    Cancel
-                  </button>
-                </td>
+                {currentItems.map((user) => (
+                  <tr key={user._id}>
+                    <td>{user.Name}</td>
+                    <td>{user.Address}</td>
+                    <td>{user.District}</td>
+                    <td>{user.AcreCount}</td>
+                    <td className="verifycationconfirm">
+                      <button className="Confirm">Confirm</button>
+                      <button className="Confirm" id="cancel">Cancel</button>
+                    </td>
+                  </tr>
+                ))}
               </tbody>
             </table>
             <div className="pagination">{renderPageNumbers()}</div>
@@ -363,9 +352,9 @@ function Machine() {
             <button className="dash">Order</button>
           </Link>
           <br />
-          <Link to="/Machineservicehome">
+          {/* <Link to="/Machineservicehome">
             <button className="dash">Home</button>
-          </Link>
+          </Link> */}
           <br/>
           {/* Logout button with onClick event */}
           <button className="dash" onClick={handleLogout}>Logout</button>
