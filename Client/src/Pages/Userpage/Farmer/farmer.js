@@ -5,6 +5,8 @@ import Logo from "../../../Assets/uzavan.png";
 import pic from "../../../Assets/final.jpg";
 import pic1 from "../../../Assets/new3.jpg";
 import pic2 from "../../../Assets/new1.jpg";
+import {jwtDecode} from 'jwt-decode';
+
 // import { HashLink as Link } from "react-router-hash-link";
 import React, { useState, useEffect } from "react";
 import { Link, useNavigate } from "react-router-dom";
@@ -18,6 +20,8 @@ function Farmer() {
   const [Farmer, setFarmer] = useState([]);
   const [currentPage, setCurrentPage] = useState(1);
   const [itemsPerPage, setItemsPerPage] = useState(6);
+  const [username, setUsername] = useState(""); // State to hold username
+
   const navigate = useNavigate(); // Hook for navigation
 
   // Function to handle logout
@@ -53,6 +57,23 @@ function Farmer() {
       </button>
     ));
   };
+
+
+  useEffect(() => {
+    const token = localStorage.getItem('token');
+    if (!token) {
+      navigate('/signin'); // Redirect to login if token is not present
+    } else {
+      // Decode the token to get user information
+      try {
+        const decodedToken = jwtDecode(token);
+        setUsername(decodedToken.Name); // Set the username from the token
+        console.log('User Email:', decodedToken.Email);
+      } catch (error) {
+        console.error('Error decoding token:', error);
+      }
+    }
+  }, [navigate]);
   return (
     <div id="alighnforadmin" className="machinealigh">
       <div className="main11">
@@ -67,7 +88,7 @@ function Farmer() {
           </div>
           <div className="Navlings">
             <div className="navname">
-              <p className="boss">Welcome Back! </p>
+              <p className="boss">Welcome Back! {username} </p>
             </div>
           </div>
         </div>
@@ -105,16 +126,11 @@ function Farmer() {
             Uzhavan <br />
             <span5>The Connector</span5>
           </p>
-          <Link to="#">
-            <button className="dash">Add Profile</button>
+         
+          <Link to="/">
+            <button className="dash">Home</button>
           </Link>
-          <Link to="#">
-            <button className="dash">Service</button>
-          </Link>
-          <br />
-          <Link to="#">
-            <button className="dash">Order</button>
-          </Link>
+        
           <br />
           {/* Logout button with onClick event */}
           <button className="dash" onClick={handleLogout}>Logout</button>

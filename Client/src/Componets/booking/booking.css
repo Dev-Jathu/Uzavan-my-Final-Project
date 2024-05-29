@@ -1,6 +1,11 @@
-
+:root{
+    --backgroundcolor:#f3f4f6;
+    --Buttons--backgroundcolor:#15803d;
+    --Navbar--backgroundcolor:#222933;
+}
 .booking-form {
     max-width: 400px;
+    height: 545px;
     margin: 50px auto;
     padding: 20px;
     background-color: #fff;
@@ -15,19 +20,25 @@
     border: 1px solid #ccc;
     border-radius: 4px;
     box-sizing: border-box;
+    margin-top: 15px;
 }
 
 #submitBtn {
     width: 100%;
-    background-color: #007bff;
+    background-color:var(--Buttons--backgroundcolor);
     border: none;
     color: #fff;
     padding: 10px;
     margin: 10px 0;
     border-radius: 4px;
     cursor: pointer;
+    margin-top: -150px;
+}
+.submitbtn{
+    margin-top: -50px;
 }
 
 #submitBtn:hover {
-    background-color: #0056b3;
+    background-color: #000000;
+    color: white;
 }

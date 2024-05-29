@@ -26,6 +26,9 @@ body{
   border-radius: 5px;
   margin-left: -50px;
 }
+#logout{
+  margin-left: -620px;
+}
 .button2{
   background-color: white;
   width: 40px;
@@ -154,7 +157,7 @@ body{
       padding: 10px 20px;
       display: flex;
       justify-content: space-between;
-      align-items: center;
+      /* align-items: center; */
       background-color: #1f2937;
       
   
@@ -229,4 +232,10 @@ body{
   padding-left: 20px;
  }
     
+  }
+
+  #house{
+    color: white;
+    margin-left: 670px;
+    padding-left: 50px;
   }

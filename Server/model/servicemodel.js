@@ -3,39 +3,40 @@ const mongoose = require("mongoose");
 const schema = new mongoose.Schema(
   {
     // MachineryId: {
-    //   type: String,
-    //   required: true, // Corrected 'require' to 'required' and set it to true
+    //   type: mongoose.Types.ObjectId,
+    //   ref: 'Machine_Owner', // Assuming it references the Machine_Owner model
+    //   required: true,
     // },
     Name: {
       type: String,
-      required: true, // Assuming Name should be required
+      required: true,
     },
     Address: {
       type: String,
-      required: true, // Assuming Address should be required
+      required: true,
     },
     PhoneNumber: {
-      type: Number,
+      type: String, // Changed to String to accommodate non-numeric characters
       unique: true,
-      required: true, // Assuming PhoneNumber should be required
+      required: true,
     },
     vehicleType: {
       type: String,
       enum: ["Tractor", "paddyCropper", "TsunamiMachine"],
-      required: true, // Assuming vehicleType should be required
+      required: true,
     },
     District: {
       type: String,
       enum: ["Vavuniya", "Mullaitivu", "Kilinochchi", "Jaffna", "Mannar"],
-      required: true, // Assuming District should be required
+      required: true,
     },
     Rate: {
       type: String,
-      required: true, // Assuming Rate should be required
+      required: true,
     },
     TelYourService: {
       type: String,
-      required: true, // Assuming TelYourService should be required
+      required: true,
     },
     ImageURL: {
       type: String,

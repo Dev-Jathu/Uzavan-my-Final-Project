@@ -1,11 +1,13 @@
 const express = require("express");
 const router = express.Router();
-const BookingControl = require("../controller/BookingControl");
+const bookingController = require("../controller/BookingControl");
 
 //routes using controller function
 
-router.post("/BookMachine", BookingControl.createBooking);
-router.get("/Book/view", BookingControl.getBooking);
+
+router.post('/BookMachine', bookingController.createBooking);
+router.get('/Bookingview', bookingController.getBooking);
+router.get('/:id/owner', bookingController.getOwnerName);
 
 
 module.exports = router;

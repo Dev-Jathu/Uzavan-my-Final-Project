@@ -365,7 +365,7 @@ function Card({ selectedDistrict }) {
                   <Link
                     to={`/hirepage/${user._id}`}
                     className="btn btn-primary"
-                    id="buttoncardtractor1"
+                    id="buttoncardtractor2"
                     onClick={() => handleHireClick(user._id)}
                   >
                     Hire

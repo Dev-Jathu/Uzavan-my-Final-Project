@@ -38,6 +38,7 @@
 }
 #cardtext{
     text-align: left;
+    height: 70px;
 }
 #cardtitle{
     text-align: left;
@@ -47,6 +48,12 @@
     background-color: var(--Buttons--backgroundcolor);
     width: 150px;
     margin-left: 5px;
+}
+#cloudedit{
+    /* width: 300px; */
+    /* height: 250px; */
+    /* margin-left: 10px; */
+    border-radius: 10px;
 }
 
 @media screen and (max-width: 850px) {
@@ -171,5 +178,8 @@
         height: 200vh;
     }
 
+}
+#paramachinecard{
+    height: 100px;
 }
   

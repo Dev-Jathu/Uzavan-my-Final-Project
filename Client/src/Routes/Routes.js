@@ -21,6 +21,11 @@ import Payment from '../Componets/payment/paymentFront'
 import Booking from '../Componets/booking/booking'
 import Farmerpage from "../Pages/Userpage/Farmer/farmer";
 import LinkAddProfile from '../Pages/Userpage/Machineowner/linkaddprofile/linkaddprofile';
+import Farmerbooking from "../Pages/Userpage/Farmer/Farmerbooking";
+import ServiveMachine from "../Pages/Userpage/Machineowner/serviceMachine/servicemachine";
+import Order from "../Pages/Userpage/Machineowner/serviceMachine/order";
+import MachineServiceHome from "../Pages/Service/machineservice";
+
 export default function RoutesTable() {
     return (
         <div className="routesTable">
@@ -46,8 +51,12 @@ export default function RoutesTable() {
                 <Route path='/Viewrofile' element={<ProfileView/>}/>
                 <Route path='/hirepage/:id' element={<Tracctorhire/>}/>
                 <Route path='/payments' element={<Payment/>}/>
-                <Route path='/Booking' element={<Booking/>}/>
+                <Route path='/Booking/:id' element={<Booking/>}/>
                 <Route path='/LinkAddProfile' element={<LinkAddProfile/>}/>
+                <Route path='/Farmerbooking' element={<Farmerbooking/>}/>
+                <Route path='/MachineService' element={<ServiveMachine/>}/>
+                <Route path='/MachineOrder' element={<Order/>}/>
+                <Route path='/Machineservicehome' element={<MachineServiceHome/>}/>
 
 
 
