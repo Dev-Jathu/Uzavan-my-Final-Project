@@ -138,9 +138,9 @@ function LinkAddProfile() {
             <button className="dash">Order</button>
           </Link>
           <br />
-          <Link to="/Machineservicehome">
+          {/* <Link to="/Machineservicehome">
             <button className="dash">Home</button>
-          </Link>
+          </Link> */}
           <br/>
           {/* Logout button with onClick event */}
           <button className="dash" onClick={handleLogout}>Logout</button>

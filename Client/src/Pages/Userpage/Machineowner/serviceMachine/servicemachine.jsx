@@ -700,11 +700,11 @@ function ServiveMachine() {
                           id="cloudedit"
                         />
                         <div className="card-body">
-                          <h5 className="card-title" id="cardtitletractor" style={{height:'60px'}}>
+                          <h5 className="card-title" id="cardtitletractor" style={{height:'30px'}}>
                             Name : {user.Name}
                           </h5>
                           <div className="card-text" id="cardtexttractor1">
-                            <p className="Addresscard">Address&nbsp;&nbsp;&nbsp;&nbsp; :&nbsp;&nbsp; {user.Address}</p>
+                            {/* <p className="Addresscard">Address&nbsp;&nbsp;&nbsp;&nbsp; :&nbsp;&nbsp; {user.Address}</p> */}
                             <p className="districtCard">District&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;:&nbsp;&nbsp; {user.District}</p>
                             <p className="districtCard">Type&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;:&nbsp;&nbsp; {user.vehicleType}</p>
                             <p className="districtCard" > Rate &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;:&nbsp;&nbsp;{user.Rate}</p>
@@ -745,9 +745,9 @@ function ServiveMachine() {
             <button className="dash">Order</button>
           </Link>
           <br />
-          <Link to="/Machineservicehome">
+          {/* <Link to="/Machineservicehome">
             <button className="dash">Home</button>
-          </Link>
+          </Link> */}
           <br />
           <button className="dash" onClick={handleLogout}>
             Logout

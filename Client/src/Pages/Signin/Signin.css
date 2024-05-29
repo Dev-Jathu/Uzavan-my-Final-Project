@@ -19,15 +19,22 @@
 
 }
 .logoimg{
-    height: 80px;
+    height: 120px;
     margin-left: 50px;
+}
+#logoimage{
+    height: 100px;
+    width: 100px;
+}
+.logoname{
+    margin-top: 10px;
 }
 .flexlogo{
     display: flex;
 }
 .logonameh3{
     font-size: 38px;
-    margin-top: 12px;
+    margin-top: 32px;
 }
 .email{
     margin-left: -270px;

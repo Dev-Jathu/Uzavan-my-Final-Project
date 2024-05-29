@@ -797,7 +797,7 @@ function Profile() {
         alert("Your service is added successfully. Waiting for verification process!");
         console.log(result);
         setUserId("");
-        setName("");
+        // setName("");
         setAddress("");
         setPhoneNumber("");
         setVehicleType("");
@@ -936,7 +936,7 @@ function Profile() {
             {/* Other input fields */}
             <div className="buttonprofile">
               <StripeCheckout
-                stripeKey="pk_test_51PILqiEp6JPeXInZx8QfmFl1DToJ5gg5bAXgIH6JMHKpkPeS7RaxnWq3rGGzLdyz35RtgFaO1XlOsTsJtPAC91Oc00KBUr8fEI"
+                stripeKey="pk_test_51PILqiEp6JPeXInZqhhfIvvARFG3Owf3rj0Yfqhr70quScmmN5ZwA32vhL2cKISNhN3HJP1nSmFYFKRgaZ8Y7J4u00UNIaRsNC"
                 token={makePayment}
                 name="Buy Uzhavan"
                 amount={product.price * 100}
