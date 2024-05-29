@@ -4,40 +4,7 @@ const ServiceModel = require("../model/servicemodel");
 // const ServiceModel = require('./path/to/ServiceModel'); // Make sure to import your ServiceModel
 const { upload } = require('../middleware/multer');
 
-// Register for machinery_owners service list
-// exports.createService = (req, res) => {
-//   const {
-//     Name,
-//     Address,
-//     vehicleType,
-//     isVerified,
-//     TelYourService,
-//     District,
-//     PhoneNumber,
-//     Rate,
-//   } = req.body; // Destructure parameters from request body
-//   try{
-//     let ImageURL =null;
-//     if(req.file){
-//       ImageURL =req.file.path;
-//     }
 
-//   }
-//   ServiceModel.create({
-//     Name,
-//     Address,
-//     vehicleType,
-//     isVerified,
-//     TelYourService,
-//     District,
-//     PhoneNumber,
-//     ImageURL,
-//     Rate,
-//     ImageURL
-//   }) // Pass an object directly
-//     .then((Service) => res.json(Service))
-//     .catch((err) => res.json(err));
-// };
 
 exports.createService = async (req, res) => {
   upload(req, res, async (err) => {
@@ -80,33 +47,6 @@ exports.createService = async (req, res) => {
       }
   });
 };
-
-
-
-
-// Get details for service list
-// exports.getService = async (req, res) => {
-//   try {
-//     const services = await ServiceModel.find();
-//     if (services.length > 0) {
-//         // Map each service to include the Cloudinary image URL
-//         const servicesWithImages = services.map(service => {
-//             return {
-//                 ...service._doc, // Include all existing service fields
-//                 ImageURL: service.ImageURL // Assuming ImageURL stores the Cloudinary URL
-//             };
-//         });
-//         res.status(200).json(servicesWithImages);
-//     } else {
-//         res.status(404).send('No services found.');
-//     }
-// } catch (error) {
-//     console.error(error);
-//     res.status(500).send('An error occurred while retrieving the services.');
-// }
-
-// };
-// Get details for service list with optional MachineryId filter
 exports.getService = async (req, res) => {
   const { MachineryId } = req.query;
   try {
