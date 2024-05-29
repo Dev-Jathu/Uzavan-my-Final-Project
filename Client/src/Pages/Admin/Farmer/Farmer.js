@@ -18,7 +18,7 @@ function FarmerDetails () {
   }, []);
   //get details
   const fetchUsers = () => {
-    fetch("http://localhost:3003/farmer/farmerView")
+    fetch("https://uzavan-my-final-project-1.onrender.com/farmer/farmerView")
       .then((response) => response.json())
       .then((data) => setUsers(data))
       .catch((error) => console.error("Failed to fetch users:", error));

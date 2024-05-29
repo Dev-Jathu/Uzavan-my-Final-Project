@@ -55,7 +55,7 @@ function Admin() {
 
   const fetchUsers = (token) => {
     axios
-      .get("http://localhost:3003/profile/serviceView", {
+      .get("https://uzavan-my-final-project-1.onrender.com/profile/serviceView", {
         headers: { Authorization: `Bearer ${token}` },
       })
       .then((response) => setUsers(response.data))
@@ -73,7 +73,7 @@ function Admin() {
     const newStatus = !currentStatus;
     axios
       .patch(
-        `http://localhost:3003/profile/verified/${id}`,
+        `https://uzavan-my-final-project-1.onrender.com/profile/verified/${id}`,
         { isVerified: newStatus },
         { headers: { Authorization: `Bearer ${token}` } }
       )
@@ -96,7 +96,7 @@ function Admin() {
 
     if (window.confirm(`Are you sure you want to delete this user?`)) {
       axios
-        .delete(`http://localhost:3003/profile/delete/${id}`, {
+        .delete(`https://uzavan-my-final-project-1.onrender.com/profile/delete/${id}`, {
           headers: { Authorization: `Bearer ${token}` },
         })
         .then((response) => {
@@ -140,7 +140,7 @@ function Admin() {
 
     //machinery details
     const fetchMachine = () => {
-      fetch("http://localhost:3003/machinery/MachineView")
+      fetch("https://uzavan-my-final-project-1.onrender.com/machinery/MachineView")
         .then((response) => response.json())
         .then((data) => setMachinery(data))
         .catch((error) => console.error("Failed to fetch machinery:", error));
@@ -149,7 +149,7 @@ function Admin() {
     const machineryUsersCount = machinery.length;
  //Farmer details
  const fetchFarmer = () => {
-  fetch("http://localhost:3003/farmer/farmerView")
+  fetch("https://uzavan-my-final-project-1.onrender.com/farmer/farmerView")
     .then((response) => response.json())
     .then((data) => setFarmer(data))
     .catch((error) => console.error("Failed to fetch users:", error));

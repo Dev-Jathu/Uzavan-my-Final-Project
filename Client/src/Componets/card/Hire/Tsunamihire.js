@@ -13,7 +13,7 @@
 //     const fetchUser = async () => {
 //       try {
 //         const response = await fetch(
-//           `http://localhost:3003/profile/serviceView/${id}`
+//           `https://uzavan-my-final-project-1.onrender.com/profile/serviceView/${id}`
 //         );
 //         if (!response.ok) {
 //           throw new Error(`HTTP error! status: ${response.status}`);
@@ -111,7 +111,7 @@ function Hire() {
     const fetchUser = async () => {
       try {
         const response = await fetch(
-          `http://localhost:3003/profile/serviceView/${id}`
+          `https://uzavan-my-final-project-1.onrender.com/profile/serviceView/${id}`
         );
         if (!response.ok) {
           throw new Error(`HTTP error! status: ${response.status}`);

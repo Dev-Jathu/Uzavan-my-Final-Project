@@ -38,7 +38,7 @@ export default function Booking() {
           console.error("MachineryId is undefined");
           return;
         }
-        const response = await fetch(`http://localhost:3003/booking/${id}/owner`);
+        const response = await fetch(`https://uzavan-my-final-project-1.onrender.com/booking/${id}/owner`);
         if (!response.ok) {
           throw new Error("Failed to fetch owner name");
         }
@@ -67,7 +67,7 @@ export default function Booking() {
     };
 
     try {
-      const response = await fetch("http://localhost:3003/Booking/BookMachine", {
+      const response = await fetch("https://uzavan-my-final-project-1.onrender.com/Booking/BookMachine", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

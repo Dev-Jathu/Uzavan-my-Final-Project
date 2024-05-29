@@ -53,7 +53,7 @@ function Profile() {
 
     // Your fetch logic
 
-        fetch("http://localhost:3003/profile/createService", {
+        fetch("https://uzavan-my-final-project-1.onrender.com/profile/createService", {
       method: "POST",
       body: formData,
     })

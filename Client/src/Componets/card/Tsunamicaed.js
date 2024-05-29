@@ -14,7 +14,7 @@ function TsunamiCard({ selectedDistrict }) {
 
   const fetchUsers = async () => {
     try {
-      const response = await fetch("http://localhost:3003/profile/serviceView");
+      const response = await fetch("https://uzavan-my-final-project-1.onrender.com/profile/serviceView");
       if (!response.ok) {
         throw new Error(`HTTP error! status: ${response.status}`);
       }

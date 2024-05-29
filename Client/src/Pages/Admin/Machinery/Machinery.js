@@ -15,7 +15,7 @@ function MachineryDetails() {
   }, []);
   //get details
   const fetchUsers = () => {
-    fetch("http://localhost:3003/machinery/MachineView")
+    fetch("https://uzavan-my-final-project-1.onrender.com/machinery/MachineView")
       .then((response) => response.json())
       .then((data) => setUsers(data))
       .catch((error) => console.error("Failed to fetch users:", error));
