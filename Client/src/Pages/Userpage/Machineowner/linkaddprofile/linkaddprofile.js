@@ -89,7 +89,29 @@ function LinkAddProfile() {
         <div className="content" id="content">
           <div className="Notecontainer" id="notecontainer">
             <p className="verification" id="verification">Add your Service!</p>
-          
+            {/* <table className="tablemachine">
+              <thead>
+                <tr>
+                  <th>Name</th>
+                  <th>Address</th>
+                  <th>District</th>
+                  <th>Acre Count</th>
+                  <th>Verifycation</th>
+                </tr>
+              </thead>
+              <tbody>
+                <td>kjhbekfb</td>
+                <td>sinnathampanai</td>
+                <td>vavuniya</td>
+                <td>2 Acre</td>
+                <td className="verifycationconfirm">
+                  <button className="Confirm">Confirm</button>
+                  <button className="Confirm" id="cancel">
+                    Cancel
+                  </button>
+                </td>
+              </tbody>
+            </table> */}
             <div className="addserviceinmachinepage">
             <Addservice/>
 

@@ -5,7 +5,7 @@ import Button from "../../../Componets/Button/Button";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faEye, faEyeSlash } from "@fortawesome/free-solid-svg-icons";
 import { Link } from "react-router-dom";
-import Logo from '../../../Assets/uzavan.png';
+import Logo from '../../../Assets/uzavan.png'
 
 function Signup() {
   const [Name, setName] = useState("");
@@ -18,6 +18,7 @@ function Signup() {
   const [showPassword, setShowPassword] = useState(false);
 
   const validateForm = () => {
+    // Validation with immediate alert on error.
     if (!Name.trim()) {
       alert("Name is required");
       return false;
@@ -35,20 +36,17 @@ function Signup() {
       return false;
     }
     if (!Password) {
-      alert("Enter your Password");
-      return false;
+      alert("enter your Password");
     } else if (!/(?=.*[a-z])(?=.*[A-Z])(?=.*\d).{8,}/.test(Password)) {
-      alert("Enter a Valid Password (Using Capital_letter, number, @&%$#)");
-      return false;
+      alert("Enter a Valid Password (Using Capital_letter,number,@&%$#)");
     }
 
     if (!ConfirmPassword.trim() || Password.trim() !== ConfirmPassword.trim()) {
       alert("Passwords do not match");
       return false;
     }
-    return true;
+    return true; // No errors, form is valid
   };
-
   const handleSubmit = async (e) => {
     e.preventDefault();
 
@@ -58,7 +56,7 @@ function Signup() {
 
     const userdata = { Name, NIC, TelNo, Email, Password };
     try {
-      const response = await fetch("https://uzavan-my-final-project-1.onrender.com/farmer/register", {
+      const response = await fetch("uzavan.vercel.app/farmer/register", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -66,20 +64,23 @@ function Signup() {
         body: JSON.stringify(userdata),
       });
 
+
       if (!response.ok) {
         throw new Error(
           "Failed to register. Server responded with status: " + response.status
         );
       }
       const result = await response.json();
-      setName("");
-      setNIC("");
-      setTelNo("");
-      setEmail("");
-      setPassword("");
-      setConfirmPassword("");
+        setName("");
+        setNIC("");
+        setTelNo("");
+        setEmail("");
+        setPassword("");
+        setConfirmPassword("");
+
 
       console.log(result);
+
       alert("Registration successful!");
     } catch (error) {
       console.error("Failed to register", error);
@@ -89,51 +90,53 @@ function Signup() {
 
   return (
     <>
-      <div className="main">
-        <div className="container">
-          <div className="logo">
-            <div className="logoimg">
-              <img src={Logo} id="logoimage" alt="this is image"/>
-            </div>
-            <div className="logoname">
-              <h2>Uzhavan</h2>
-            </div>
+    <div className="main">
+      <div className="container">
+        <div className="logo">
+          <div className="logoimg">
+            <img src={Logo} id="logoimage" />
           </div>
-          <div className="Navlings">
-            <div className="navname">
-              <Link to="/">Home</Link>
-              <Link to="/about" smooth>
-                About
-              </Link>
-              <Link to="/service" smooth>
-                Service
-              </Link>
-              <Link to="/contact" smooth>
-                Contact
-              </Link>
-            </div>
-            <div className="navnamecopy">
-              <Link to="#carouselExampleAutoplaying"><i className="fa-solid fa-house" id="copylog"></i></Link>
-              <Link to="#Aboutid" smooth>
-                <i className="fa-solid fa-user-tag" id="copylog"></i>
-              </Link>
-              <Link to="#Serviceid" smooth>
-                <i className="fa-solid fa-briefcase" id="copylog"></i>
-              </Link>
-              <Link to="#Contactid" smooth>
-                <i className="fa-solid fa-address-book" id="copylog"></i>
-              </Link>
-            </div>
-            <div className="butres">
-              <Link to="/join">
-                <button className="button1" id="button10">
-                  Join
-                </button>
-              </Link>
-            </div>
+          <div className="logoname">
+            <h2>Uzhavan</h2>
+          </div>
+        </div>
+        <div className="Navlings">
+          <div className="navname">
+            <Link to="/">Home</Link>
+            <Link to="/about" smooth>
+              About
+            </Link>
+            <Link to="/service" smooth>
+              Service
+            </Link>
+            
+            <Link to="/contact" smooth>
+              Contact
+            </Link>
+          </div>
+          <div className="navnamecopy">
+            <Link to="#carouselExampleAutoplaying"><i class="fa-solid fa-house" id="copylog"></i></Link>
+            <Link to="#Aboutid" smooth>
+            <i class="fa-solid fa-user-tag" id="copylog"></i>
+            </Link>
+            <Link to="#Serviceid" smooth>
+            <i class="fa-solid fa-briefcase"id="copylog"></i>
+            </Link>
+            <Link to="#Contactid" smooth>
+            <i class="fa-solid fa-address-book"id="copylog"></i>
+            </Link>
+          </div>
+          <div className="butres">
+            <Link to="/join">
+              <button className="button1" id="button10">
+                Join
+              </button>
+            </Link>
+            
           </div>
         </div>
       </div>
+    </div>
       <div className="Signup">
         <div className="subsign">
           <div className="Signphot">
@@ -142,6 +145,7 @@ function Signup() {
           <div className="signform">
             <h5 className="signlogofarmer">Welcome to Farmers</h5>
             <span id="enterdet">Please enter your details.</span>
+
             <form onSubmit={handleSubmit}>
               <label className="Name">Full Name</label>
               <br />
@@ -153,6 +157,7 @@ function Signup() {
                 onChange={(e) => setName(e.target.value)}
                 required
               />
+              {/* {errors.name && <span className="error">{errors.name}</span>} */}
               <br />
 
               <label className="nic">NIC Number</label>
@@ -166,6 +171,7 @@ function Signup() {
                 required
                 maxLength={12}
               />
+              {/* {errors.nic && <span className="error">{errors.nic}</span>} */}
               <br />
 
               <label className="phone">Phone Number</label>
@@ -179,6 +185,8 @@ function Signup() {
                 required
                 maxLength={12}
               />
+
+              {/* {errors.telNo && <span className="error">{errors.telNo}</span>} */}
               <br />
 
               <label className="emaill">Email</label>
@@ -191,10 +199,19 @@ function Signup() {
                 onChange={(e) => setEmail(e.target.value)}
                 required
               />
+              {/* {errors.email && <span className="error">{errors.email}</span>} */}
               <br />
 
               <label className="passwordd">Password</label>
               <br />
+              {/* <input
+                type="password"
+                className="inputName"
+                placeholder="Create password"
+                value={Password}
+                onChange={(e) => setPassword(e.target.value)}
+                required
+              /> */}
               <input
                 type={showPassword ? "text" : "password"}
                 className="inputName"
@@ -205,12 +222,17 @@ function Signup() {
                 required
               />
               <button
-                type="button"
                 className="eye"
                 onClick={() => setShowPassword(!showPassword)}
               >
-                <FontAwesomeIcon icon={showPassword ? faEyeSlash : faEye} />
+                {/* <FontAwesomeIcon icon={showPassword ? faEyeSlash : faEye} /> */}
+                {/* <FontAwesomeIcon icon="fa-regular fa-eye"  /> */}
+                <i class="fa-regular fa-eye" id="eyeinside"></i>
               </button>
+
+              {/* {errors.password && (
+                <span className="error">{errors.password}</span>
+              )} */}
               <br />
 
               <label className="passworddd">Confirm Password</label>
@@ -223,6 +245,9 @@ function Signup() {
                 onChange={(e) => setConfirmPassword(e.target.value)}
                 required
               />
+              {/* {errors.confirmPassword && (
+                <span className="error">{errors.confirmPassword}</span>
+              )} */}
               <br />
               <br />
 
@@ -230,9 +255,9 @@ function Signup() {
             </form>
             <h6 className="signinling">
               Already have an account?
-              <Link to="/Signin" className="signinlink">
+              <a href="/Signin" className="signinlink">
                 Sign in!
-              </Link>
+              </a>
             </h6>
           </div>
         </div>

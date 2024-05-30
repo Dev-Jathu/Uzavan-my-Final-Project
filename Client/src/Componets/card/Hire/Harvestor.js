@@ -14,7 +14,7 @@
 //     const fetchUser = async () => {
 //       try {
 //         const response = await fetch(
-//           `https://uzavan-my-final-project-1.onrender.com/profile/serviceView/${id}`
+//           `uzavan.vercel.app/profile/serviceView/${id}`
 //         );
 //         if (!response.ok) {
 //           throw new Error(`HTTP error! status: ${response.status}`);
@@ -120,7 +120,7 @@
 //     const fetchUser = async () => {
 //       try {
 //         const response = await fetch(
-//           `https://uzavan-my-final-project-1.onrender.com/profile/serviceView/${id}`
+//           `uzavan.vercel.app/profile/serviceView/${id}`
 //         );
 //         if (!response.ok) {
 //           throw new Error(`HTTP error! status: ${response.status}`);
@@ -222,7 +222,7 @@ function HireHarvestor() {
   useEffect(() => {
     const fetchUser = async () => {
       try {
-        const response = await fetch(`https://uzavan-my-final-project-1.onrender.com/booking/${id}/owner`);
+        const response = await fetch(`uzavan.vercel.app/booking/${id}/owner`);
         if (!response.ok) {
           throw new Error(`HTTP error! status: ${response.status}`);
         }
@@ -305,7 +305,7 @@ export default HireHarvestor;
 //   useEffect(() => {
 //     const fetchUser = async () => {
 //       try {
-//         const response = await fetch(`https://uzavan-my-final-project-1.onrender.com/profile/serviceView/${id}`);
+//         const response = await fetch(`uzavan.vercel.app/profile/serviceView/${id}`);
 //         if (!response.ok) {
 //           throw new Error(`HTTP error! status: ${response.status}`);
 //         }

@@ -54,7 +54,7 @@ function Machineservice() {
           <div className="container">
             <div className="logo">
               <div className="logoimg">
-                <img src={Logo} id="logoimage" alt="this is image"/>
+                <img src={Logo} id="logoimage" />
               </div>
               <div className="logoname">
                 <h2>Uzhavan</h2>
@@ -96,7 +96,7 @@ function Machineservice() {
       </p>
       <div className="cards">
         <div class="card"  id="card">
-          <img src={pic} class="card-img-top" className='pic2'alt="this is image"/>
+          <img src={pic} class="card-img-top" className='pic2'alt="..." />
           <div class="card-body">
             <h5 class="card-title"id="cardtitle">Tractor</h5>
             <p class="card-text" id='cardtext'>
@@ -108,7 +108,7 @@ function Machineservice() {
           </div>
         </div>
         <div class="card" id="card">
-          <img src={pic1} class="card-img-top" alt="this is image" className="pic2"/>
+          <img src={pic1} class="card-img-top" alt="..."  className="pic2"/>
           <div class="card-body">
             <h5 class="card-title" id="cardtitle">paddy Harvestor</h5>
             <p class="card-text"id='cardtext' >
@@ -121,7 +121,7 @@ function Machineservice() {
           </div>
         </div>
         <div class="card" id="card">
-          <img src={pic2} class="card-img-top" alt="this is image"   id='pic2'className="pic2"/>
+          <img src={pic2} class="card-img-top" alt="..."   id='pic2'className="pic2"/>
           <div class="card-body">
             <h5 class="card-title" id="cardtitle" className="cardtitle">Tsunami machine</h5>
             <p class="card-text"id='cardtext'>

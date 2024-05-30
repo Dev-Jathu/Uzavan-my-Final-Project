@@ -1,4 +1,57 @@
+// import React, { useState, useEffect } from "react";
 
+// function Card() {
+//   const [users, setUsers] = useState([]);
+
+//   useEffect(() => {
+//     fetchUsers();
+//   }, []);
+//   //get details
+//   const fetchUsers = () => {
+//     fetch("uzavan.vercel.app/profile/serviceView")
+//       .then((response) => response.json())
+//       .then((data) => {
+//         const tractorUsers = data.filter(
+//           (user) => user.vehicleType === "paddyCropper"
+//         );
+//         setUsers(tractorUsers);
+//       })
+//       .catch((error) => console.error("Failed to fetch users:", error));
+//   };
+
+//   const filteredUsers =
+//     selectedDistrict === "All-District"
+//       ? users
+//       : users.filter((user) => user.District === selectedDistrict);
+
+//   return (
+//     <>
+//       {filteredUsers.map((user) => (
+//         <div className="card" key={user.id}>
+//           <img
+//             src="#"
+//             className="card-img-top track1"
+//             alt="Machine owner photo"
+//           />
+//           <div className="card-body">
+//             <h5 className="card-title" id="cardtitletractor">
+//               Name: {user.Name}
+//             </h5>
+//             <div className="card-text" id="cardtexttractor">
+//               <p className="Addresscard">Address: {user.Address}</p>
+//               <p className="districtCard">District: {user.District}</p>
+//             </div>
+//             <a href="#" className="btn btn-primary" id="buttoncardtractor1">
+//               Hire
+//             </a>
+//           </div>
+//         </div>
+//       ))}
+//     </>
+//   );
+// }
+
+// export default Card;
 
 
 import React, { useState, useEffect } from "react";
@@ -18,7 +71,7 @@ function Card({ selectedDistrict }) {
 
   const fetchUsers = async () => {
     try {
-      const response = await fetch("https://uzavan-my-final-project-1.onrender.com/profile/serviceView");
+      const response = await fetch("uzavan.vercel.app/profile/serviceView");
       if (!response.ok) {
         throw new Error(`HTTP error! status: ${response.status}`);
       }

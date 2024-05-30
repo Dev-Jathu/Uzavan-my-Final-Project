@@ -10,7 +10,7 @@ export default function Footer() {
         <div className="Footerlings">
           <div className="Footlogopara">
             <div className="footlogo">
-              <img src={Logo} alt="this is image"/>
+              <img src={Logo} />
               <p className="footlname">Uzhavan</p>
             </div>
             <div className="footsubgrid">

@@ -24,7 +24,7 @@ export default function Ababoutfinalout() {
             <div className="subdiv">
               <div className="logosabout">
                 <div className="photoabout">
-                  <img src={Servicelogo2} className="picabout" id="resicon" alt="this is image"/>
+                  <img src={Servicelogo2} className="picabout" id="resicon" />
                 </div>
                 <div className="gridparaabout">
                   <p className="shortpara">Best Service</p>
@@ -41,7 +41,7 @@ export default function Ababoutfinalout() {
           <div className="subdivdiv">
             <div className="logosabout1">
               <div className="photoabout1">
-                <img src={Servicelogo3} className="picabout1" id="resicon" alt="this is image"/>
+                <img src={Servicelogo3} className="picabout1" id="resicon" />
               </div>
               <div className="gridparaabout">
                 <p className="shortpara1">Verified Profile</p>
@@ -57,7 +57,7 @@ export default function Ababoutfinalout() {
           <div className="subdives">
             <div className="logosabout2">
               <div className="photoabout2">
-                <img src={Servicelogo1} className="picabout2" id="resicon" alt="this is image"/>
+                <img src={Servicelogo1} className="picabout2" id="resicon"/>
               </div>
               <div className="gridparaabout">
                 <p className="shortpara2">Review & Rating</p>
@@ -73,7 +73,7 @@ export default function Ababoutfinalout() {
           <div className="subdives3">
             <div className="logosabout3">
               <div className="photoabout3">
-                <img src={Servicelogo} className="picabout3" id="resicon" alt="this is image"/>
+                <img src={Servicelogo} className="picabout3" id="resicon"/>
               </div>
               <div className="gridparaabout">
                 <p className="shortpara3">Customer Service</p>
@@ -89,7 +89,7 @@ export default function Ababoutfinalout() {
           <div className="subdives4">
             <div className="logosabout4">
               <div className="photoabout4">
-                <img src={Servicelogo4} className="picabout4" id="resicon"alt="this is image"/>
+                <img src={Servicelogo4} className="picabout4" id="resicon"/>
               </div>
               <div className="gridparaabout">
                 <p className="shortpara4">Message</p>
@@ -108,13 +108,13 @@ export default function Ababoutfinalout() {
         <div className="aboutgrid">
           <div className="photo_about">
             <div className="pic1about">
-              <img src={Logoabout1} className="pic1edit" alt="this is image"/>
+              <img src={Logoabout1} className="pic1edit" />
             </div>
             <div className="pic2about">
-              <img src={Logoabout2} className="pic1edit1"alt="this is image" />
+              <img src={Logoabout2} className="pic1edit1" />
             </div>
             <div className="pic3about">
-              <img src={Logoabout3} className="pic1edit2" alt="this is image"/>
+              <img src={Logoabout3} className="pic1edit2" />
             </div>
           </div>
           <div className="paraaboutpage">
