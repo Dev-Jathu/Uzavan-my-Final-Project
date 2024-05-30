@@ -32,7 +32,7 @@ function Admin() {
       navigate("/signin");
     } else {
       fetchUsers(token);
-      const newSocket = new WebSocket("ws://https://uzhavan-server.onrender.com");
+      const newSocket = new WebSocket("ws://localhost:3001");
 
       newSocket.onmessage = (event) => {
         const data = JSON.parse(event.data);
