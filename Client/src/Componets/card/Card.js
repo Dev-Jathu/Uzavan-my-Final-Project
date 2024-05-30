@@ -1,5 +1,4 @@
 
-
 import React, { useState, useEffect } from "react";
 import "./Card.css";
 import { Link } from "react-router-dom";
@@ -104,7 +103,7 @@ function Card({ selectedDistrict }) {
                     id="buttoncardtractor2"
                     onClick={() => handleHireClick(user._id)}
                   >
-                    Hire
+                    View
                   </Link>
                 </div>
               </div>

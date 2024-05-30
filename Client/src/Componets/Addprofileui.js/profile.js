@@ -101,7 +101,7 @@ function Profile() {
       "Content-Type": "application/json",
     };
 
-    return fetch("https://uzhavan-server.onrender.com/payment", {
+    return fetch("https:///payment", {
       method: "POST",
       headers,
       body: JSON.stringify(body),
