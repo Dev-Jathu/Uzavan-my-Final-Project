@@ -57,7 +57,7 @@ function MachineryDetails() {
         <div className="container">
           <div className="logo" id="logoadmin">
             <div className="logoimg">
-              <img src={Logo} id="logoimage" />
+              <img src={Logo} id="logoimage" alt="this is image"/>
             </div>
             <div className="logoname">
               <h2>Uzhavan</h2>
@@ -68,7 +68,7 @@ function MachineryDetails() {
               <p className="boss">Welcome Back! mr Jathusan</p>
             </div>
             <div>
-              <img src={Boss} className="bossimg" />
+              <img src={Boss} className="bossimg" alt="this is image" />
             </div>
           </div>
         </div>
@@ -137,7 +137,7 @@ function MachineryDetails() {
           <Link to="/MachineryDetails">
             <button className="dash">Machine Owner</button>
           </Link>
-          <img src={Logo} className="footlogoboss" />
+          <img src={Logo} className="footlogoboss" alt="this is image"/>
         </div>
       </div>
     </div>

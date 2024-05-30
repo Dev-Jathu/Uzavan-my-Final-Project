@@ -119,7 +119,7 @@ function Signupmachine() {
       <div className="container">
         <div className="logo">
           <div className="logoimg">
-            <img src={Logo} id="logoimage" />
+            <img src={Logo} id="logoimage" alt="this is image"/>
           </div>
           <div className="logoname">
             <h2>Uzhavan</h2>
@@ -166,7 +166,7 @@ function Signupmachine() {
     <div className="Signupmachin">
       <div className="subsign">
         <div className="Signphot">
-          <img src={Photo} className="signpicmachin" smooth />
+          <img src={Photo} className="signpicmachin" smooth alt="this is image" />
         </div>
         <div className="signformmachin">
           <h5 className="signlogo">Welcome to Macinery's owner</h5>
@@ -273,7 +273,7 @@ function Signupmachine() {
         </div>
       </div>
       <div className="logonamemachin">
-        <img src={Logoname} className="mchinlogo" />
+        <img src={Logoname} className="mchinlogo" alt="this is image"/>
       </div>
     </div>
     </>

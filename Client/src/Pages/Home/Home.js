@@ -37,7 +37,7 @@ function Home() {
             <img
               src={Backgroundpgoto2}
               class="d-block w-100"
-              alt="..."
+              alt="this is image"
               id="bgphot"
             />
           </div>

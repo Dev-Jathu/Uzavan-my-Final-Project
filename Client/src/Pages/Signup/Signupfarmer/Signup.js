@@ -93,7 +93,7 @@ function Signup() {
         <div className="container">
           <div className="logo">
             <div className="logoimg">
-              <img src={Logo} id="logoimage" />
+              <img src={Logo} id="logoimage" alt="this is image"/>
             </div>
             <div className="logoname">
               <h2>Uzhavan</h2>

@@ -12,7 +12,7 @@ function footerforcard() {
           <div className="Footerlings">
             <div className="Footlogopara">
               <div className="footlogo">
-                <img src={Logo} />
+                <img src={Logo} alt="this is image"/>
                 <p className="footlname">Uzhavan</p>
               </div>
               <div className="footsubgrid">

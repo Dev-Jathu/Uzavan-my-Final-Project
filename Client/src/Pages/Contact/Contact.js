@@ -42,7 +42,7 @@ export default function Contact() {
                 For our Best Team. The Machinery's owner Connected To Our
                 farmers. If you have eny Doubt You can Contact me!Thank you.{" "}
               </p>
-              <img src={ContactPic} className="piclastcontact" />
+              <img src={ContactPic} className="piclastcontact" alt="this is image"/>
             </div>
           </div>
           <div className="massagepanel">
