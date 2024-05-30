@@ -17,7 +17,7 @@ app.use(express.json());
 app.use(cookieParser());
 app.use(
   cors({
-    origin: ["uzhavan.vercel.app"],
+    origin: ["https://uzhavan-dev-jathus-projects.vercel.app"],
     methods: ["GET", "POST", "PATCH", "DELETE", "PUT"],
     credentials: true,
   })
