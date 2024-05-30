@@ -4,6 +4,7 @@ import { useParams, useNavigate } from "react-router-dom";
 import "./Tractorhire.css";
 import Navbarcard from "../navbarforcard/navbarforcard";
 
+
 function HireHarvestor() {
   const { id } = useParams();
   const [user, setUser] = useState(null);
@@ -69,7 +70,6 @@ function HireHarvestor() {
                 <small className="text-body-secondary" id="hirethanks">I will give you a Great service. Thank You.</small>
               </p>
               <button id="hirecardbutton" onClick={handleHireButtonClick}>Hire</button>
-              <img src={logo} id="hirelogo" alt="logo" />
             </div>
           </div>
         </div>
