@@ -257,7 +257,7 @@ function Machine() {
 
   const fetchUsers = (ownerName, token) => {
     axios
-      .get("uzavan.vercel.app/Booking/Bookingview", {
+      .get("https://uzhavan-server.onrender.com/Booking/Bookingview", {
         headers: { Authorization: `Bearer ${token}` },
       })
       .then((response) => {

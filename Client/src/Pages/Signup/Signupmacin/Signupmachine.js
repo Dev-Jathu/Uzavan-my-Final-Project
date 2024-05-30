@@ -80,7 +80,7 @@ function Signupmachine() {
     };
     try {
       const response = await fetch(
-        "uzavan.vercel.app/machinery/registerMachine",
+        "https://uzhavan-server.onrender.com/machinery/registerMachine",
         {
           method: "POST",
           headers: {
