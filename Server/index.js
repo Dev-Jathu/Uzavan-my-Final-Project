@@ -17,7 +17,7 @@ app.use(express.json());
 app.use(cookieParser());
 app.use(
   cors({
-    origin: ["http://localhost:3000"],
+    origin: ["https://uzhavan-0mr6.onrender.com"],
     methods: ["GET", "POST", "PATCH", "DELETE", "PUT"],
     credentials: true,
   })
