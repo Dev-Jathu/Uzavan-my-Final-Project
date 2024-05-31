@@ -1,133 +1,5 @@
-// import React from 'react'
-// import { Link }from 'react-router-dom'
-// import Logo from "../../../Assets/uzavan.png";
-// import Boss from "../../../Assets/boss.png";
-// import Button from '../../../Componets/Button/Button'
-// import { useState, useEffect } from "react";
 
-// function MachineryDetails() {
-
-//   const [users, setUsers] = useState([]);
-//   const [currentPage, setCurrentPage] = useState(1);
-//   const [itemsPerPage, setItemsPerPage] = useState(8);
-//   useEffect(() => {
-//     fetchUsers();
-//   }, []);
-
-//   const fetchUsers = () => {
-//     fetch("http://localhost:3003/machinery/MachineView")
-//       .then((response) => response.json())
-//       .then((data) => setUsers(data))
-//       .catch((error) => console.error("Failed to fetch users:", error));
-//   };
-//    //pagination
-//    const indexOfLastItem = currentPage * itemsPerPage;
-//    const indexOfFirstItem = indexOfLastItem - itemsPerPage;
-//    const currentItems = users.slice(indexOfFirstItem, indexOfLastItem);
-//    const totalPages = Math.ceil(users.length / itemsPerPage);
-
-//    const handlePageChange = (pageNumber) => {
-//      setCurrentPage(pageNumber);
-//    };
-
-//    const renderPageNumbers = () => {
-//      const pageNumbers = [];
-//      for (let i = 1; i <= totalPages; i++) {
-//        pageNumbers.push(i);
-//      }
-//      return pageNumbers.map((number) => (
-//        <button
-//          className="pagenumber"
-//          key={number}
-//          onClick={() => handlePageChange(number)}
-//          disabled={currentPage === number}
-//        >
-//          {number}
-//        </button>
-//      ));
-//    };
-
-//   return (
-//     <div>
-//     <div className="main11">
-//       <div className="container">
-//         <div className="logo" id='logoadmin'>
-//           <div className="logoimg">
-//             <img src={Logo} id="logoimage" />
-//           </div>
-//           <div className="logoname">
-//             <h2>Uzhavan</h2>
-//           </div>
-//         </div>
-//         <div className="Navlings">
-//           <div className="navname">
-//             <p className="boss">Welcome Back! mr Jathusan</p>
-
-//           </div>
-//           <div>
-//           <img src={Boss} className="bossimg"/>
-
-//           </div>
-//         </div>
-
-//       </div>
-//       <div className="alighnfarmer">
-//           <div className="Notecontainer" id="notefarmer">
-//             <p className="detailsfarm">Farmer Details!</p>
-//             <table border={1}>
-//               <tr>
-//                 <th>Name</th>
-//                 <th> NIC</th>
-//                 <th> TelNo</th>
-//                 <th>Email</th>
-//                 <th>Update</th>
-//                 <th>Delete</th>
-//               </tr>
-//               <tbody></tbody>
-
-//               {currentItems.map((user) => (
-//                 <tr key={user._id}>
-//                   <td>{user.Name}</td>
-//                   <td>{user.NIC}</td>
-//                   <td>{user.TelNo}</td>
-//                   <td>{user.Email}</td>
-
-//                   <td>
-//                     <Button class="edit" name="Update" />
-//                   </td>
-//                   <td>
-//                     <button class="delete">Delete</button>
-//                   </td>
-//                 </tr>
-//               ))}
-//             </table>
-//             <div className="pagination">
-//                     {renderPageNumbers()}
-//                 </div>
-
-//           </div>
-
-//           {/* </div> */}
-//         </div>
-
-//     <div className="sidbarboss">
-//     <p className="sidetext">Uzhavan <br/><span5>The Connector</span5></p>
-
-//      <Link to='/Admin'><button className="dash">Dashbord</button></Link><br/>
-//      <Link to='/FarmerDetails'><button className="dash">Farmer</button></Link><br/>
-//      <Link to='/MachineryDetails'><button className="dash">Machine Owner</button></Link>
-//      <img src={Logo}className='footlogoboss'/>
-//     </div>
-
-//     </div>
-//   </div>
-//   )
-// }
-
-// export default MachineryDetails;
-
-// import "./Admin.css";
-import { Link } from "react-router-dom";
+import { Link ,useNavigate } from "react-router-dom";
 import Logo from "../../../Assets/uzavan.png";
 import Boss from "../../../Assets/boss.png";
 import Button from "../../../Componets/Button/Button";
@@ -137,6 +9,12 @@ function MachineryDetails() {
   const [users, setUsers] = useState([]);
   const [currentPage, setCurrentPage] = useState(1);
   const [itemsPerPage, setItemsPerPage] = useState(8);
+  const navigate = useNavigate();
+  const handleLogout = () => {
+    localStorage.removeItem("token");
+    navigate("/signin");
+  };
+
   useEffect(() => {
     fetchUsers();
   }, []);
@@ -244,7 +122,7 @@ function MachineryDetails() {
                 <th> NIC</th>
                 <th> TelNo</th>
                 <th>Address</th>
-                <th>Update</th>
+                {/* <th>Update</th> */}
                 <th>Delete</th>
               </tr>
               <tbody>
@@ -255,9 +133,9 @@ function MachineryDetails() {
                     <td>{user.TelNo}</td>
                     <td>{user.Address}</td>
 
-                    <td>
+                    {/* <td>
                       <Button class="edit" name="update" />
-                    </td>
+                    </td> */}
                     <td>
                       <button
                         class="delete"
@@ -291,6 +169,12 @@ function MachineryDetails() {
           <Link to="/MachineryDetails">
             <button className="dash">Machine Owner</button>
           </Link>
+          <Link to="/paymentDetails">
+            <button className="dash">Payments</button>
+          </Link>
+          
+            <button onClick= {handleLogout} className="dash">Logout</button>
+            <p className="copyrights">&copy; 2024 Uzhavan. All rights reserved.</p> 
           <img src={Logo} className="footlogoboss" />
         </div>
       </div>
