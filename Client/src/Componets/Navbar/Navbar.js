@@ -32,7 +32,7 @@ export default function Navbar() {
       <div className="container" id="containernav">
         <div className="logo">
           <div className="logoimg">
-            <img src={Logo} id="logoimage" alt="logo" />
+            <img src={Logo} id="logoimage" alt="logo"  />
           </div>
           <div className="logoname">
             <h2>Uzhavan</h2>
