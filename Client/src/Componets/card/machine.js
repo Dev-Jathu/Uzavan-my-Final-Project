@@ -1,11 +1,9 @@
-
 // import React, { useState, useEffect } from "react";
 // import "./Card.css";
 // import { Link } from "react-router-dom";
 
-
 // function Card({ selectedDistrict }) {
-  
+
 //   const [users, setUsers] = useState([]);
 //   const [error, setError] = useState(null);
 //   const [currentPage, setCurrentPage] = useState(1);
@@ -67,7 +65,6 @@
 //     ));
 //   };
 
-  
 //   return (
 //     <>
 //       {error ? (
@@ -78,7 +75,7 @@
 //             {currentItems.map((user) => (
 //               <div className="card" key={user._id}>
 //                 <img
-//                   src={user.ImageURL} 
+//                   src={user.ImageURL}
 //                   className="card-img-top track1"
 //                   alt="Machine owner photo"
 //                 />
@@ -127,14 +124,12 @@
 
 // export default Card;
 
-
-
 import React, { useState, useEffect } from "react";
 import "./Card.css";
 import { Link } from "react-router-dom";
 
-
-function Card({ selectedDistrict }) {
+function Machine({ selectedDistrict }) {
+  Tractor;
   const [users, setUsers] = useState([]);
   const [error, setError] = useState(null);
   const [currentPage, setCurrentPage] = useState(1);
@@ -146,13 +141,16 @@ function Card({ selectedDistrict }) {
 
   const fetchUsers = async () => {
     try {
-      const response = await fetch("https://uzavan-my-final-project.onrender.com/profile/serviceView");
+      const response = await fetch(
+        "https://uzavan-my-final-project.onrender.com/profile/serviceView"
+      );
       if (!response.ok) {
         throw new Error(`HTTP error! status: ${response.status}`);
       }
       const data = await response.json();
       const verifiedMachines = data.filter(
-        (machine) => machine.isVerified && machine.vehicleType === "Tractor"
+        (machine) =>
+          machine.isVerified && machine.vehicleType === "paddyCropper"
       );
       setUsers(verifiedMachines);
     } catch (error) {
@@ -254,5 +252,4 @@ function Card({ selectedDistrict }) {
   );
 }
 
-export default Card;
-
+export default Machine;

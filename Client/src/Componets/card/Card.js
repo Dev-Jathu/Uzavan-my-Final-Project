@@ -1,8 +1,6 @@
-
 import React, { useState, useEffect } from "react";
 import "./Card.css";
 import { Link } from "react-router-dom";
-
 
 function Card({ selectedDistrict }) {
   const [users, setUsers] = useState([]);
@@ -16,7 +14,9 @@ function Card({ selectedDistrict }) {
 
   const fetchUsers = async () => {
     try {
-      const response = await fetch("https://uzavan-my-final-project.onrender.com/profile/serviceView");
+      const response = await fetch(
+        "https://uzavan-my-final-project.onrender.com/profile/serviceView"
+      );
       if (!response.ok) {
         throw new Error(`HTTP error! status: ${response.status}`);
       }
@@ -125,4 +125,3 @@ function Card({ selectedDistrict }) {
 }
 
 export default Card;
-
