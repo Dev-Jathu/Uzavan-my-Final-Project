@@ -101,7 +101,7 @@ function TsunamiCard({ selectedDistrict }) {
                     to={`/hirepage/${user._id}`}
                     className="btn btn-primary"
                     id="buttoncardtractor2"
-                    onClick={() => handleHireClick(user._id)}
+                    // onClick={() => handleHireClick(user._id)}
 
                   >
                     View
