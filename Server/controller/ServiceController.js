@@ -113,6 +113,10 @@ exports.deleteService = async (req, res) => {
 };
 
 // Patch for service
+// Patch for service
+// Patch for service
+// Patch for service
+// Patch for service
 exports.patchUsers = async (req, res) => {
   const userId = req.params.id;
   const { isVerified } = req.body;
