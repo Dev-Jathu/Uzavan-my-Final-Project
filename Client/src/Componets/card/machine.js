@@ -5,6 +5,7 @@ import { Link } from "react-router-dom";
 
 
 function Card({ selectedDistrict }) {
+  
   const [users, setUsers] = useState([]);
   const [error, setError] = useState(null);
   const [currentPage, setCurrentPage] = useState(1);

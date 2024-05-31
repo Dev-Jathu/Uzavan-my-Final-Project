@@ -8,7 +8,32 @@ import Footercard from "../../../Componets/card/navbarforcard/footerforcard";
 function Tractor() {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
   const [selectedDistrict, setSelectedDistrict] = useState("All-District");
+  const [users, setUsers] = useState([]);
+  const [error, setError] = useState(null);
+  const [currentPage, setCurrentPage] = useState(1);
+  const itemsPerPage = 8;
 
+  useEffect(() => {
+    fetchUsers();
+  }, []);
+
+  const fetchUsers = async () => {
+    try {
+      const response = await fetch("https://uzavan-my-final-project.onrender.com/profile/serviceView");
+      if (!response.ok) {
+        throw new Error(`HTTP error! status: ${response.status}`);
+      }
+      const data = await response.json();
+      const verifiedMachines = data.filter(
+        (machine) => machine.isVerified && machine.vehicleType === "paddyCropper"
+      );
+      setUsers(verifiedMachines);
+      console.log("Verified machines fetched:", verifiedMachines);
+    } catch (error) {
+      console.error("Failed to fetch users:", error);
+      setError("Failed to fetch users. Please try again later.");
+    }
+  };
 
   
   useEffect(() => {
