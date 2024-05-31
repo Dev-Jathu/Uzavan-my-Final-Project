@@ -1,3 +1,6 @@
+
+
+
 import React, { useState, useEffect } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import axios from "axios";
@@ -64,7 +67,8 @@ function Admin() {
       });
   };
 
-  const toggleVerifyUser = (id, currentStatus) => {
+  const toggleVerifyUser = (id, currentStatus
+  ) => {
     const token = localStorage.getItem("token");
     const newStatus = !currentStatus;
     axios
@@ -79,9 +83,7 @@ function Admin() {
       })
       .catch((error) => {
         console.error("Error verifying user:", error);
-        alert(
-          `Failed to update the user's verification status: ${error.message}`
-        );
+        alert(`Failed to update the user's verification status: ${error.message}`);
       });
   };
 
@@ -122,7 +124,6 @@ function Admin() {
     for (let i = 1; i <= totalPages; i++) {
       pageNumbers.push(i);
     }
-    const id = req.params.id;
     return pageNumbers.map((number) => (
       <button
         className="pagenumber"
@@ -134,33 +135,34 @@ function Admin() {
       </button>
     ));
   };
-  // Total count of service users
-  const serviceUsersCount = users.length;
+    // Total count of service users
+    const serviceUsersCount = users.length;
 
-  //machinery details
-  const fetchMachine = () => {
-    fetch("https://uzhavan-server.onrender.com/machinery/MachineView")
-      .then((response) => response.json())
-      .then((data) => setMachinery(data))
-      .catch((error) => console.error("Failed to fetch machinery:", error));
-  };
+    //machinery details
+    const fetchMachine = () => {
+      fetch("https://uzhavan-server.onrender.com/machinery/MachineView")
+        .then((response) => response.json())
+        .then((data) => setMachinery(data))
+        .catch((error) => console.error("Failed to fetch machinery:", error));
+    };
+  
+    const machineryUsersCount = machinery.length;
+ //Farmer details
+ const fetchFarmer = () => {
+  fetch("https://uzhavan-server.onrender.com/farmer/farmerView")
+    .then((response) => response.json())
+    .then((data) => setFarmer(data))
+    .catch((error) => console.error("Failed to fetch users:", error));
 
-  const machineryUsersCount = machinery.length;
-  //Farmer details
-  const fetchFarmer = () => {
-    fetch("https://uzhavan-server.onrender.com/farmer/farmerView")
-      .then((response) => response.json())
-      .then((data) => setFarmer(data))
-      .catch((error) => console.error("Failed to fetch users:", error));
-  };
-  const FarmerUsersCount = Farmer.length;
+};
+const FarmerUsersCount = Farmer.length;
 
   return (
     <div id="alighnforadmin">
       <div className="main11">
         <div className="container">
           <div className="logo" id="logoadmin">
-            <div className="logoimg">
+            <div className="logoimg" >
               <img src={Logo} id="logoimage" alt="Uzhavan Logo" />
             </div>
             <div className="logoname">
@@ -192,6 +194,7 @@ function Admin() {
               <p className="fcount">Service Profile</p>
               {/* <i className="fa-solid fa-user" id="addlogo"></i> */}
               {serviceUsersCount}
+
             </div>
           </div>
           <div className="Notecontainer">
@@ -222,9 +225,7 @@ function Admin() {
                         className={`button-verify ${
                           user.isVerified ? "button-verified" : ""
                         }`}
-                        onClick={() =>
-                          toggleVerifyUser(user._id, user.isVerified)
-                        }
+                        onClick={() => toggleVerifyUser(user._id, user.isVerified)}
                       >
                         {user.isVerified ? "Verified" : "Pending"}
                       </button>
@@ -244,11 +245,12 @@ function Admin() {
             <div className="pagination">{renderPageNumbers()}</div>
           </div>
         </div>
-        <div className="sidbarboss">
+      <div className="sidbarboss">
           <p className="sidetext">
             Uzhavan <br />
             <span5>The Connector</span5>
           </p>
+
           <Link to="/Admin">
             <button className="dash">Dashbord</button>
           </Link>
@@ -263,17 +265,18 @@ function Admin() {
           <Link to="/paymentDetails">
             <button className="dash">Payments</button>
           </Link>
-          <button onClick={handleLogout} className="dash">
-            Logout
-          </button>
+          
+            <button onClick= {handleLogout} className="dash">Logout</button>
+          
           {/* <img src={Logo} className="footlogoboss" /> */}
-          <p className="copyrights">
-            &copy; 2024 Uzhavan. All rights reserved.
-          </p>{" "}
-        </div>
+          <p className="copyrights">&copy; 2024 Uzhavan. All rights reserved.</p>        </div>
       </div>
     </div>
   );
 }
 
 export default Admin;
+
+
+
+
