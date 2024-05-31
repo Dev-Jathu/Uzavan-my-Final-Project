@@ -82,6 +82,8 @@ function Admin() {
       )
       .then(() => {
         alert(`User ${newStatus ? "verified" : "unverified"} successfully`);
+        toast.success("Add Service successfully")
+
         fetchUsers(token);
       })
       .catch((error) => {
@@ -104,6 +106,7 @@ function Admin() {
         })
         .then((response) => {
           alert(response.data.message || "User deleted successfully");
+          toast.success("User deleted successfully")
           fetchUsers(token);
         })
         .catch((error) => {
