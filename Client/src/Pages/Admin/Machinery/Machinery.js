@@ -127,7 +127,6 @@ function MachineryDetails() {
             Uzhavan <br />
             <span5>The Connector</span5>
           </p>
-          <th>Update</th>
           <Link to="/Admin">
             <button className="dash">Dashbord</button>
           </Link>
