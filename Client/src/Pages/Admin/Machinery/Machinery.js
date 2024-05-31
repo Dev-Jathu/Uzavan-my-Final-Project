@@ -1,5 +1,5 @@
 
-import { Link } from "react-router-dom";
+import { Link,useNavigate } from "react-router-dom";
 import Logo from "../../../Assets/uzavan.png";
 import Boss from "../../../Assets/boss.png";
 import Button from "../../../Componets/Button/Button";
@@ -9,6 +9,12 @@ function MachineryDetails() {
   const [users, setUsers] = useState([]);
   const [currentPage, setCurrentPage] = useState(1);
   const [itemsPerPage, setItemsPerPage] = useState(8);
+  const navigate = useNavigate();
+
+  const handleLogout = () => {
+    localStorage.removeItem("token");
+    navigate("/signin");
+  };
   useEffect(() => {
     fetchUsers();
   }, []);
@@ -88,7 +94,7 @@ function MachineryDetails() {
                 <th> NIC</th>
                 <th> TelNo</th>
                 <th>Address</th>
-                <th>Update</th>
+                
                 <th>Delete</th>
               </tr>
               <tbody>
@@ -99,9 +105,7 @@ function MachineryDetails() {
                     <td>{user.TelNo}</td>
                     <td>{user.Address}</td>
 
-                    <td>
-                      <Button class="edit" name="update" />
-                    </td>
+                   
                     <td>
                       <button
                         class="delete"
@@ -123,7 +127,7 @@ function MachineryDetails() {
             Uzhavan <br />
             <span5>The Connector</span5>
           </p>
-
+          <th>Update</th>
           <Link to="/Admin">
             <button className="dash">Dashbord</button>
           </Link>
@@ -135,7 +139,15 @@ function MachineryDetails() {
           <Link to="/MachineryDetails">
             <button className="dash">Machine Owner</button>
           </Link>
-          <img src={Logo} className="footlogoboss" />
+          <Link to="/paymentDetails">
+            <button className="dash">Payments</button>
+          </Link>
+          
+            <button onClick= {handleLogout} className="dash">Logout</button>
+          
+          {/* <img src={Logo} className="footlogoboss" /> */}
+          <p className="copyrights">&copy; 2024 Uzhavan. All rights reserved.</p>   
+          {/* <img src={Logo} className="footlogoboss" /> */}
         </div>
       </div>
     </div>

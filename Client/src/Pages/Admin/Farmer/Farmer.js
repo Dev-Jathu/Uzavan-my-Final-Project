@@ -2,7 +2,7 @@
 
 
 // import "./Admin.css";
-import { Link } from "react-router-dom";
+import { Link,useNavigate } from "react-router-dom";
 import Logo from "../../../Assets/uzavan.png";
 import Boss from "../../../Assets/boss.png";
 import Button from "../../../Componets/Button/Button";
@@ -13,6 +13,12 @@ function FarmerDetails () {
   const [users, setUsers] = useState([]);
   const [currentPage, setCurrentPage] = useState(1);
   const [itemsPerPage, setItemsPerPage] = useState(8);
+  const navigate = useNavigate();
+
+  const handleLogout = () => {
+    localStorage.removeItem("token");
+    navigate("/signin");
+  };
   useEffect(() => {
     fetchUsers();
   }, []);
@@ -89,7 +95,6 @@ function FarmerDetails () {
                 <th> NIC</th>
                 <th>TelNo </th>
                 <th>Email</th>
-                <th> Verify</th>
                 <th> Delete</th>
               </tr>
               <tbody>
@@ -102,9 +107,7 @@ function FarmerDetails () {
                  
 
 
-                    <td>
-                      <Button class="edit" name="Verify" />
-                    </td>
+                    
                     <td>
                       <button
                         class="delete"
@@ -140,7 +143,15 @@ function FarmerDetails () {
           <Link to="/MachineryDetails">
             <button className="dash">Machine Owner</button>
           </Link>
-          <img src={Logo} className="footlogoboss" />
+          <Link to="/paymentDetails">
+            <button className="dash">Payments</button>
+          </Link>
+          
+            <button onClick= {handleLogout} className="dash">Logout</button>
+          
+          {/* <img src={Logo} className="footlogoboss" /> */}
+          <p className="copyrights">&copy; 2024 Uzhavan. All rights reserved.</p>   
+          {/* <img src={Logo} className="footlogoboss" /> */}
         </div>
       </div>
     </div>
