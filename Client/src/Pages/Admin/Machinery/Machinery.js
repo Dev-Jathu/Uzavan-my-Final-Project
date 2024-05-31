@@ -94,6 +94,7 @@ function MachineryDetails() {
                 <th> NIC</th>
                 <th> TelNo</th>
                 <th>Address</th>
+                
                 <th>Delete</th>
               </tr>
               <tbody>
