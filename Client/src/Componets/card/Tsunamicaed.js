@@ -64,7 +64,16 @@ function TsunamiCard({ selectedDistrict }) {
       </button>
     ));
   };
-
+  const handleHireClick = (userId) => {
+    const token = localStorage.getItem("token");
+    if (token) {
+      // If token exists, navigate to the hire page
+      window.location.href = `/hirepage/${userId}`;
+    } else {
+      // If token doesn't exist, navigate to the home page
+      window.location.href = "Signin";
+    }
+  };
 
   return (
     <>
@@ -92,7 +101,7 @@ function TsunamiCard({ selectedDistrict }) {
                     to={`/hirepage/${user._id}`}
                     className="btn btn-primary"
                     id="buttoncardtractor2"
-                    // onClick={() => handleHireClick(user._id)}
+                    onClick={() => handleHireClick(user._id)}
 
                   >
                     View
