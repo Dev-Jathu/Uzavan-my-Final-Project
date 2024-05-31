@@ -17,7 +17,7 @@ app.use(express.json());
 app.use(cookieParser());
 app.use(
   cors({
-    origin: ["https://uzhavan-0mr6.onrender.com"],
+    origin: ["https://uzhvan-the-connector.onrender.com"],
     methods: ["GET", "POST", "PATCH", "DELETE", "PUT"],
     credentials: true,
   })
