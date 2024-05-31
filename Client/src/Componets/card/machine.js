@@ -243,7 +243,7 @@ function Machine({ selectedDistrict }) {
               {` ${indexOfFirstItem + 1} - ${Math.min(
                 indexOfLastItem,
                 filteredUsers.length
-              )} of ${filteredUsers.length} Tractor`}
+              )} of ${filteredUsers.length} paddyCropper`}
             </div>
           </div>
         </>
