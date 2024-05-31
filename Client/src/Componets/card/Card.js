@@ -15,7 +15,8 @@ function Card({ selectedDistrict }) {
   const fetchUsers = async () => {
     try {
       const response = await fetch(
-        "https://uzavan-my-final-project.onrender.com/profile/serviceView"
+        "https://uzavan-server.onrender.com/profile/serviceView"
+        
       );
       if (!response.ok) {
         throw new Error(`HTTP error! status: ${response.status}`);

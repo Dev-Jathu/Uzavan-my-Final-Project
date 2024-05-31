@@ -64,7 +64,7 @@ function Order() {
 
   const fetchUsers = (ownerName, token) => {
     axios
-      .get("https://uzavan-my-final-project.onrender.com/Booking/Bookingview", {
+      .get("https://uzavan-server.onrender.com/Booking/Bookingview", {
         headers: { Authorization: `Bearer ${token}` },
       })
       .then((response) => {

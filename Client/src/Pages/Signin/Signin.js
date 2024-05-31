@@ -26,7 +26,7 @@ function Signin() {
     console.log(userdata);
     
     axios
-      .post("https://uzavan-my-final-project.onrender.com/farmerLogin/sigIn", userdata)
+      .post("https://uzavan-server.onrender.com/farmerLogin/sigIn", userdata)
       .then((result) => {
         console.log(result);
         if (result.data.token) {
