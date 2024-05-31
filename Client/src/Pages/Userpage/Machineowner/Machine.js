@@ -257,7 +257,7 @@ function Machine() {
 
   const fetchUsers = (ownerName, token) => {
     axios
-      .get("https://uzhavan-server.onrender.com/Booking/Bookingview", {
+      .get("https://uzavan-my-final-project.onrender.com/Booking/Bookingview", {
         headers: { Authorization: `Bearer ${token}` },
       })
       .then((response) => {

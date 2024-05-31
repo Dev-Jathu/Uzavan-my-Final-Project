@@ -16,7 +16,7 @@ function Card({ selectedDistrict }) {
 
   const fetchUsers = async () => {
     try {
-      const response = await fetch("https://uzhavan-server.onrender.com/profile/serviceView");
+      const response = await fetch("https://uzavan-my-final-project.onrender.com/profile/serviceView");
       if (!response.ok) {
         throw new Error(`HTTP error! status: ${response.status}`);
       }
@@ -65,16 +65,7 @@ function Card({ selectedDistrict }) {
       </button>
     ));
   };
-  const handleHireClick = (userId) => {
-    const token = localStorage.getItem("token");
-    if (token) {
-      // If token exists, navigate to the hire page
-      window.location.href = `/hirepage/${userId}`;
-    } else {
-      // If token doesn't exist, navigate to the home page
-      window.location.href = "Signin";
-    }
-  };
+
   
   return (
     <>
@@ -109,7 +100,7 @@ function Card({ selectedDistrict }) {
                     to={`/hirepage/${user._id}`}
                     className="btn btn-primary"
                     id="buttoncardtractor2"
-                    onClick={() => handleHireClick(user._id)}
+                    // onClick={() => handleHireClick(user._id)}
 
                   >
                     View

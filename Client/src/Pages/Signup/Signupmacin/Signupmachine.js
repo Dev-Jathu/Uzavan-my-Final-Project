@@ -80,7 +80,7 @@ function Signupmachine() {
     };
     try {
       const response = await fetch(
-        "https://uzhavan-server.onrender.com/machinery/registerMachine",
+        "https://uzavan-my-final-project.onrender.com/machinery/registerMachine",
         {
           method: "POST",
           headers: {
