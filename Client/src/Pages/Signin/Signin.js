@@ -35,7 +35,7 @@ function Signin() {
           
           // Navigate based on user role
           if (result.data.role === "user") {
-            navigate("/");z
+            navigate("/");
           } else if (result.data.role === "machine_user") {
             navigate("/machinepage");
           } else if (result.data.role === "admin") {
