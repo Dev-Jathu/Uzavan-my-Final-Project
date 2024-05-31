@@ -10,6 +10,8 @@ import Gphoto from "../../Assets/Gphoto.png";
 import Logo from "../../Assets/uzavan.png";
 import "./Signin.css";
 import { HashLink as Link } from "react-router-hash-link";
+import { ToastContainer, toast } from "react-toastify";
+import 'react-toastify/dist/ReactToastify.css';
 
 function Signin() {
   const [Email, setEmail] = useState("");
@@ -41,6 +43,7 @@ function Signin() {
           }
         } else {
           console.log("Login failed");
+          toast.error("Login failed! Please check your credentials.")
         }
       })
       .catch((err) => console.log(err));

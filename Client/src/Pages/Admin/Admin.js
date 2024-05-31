@@ -7,6 +7,9 @@ import axios from "axios";
 import "./Admin.css";
 import Logo from "../../Assets/uzavan.png";
 import Boss from "../../Assets/boss.png";
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+
 
 function Admin() {
   const [users, setUsers] = useState([]);
@@ -83,14 +86,14 @@ function Admin() {
       })
       .catch((error) => {
         console.error("Error verifying user:", error);
-        alert(`Failed to update the user's verification status: ${error.message}`);
+        toast.error(`Failed to update the user's verification status: ${error.message}`);
       });
   };
 
   const deleteUser = (id) => {
     const token = localStorage.getItem("token");
     if (!id) {
-      alert("User ID is missing.");
+      toast.error("User ID is missing.");
       return;
     }
 
@@ -105,7 +108,7 @@ function Admin() {
         })
         .catch((error) => {
           console.error("Error:", error);
-          alert("Failed to delete the user.");
+          toast.error("Failed to delete the user.");
         });
     }
   };
