@@ -210,6 +210,7 @@ function Profile() {
                 token={makePayment}
                 name="Buy "
                 amount={product.price * 100}
+                currency = 'LKR'
               >
                 <button className="profadd" id="dash">Add Service</button>
               </StripeCheckout>
