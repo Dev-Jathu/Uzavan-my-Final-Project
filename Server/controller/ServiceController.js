@@ -101,9 +101,8 @@ exports.updateService = async (req, res) => {
 
 //DELETE
 exports.deleteService = async (req, res) => {
-  const id = req.params.id;
   try {
-    const Service = await ServiceModel.findOneAndDelete({ _id: id });
+    const Service = await ServiceModel.findOneAndDelete(req.params.id);
     if (!Service) {
       return res.status(404).json({ message: "User not found" });
     }
