@@ -85,7 +85,7 @@ function Admin() {
         fetchUsers(token);
       })
       .catch((error) => {
-        console.error("Error verifying user:", error);
+        console.error("Error verifying user:", error);z
         toast.error(`Failed to update the user's verification status: ${error.message}`);
       });
   };
