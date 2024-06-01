@@ -205,15 +205,15 @@ function Profile() {
             ></textarea>
             {/* Other input fields */}
             <div className="buttonprofile">
-              <StripeCheckout
+              {/* <StripeCheckout
                 stripeKey="pk_test_51PILqiEp6JPeXInZqhhfIvvARFG3Owf3rj0Yfqhr70quScmmN5ZwA32vhL2cKISNhN3HJP1nSmFYFKRgaZ8Y7J4u00UNIaRsNC"
                 token={makePayment}
                 name="Buy "
                 amount={product.price * 100}
                 currency = 'LKR'
-              >
+              > */}
                 <button className="profadd" id="dash">Add Service</button>
-              </StripeCheckout>
+              {/* </StripeCheckout> */}
             </div>
           </form>
         </div>
