@@ -13,7 +13,7 @@ function ServiveMachine() {
   const [username, setUsername] = useState("");
   const [userId, setUserId] = useState("");
 
-  const navigate = useNavigate(); // Hook for navigation
+  const navigate = useNavigate();
 
   // Function to handle logout
   const handleLogout = () => {
