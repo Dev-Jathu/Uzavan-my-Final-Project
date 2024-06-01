@@ -58,7 +58,7 @@ function Admin() {
 
   const fetchUsers = (token) => {
     axios
-      .get("https://uzhavan-server.onrender.com/profile/serviceView", {
+      .get("https://uzavan-server.onrender.com/profile/serviceView", {
         headers: { Authorization: `Bearer ${token}` },
       })
       .then((response) => setUsers(response.data))
@@ -76,7 +76,7 @@ function Admin() {
     const newStatus = !currentStatus;
     axios
       .patch(
-        `https://uzhavan-server.onrender.com/profile/verified/${id}`,
+        `https://uzavan-server.onrender.com/profile/verified/${id}`,
         { isVerified: newStatus },
         { headers: { Authorization: `Bearer ${token}` } }
       )

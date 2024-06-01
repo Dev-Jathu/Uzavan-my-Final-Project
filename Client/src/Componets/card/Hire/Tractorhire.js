@@ -16,7 +16,7 @@ function Hire() {
   useEffect(() => {
     const fetchUser = async () => {
       try {
-        const response = await fetch(`https://uzhavan-server.onrender.com/profile/serviceView/${id}`);
+        const response = await fetch(`https://uzavan-server.onrender.com/profile/serviceView/${id}`);
         if (!response.ok) {
           throw new Error(`HTTP error! status: ${response.status}`);
         }

@@ -20,7 +20,7 @@ function MachineryDetails() {
   }, []);
   //get details
   const fetchUsers = () => {
-    fetch("https://uzhavan-server.onrender.com/machinery/MachineView")
+    fetch("https://uzavan-server.onrender.com/machinery/MachineView")
       .then((response) => response.json())
       .then((data) => setUsers(data))
       .catch((error) => console.error("Failed to fetch users:", error));
