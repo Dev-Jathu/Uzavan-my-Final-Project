@@ -86,7 +86,7 @@ export default function Booking() {
       setMessage("");
 
       alert("Booking successful!");
-      navigate("/success"); // Navigate to a success page or back to the home page
+      navigate("/Farmerpage"); // Navigate to a success page or back to the home page
     } catch (error) {
       console.error("Failed to register", error);
       alert("Booking failed!");

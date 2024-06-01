@@ -94,7 +94,7 @@ function Farmer() {
         </div>
         <div className="content" id="content">
           <div className="Notecontainer" id="notecontainer">
-            <p className="verification" id="verification">Waiting for your Confirmation!</p>
+            <p className="verification" id="verification">Your Booking Details!</p>
             <table>
               <thead>
                 <tr>
@@ -102,19 +102,17 @@ function Farmer() {
                   <th>Address</th>
                   <th>District</th>
                   <th>Acre Count</th>
-                  <th>Verifycation</th>
+                  <th>Status</th>
                 </tr>
               </thead>
               <tbody>
-                <td>kjhbekfb</td>
-                <td>sinnathampanai</td>
+                <td>Jathusan</td>
+                <td>Veerapuram</td>
                 <td>vavuniya</td>
                 <td>2 Acre</td>
                 <td className="verifycationconfirm">
-                  <button className="Confirm">Confirm</button>
-                  <button className="Confirm" id="cancel">
-                    Cancel
-                  </button>
+                  <button className="Confirm">Pending</button>
+                
                 </td>
               </tbody>
             </table>

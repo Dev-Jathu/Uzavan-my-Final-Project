@@ -138,9 +138,9 @@ function MachineryDetails() {
           <Link to="/MachineryDetails">
             <button className="dash">Machine Owner</button>
           </Link>
-          <Link to="/paymentDetails">
+          {/* <Link to="/paymentDetails">
             <button className="dash">Payments</button>
-          </Link>
+          </Link> */}
           
             <button onClick= {handleLogout} className="dash">Logout</button>
           
