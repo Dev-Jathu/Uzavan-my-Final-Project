@@ -6,12 +6,11 @@ import Servicelogo1 from "../../Assets/about2.png";
 import Servicelogo2 from "../../Assets/about3.png";
 import Servicelogo3 from "../../Assets/about4.png";
 import Servicelogo4 from "../../Assets/about5.png";
-import Logoabout1 from "../../Assets/uzavan17.jpg";
+import Logoabout1 from "../../Assets/uzavan17.jpg"; //jbhbj
 import Logoabout2 from "../../Assets/uzavan17.1.jpg";
 import Logoabout3 from "../../Assets/TOP.jpg";
 import Button from "../../Componets/Button/Button";
 import { HashLink as Link } from "react-router-hash-link";
-
 
 export default function Ababoutfinalout() {
   return (
@@ -31,8 +30,9 @@ export default function Ababoutfinalout() {
                 </div>
                 <div>
                   <p className="headingabout ">
-                    The paragraphs that you write must follow a very specific
-                    structure.
+                    To provide the best service, we focus on quality,
+                    efficiency, and customer satisfaction. Our team ensures
+                    every need is met promptly.
                   </p>
                 </div>
               </div>
@@ -48,8 +48,9 @@ export default function Ababoutfinalout() {
               </div>
               <div>
                 <p className="headingabout1 ">
-                  The paragraphs that you write must follow a very specific
-                  structure.
+                  To ensure a verified profile, we  check all
+                  credentials, guaranteeing authenticity and trust. Your
+                  security is our priority
                 </p>
               </div>
             </div>
@@ -57,15 +58,15 @@ export default function Ababoutfinalout() {
           <div className="subdives">
             <div className="logosabout2">
               <div className="photoabout2">
-                <img src={Servicelogo1} className="picabout2" id="resicon"/>
+                <img src={Servicelogo1} className="picabout2" id="resicon" />
               </div>
               <div className="gridparaabout">
                 <p className="shortpara2">Review & Rating</p>
               </div>
               <div>
                 <p className="headingabout2 ">
-                  The paragraphs that you write must follow a very specific
-                  structure.
+                  Review & Rating help us maintain high standards, ensuring
+                  quality and customer satisfaction.
                 </p>
               </div>
             </div>
@@ -73,15 +74,16 @@ export default function Ababoutfinalout() {
           <div className="subdives3">
             <div className="logosabout3">
               <div className="photoabout3">
-                <img src={Servicelogo} className="picabout3" id="resicon"/>
+                <img src={Servicelogo} className="picabout3" id="resicon" />
               </div>
               <div className="gridparaabout">
                 <p className="shortpara3">Customer Service</p>
               </div>
               <div>
                 <p className="headingabout3 ">
-                  The paragraphs that you write must follow a very specific
-                  structure.
+                  Customer Service is our top priority. We provide prompt,
+                  efficient support to ensure your satisfaction and resolve any
+                  issues quickly.
                 </p>
               </div>
             </div>
@@ -89,15 +91,15 @@ export default function Ababoutfinalout() {
           <div className="subdives4">
             <div className="logosabout4">
               <div className="photoabout4">
-                <img src={Servicelogo4} className="picabout4" id="resicon"/>
+                <img src={Servicelogo4} className="picabout4" id="resicon" />
               </div>
               <div className="gridparaabout">
                 <p className="shortpara4">Message</p>
               </div>
               <div>
                 <p className="headingabout4 ">
-                  The paragraphs that you write must follow a very specific
-                  structure.
+                  For any inquiries or support, please message us. Our team is
+                  ready to assist you promptly and efficiently.
                 </p>
               </div>
             </div>
@@ -118,29 +120,40 @@ export default function Ababoutfinalout() {
             </div>
           </div>
           <div className="paraaboutpage">
-            <p className="headingaboutsub">Uzhavan The Best Agriculture Machinery’s Here!</p>
-            <p className="headingaboutsub1">In this websites Show Three Varities Of Machinery's  For farmers Needs!</p>
-            <p className="headingaboutsub2">Lot's of machinery's Owner Profile Here.All profile Are Verified For our Best Team. The  Machinery's owner Connected To Our farmers. Do you Check Our Service Collection Click The Go Service Button </p>
+            <p className="headingaboutsub">
+              Uzhavan The Best Agriculture Machinery’s Here!
+            </p>
+            <p className="headingaboutsub1">
+              In this websites Show Three Varities Of Machinery's For farmers
+              Needs!
+            </p>
+            <p className="headingaboutsub2">
+              Lot's of machinery's Owner Profile Here.All profile Are Verified
+              For our Best Team. The Machinery's owner Connected To Our farmers.
+              Do you Check Our Service Collection Click The Go Service Button{" "}
+            </p>
             <p className="headingaboutsub2">Connect WIth Our Social Network</p>
             <div className="footlings1">
-                <Link to="https://www.facebook.com/people/Uzhavan/61559226045426/">
-                  <i class="fa-brands fa-facebook" id="editicon1"></i>
-                </Link>
-                <Link to="#">
-                  <i class="fa-brands fa-instagram" id="editicon1"></i>
-                </Link>
-                <Link to="#">
-                  <i class="fa-brands fa-youtube" id="editicon1"></i>
-                </Link>
-                <Link to="#">
-                  <i class="fa-brands fa-google" id="editicon1"></i>
-                </Link>
-              </div>
-            <Button name="Go Service" class='goservice'/>
+              <Link to="https://www.facebook.com/people/Uzhavan/61559226045426/">
+                <i class="fa-brands fa-facebook" id="editicon1"></i>
+              </Link>
+              <Link to="#">
+                <i class="fa-brands fa-instagram" id="editicon1"></i>
+              </Link>
+              <Link to="#">
+                <i class="fa-brands fa-youtube" id="editicon1"></i>
+              </Link>
+              <Link to="#">
+                <i class="fa-brands fa-google" id="editicon1"></i>
+              </Link>
+            </div>
+
+            <Link to="#Serviceid" smooth>
+            <Button name="Go Service" class="goservice" />
+            </Link>
           </div>
-          
         </div>
       </div>
-      </div>
+    </div>
   );
 }

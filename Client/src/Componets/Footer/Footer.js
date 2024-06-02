@@ -68,7 +68,7 @@ export default function Footer() {
                 </div>
               </div>
               <div className="footlings">
-                <a href="machinepage">
+                <a href="https://www.facebook.com/people/Uzhavan/61559226045426/">
                   <i class="fa-brands fa-facebook" id="editicon"></i>
                 </a>
                 <a href="#">

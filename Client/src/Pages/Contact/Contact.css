@@ -9,37 +9,38 @@
     margin-top: 100px;
     height: 130vh;
     padding-top: 100px;
+    margin-left: -30px;
     
 }
 .gridaddresspanel{
     display: grid;
-    grid-template-columns: 330px 330px 330px;
+    grid-template-columns: 400px 400px 400px;
     column-gap: 10px;
-   background-color: var(--Navbar--backgroundcolor);
-    color:white;
-    width: 45%;
+   /* background-color: var(--Navbar--backgroundcolor); */
+    color:rgb(0, 0, 0);
+    width: 60%;
     height: 200px;
-    box-shadow: 1px 1px 2px;
-    margin-left: 540px;
+    /* box-shadow: 1px 1px 5px; */
+    margin-left: 370px;
     border: none;
     opacity: .9;
-    border-top-left-radius: 10px;
-    border-top-right-radius: 10px;
+
 }
 #addressedit{
-    margin-left: -50px;
+    margin-left: 40px;
     margin-top: 10px;
     
 }
 .Phone{
-    margin-left: -120px;
+    margin-left: 10px;
     margin-top: 10px;
 }
 .addresspanel{
     height: 600px;
 }
 #mailabout{
-    margin-top: 30px;
+    margin-top: 35px;
+    margin-left: -70px;
 }
 #icoedit{
     font-size: 40px;
@@ -120,61 +121,61 @@
 }
 .inputContactName{
     height: 50px;
-    width: 350px;
+    width: 420px;
     border-radius: 5px;
     box-shadow: 1px .5px 3px;
     border: none;
     padding: 15px;
     font-size: 18px;
     margin-top: 10px;
-    margin-left: 630px;
+    margin-left: 700px;
 }
 .inputContactAddress{
      height: 50px;
-     width: 350px;
+     width: 420px;
      border-radius: 5px;
      box-shadow: 1px .5px 3px;
      border: none;
     padding: 15px;
     font-size: 18px;
     margin-top: 10px;
-    margin-left: 630px;
+    margin-left: 700px;
 
 }
 .inputContactemail{
     height: 50px;
-    width: 350px;
+    width: 420px;
     border-radius: 5px;
     box-shadow: 1px .5px 3px;
     border: none;
     padding: 15px;
     font-size: 18px;
     margin-top: 10px;
-    margin-left: 150px;
+    margin-left: 700px;
 
 }
 .inputContactPhone{
     height: 50px;
-    width: 350px;
+    width: 420px;
     border-radius: 5px;
     box-shadow: 1px .5px 3px;
     border: none;
     padding: 15px;
     font-size: 18px;
     margin-top: 10px;
-    margin-left: 630px;
+    margin-left: 700px;
 
 }
 .inputContactmassage{
     height:120px;
-    width: 350px;
+    width: 420px;
     border-radius: 5px;
     border: none;
     padding: 15px;
     font-size: 18px;
     box-shadow: 1px .5px 3px;
     margin-top: 10px;
-    margin-left: 620px;
+    margin-left: 700px;
     
 
 }
@@ -188,7 +189,7 @@
 
 }
 .contactbutton{
-    width: 350px;
+    width: 420px;
     height: 50px;
     background-color: var(--Buttons--backgroundcolor);
     border-radius: 10px;
@@ -197,9 +198,12 @@
     font-size: 25px;
     box-shadow: 1px 1px 5px black;
     border: none;
-    margin-left: 620px;
+    margin-left: 700px;
 
 
+}
+.contactbutton:hover{
+    background-color: black;
 }
 .piclastcontact{
     height: 250px;
@@ -219,8 +223,8 @@
 .contactphotogrid{
     /* margin-left: -50px; */
     display:grid ;
-    grid-template-columns: 560px 600px;
-    margin-left: 350px;
+    grid-template-columns: 620px 600px;
+    margin-left: 290px;
     margin-top: -100px;
     
 }
@@ -234,7 +238,7 @@ text-align: left;
     margin-top: 30px;
     color: var(--Navbar--backgroundcolor);
     font-weight: 600;
-    margin-left: 80px;
+    margin-left: 30px;
 }
 .contactpara{
     font-size: 18px;
@@ -258,7 +262,7 @@ text-align: left;
     /* box-shadow: 1px 1px 10px; */
     justify-content: center;
     margin-top: -290PX;
-    margin-left: -350px;
+    margin-left: -450px;
 }
 .succesfull{
     margin-top: 100px;

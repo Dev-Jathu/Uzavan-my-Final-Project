@@ -94,7 +94,7 @@ export default function Contact() {
             <div class="map">
               <iframe
                 src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d63093.79259309366!2d80.44436334408775!3d8.751965622375431!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3afc150e0fc66c73%3A0x37b6b473c8b4d008!2sVavuniya!5e0!3m2!1sen!2slk!4v1707315340836!5m2!1sen!2slk"
-                width="380"
+                width="400"
                 height="290"
                 allowfullscreen=""
                 loading="lazy"

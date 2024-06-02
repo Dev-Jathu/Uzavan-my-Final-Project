@@ -9,7 +9,7 @@
 }
 .hedingservice{
     font-size: 65px;
-    margin-left: -800px;
+    margin-left: -780px;
     margin-top: 50px;
     letter-spacing: 2px;
     font-weight: bold;
@@ -19,7 +19,7 @@
     font-size: 26px;
     width: 65%;
     text-align: left;
-    margin-left: 360px;
+    margin-left: 320px;
 }
 .card{
     width: 400px;
@@ -48,6 +48,9 @@
     background-color: var(--Buttons--backgroundcolor);
     width: 150px;
     margin-left: 5px;
+}
+#buttoncard:hover{
+    background-color: black;
 }
 #cloudedit{
     /* width: 300px; */

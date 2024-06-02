@@ -8,7 +8,8 @@ import Button from '../../Componets/Button/Button'
 import About from "../About/About";
 import Service from '../Service/Service'
 import Contact from "../Contact/Contact";
-import { Link } from "react-router-dom";
+// import { Link } from "react-router-dom";
+import { Link } from 'react-scroll';
 
 
 
@@ -45,10 +46,12 @@ function Home() {
        
         <div className="parahome">
           <h6 className="h6"><span className="welcome">Welcome To Uzhavan!</span><br/>We are ready to save  your Time</h6>
-          <Link to='#Serviceid'>
-          <button className='homebutton'> Learn more </button>
 
-          </Link>
+
+          <Link to="#Contactid" smooth>
+  <button className='homebutton'>Learn more</button>
+</Link>
+        
   
           
         </div>
