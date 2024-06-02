@@ -83,7 +83,7 @@ function Admin() {
       })
       .catch((error) => {
         console.error("Error verifying user:", error);
-        toast.error(`Failed to update the user's verification status: ${error.message}`);
+        console.error(`Failed to update the user's verification status: ${error.message}`);
       });
   };
 
@@ -105,7 +105,7 @@ function Admin() {
         })
         .catch((error) => {
           console.error("Error:", error);
-          toast.error("Failed to delete the user.");
+          console.error("Failed to delete the user.");
         });
     }
   };
