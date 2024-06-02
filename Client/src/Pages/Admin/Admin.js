@@ -7,9 +7,6 @@ import axios from "axios";
 import "./Admin.css";
 import Logo from "../../Assets/uzavan.png";
 import Boss from "../../Assets/boss.png";
-import { ToastContainer, toast } from 'react-toastify';
-import 'react-toastify/dist/ReactToastify.css';
-
 
 function Admin() {
   const [users, setUsers] = useState([]);
@@ -93,13 +90,13 @@ function Admin() {
   const deleteUser = (id) => {
     const token = localStorage.getItem("token");
     if (!id) {
-      toast.error("User ID is missing.");
+      alert("User ID is missing.");
       return;
     }
 
     if (window.confirm(`Are you sure you want to delete this user?`)) {
       axios
-        .delete(`https://uzhavan-server.onrender.com/profile/delete/${id}`, {
+        .delete(`https://uzavan-server.onrender.com/profile/delete/${id}`, {
           headers: { Authorization: `Bearer ${token}` },
         })
         .then((response) => {
@@ -143,7 +140,7 @@ function Admin() {
 
     //machinery details
     const fetchMachine = () => {
-      fetch("https://uzhavan-server.onrender.com/machinery/MachineView")
+      fetch("https://uzavan-server.onrender.com/machinery/MachineView")
         .then((response) => response.json())
         .then((data) => setMachinery(data))
         .catch((error) => console.error("Failed to fetch machinery:", error));
@@ -152,7 +149,7 @@ function Admin() {
     const machineryUsersCount = machinery.length;
  //Farmer details
  const fetchFarmer = () => {
-  fetch("https://uzhavan-server.onrender.com/farmer/farmerView")
+  fetch("https://uzavan-server.onrender.com/farmer/farmerView")
     .then((response) => response.json())
     .then((data) => setFarmer(data))
     .catch((error) => console.error("Failed to fetch users:", error));
