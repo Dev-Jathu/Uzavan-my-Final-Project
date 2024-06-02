@@ -150,8 +150,8 @@ function ServiveMachine() {
                           className="editmachine"
                           style={{
                             marginTop: "10px",
-                            padding: "10px",
-                            backgroundColor: "green",
+                            padding: "5px",
+                            backgroundColor: "black",
                             color: "#fff",
                             border: "none",
                             borderRadius: "5px",
