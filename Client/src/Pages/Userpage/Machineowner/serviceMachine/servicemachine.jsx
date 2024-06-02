@@ -1,50 +1,23 @@
 
-
 import React, { useState, useEffect } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import {jwtDecode} from "jwt-decode";
 import Logo from "../../../../Assets/uzavan.png";
 
+const ITEMS_PER_PAGE = 3;
+
 function ServiveMachine() {
   const [users, setUsers] = useState([]);
   const [error, setError] = useState(null);
   const [currentPage, setCurrentPage] = useState(1);
-  const [itemsPerPage, setItemsPerPage] = useState(3);
   const [username, setUsername] = useState("");
   const [userId, setUserId] = useState("");
 
   const navigate = useNavigate();
 
-  // Function to handle logout
   const handleLogout = () => {
     localStorage.removeItem("token");
     navigate("/signin");
-  };
-
-  const indexOfLastItem = currentPage * itemsPerPage;
-  const indexOfFirstItem = indexOfLastItem - itemsPerPage;
-  const currentItems = users.slice(indexOfFirstItem, indexOfLastItem);
-  const totalPages = Math.ceil(users.length / itemsPerPage);
-
-  const handlePageChange = (pageNumber) => {
-    setCurrentPage(pageNumber);
-  };
-
-  const renderPageNumbers = () => {
-    const pageNumbers = [];
-    for (let i = 1; i <= totalPages; i++) {
-      pageNumbers.push(i);
-    }
-    return pageNumbers.map((number) => (
-      <button
-        className="pagenumber"
-        key={number}
-        onClick={() => handlePageChange(number)}
-        disabled={currentPage === number}
-      >
-        {number}
-      </button>
-    ));
   };
 
   useEffect(() => {
@@ -56,7 +29,6 @@ function ServiveMachine() {
         const decodedToken = jwtDecode(token);
         setUsername(decodedToken.Name);
         setUserId(decodedToken.id);
-        console.log("User Email:", decodedToken.Email);
       } catch (error) {
         console.error("Error decoding token:", error);
         navigate("/signin");
@@ -65,24 +37,54 @@ function ServiveMachine() {
   }, [navigate]);
 
   useEffect(() => {
-    fetchUsers(userId);
-  }, [userId]); // Dependency on username
+    if (userId) {
+      fetchUsers();
+    }
+  }, [userId]);
 
   const fetchUsers = async () => {
     try {
-      const response = await fetch("https://uzavan-server.onrender.com/profile/serviceView");
+      const response = await fetch(`http://localhost:3003/profile/serviceView`);
       if (!response.ok) {
         throw new Error(`HTTP error! status: ${response.status}`);
       }
       const data = await response.json();
-      const verifiedMachines = data.filter(
-        (machine) => machine.isVerified && machine.MachineryId === userId // Use username from token
-      );
-      setUsers(verifiedMachines);
+      const filteredData = data.filter((user) => user.Name === username);
+      setUsers(filteredData);
     } catch (error) {
       console.error("Failed to fetch users:", error);
       setError("Failed to fetch users. Please try again later.");
     }
+  };
+
+  const totalPages = Math.ceil(users.length / ITEMS_PER_PAGE);
+  const startIndex = (currentPage - 1) * ITEMS_PER_PAGE;
+  const currentItems = users.slice(startIndex, startIndex + ITEMS_PER_PAGE);
+
+  const handlePageChange = (pageNumber) => {
+    setCurrentPage(pageNumber);
+  };
+
+  const renderPageNumbers = () => {
+    return Array.from({ length: totalPages }, (_, index) => (
+      <button
+        key={index}
+        onClick={() => handlePageChange(index + 1)}
+        style={{
+          margin: "0 5px",
+          padding: "10px 20px",
+          fontSize: "16px",
+          cursor: "pointer",
+          backgroundColor: currentPage === index + 1 ? "green" : "#fff",
+          color: currentPage === index + 1 ? "#fff" : "green",
+          border: "1px solid #0e0737",
+          borderRadius: "5px",
+        }}
+        disabled={currentPage === index + 1}
+      >
+        {index + 1}
+      </button>
+    ));
   };
 
   return (
@@ -108,44 +110,68 @@ function ServiveMachine() {
             <p className="verification" id="verification">
               Your Services!
             </p>
-            <>
-              {error ? (
-                <p className="error-message">{error}</p>
-              ) : (
-                <>
-                  <div className="cards-container" id="cardmachine">
-                    {currentItems.map((user) => (
-                      <div className="card" key={user._id}>
-                        <img
-                          src={user.ImageURL}
-                          className="card-img-top track1"
-                          alt="Machine owner photo"
-                          id="cloudedit"
-                        />
-                        <div className="card-body">
-                          <h5 className="card-title" id="cardtitletractor" style={{height:'30px'}}>
-                            Name : {user.Name}
-                          </h5>
-                          <div className="card-text" id="cardtexttractor1">
-                            {/* <p className="Addresscard">Address&nbsp;&nbsp;&nbsp;&nbsp; :&nbsp;&nbsp; {user.Address}</p> */}
-                            <p className="districtCard">District&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;:&nbsp;&nbsp; {user.District}</p>
-                            <p className="districtCard">Type&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;:&nbsp;&nbsp; {user.vehicleType}</p>
-                            <p className="districtCard" > Rate &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;:&nbsp;&nbsp;{user.Rate}</p>
-                            {/* <p className="districtCard" id='paramachinecard'>{user.TelYourService}</p> */}
-                          </div>
-                          <button className="editmachine">Edit</button>
+            {error ? (
+              <p className="error-message">{error}</p>
+            ) : (
+              <>
+                <div className="cards-container" id="cardmachine">
+                  {currentItems.map((user) => (
+                    <div
+                      className="card"
+                      key={user._id}
+                      style={{
+                        margin: "10px",
+                        border: "1px solid #ccc",
+                        padding: "20px",
+                        width: "300px",
+                      }}
+                    >
+                      <img
+                        src={user.ImageURL}
+                        className="card-img-top track1"
+                        alt="Machine owner photo"
+                        id="cloudedit"
+                        style={{ width: "100%", height: "200px", objectFit: "cover" }}
+                      />
+                      <div className="card-body">
+                        <h5
+                          className="card-title"
+                          id="cardtitletractor"
+                          style={{ height: "30px" }}
+                        >
+                          Name : {user.Name}
+                        </h5>
+                        <div className="card-text" id="cardtexttractor1">
+                          <p className="districtCard">District: {user.District}</p>
+                          <p className="districtCard">Type: {user.vehicleType}</p>
+                          <p className="districtCard">Rate: {user.Rate}</p>
                         </div>
+                        <button
+                          className="editmachine"
+                          style={{
+                            marginTop: "10px",
+                            padding: "10px",
+                            backgroundColor: "green",
+                            color: "#fff",
+                            border: "none",
+                            borderRadius: "5px",
+                            cursor: "pointer",
+                          }}
+                        >
+                          Edit
+                        </button>
                       </div>
-                    ))}
-                  </div>
-                  <div className="pagination-container">
-                    <div className="pagination-buttons">
-                      {renderPageNumbers()}
                     </div>
-                  </div>
-                </>
-              )}
-            </>
+                  ))}
+                </div>
+                <div
+                  className="pagination-container"
+                  style={{ textAlign: "center", margin: "20px 0" }}
+                >
+                  <div className="pagination-buttons">{renderPageNumbers()}</div>
+                </div>
+              </>
+            )}
           </div>
         </div>
         <div className="sidbarboss" id="sidbarmachine">
@@ -167,10 +193,6 @@ function ServiveMachine() {
           <Link to="/MachineOrder">
             <button className="dash">Order</button>
           </Link>
-          <br />
-          {/* <Link to="/Machineservicehome">
-            <button className="dash">Home</button>
-          </Link> */}
           <br />
           <button className="dash" onClick={handleLogout}>
             Logout
