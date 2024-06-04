@@ -1,5 +1,3 @@
-
-
 import React, { useState, useEffect } from "react";
 import { useParams, useNavigate } from "react-router-dom";
 import {jwtDecode} from "jwt-decode"; // corrected import
@@ -16,6 +14,7 @@ export default function Booking() {
   const [AcreCount, setAcreCount] = useState("");
   const [Message, setMessage] = useState("");
   const [FarmerId, setFarmerId] = useState("");
+  const [createDate, setcreateDate] = useState("");
 
   useEffect(() => {
     const token = localStorage.getItem("token");
@@ -38,7 +37,7 @@ export default function Booking() {
           console.error("MachineryId is undefined");
           return;
         }
-        const response = await fetch(`https://uzavan-server.onrender.com/booking/${id}/owner`);
+        const response = await fetch(`https://uzavan-server.onrender.com/${id}/owner`);
         if (!response.ok) {
           throw new Error("Failed to fetch owner name");
         }
@@ -64,6 +63,7 @@ export default function Booking() {
       Message,
       MachineryId: id, // Corrected here
       FarmerId,
+      createDate
     };
 
     try {
@@ -84,6 +84,7 @@ export default function Booking() {
       setPhoneNumber("");
       setAcreCount("");
       setMessage("");
+      setcreateDate("")
 
       alert("Booking successful!");
       navigate("/Farmerpage"); // Navigate to a success page or back to the home page
@@ -158,6 +159,14 @@ export default function Booking() {
             onChange={(e) => setAcreCount(e.target.value)}
             required
           />
+          <input
+            type="date"
+            id="createDate" // Corrected id to match the purpose
+            className="bookingform"
+            value={createDate}
+            onChange={(e) => setcreateDate(e.target.value)} // Corrected state updater
+            required
+          />
           <textarea
             className="bookingform"
             id="details"
@@ -176,6 +185,8 @@ export default function Booking() {
     </div>
   );
 }
+
+
 
 
 

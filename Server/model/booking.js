@@ -1,7 +1,5 @@
 
 
-
-
 const mongoose = require("mongoose");
 
 const bookingSchema = new mongoose.Schema(
@@ -25,6 +23,10 @@ const bookingSchema = new mongoose.Schema(
     PhoneNumber: {
       type: Number,
     },
+    createDate:{
+      type:Date
+    },
+ 
     AcreCount: {
       type: Number,
     },
@@ -35,6 +37,12 @@ const bookingSchema = new mongoose.Schema(
       type: String,
       require: true
     },
+    isVerified: {
+      type: Boolean,
+      default: false,
+    },
+    bookingDate: { type: Date, default: Date.now },
+
     
   },
   { timestamps: true }

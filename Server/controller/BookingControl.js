@@ -6,9 +6,9 @@ const Machiery = require("../model/servicemodel")
 // Register for machinery owner's service list
 // Create a new booking
 exports.createBooking = (req, res) => {
-  const { Name, Address, District, PhoneNumber, AcreCount, Message, MachineryId, FarmerId ,OwnerName} = req.body;
+  const { Name, Address, District, PhoneNumber, AcreCount, Message, MachineryId, FarmerId ,OwnerName , bookingDate, createDate} = req.body;
 
-  BookingModel.create({ Name, Address, District, PhoneNumber, AcreCount, Message, MachineryId, FarmerId ,OwnerName})
+  BookingModel.create({ Name, Address, District, PhoneNumber, AcreCount, Message, MachineryId, FarmerId ,OwnerName, bookingDate ,createDate})
     .then(service => res.status(201).json(service))
     .catch(err => res.status(500).json({ error: err.message }));
 };
