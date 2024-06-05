@@ -5,6 +5,31 @@ import Button from "../../Componets/Button/Button";
 import ContactPic from "../../Assets/machin8.jpg";
 
 export default function Contact() {
+  const [result, setResult] = React.useState("");
+
+  const onSubmit = async (event) => {
+    event.preventDefault();
+    setResult("Sending....");
+    const formData = new FormData(event.target);
+
+    formData.append("access_key", "07f52770-1fcf-4235-95fc-cba927b71c4c");
+
+    const response = await fetch("https://api.web3forms.com/submit", {
+      method: "POST",
+      body: formData,
+    });
+
+    const data = await response.json();
+
+    if (data.success) {
+      setResult("Succesfully Send your Message");
+      alert(result)
+      event.target.reset();
+    } else {
+      console.log("Error", data);
+      setResult(data.message);
+    }
+  };
   return (
     <div className="totalcontact">
       <div className="maingrid" id="Contactid">
@@ -48,7 +73,7 @@ export default function Contact() {
           <div className="massagepanel">
             <div className="contact details">
               {/* <div className="nameadd"> */}
-              <form>
+              <form onSubmit={onSubmit}>
                 <label className="ContactName"> Name</label>
                 <br />
 
@@ -56,6 +81,7 @@ export default function Contact() {
                   type="text"
                   className="inputContactName"
                   placeholder="Enter your Full Name"
+                  name="name"
                   required
                 />
                 <br />
@@ -66,6 +92,7 @@ export default function Contact() {
                   className="inputContactAddress"
                   placeholder="Enter your Address"
                   required
+                  name="Address"
                 />
                 <br />
                 <label className="Contactphone"> Contact Number</label>
@@ -75,6 +102,7 @@ export default function Contact() {
                   className="inputContactPhone"
                   placeholder="Enter Phone number"
                   required
+                  name="T.P Number"
                 />
                 <br />
                 <label className="Contactmassage"> Message</label>
@@ -85,16 +113,18 @@ export default function Contact() {
                   placeholder="Type Your Message"
                   maxLength={200}
                   required
+                  name="message"
+                  result
                 />
 
                 {/* <Button class="contactbutton" name="Send Message" /> */}
-                <button className="contactbutton">Send Message</button>
+                <button className="contactbutton" type="submit">Send Message</button>
               </form>
             </div>
             <div class="map">
               <iframe
                 src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d63093.79259309366!2d80.44436334408775!3d8.751965622375431!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3afc150e0fc66c73%3A0x37b6b473c8b4d008!2sVavuniya!5e0!3m2!1sen!2slk!4v1707315340836!5m2!1sen!2slk"
-                width="400"
+                width="380"
                 height="290"
                 allowfullscreen=""
                 loading="lazy"
