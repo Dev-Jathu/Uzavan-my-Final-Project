@@ -5,25 +5,25 @@
 }
 
 #hirecard{
-    height: 600px;
-    width: 1000px;
+    height: 500px;
+    width: 800px;
     margin-top: 150px;
-    margin-left: 450px;
+    margin-left: 270px;
     box-shadow: 1px 1px 10px ;
     border: none;
 }
 #hireimg{
 margin-top: -10px;
-height: 520px;
-width: 400px;
-/* width: 0px; */
-margin-top: 25px;
-margin-left: 10px;
+height: 300px;
+width: 300px;
+width: 0px;
+margin-top: 5px;
+margin-left: 20px;
 border-radius: 10px;
 }
 #hirecardtitle{
     font-size: 35px;
-    margin-left: -125px;
+    margin-left: -5px;
     margin-top: 50px;
 }
 #cardbody{
@@ -52,21 +52,22 @@ border-radius: 10px;
     margin-left: -120px;
 }
 #hirethanks{
-    margin-left: -110px;
+    margin-left: 20px;
     font-size: 17px;
     
 }
 
 #hirecardbutton{
-    width: 180px;
+    width: 280px;
     height: 40px;
     background-color: var(--Buttons--backgroundcolor);
     border: none;
     box-shadow: 1px 1px 5px;
-    margin-top: 40px;
-    margin-left: 10px;
+    margin-top: 20px;
+    margin-left: 30px;
     font-size: 20px;
     cursor: pointer;
+    color: white;
 }
 #hirecardbutton:hover{
     background-color: #000000;
@@ -93,3 +94,195 @@ border-radius: 10px;
     margin-left: -600px;
     margin-top: -190px;
 }
+
+.car-listing {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  padding: 20px;
+  margin-left: 50px;
+  /* background-color: white; */
+}
+
+.car-images {
+  flex: 1;
+  /* height: 100px; */
+ 
+  display: flex;
+  flex-direction: column;
+  margin-left: 10px;
+  /* background-color: white; */
+  /* background-color: #0056b3; */
+
+}
+
+.details{
+  flex: 1;
+  min-width: 300px;
+  display: flex;
+  flex-direction: column;
+  margin-left: -150px;
+}
+
+.main-image {
+  width: 450px;
+  height: 350px;
+  margin-left: -500px;
+  margin-top: 20px;
+  background-color: var(--Navbar--backgroundcolor);
+}
+
+.car-details {
+  margin-left:25px;
+  margin-top: 20px;
+  text-align: left;
+  /* font-weight: bold; */
+  font-size: 22px;
+}
+#hireCardText{
+
+  width: 470px;
+}
+#machinedetails{
+  background-color: #ffffff;
+  width: 1000px;
+  margin-left: 100px;
+  box-shadow: 1px 1px 10px #f3f4f6; 
+  border-radius: 10px;
+
+}
+
+.request-info {
+  flex: 1;
+  min-width: 300px;
+  margin-left: -1200px;
+}
+.bookinginfo{
+  margin-left: -250px;
+  margin-top: 10px;
+}
+.request-info form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.request-info input,
+.request-info textarea {
+  padding: 10px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.request-info button {
+  padding: 10px;
+  font-size: 16px;
+  color: white;
+  background-color: #007bff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.request-info button:hover {
+  background-color: #0056b3;
+}
+
+.captcha {
+  display: flex;
+  align-items: center;
+}
+
+.captcha input {
+  margin-right: 10px;
+}
+
+.hireButtons {
+  margin-top: 10px;
+}
+
+#error-message {
+  color: red;
+  font-size: 16px;
+}
+
+
+.request-info, .testimonial-section {
+  width: 100%;
+
+  max-width: 600px;
+}
+
+.testimonial-section {
+  /* margin-top: 20px; */
+ 
+}
+
+.testimonial-card {
+  width: 100%;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  background-color: #fff;
+  margin-left: -50px;
+}
+
+.theme1 {
+  color: #000000;
+}
+
+.testimonial-content {
+  position: relative;
+}
+
+.quote-icon {
+  font-size: 3rem;
+  line-height: 1;
+  position: absolute;
+  top: -20px;
+  left: 0;
+}
+
+.client-info {
+  display: flex;
+  align-items: center;
+  margin-top: 20px;
+}
+
+.client-avatar {
+  width: 50px;
+  height: 50px;
+  background-color: #ccc;
+  border-radius: 50%;
+  margin-right: 10px;
+}
+
+.client-details {
+  line-height: 1.2;
+}
+
+.client-name {
+  font-weight: bold;
+}
+
+.client-designation {
+  font-size: 0.9rem;
+  color: #666;
+}
+
+.client-rating {
+  display: flex;
+  gap: 5px;
+  margin-top: 10px;
+}
+
+.star {
+  font-size: 1.2rem;
+  color: #ccc;
+}
+
+.star.filled {
+  color: #fbc02d;
+}
+
