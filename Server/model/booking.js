@@ -25,7 +25,7 @@ const bookingSchema = new mongoose.Schema(
     },
     createDate:{
       type:Date
-    },
+    }, 
  
     AcreCount: {
       type: Number,
@@ -37,10 +37,8 @@ const bookingSchema = new mongoose.Schema(
       type: String,
       require: true
     },
-    isVerified: {
-      type: Boolean,
-      default: false,
-    },
+  isVerified: { type: String, default: 'Pending' } ,// 'Pending', 'Accepted', 'Denied'
+  // status: { type: String, enum: ['pending', 'accepted', 'denied'], default: 'pending' },
     bookingDate: { type: Date, default: Date.now },
 
     
