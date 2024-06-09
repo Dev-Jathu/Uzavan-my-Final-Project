@@ -10,6 +10,8 @@ const LoginRoutes = require("./userRoutes/loginRoutes");
 const AdminRoutes = require("./userRoutes/adminRoutes");
 const CreateService = require("./userRoutes/ServiceaddRoutes");
 const BookingRoutes =require("./userRoutes/BookingRoutes")
+const ReviewRoutes =require("./userRoutes/reviewRoutes")
+
 
 //app assignd
 const app = express();
@@ -54,7 +56,9 @@ const startServer = async () => {
     //call for booking
     app.use ("/Booking",BookingRoutes)
 
-    
+    //call for Review
+    app.use ("/Review",ReviewRoutes)
+
   } catch (err) {
     console.log(err);
   }
