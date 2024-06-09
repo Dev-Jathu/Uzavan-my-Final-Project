@@ -217,6 +217,9 @@ max-width: 600px;
 .testimonial-section {
 /* margin-top: 20px; */
 
+display: grid;
+grid-template-rows: 158px 158px 158px 158px;
+
 }
 
 .testimonial-card {
@@ -226,7 +229,7 @@ padding: 20px;
 border-radius: 10px;
 box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 background-color: #fff;
-margin-left: -50px;
+margin-left: -150px;
 }
 
 .theme1 {
@@ -395,4 +398,16 @@ width: 100%;
 
 .edit-modal button {
 margin-top: 10px;
+}
+
+.testimonial-section {
+max-height: 800px; /* Adjust the height as needed */
+overflow-y: scroll;
+
+}
+
+.testimonial-card {
+margin-bottom: 20px; /* Add some space between cards */
+margin-left: 20px;
+
 }
