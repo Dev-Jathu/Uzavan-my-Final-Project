@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useParams, useNavigate } from "react-router-dom";
-import {jwtDecode} from "jwt-decode";
+import {jwtDecode} from "jwt-decode"; // Ensure jwtDecode is correctly imported
+import axios from "axios";
 import "./Tractorhire.css";
 import images from "../../../Assets/uzavan17.1.jpg";
 import NavbarForCard from "../navbarforcard/navbarforcard";
@@ -11,7 +12,7 @@ const Hire = () => {
   const [user, setUser] = useState(null);
   const [error, setError] = useState(null);
   const navigate = useNavigate();
-  
+
   const [OwnerName, setOwnerName] = useState("");
   const [Name, setName] = useState("");
   const [Address, setAddress] = useState("");
@@ -20,17 +21,21 @@ const Hire = () => {
   const [AcreCount, setAcreCount] = useState("");
   const [Message, setMessage] = useState("");
   const [FarmerId, setFarmerId] = useState("");
-  const [createDate, setcreateDate] = useState("");
+  const [createDate, setCreateDate] = useState("");
+  const [reviews, setReviews] = useState([]);
 
   useEffect(() => {
     const fetchUser = async () => {
       try {
-        const response = await fetch(`http://localhost:3003/profile/serviceView/${id}`);
+        const response = await fetch(
+          `https://uzavan-server.onrender.com/profile/serviceView/${id}`
+        );
         if (!response.ok) {
           throw new Error(`HTTP error! status: ${response.status}`);
         }
         const data = await response.json();
         setUser(data);
+        setOwnerName(data.Name); // Set owner name from user data
       } catch (error) {
         console.error("Failed to fetch user:", error);
         setError("Failed to fetch user. Please try again later.");
@@ -39,6 +44,21 @@ const Hire = () => {
 
     fetchUser();
   }, [id]);
+
+  useEffect(() => {
+    const fetchReviews = async () => {
+      try {
+        const response = await axios.get(
+          "https://uzavan-server.onrender.com/Review/reviews"
+        );
+        setReviews(response.data);
+      } catch (error) {
+        console.error("There was an error fetching the reviews:", error);
+      }
+    };
+
+    fetchReviews();
+  }, []);
 
   useEffect(() => {
     const token = localStorage.getItem("token");
@@ -53,26 +73,7 @@ const Hire = () => {
     } else {
       navigate("/signin");
     }
-
-    // Fetch owner name
-    async function fetchOwnerName() {
-      try {
-        if (!id) {
-          console.error("MachineryId is undefined");
-          return;
-        }
-        const response = await fetch(`http://localhost:3003/booking/${id}/owner`);
-        if (!response.ok) {
-          throw new Error("Failed to fetch owner name");
-        }
-        const data = await response.json();
-        setOwnerName(data.Name);
-      } catch (error) {
-        console.error("Failed to fetch owner name", error);
-      }
-    }
-    fetchOwnerName();
-  }, [id, navigate]);
+  }, [navigate]);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -85,22 +86,27 @@ const Hire = () => {
       PhoneNumber,
       AcreCount,
       Message,
-      MachineryId: id, // Corrected here
+      MachineryId: id,
       FarmerId,
-      createDate
+      createDate,
     };
 
     try {
-      const response = await fetch("http://localhost:3003/Booking/BookMachine", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(userdata),
-      });
+      const response = await fetch(
+        "https://uzavan-server.onrender.com/Booking/BookMachine",
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(userdata),
+        }
+      );
 
       if (!response.ok) {
-        throw new Error("Failed to register. Server responded with status: " + response.status);
+        throw new Error(
+          "Failed to register. Server responded with status: " + response.status
+        );
       }
       const result = await response.json();
       setAddress("");
@@ -108,10 +114,10 @@ const Hire = () => {
       setPhoneNumber("");
       setAcreCount("");
       setMessage("");
-      setcreateDate("")
+      setCreateDate("");
 
       alert("Booking successful!");
-      navigate("/Farmerpage"); // Navigate to a success page or back to the home page
+      navigate("/Farmerpage");
     } catch (error) {
       console.error("Failed to register", error);
       alert("Booking failed!");
@@ -128,31 +134,47 @@ const Hire = () => {
 
   return (
     <div>
-      <NavbarForCard /><br/><br/><br/><br/>
+      <NavbarForCard />
+      <br />
+      <br />
+      <br />
+      <br />
       <div className="car-listing">
         <div className="car-images">
           <div id="machinedetails">
-          <img src={user.ImageURL || images} alt="Machinery" className="main-image" />
-          <div className="car-details">
-            <h3>Machinery Details:</h3>
-            <div id="hireDetails">
-              <p id="hireName"><strong>Name:</strong> {user.Name}</p>
-              <p id="hireAddress"><strong>Address:</strong> {user.Address}</p>
-              <p id="hireDistrict"><strong>District:</strong> {user.District}</p>
-              <p id="hireRate"><strong>Rate:</strong> {user.Rate}</p>
-              <p className="card-text" id="hireCardText">{user.TelYourService}</p>
+            <img
+              src={user.ImageURL || images}
+              alt="Machinery"
+              className="main-image"
+            />
+            <div className="car-details">
+              <h3>Machinery Details:</h3>
+              <div id="hireDetails">
+                <p id="hireName">
+                  <strong>Name:</strong> {user.Name}
+                </p>
+                <p id="hireAddress">
+                  <strong>Address:</strong> {user.Address}
+                </p>
+                <p id="hireDistrict">
+                  <strong>District:</strong> {user.District}
+                </p>
+                <p id="hireRate">
+                  <strong>Rate:</strong> {user.Rate}
+                </p>
+                <p className="card-text" id="hireCardText">
+                  {user.TelYourService}
+                </p>
+              </div>
+              <p className="card-text" id="thankPage">
+                <small className="text-body-secondary" id="hireThanks">
+                  I will give you a great service. Thank you.
+                </small>
+              </p>
             </div>
-            <p className="card-text" id="thankPage">
-              <small className="text-body-secondary" id="hireThanks">I will give you a great service. Thank you.</small>
-            </p>
-          </div>
           </div>
         </div>
         <div className="request-info">
-          {/* <h2>Request Information</h2> */}
-
-            
-
           <form onSubmit={handleSubmit}>
             <div className="booking-form">
               <input
@@ -161,6 +183,7 @@ const Hire = () => {
                 placeholder="Name"
                 className="bookingform"
                 value={Name}
+                onChange={(e) => setName(e.target.value)}
                 disabled
                 required
               />
@@ -170,6 +193,7 @@ const Hire = () => {
                 placeholder="Owner Name"
                 className="bookingform"
                 value={OwnerName}
+                onChange={(e) => setOwnerName(e.target.value)}
                 disabled
                 required
               />
@@ -221,7 +245,7 @@ const Hire = () => {
                 id="createDate"
                 className="bookingform"
                 value={createDate}
-                onChange={(e) => setcreateDate(e.target.value)}
+                onChange={(e) => setCreateDate(e.target.value)}
                 required
               />
               <textarea
@@ -232,8 +256,8 @@ const Hire = () => {
                 onChange={(e) => setMessage(e.target.value)}
                 required
               ></textarea>
-              <p style={{ visibility: 'hidden' }}>Machinery ID: {id}</p>
-              <p style={{ visibility: 'hidden' }}>Farmer ID: {FarmerId}</p>
+              <p style={{ visibility: "hidden" }}>Machinery ID: {id}</p>
+              <p style={{ visibility: "hidden" }}>Farmer ID: {FarmerId}</p>
               <div className="submitbtn">
                 <button id="submitBtn">Book Now</button>
               </div>
@@ -241,31 +265,45 @@ const Hire = () => {
           </form>
         </div>
         <div className="testimonial-section">
-          <div className="testimonial-card theme1">
-            <div className="testimonial-content">
-              <div className="quote-icon">“</div>
-              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-              <div className="client-info">
-                <div className="client-avatar"></div>
-                <div className="client-details">
-                  <p className="client-name">Client Name</p>
-                  <p className="client-designation">Client Designation</p>
+          {reviews
+            .filter((review) => review.ownerName === user.Name)
+            .map((review) => (
+              <div key={review._id} className="testimonial-card theme1">
+                <div className="testimonial-content">
+                  <div className="quote-icon">“</div>
+                  <p className="reviecommentout">{review.comment}</p>
+                  <div className="client-info">
+                    <div className="client-avatar">
+                      <i className="fa-solid fa-user" id="userreview"></i>
+                    </div>
+                    <div className="client-details">
+                      <p className="client-name">{review.name}</p>
+                      <div className="client-rating">
+                        <div className="arrangestarr">
+                          {" "}
+                          {[1, 2, 3, 4, 5].map((star) => (
+                            <span
+                              id="startedit"
+                              key={star}
+                              className={
+                                star <= review.rating ? "star filled" : "star"
+                              }
+                            >
+                              ★
+                            </span>
+                          ))}
+                        </div>
+                      </div>{" "}
+                    </div>
+                  </div>
                 </div>
               </div>
-            </div>
-            <div className="client-rating">
-              <span className="star filled">★</span>
-              <span className="star filled">★</span>
-              <span className="star filled">★</span>
-              <span className="star filled">★</span>
-              <span className="star">★</span>
-            </div>
-          </div>
+            ))}
         </div>
       </div>
       <FooterForCard />
     </div>
   );
-}
+};
 
 export default Hire;

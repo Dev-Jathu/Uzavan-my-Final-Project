@@ -25,6 +25,8 @@ import Farmerbooking from "../Pages/Userpage/Farmer/Farmerbooking";
 import ServiveMachine from "../Pages/Userpage/Machineowner/serviceMachine/servicemachine";
 import Order from "../Pages/Userpage/Machineowner/serviceMachine/order";
 import MachineServiceHome from "../Pages/Service/machineservice";
+import Review from '../Componets/Review/Review'
+
 
 export default function RoutesTable() {
     return (
@@ -57,7 +59,7 @@ export default function RoutesTable() {
                 <Route path='/MachineService' element={<ServiveMachine/>}/>
                 <Route path='/MachineOrder' element={<Order/>}/>
                 <Route path='/Machineservicehome' element={<MachineServiceHome/>}/>
-
+                <Route path='/Review' element={<Review/>}/>
 
 
             </Routes>

@@ -1,16 +1,16 @@
 :root{
-    --Navbar--backgroundcolor:#222933;
-    --Buttons--backgroundcolor:#15803d;
-    --backgroundcolor:#f3f4f6;
+  --Navbar--backgroundcolor:#222933;
+  --Buttons--backgroundcolor:#15803d;
+  --backgroundcolor:#f3f4f6;
 }
 
 #hirecard{
-    height: 500px;
-    width: 800px;
-    margin-top: 150px;
-    margin-left: 270px;
-    box-shadow: 1px 1px 10px ;
-    border: none;
+  height: 500px;
+  width: 800px;
+  margin-top: 150px;
+  margin-left: 270px;
+  box-shadow: 1px 1px 10px ;
+  border: none;
 }
 #hireimg{
 margin-top: -10px;
@@ -22,267 +22,377 @@ margin-left: 20px;
 border-radius: 10px;
 }
 #hirecardtitle{
-    font-size: 35px;
-    margin-left: -5px;
-    margin-top: 50px;
+  font-size: 35px;
+  margin-left: -5px;
+  margin-top: 50px;
 }
 #cardbody{
-    margin-left: 100px;
-    margin-top: -50px;
+  margin-left: 100px;
+  margin-top: -50px;
 }
 #hirecardtex{
-    text-align: left;
-    margin-left: 150px;
-    margin-top: 30px;
-    width: 500px;
+  text-align: left;
+  margin-left: 150px;
+  margin-top: 30px;
+  width: 500px;
 
 
 }
 #thankpage{
-    margin-top: 30px;
+  margin-top: 30px;
 }
 #Hirename{
-    text-align: left;
-    margin-left: 155px;
-    margin-top: 10px;
-    font-size: 20px;
+  text-align: left;
+  margin-left: 155px;
+  margin-top: 10px;
+  font-size: 20px;
 }
 #hiredeatails{
-    margin-top: 30px;
-    margin-left: -120px;
+  margin-top: 30px;
+  margin-left: -120px;
 }
 #hirethanks{
-    margin-left: 20px;
-    font-size: 17px;
-    
+  margin-left: 20px;
+  font-size: 17px;
+  
 }
 
 #hirecardbutton{
-    width: 280px;
-    height: 40px;
-    background-color: var(--Buttons--backgroundcolor);
-    border: none;
-    box-shadow: 1px 1px 5px;
-    margin-top: 20px;
-    margin-left: 30px;
-    font-size: 20px;
-    cursor: pointer;
-    color: white;
+  width: 280px;
+  height: 40px;
+  background-color: var(--Buttons--backgroundcolor);
+  border: none;
+  box-shadow: 1px 1px 5px;
+  margin-top: 20px;
+  margin-left: 30px;
+  font-size: 20px;
+  cursor: pointer;
+  color: white;
 }
 #hirecardbutton:hover{
-    background-color: #000000;
-    color: white;
+  background-color: #000000;
+  color: white;
 }
 #connectbutton{
-    width: 180px;
-    height: 40px;
-    background-color: var(--Buttons--backgroundcolor);
-    border: none;
-    box-shadow: 1px 1px 5px;
-    margin-left: 20px;
-    font-size: 20px;
+  width: 180px;
+  height: 40px;
+  background-color: var(--Buttons--backgroundcolor);
+  border: none;
+  box-shadow: 1px 1px 5px;
+  margin-left: 20px;
+  font-size: 20px;
 }
 .hire2buttons{
-    margin-left: -80px;
-    margin-top: 45px;
+  margin-left: -80px;
+  margin-top: 45px;
 }
 #connectbutton:hover{
-    background-color: #000000;
-    color: white;
+  background-color: #000000;
+  color: white;
 }
 #hirelogo{
-    margin-left: -600px;
-    margin-top: -190px;
+  margin-left: -600px;
+  margin-top: -190px;
 }
 
 .car-listing {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 20px;
-  padding: 20px;
-  margin-left: 50px;
-  /* background-color: white; */
+display: flex;
+flex-wrap: wrap;
+gap: 20px;
+padding: 20px;
+margin-left: 50px;
+/* background-color: white; */
 }
 
 .car-images {
-  flex: 1;
-  /* height: 100px; */
- 
-  display: flex;
-  flex-direction: column;
-  margin-left: 10px;
-  /* background-color: white; */
-  /* background-color: #0056b3; */
+flex: 1;
+/* height: 100px; */
+
+display: flex;
+flex-direction: column;
+margin-left: 10px;
+/* background-color: white; */
+/* background-color: #0056b3; */
 
 }
 
 .details{
-  flex: 1;
-  min-width: 300px;
-  display: flex;
-  flex-direction: column;
-  margin-left: -150px;
+flex: 1;
+min-width: 300px;
+display: flex;
+flex-direction: column;
+margin-left: -150px;
 }
 
 .main-image {
-  width: 450px;
-  height: 350px;
-  margin-left: -500px;
-  margin-top: 20px;
-  background-color: var(--Navbar--backgroundcolor);
+width: 450px;
+height: 350px;
+margin-left: -500px;
+margin-top: 20px;
+background-color: var(--Navbar--backgroundcolor);
 }
 
 .car-details {
-  margin-left:25px;
-  margin-top: 20px;
-  text-align: left;
-  /* font-weight: bold; */
-  font-size: 22px;
+margin-left:25px;
+margin-top: 20px;
+text-align: left;
+/* font-weight: bold; */
+font-size: 22px;
 }
 #hireCardText{
 
-  width: 470px;
+width: 470px;
 }
 #machinedetails{
-  background-color: #ffffff;
-  width: 1000px;
-  margin-left: 100px;
-  box-shadow: 1px 1px 10px #f3f4f6; 
-  border-radius: 10px;
+background-color: #ffffff;
+width: 1000px;
+height: 775px;
+margin-left: 100px;
+box-shadow: 1px 1px 10px #f3f4f6; 
+border-radius: 10px;
 
 }
 
 .request-info {
-  flex: 1;
-  min-width: 300px;
-  margin-left: -1200px;
+flex: 1;
+min-width: 300px;
+margin-left: -1200px;
 }
 .bookinginfo{
-  margin-left: -250px;
-  margin-top: 10px;
+margin-left: -250px;
+margin-top: 10px;
 }
 .request-info form {
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
+display: flex;
+flex-direction: column;
+gap: 10px;
 }
 
 .request-info input,
 .request-info textarea {
-  padding: 10px;
-  font-size: 16px;
-  border: 1px solid #ccc;
-  border-radius: 4px;
+padding: 10px;
+font-size: 16px;
+border: 1px solid #ccc;
+border-radius: 4px;
 }
 
 .request-info button {
-  padding: 10px;
-  font-size: 16px;
-  color: white;
-  background-color: #007bff;
-  border: none;
-  border-radius: 4px;
-  cursor: pointer;
+padding: 10px;
+font-size: 16px;
+color: white;
+background-color: #007bff;
+border: none;
+border-radius: 4px;
+cursor: pointer;
 }
 
 .request-info button:hover {
-  background-color: #0056b3;
+background-color: #0056b3;
 }
 
 .captcha {
-  display: flex;
-  align-items: center;
+display: flex;
+align-items: center;
 }
 
 .captcha input {
-  margin-right: 10px;
+margin-right: 10px;
 }
 
 .hireButtons {
-  margin-top: 10px;
+margin-top: 10px;
 }
 
 #error-message {
-  color: red;
-  font-size: 16px;
+color: red;
+font-size: 16px;
 }
 
 
 .request-info, .testimonial-section {
-  width: 100%;
-
-  max-width: 600px;
+width: 100%;
+max-width: 600px;
 }
 
 .testimonial-section {
-  /* margin-top: 20px; */
- 
+/* margin-top: 20px; */
+
 }
 
 .testimonial-card {
-  width: 100%;
-  padding: 20px;
-  border-radius: 10px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  background-color: #fff;
-  margin-left: -50px;
+width: 500px;
+height: 140px;
+padding: 20px;
+border-radius: 10px;
+box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+background-color: #fff;
+margin-left: -50px;
 }
 
 .theme1 {
-  color: #000000;
+color: #000000;
 }
 
 .testimonial-content {
-  position: relative;
+position: relative;
 }
 
 .quote-icon {
-  font-size: 3rem;
-  line-height: 1;
-  position: absolute;
-  top: -20px;
-  left: 0;
+font-size: 4rem;
+line-height: 1;
+position: absolute;
+top: -20px;
+left: 0;
+color: #15803d;
+
 }
 
 .client-info {
-  display: flex;
-  align-items: center;
-  margin-top: 20px;
+display: flex;
+align-items: center;
+margin-top: -15px;
+}
+.reviecommentout{
+padding-top: 70px;
+margin-left: -50PX;
 }
 
 .client-avatar {
-  width: 50px;
-  height: 50px;
-  background-color: #ccc;
-  border-radius: 50%;
-  margin-right: 10px;
+width: 40px;
+height: 40px;
+background-color: #ccc;
+border-radius: 50%;
+margin-right: 10px;
+margin-top: -130px;
+margin-left: 20px;
+}
+#userreview{
+font-size: 20px;
+margin-top: 10px;
 }
 
 .client-details {
-  line-height: 1.2;
+line-height: 1.2;
+margin-top: -50px;
 }
 
 .client-name {
-  font-weight: bold;
+font-weight: bold;
+margin-top: -52px;
+font-size: 20px;
+margin-left: -300px;
 }
 
 .client-designation {
-  font-size: 0.9rem;
-  color: #666;
+font-size: 0.9rem;
+color: #666;
 }
 
 .client-rating {
-  display: flex;
-  gap: 5px;
-  margin-top: 10px;
+display: flex;
+gap: 8px;
+margin-top: -5px;
+margin-left: -100px;
+}
+.arrangestarr{
+margin-left: 300px;
+margin-top: -40px;
+}
+#startedit{
+font-size: 28px;
+padding-left: 10px;
+
 }
 
 .star {
-  font-size: 1.2rem;
-  color: #ccc;
+font-size: 1.2rem;
+color: #ccc;
 }
 
 .star.filled {
-  color: #fbc02d;
+color: #fbc02d;
 }
 
+/* App.css */
+
+.user-management-container {
+display: flex;
+flex-direction: column;
+align-items: center;
+}
+
+.toggle-buttons {
+margin-bottom: 20px;
+}
+
+.toggle-buttons button {
+margin-right: 10px;
+}
+
+.order-table-container,
+.consultation-table-container {
+width: 80%;
+margin-bottom: 20px;
+}
+
+.order-table,
+.consultation-table {
+width: 100%;
+border-collapse: collapse;
+}
+
+.order-table th,
+.consultation-table th,
+.order-table td,
+.consultation-table td {
+border: 1px solid #ddd;
+padding: 8px;
+text-align: left;
+}
+
+.order-table th,
+.consultation-table th {
+background-color: #f2f2f2;
+}
+
+.pagination {
+display: flex;
+justify-content: center;
+margin-top: 10px;
+}
+
+.pagination button {
+margin: 0 5px;
+padding: 5px 10px;
+cursor: pointer;
+}
+
+.edit-modal {
+position: fixed;
+top: 50%;
+left: 50%;
+transform: translate(-50%, -50%);
+background-color: #fff;
+padding: 20px;
+border: 1px solid #ccc;
+}
+
+.edit-modal form {
+display: flex;
+flex-direction: column;
+}
+
+.edit-modal label {
+margin-bottom: 5px;
+}
+
+.edit-modal input,
+.edit-modal textarea {
+margin-bottom: 10px;
+padding: 5px;
+width: 100%;
+}
+
+.edit-modal button {
+margin-top: 10px;
+}

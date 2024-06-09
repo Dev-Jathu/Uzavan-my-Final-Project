@@ -1,14 +1,8 @@
-
-
-
-
-
 import React, { useState, useEffect } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import axios from 'axios';
 import {jwtDecode} from 'jwt-decode';
 import Logo from '../../../Assets/uzavan.png';
-// import StripeCheckout from 'react-stripe-checkout';
 
 function Machine() {
   const [users, setUsers] = useState([]);
@@ -19,11 +13,8 @@ function Machine() {
 
   const navigate = useNavigate();
 
-  // Function to handle logout
   const handleLogout = () => {
-    // Remove JWT token from local storage or wherever it's stored
     localStorage.removeItem('token');
-    // Navigate to the home page
     navigate('/signin');
   };
 
@@ -53,21 +44,19 @@ function Machine() {
     ));
   };
 
-
-
   useEffect(() => {
     const token = localStorage.getItem('token');
     if (!token) {
-      navigate('/signin'); // Redirect to login if token is not present
+      navigate('/signin');
     } else {
-      // Decode the token to get user information
       try {
         const decodedToken = jwtDecode(token);
-        setUsername(decodedToken.Name); // Set the username from the token
+        setUsername(decodedToken.Name);
         setUserid(decodedToken.id);
         fetchUsers(decodedToken.Name, token);
       } catch (error) {
         console.error('Error decoding token:', error);
+        navigate('/signin');
       }
     }
   }, [navigate]);
@@ -88,6 +77,18 @@ function Machine() {
         if (error.response && error.response.status === 401) {
           navigate("/signin");
         }
+      });
+  };
+
+  const updateBookingStatus = (id, status) => {
+    axios
+      .patch(`https://uzavan-server.onrender.com/Booking/updateBookingStatus/${id}`, { status })
+      .then((response) => {
+        console.log('Booking status updated:', response.data);
+        fetchUsers(username, localStorage.getItem('token')); // Refresh the user list
+      })
+      .catch((error) => {
+        console.error('Failed to update booking status:', error);
       });
   };
 
@@ -130,8 +131,8 @@ function Machine() {
                     <td>{user.District}</td>
                     <td>{user.AcreCount}</td>
                     <td className="verifycationconfirm">
-                      <button className="Confirm">Confirm</button>
-                      <button className="Confirm" id="cancel">Cancel</button>
+                      <button className="Confirm" onClick={() => updateBookingStatus(user._id, 'Accepted')}>Confirm</button>
+                      <button className="Confirm" id="cancel" onClick={() => updateBookingStatus(user._id, 'cancelled')}>Cancel</button>
                     </td>
                   </tr>
                 ))}
@@ -141,26 +142,15 @@ function Machine() {
           </div>
         </div>
         <div className="sidbarboss" id="sidbarmachine">
-          <p className="sidetext" >
+          <p className="sidetext">
             <div id="sidetext">
-            Uzhavan <br />
-            <span5>The Connector</span5>
+              Uzhavan <br />
+              <span5>The Connector</span5>
             </div>
-         
           </p>
           <Link to="/LinkAddProfile">
-          {/* <StripeCheckout
-                stripeKey="pk_test_51PILqiEp6JPeXInZx8QfmFl1DToJ5gg5bAXgIH6JMHKpkPeS7RaxnWq3rGGzLdyz35RtgFaO1XlOsTsJtPAC91Oc00KBUr8fEI"
-                token={makePayment}
-                name="Buy Uzhavan"
-                amount={product.price * 100}
-              >
             <button className="dash" id="dash">Add Profile</button>
-              </StripeCheckout> */}
-            <button className="dash" id="dash">Add Profile</button>
-
           </Link>
-         
           <Link to="/MachineService">
             <button className="dash">Service</button>
           </Link>
@@ -169,15 +159,10 @@ function Machine() {
             <button className="dash">Order</button>
           </Link>
           <br />
-          {/* <Link to="/Machineservicehome">
-            <button className="dash">Home</button>
-          </Link> */}
-          <br/>
-          {/* Logout button with onClick event */}
           <button className="dash" onClick={handleLogout}>Logout</button>
           <p className="copyrights">
             &copy; 2024 Uzhavan. All rights reserved.
-          </p>{" "}
+          </p>
         </div>
       </div>
     </div>
@@ -185,5 +170,3 @@ function Machine() {
 }
 
 export default Machine;
-
-

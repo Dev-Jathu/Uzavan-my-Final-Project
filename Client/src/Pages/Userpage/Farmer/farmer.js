@@ -1,38 +1,32 @@
 import React, { useState, useEffect } from "react";
-import Backgroundpgoto3 from "../../../Assets/newfarmer1.jpg";
-import Button from "../../../Componets/Button/Button";
-import Logo from "../../../Assets/uzavan.png";
-import pic from "../../../Assets/final.jpg";
-import pic1 from "../../../Assets/new3.jpg";
-import pic2 from "../../../Assets/new1.jpg";
-import {jwtDecode }from "jwt-decode"; // Remove curly braces around jwtDecode
+import {jwtDecode} from "jwt-decode";
 import { Link, useNavigate } from "react-router-dom";
 import axios from "axios";
+import Modal from "react-modal";
+import Logo from '../../../Assets/uzavan.png';
+import ReviewForm from "../../../Componets/Review/Review"; // Import the ReviewForm component
 import "./farmer.css";
 
 function Farmer() {
-  const [users, setUsers] = useState([]);
+  const [bookings, setBookings] = useState([]);
   const [currentPage, setCurrentPage] = useState(1);
   const [itemsPerPage, setItemsPerPage] = useState(6);
-  const [username, setUsername] = useState(""); // State to hold username
-  const [bookings, setBookings] = useState([]); // State to hold bookings
-  const [filteredBookings, setFilteredBookings] = useState([]); // State to hold filtered bookings
+  const [username, setUsername] = useState("");
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const [selectedOwner, setSelectedOwner] = useState("");
+  const [selectedBooking, setSelectedBooking] = useState(null);
 
-  const navigate = useNavigate(); // Hook for navigation
+  const navigate = useNavigate();
 
-  // Function to handle logout
   const handleLogout = () => {
-    // Remove JWT token from local storage or wherever it's stored
     localStorage.removeItem("token");
-    // Navigate to the home page
     navigate("/signin");
   };
 
-  // Pagination logic
   const indexOfLastItem = currentPage * itemsPerPage;
   const indexOfFirstItem = indexOfLastItem - itemsPerPage;
-  const currentItems = filteredBookings.slice(indexOfFirstItem, indexOfLastItem); // Paginate filtered bookings
-  const totalPages = Math.ceil(filteredBookings.length / itemsPerPage);
+  const currentItems = bookings.slice(indexOfFirstItem, indexOfLastItem);
+  const totalPages = Math.ceil(bookings.length / itemsPerPage);
 
   const handlePageChange = (pageNumber) => {
     setCurrentPage(pageNumber);
@@ -55,28 +49,36 @@ function Farmer() {
     ));
   };
 
+  const openModal = (booking) => {
+    if (booking.isVerified === "cancelled" || booking.isVerified === "Accepted") {
+      setSelectedOwner(booking.OwnerName);
+      setSelectedBooking(booking);
+      setIsModalOpen(true);
+    }
+  };
+
+  const closeModal = () => {
+    setIsModalOpen(false);
+  };
+
   useEffect(() => {
     const token = localStorage.getItem("token");
     if (!token) {
-      navigate("/signin"); // Redirect to login if token is not present
+      navigate("/signin");
     } else {
-      // Decode the token to get user information
       try {
         const decodedToken = jwtDecode(token);
-        setUsername(decodedToken.Name); // Set the username from the token
+        setUsername(decodedToken.Name);
         console.log("User Email:", decodedToken.Email);
         console.log("User Name:", decodedToken.Name);
 
-        // Fetch bookings from backend
         axios
           .get("https://uzavan-server.onrender.com/Booking/Bookingview")
           .then((response) => {
-            // Filter bookings to show only those that match the username in the Name field
             const userBookings = response.data.filter(
               (booking) => booking.Name === decodedToken.Name
             );
             setBookings(userBookings);
-            setFilteredBookings(userBookings); // Initialize filteredBookings with userBookings
           })
           .catch((error) => {
             console.error("Error fetching bookings:", error);
@@ -107,7 +109,7 @@ function Farmer() {
         </div>
         <div className="content" id="content">
           <div className="Notecontainer" id="notecontainer">
-            <p className="verification" id="verification">Waiting for your Confirmation!</p>
+            <p className="verification" id="verification">Your Bookings</p>
             <table>
               <thead>
                 <tr>
@@ -117,6 +119,7 @@ function Farmer() {
                   <th>District</th>
                   <th>Acre Count</th>
                   <th>Status</th>
+                  <th>Review</th>
                 </tr>
               </thead>
               <tbody>
@@ -126,8 +129,11 @@ function Farmer() {
                     <td>{booking.OwnerName}</td>
                     <td>{booking.Address}</td>
                     <td>{booking.District}</td>
-                    <td>{booking.AcreCount} </td>
-                    <td>{booking.isVerified ? "Done" : "Pending"}</td> {/* Display isVerified as True/False */}
+                    <td>{booking.AcreCount}</td>
+                    <td>{booking.isVerified}</td>
+                    <td>
+                      <i className="fa-solid fa-star" onClick={() => openModal(booking)}></i>
+                    </td>
                   </tr>
                 ))}
               </tbody>
@@ -150,6 +156,15 @@ function Farmer() {
           </p>
         </div>
       </div>
+      <Modal
+        isOpen={isModalOpen}
+        onRequestClose={closeModal}
+        contentLabel="Review Form"
+        className="Modal"
+        overlayClassName="Overlay"
+      >
+        <ReviewForm username={username} ownerName={selectedOwner} booking={selectedBooking} />
+      </Modal>
     </div>
   );
 }
