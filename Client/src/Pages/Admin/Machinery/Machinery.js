@@ -1,4 +1,3 @@
-
 import { Link,useNavigate } from "react-router-dom";
 import Logo from "../../../Assets/uzavan.png";
 import Boss from "../../../Assets/boss.png";
@@ -8,7 +7,7 @@ import React, { useState, useEffect } from "react";
 function MachineryDetails() {
   const [users, setUsers] = useState([]);
   const [currentPage, setCurrentPage] = useState(1);
-  const [itemsPerPage, setItemsPerPage] = useState(8);
+  const [itemsPerPage, setItemsPerPage] = useState(7);
   const navigate = useNavigate();
 
   const handleLogout = () => {
@@ -93,6 +92,7 @@ function MachineryDetails() {
                 <th>Name</th>
                 <th> NIC</th>
                 <th> TelNo</th>
+                <th> Email</th>
                 <th>Address</th>
                 
                 <th>Delete</th>
@@ -103,6 +103,7 @@ function MachineryDetails() {
                     <td>{user.Name}</td>
                     <td>{user.NIC}</td>
                     <td>{user.TelNo}</td>
+                    <td>{user.Email}</td>
                     <td>{user.Address}</td>
 
                    

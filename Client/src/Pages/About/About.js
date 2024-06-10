@@ -6,7 +6,7 @@ import Servicelogo1 from "../../Assets/about2.png";
 import Servicelogo2 from "../../Assets/about3.png";
 import Servicelogo3 from "../../Assets/about4.png";
 import Servicelogo4 from "../../Assets/about5.png";
-import Logoabout1 from "../../Assets/uzavan17.jpg"; //jbhbj
+import Logoabout1 from "../../Assets/newabout.jpeg"; //jbhbj
 import Logoabout2 from "../../Assets/uzavan17.1.jpg";
 import Logoabout3 from "../../Assets/TOP.jpg";
 import Button from "../../Componets/Button/Button";
