@@ -136,7 +136,7 @@ function Order() {
             </div>
           </p>
           <Link to="/LinkAddProfile">
-            <button className="dash" id="dash">Add Profile</button>
+            <button className="dash" id="dash">Add Service</button>
           </Link>
           <Link to="/MachineService">
             <button className="dash">Service</button>

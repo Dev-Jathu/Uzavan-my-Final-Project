@@ -128,7 +128,7 @@ function LinkAddProfile() {
          
           </p>
           <Link to="/LinkAddProfile">
-            <button className="dash">Add Profile</button>
+            <button className="dash">Add Service</button>
           </Link>
           <Link to="/MachineService">
             <button className="dash">Service</button>

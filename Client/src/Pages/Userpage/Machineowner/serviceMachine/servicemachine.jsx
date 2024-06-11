@@ -183,7 +183,7 @@ function ServiveMachine() {
           </p>
           <Link to="/LinkAddProfile">
             <button className="dash" id="dash">
-              Add Profile
+            Add Service
             </button>
           </Link>
           <Link to="/MachineService">
