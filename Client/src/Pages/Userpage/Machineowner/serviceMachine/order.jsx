@@ -98,7 +98,7 @@ function Machine() {
         console.log("Booking status updated:", response.data);
         fetchUsers(username, localStorage.getItem("token")); // Refresh the user list
         if (status === "Accepted") {
-          toast.success("Your booking is successfully confirmed!");
+          toast.success("Your booking is successfully!");
         } else if (status === "cancelled") {
           toast.info("Your booking is canceled!");
         }
@@ -155,13 +155,11 @@ function Machine() {
                     key={user._id}
                     style={{
                       backgroundColor:
-                        user._id === newOrderId && user.isVerified === "Pending"
-                          ? "lightblue"
-                          : "transparent",
+                        user.isVerified === "Pending" ? "lightblue" : "transparent",
                     }}
                   >
                     <td style={{ padding: "5px" }}>
-                      {user._id === newOrderId && user.isVerified === "Pending" && (
+                      {user.isVerified === "Pending" && (
                         <span
                           style={{
                             fontSize: "12px",

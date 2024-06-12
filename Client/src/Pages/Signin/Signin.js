@@ -1,6 +1,3 @@
-
-
-
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
@@ -20,19 +17,23 @@ function Signin() {
 
   axios.defaults.withCredentials = true;
   
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
     const userdata = { Email, Password };
     console.log(userdata);
     
-    axios
-      .post("https://uzavan-server.onrender.com/farmerLogin/sigIn", userdata)
-      .then((result) => {
-        console.log(result);
-        if (result.data.token) {
-          // Save the token in local storage
-          localStorage.setItem("token", result.data.token);
-          
+    try {
+      const result = await axios.post("https://uzavan-server.onrender.com/farmerLogin/sigIn", userdata);
+      console.log(result);
+      if (result.data.token) {
+        // Save the token in local storage
+        localStorage.setItem("token", result.data.token);
+        
+        // Show success message
+        toast.success("Login Successfully!");
+
+        // Delay navigation to ensure the toast message is visible
+        setTimeout(() => {
           // Navigate based on user role
           if (result.data.role === "user") {
             navigate("/");
@@ -41,16 +42,26 @@ function Signin() {
           } else if (result.data.role === "admin") {
             navigate("/Admin");
           }
-        } else {
-          console.log("Login failed");
-          toast.error("Login failed! Please check your credentials.")
-        }
-      })
-      .catch((err) => console.log(err));
+        }, 2000); // Delay of 2 seconds
+      } else {
+        // Handle case where token is not received
+        console.log("Login failed");
+        toast.error("Login failed! Please check your credentials.");
+      }
+    } catch (err) {
+      console.log(err);
+      // Check if the error is due to incorrect password
+      if (err.response && err.response.data && err.response.data.message) {
+        toast.error(err.response.data.message);
+      } else {
+        toast.error("An error occurred during login.");
+      }
+    }
   };
 
   return (
     <div className="maincontainer">
+      <ToastContainer />
       <div className="Grid">
         <div className="Form">
           <div className="flexlogo">
