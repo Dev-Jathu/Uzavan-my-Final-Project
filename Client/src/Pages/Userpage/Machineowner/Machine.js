@@ -66,7 +66,7 @@ function Machine() {
 
   const fetchUsers = (ownerName, token) => {
     axios
-      .get("http://localhost:3003/Booking/Bookingview", {
+      .get("https://uzavan-server.onrender.com/Booking/Bookingview", {
         headers: { Authorization: `Bearer ${token}` },
       })
       .then((response) => {
@@ -91,7 +91,7 @@ function Machine() {
 
   const updateBookingStatus = (id, status) => {
     axios
-      .patch(`http://localhost:3003/Booking/updateBookingStatus/${id}`, {
+      .patch(`https://uzavan-server.onrender.com/Booking/updateBookingStatus/${id}`, {
         status,
       })
       .then((response) => {
