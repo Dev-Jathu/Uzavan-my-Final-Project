@@ -96,7 +96,11 @@ function Machine() {
       })
       .then((response) => {
         console.log("Booking status updated:", response.data);
-        fetchUsers(username, localStorage.getItem("token")); // Refresh the user list
+        setUsers((prevUsers) =>
+          prevUsers.map((user) =>
+            user._id === id ? { ...user, isVerified: status } : user
+          )
+        );
         if (status === "Accepted") {
           toast.success("Your booking is successfully!");
         } else if (status === "cancelled") {
@@ -180,23 +184,29 @@ function Machine() {
                     <td>{user.AcreCount}</td>
                     <td>{user.isVerified}</td>
                     <td className="verifycationconfirm">
-                      {user.isVerified !== "Accepted" && (
-                        <button
-                          className="Confirm"
-                          onClick={() =>
-                            updateBookingStatus(user._id, "Accepted")
-                          }
-                        >
-                          Confirm
-                        </button>
+                      {user.isVerified === "Pending" && (
+                        <>
+                          <button
+                            className="Confirm"
+                            onClick={() => updateBookingStatus(user._id, "Accepted")}
+                          >
+                            Confirm
+                          </button>
+                          <button
+                            className="Confirm"
+                            id="cancel"
+                            onClick={() => handleCancel(user._id)}
+                          >
+                            Cancel
+                          </button>
+                        </>
                       )}
-                      <button
-                        className="Confirm"
-                        id="cancel"
-                        onClick={() => handleCancel(user._id)}
-                      >
-                        Cancel
-                      </button>
+                      {user.isVerified === "Accepted" && (
+                       <i class="fa-solid fa-check" id="correct"> </i>
+                      )}
+                      {user.isVerified === "cancelled" && (
+                     <i class="fa-solid fa-xmark" id="wrong"></i>
+                      )}
                     </td>
                   </tr>
                 ))}
@@ -238,3 +248,4 @@ function Machine() {
 }
 
 export default Machine;
+ 

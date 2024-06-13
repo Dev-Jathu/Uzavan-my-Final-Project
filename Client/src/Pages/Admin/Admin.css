@@ -306,3 +306,24 @@ td{
 .namemachine{
     text-align: left;
 }
+#correct{
+    font-size: 25px;
+    font-weight: bold;
+    height: 40px;
+    width: 40px;
+    background-color:var(--Buttons--backgroundcolor);
+    color: #fdfdfd;
+    border-radius: 50%;
+    padding-top: 7px;
+
+}
+#wrong{
+    font-size: 25px;
+    font-weight: bold;
+    height: 40px;
+    width: 40px;
+    background-color:red;
+    color: #fdfdfd;
+    border-radius: 50%;
+    padding-top: 7px;
+}
