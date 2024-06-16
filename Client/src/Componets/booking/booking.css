@@ -10,7 +10,7 @@
     padding: 20px;
     border-radius: 5px;
     margin-left: 15px;
-    margin-top: 0px;
+    margin-top: -12px;
 }
 
  .bookingform {
@@ -23,7 +23,7 @@
     margin-top: 15px;
 }
 #details{
-    height: 150px;
+    height: 110px;
 }
 
 #submitBtn {
