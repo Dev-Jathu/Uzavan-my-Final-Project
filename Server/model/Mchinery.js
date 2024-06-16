@@ -1,9 +1,9 @@
-
 const mongoose = require("mongoose");
+
 const schema = new mongoose.Schema(
   {
     MachineryId: {
-      type:mongoose.Types.ObjectId,
+      type: mongoose.Types.ObjectId,
     },
     Name: {
       type: String,
@@ -17,10 +17,10 @@ const schema = new mongoose.Schema(
     Address: {
       type: String,
     },
-    VehileTypes: {
+    VehicleTypes: {
+      type: String,
       enum: ["Tractor", "paddyCropper", "TsunamiMachine"],
     },
-
     Email: {
       type: String,
       unique: true,
@@ -31,5 +31,6 @@ const schema = new mongoose.Schema(
   },
   { timestamps: true }
 );
+
 const Machinery = mongoose.model("Machine_Owner", schema);
 module.exports = Machinery;
