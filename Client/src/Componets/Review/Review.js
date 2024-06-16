@@ -33,6 +33,28 @@ const ReviewForm = ({ username, ownerName, booking }) => {
     setName(username);
   }, [username]);
 
+  useEffect(() => {
+    switch (rating) {
+      case 1:
+        setComment("Very bad");
+        break;
+      case 2:
+        setComment("Bad");
+        break;
+      case 3:
+        setComment("Average");
+        break;
+      case 4:
+        setComment("Good");
+        break;
+      case 5:
+        setComment("Very good");
+        break;
+      default:
+        setComment("");
+    }
+  }, [rating]);
+
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
@@ -82,7 +104,6 @@ const ReviewForm = ({ username, ownerName, booking }) => {
             
           />
         </div>
-       
         <div className="starrating">
           <StarRating rating={rating} setRating={setRating} />
         </div>
@@ -93,7 +114,6 @@ const ReviewForm = ({ username, ownerName, booking }) => {
             required
             className="reviewcomment"
             placeholder="Comment here"
-            
           />
         </div>
         <button type="submit" className="reviebutton">
