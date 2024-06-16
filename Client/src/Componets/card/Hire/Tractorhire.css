@@ -126,8 +126,9 @@ margin-left: 20px;
 
 .main-image {
 width: 450px;
+border-radius: 10px;
 height: 350px;
-margin-left: -500px;
+margin-left: -525px;
 margin-top: 20px;
 background-color: var(--Navbar--backgroundcolor);
 }
@@ -145,7 +146,7 @@ width: 470px;
 }
 #machinedetails{
 background-color: #ffffff;
-width: 1000px;
+width: 1020px;
 height: 775px;
 margin-left: 100px;
 box-shadow: 1px 1px 10px #f3f4f6; 

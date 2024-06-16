@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import axios from "axios";
-import {jwtDecode} from "jwt-decode";
+import { jwtDecode } from "jwt-decode";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import Logo from "../../../../Assets/uzavan.png";
@@ -13,6 +13,9 @@ function Machine() {
   const [username, setUsername] = useState("");
   const [userid, setUserid] = useState("");
   const [newOrderId, setNewOrderId] = useState(null);
+  const [pendingCount, setPendingCount] = useState(0);
+  const [acceptedCount, setAcceptedCount] = useState(0);
+  const [cancelledCount, setCancelledCount] = useState(0);
 
   const navigate = useNavigate();
 
@@ -30,21 +33,34 @@ function Machine() {
     setCurrentPage(pageNumber);
   };
 
+  const handleNextPage = () => {
+    setCurrentPage((prevPage) => Math.min(prevPage + 1, totalPages));
+  };
+
   const renderPageNumbers = () => {
     const pageNumbers = [];
     for (let i = 1; i <= totalPages; i++) {
       pageNumbers.push(i);
     }
-    return pageNumbers.map((number) => (
-      <button
-        className="pagenumber"
-        key={number}
-        onClick={() => handlePageChange(number)}
-        disabled={currentPage === number}
-      >
-        {number}
-      </button>
-    ));
+    return (
+      <>
+        {pageNumbers.slice(0, 3).map((number) => (
+          <button
+            className={`pagenumber ${currentPage === number ? "active" : ""}`}
+            key={number}
+            onClick={() => handlePageChange(number)}
+            disabled={currentPage === number}
+          >
+            {number}
+          </button>
+        ))}
+        {totalPages > 3 && currentPage < totalPages && (
+          <button className="pagenumber" onClick={handleNextPage}>
+            <i class="fa-solid fa-chevron-right"></i>
+          </button>
+        )}
+      </>
+    );
   };
 
   useEffect(() => {
@@ -80,6 +96,21 @@ function Machine() {
         if (sortedUsers.length > 0) {
           setNewOrderId(sortedUsers[0]._id);
         }
+
+        // Calculate counts
+        const pending = sortedUsers.filter(
+          (user) => user.isVerified === "Pending"
+        ).length;
+        const accepted = sortedUsers.filter(
+          (user) => user.isVerified === "Accepted"
+        ).length;
+        const cancelled = sortedUsers.filter(
+          (user) => user.isVerified === "cancelled"
+        ).length;
+
+        setPendingCount(pending);
+        setAcceptedCount(accepted);
+        setCancelledCount(cancelled);
       })
       .catch((error) => {
         console.error("Failed to fetch users:", error);
@@ -101,9 +132,15 @@ function Machine() {
             user._id === id ? { ...user, isVerified: status } : user
           )
         );
+
+        // Update counts
         if (status === "Accepted") {
+          setPendingCount((prev) => prev - 1);
+          setAcceptedCount((prev) => prev + 1);
           toast.success("Your booking is successfully!");
         } else if (status === "cancelled") {
+          setPendingCount((prev) => prev - 1);
+          setCancelledCount((prev) => prev + 1);
           toast.info("Your booking is canceled!");
         }
       })
@@ -139,18 +176,25 @@ function Machine() {
         </div>
         <div className="content" id="content">
           <div className="Notecontainer" id="notecontainer">
-            <p className="verification" id="verification">
+            <p className="verification" id="verificationmachine">
               Waiting for your Confirmation!
             </p>
+            <div className="fletotal">
+              <p className="TotalBooking">Total Bookings<br/> {users.length}</p>
+              <p className="TotalBooking1">Pending Bookings<br/> {pendingCount}</p>
+              <p className="TotalBooking2">Accepted Bookings<br/> {acceptedCount}</p>
+              <p className="TotalBooking3">Cancelled Bookings<br/> {cancelledCount}</p>
+            </div>
             <table className="tablemachine">
               <thead>
                 <tr>
                   <th>Name</th>
+                  <th className="vetype">Vehicle Type</th>
                   <th>Address</th>
                   <th>District</th>
-                  <th>Acre Count</th>
+                  <th className="vetype">Acre Count</th>
                   <th>Status</th>
-                  <th>Verification</th>
+                  <th className="vetype1">Verification</th>
                 </tr>
               </thead>
               <tbody>
@@ -162,23 +206,25 @@ function Machine() {
                         user.isVerified === "Pending" ? "lightblue" : "transparent",
                     }}
                   >
-                    <td style={{ padding: "5px" }}>
+                    <td className="namemachine" style={{ padding: "5px" }}>
                       {user.isVerified === "Pending" && (
                         <span
                           style={{
                             fontSize: "12px",
-                            marginLeft: "-20px",
+                            marginLeft: "2px",
                             backgroundColor: "blue",
                             color: "white",
                             padding: "2px 8px",
                             borderRadius: "5px",
+                            fontWeight:"bold"
                           }}
                         >
-                          New
+                         &nbsp; New
                         </span>
                       )}
                       &nbsp; &nbsp; {user.Name}
                     </td>
+                    <td>{user.vehicleType}</td>
                     <td>{user.Address}</td>
                     <td>{user.District}</td>
                     <td>{user.AcreCount}</td>
@@ -202,10 +248,10 @@ function Machine() {
                         </>
                       )}
                       {user.isVerified === "Accepted" && (
-                       <i class="fa-solid fa-check" id="correct"> </i>
+                        <i className="fa-solid fa-check" id="correct"></i>
                       )}
                       {user.isVerified === "cancelled" && (
-                     <i class="fa-solid fa-xmark" id="wrong"></i>
+                        <i className="fa-solid fa-xmark" id="wrong"></i>
                       )}
                     </td>
                   </tr>
@@ -248,4 +294,3 @@ function Machine() {
 }
 
 export default Machine;
- 

@@ -10,6 +10,10 @@ const bookingSchema = new mongoose.Schema(
     FarmerId: {
       type: String,
     },
+    vehicleType:{
+      type: String,
+
+    },
     Name: {
       type: String,
     },

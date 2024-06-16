@@ -1,9 +1,9 @@
 const BookingModel = require("../model/booking");
 
 exports.createBooking = (req, res) => {
-  const { Name, Address, District, PhoneNumber, AcreCount, Message, MachineryId, FarmerId, OwnerName, bookingDate, createDate } = req.body;
+  const { Name, Address, District, PhoneNumber, AcreCount, Message, MachineryId, FarmerId, OwnerName, bookingDate, createDate,vehicleType } = req.body;
 
-  BookingModel.create({ Name, Address, District, PhoneNumber, AcreCount, Message, MachineryId, FarmerId, OwnerName, bookingDate, createDate })
+  BookingModel.create({ Name, Address, District, PhoneNumber, AcreCount, Message, MachineryId, FarmerId, OwnerName, bookingDate, createDate,vehicleType })
     .then(service => res.status(201).json(service))
     .catch(err => res.status(500).json({ error: err.message }));
 };
