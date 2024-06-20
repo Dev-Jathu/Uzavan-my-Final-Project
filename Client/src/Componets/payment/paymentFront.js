@@ -20,7 +20,7 @@ function PaymentFront() {
       "Content-Type": "application/json",
     };
 
-    return fetch("https://uzavan-server.onrender.com/payment", {  // Ensure the backend server is running on this port
+    return fetch("https://uzavan-my-final-project-1-server.onrender.com/payment", {  // Ensure the backend server is running on this port
       method: "POST",
       headers,
       body: JSON.stringify(body),

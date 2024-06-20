@@ -58,7 +58,7 @@ const ReviewForm = ({ username, ownerName, booking }) => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const response = await axios.post("https://uzavan-server.onrender.com/Review/addreviews", {
+      const response = await axios.post("https://uzavan-my-final-project-1-server.onrender.com/Review/addreviews", {
         name,
         email,
         rating,

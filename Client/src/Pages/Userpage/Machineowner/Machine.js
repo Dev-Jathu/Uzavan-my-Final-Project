@@ -81,7 +81,7 @@ function Machine() {
 
   const handleFinish = (id) => {
     axios
-      .patch(`https://uzavan-server.onrender.com/Booking/updateFinishWorkStatus/${id}`, {
+      .patch(`https://uzavan-my-final-project-1-server.onrender.com/Booking/updateFinishWorkStatus/${id}`, {
         status: "Finished",
       })
       .then((response) => {
@@ -116,7 +116,7 @@ function Machine() {
 
   const fetchUsers = (ownerName, token) => {
     axios
-      .get("https://uzavan-server.onrender.com/Booking/Bookingview", {
+      .get("https://uzavan-my-final-project-1-server.onrender.com/Booking/Bookingview", {
         headers: { Authorization: `Bearer ${token}` },
       })
       .then((response) => {
@@ -157,7 +157,7 @@ function Machine() {
 
   const updateBookingStatus = (id, status) => {
     axios
-      .patch(`https://uzavan-server.onrender.com/Booking/updateBookingStatus/${id}`, {
+      .patch(`https://uzavan-my-final-project-1-server.onrender.com/Booking/updateBookingStatus/${id}`, {
         status,
       })
       .then((response) => {

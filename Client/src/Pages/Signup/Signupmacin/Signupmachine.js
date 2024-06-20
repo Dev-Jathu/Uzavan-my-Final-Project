@@ -80,7 +80,7 @@
 //     };
 //     try {
 //       const response = await fetch(
-//         "https://uzavan-server.onrender.com/machinery/registerMachine",
+//         "https://uzavan-my-final-project-1-server.onrender.com/machinery/registerMachine",
 //         {
 //           method: "POST",
 //           headers: {
@@ -353,7 +353,7 @@ function Signupmachine() {
 
     try {
       const response = await fetch(
-        "https://uzavan-server.onrender.com/machinery/registerMachine",
+        "https://uzavan-my-final-project-1-server.onrender.com/machinery/registerMachine",
         {
           method: "POST",
           headers: {

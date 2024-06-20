@@ -19,7 +19,7 @@ function Tractor() {
 
   const fetchUsers = async () => {
     try {
-      const response = await fetch("https://uzavan-server.onrender.com/profile/serviceView");
+      const response = await fetch("https://uzavan-my-final-project-1-server.onrender.com/profile/serviceView");
       if (!response.ok) {
         throw new Error(`HTTP error! status: ${response.status}`);
       }

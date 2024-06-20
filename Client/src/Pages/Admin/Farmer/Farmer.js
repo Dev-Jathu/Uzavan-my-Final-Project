@@ -24,7 +24,7 @@
 //   }, []);
 //   //get details
 //   const fetchUsers = () => {
-//     fetch("https://uzavan-server.onrender.com/farmer/farmerView")
+//     fetch("https://uzavan-my-final-project-1-server.onrender.com/farmer/farmerView")
 //       .then((response) => response.json())
 //       .then((data) => setUsers(data))
 //       .catch((error) => console.error("Failed to fetch users:", error));
@@ -182,7 +182,7 @@ function FarmerDetails() {
 
   const fetchUsers = (token) => {
     axios
-      .get("https://uzavan-server.onrender.com/farmer/farmerView", {
+      .get("https://uzavan-my-final-project-1-server.onrender.com/farmer/farmerView", {
         headers: { Authorization: `Bearer ${token}` },
       })
       .then((response) => {

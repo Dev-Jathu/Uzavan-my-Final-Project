@@ -89,7 +89,7 @@ function Farmer() {
 
   const handleFinish = (id) => {
     axios
-      .patch(`https://uzavan-server.onrender.com/Booking/updateFinishWorkStatus/${id}`, {
+      .patch(`https://uzavan-my-final-project-1-server.onrender.com/Booking/updateFinishWorkStatus/${id}`, {
         status: "Finished",
       })
       .then((response) => {
@@ -114,7 +114,7 @@ function Farmer() {
         const decodedToken = jwtDecode(token);
         setUsername(decodedToken.Name);
         axios
-          .get("https://uzavan-server.onrender.com/Booking/Bookingview")
+          .get("https://uzavan-my-final-project-1-server.onrender.com/Booking/Bookingview")
           .then((response) => {
             const userBookings = response.data
               .filter((booking) => booking.Name === decodedToken.Name)

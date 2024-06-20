@@ -17,7 +17,7 @@ function Hire() {
     const fetchUser = async () => {
       try {
         const response = await fetch(
-          `https://uzavan-server.onrender.com/profile/serviceView/${id}`
+          `https://uzavan-my-final-project-1-server.onrender.com/profile/serviceView/${id}`
         );
         if (!response.ok) {
           throw new Error(`HTTP error! status: ${response.status}`);

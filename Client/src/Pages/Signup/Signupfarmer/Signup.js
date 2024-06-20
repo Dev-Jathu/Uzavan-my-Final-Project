@@ -59,7 +59,7 @@ function Signup() {
 
     const userdata = { Name, NIC, TelNo, Email, Password };
     try {
-      const response = await fetch("https://uzavan-server.onrender.com/farmer/register", {
+      const response = await fetch("https://uzavan-my-final-project-1-server.onrender.com/farmer/register", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

@@ -23,7 +23,7 @@ function Signin() {
     console.log(userdata);
     
     try {
-      const result = await axios.post("https://uzavan-server.onrender.com/farmerLogin/sigIn", userdata);
+      const result = await axios.post("https://uzavan-my-final-project-1-server.onrender.com/farmerLogin/sigIn", userdata);
       console.log(result);
       if (result.data.token) {
         // Save the token in local storage

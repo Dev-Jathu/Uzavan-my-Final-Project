@@ -31,7 +31,7 @@ const Hire = () => {
     const fetchUser = async () => {
       try {
         const response = await fetch(
-          `https://uzavan-server.onrender.com/profile/serviceView/${id}`
+          `https://uzavan-my-final-project-1-server.onrender.com/profile/serviceView/${id}`
         );
         if (!response.ok) {
           throw new Error(`HTTP error! status: ${response.status}`);
@@ -53,7 +53,7 @@ const Hire = () => {
     const fetchReviews = async () => {
       try {
         const response = await axios.get(
-          "https://uzavan-server.onrender.com/Review/reviews"
+          "https://uzavan-my-final-project-1-server.onrender.com/Review/reviews"
         );
         setReviews(response.data);
       } catch (error) {
@@ -100,7 +100,7 @@ const Hire = () => {
 
     try {
       const response = await fetch(
-        "https://uzavan-server.onrender.com/Booking/BookMachine",
+        "https://uzavan-my-final-project-1-server.onrender.com/Booking/BookMachine",
         {
           method: "POST",
           headers: {

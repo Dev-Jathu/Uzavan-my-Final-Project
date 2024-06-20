@@ -67,7 +67,7 @@ function Admin() {
 
   const fetchUsers = (token) => {
     axios
-      .get("https://uzavan-server.onrender.com/profile/serviceView", {
+      .get("https://uzavan-my-final-project-1-server.onrender.com/profile/serviceView", {
         headers: { Authorization: `Bearer ${token}` },
       })
       .then((response) => {
@@ -90,7 +90,7 @@ function Admin() {
     const newStatus = !currentStatus;
     axios
       .patch(
-        `https://uzavan-server.onrender.com/profile/verified/${id}`,
+        `https://uzavan-my-final-project-1-server.onrender.com/profile/verified/${id}`,
         { isVerified: newStatus },
         { headers: { Authorization: `Bearer ${token}` } }
       )
@@ -116,7 +116,7 @@ function Admin() {
     }
 
     axios
-      .delete(`https://uzavan-server.onrender.com/profile/delete/${id}`, {
+      .delete(`https://uzavan-my-final-project-1-server.onrender.com/profile/delete/${id}`, {
         headers: { Authorization: `Bearer ${token}` },
       })
       .then((response) => {
@@ -130,14 +130,14 @@ function Admin() {
   };
 
   const fetchMachine = () => {
-    fetch("https://uzavan-server.onrender.com/machinery/MachineView")
+    fetch("https://uzavan-my-final-project-1-server.onrender.com/machinery/MachineView")
       .then((response) => response.json())
       .then((data) => setMachinery(data))
       .catch((error) => console.error("Failed to fetch machinery:", error));
   };
 
   const fetchFarmer = () => {
-    fetch("https://uzavan-server.onrender.com/farmer/farmerView")
+    fetch("https://uzavan-my-final-project-1-server.onrender.com/farmer/farmerView")
       .then((response) => response.json())
       .then((data) => setFarmer(data))
       .catch((error) => console.error("Failed to fetch users:", error));
@@ -145,7 +145,7 @@ function Admin() {
 
   const fetchBookings = (token) => {
     axios
-      .get("https://uzavan-server.onrender.com/Booking/Bookingview", {
+      .get("https://uzavan-my-final-project-1-server.onrender.com/Booking/Bookingview", {
         headers: { Authorization: `Bearer ${token}` },
       })
       .then((response) => {

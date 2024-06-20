@@ -14,7 +14,7 @@ function HireHarvestor() {
   useEffect(() => {
     const fetchUser = async () => {
       try {
-        const response = await fetch(`https://uzavan-server.onrender.com/booking/${id}/owner`);
+        const response = await fetch(`https://uzavan-my-final-project-1-server.onrender.com/booking/${id}/owner`);
         if (!response.ok) {
           throw new Error(`HTTP error! status: ${response.status}`);
         }

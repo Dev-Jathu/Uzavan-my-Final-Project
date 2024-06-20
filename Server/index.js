@@ -19,7 +19,7 @@ app.use(express.json());
 app.use(cookieParser());
 app.use(
   cors({
-    origin: ["https://sensational-mousse-2a1a4c.netlify.app/"],
+    origin: ["https://famous-figolla-55cf47.netlify.app/"],
     // origin: ["https://uzhavan.netlify.app/"],
     methods: ["GET", "POST", "PATCH", "DELETE", "PUT"],
     credentials: true,

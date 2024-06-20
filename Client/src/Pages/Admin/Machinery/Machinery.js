@@ -19,7 +19,7 @@
 //   }, []);
 //   //get details
 //   const fetchUsers = () => {
-//     fetch("https://uzavan-server.onrender.com/machinery/MachineView")
+//     fetch("https://uzavan-my-final-project-1-server.onrender.com/machinery/MachineView")
 //       .then((response) => response.json())
 //       .then((data) => setUsers(data))
 //       .catch((error) => console.error("Failed to fetch users:", error));
@@ -179,7 +179,7 @@ function MachineryDetails() {
 
   const fetchUsers = async (token) => {
     try {
-      const response = await axios.get("https://uzavan-server.onrender.com/machinery/MachineView", {
+      const response = await axios.get("https://uzavan-my-final-project-1-server.onrender.com/machinery/MachineView", {
         headers: { Authorization: `Bearer ${token}` },
       });
       setUsers(response.data);
