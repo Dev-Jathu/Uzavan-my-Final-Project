@@ -178,7 +178,7 @@ function ServiveMachine() {
           <p className="sidetext">
             <div id="sidetext">
               Uzhavan <br />
-              <span5>The Connector</span5>
+              <span5 className="slogan">The Connector</span5>
             </div>
           </p>
           <Link to="/LinkAddProfile">
