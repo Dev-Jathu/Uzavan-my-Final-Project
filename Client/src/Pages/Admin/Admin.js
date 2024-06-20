@@ -16,6 +16,7 @@ function Admin() {
   const [currentPage, setCurrentPage] = useState(1);
   const [itemsPerPage, setItemsPerPage] = useState(6);
   const [notificationCount, setNotificationCount] = useState(0);
+  const [finishedWorkCount, setFinishedWorkCount] = useState(0); // State to store finished work count
   const [isPopupVisible, setIsPopupVisible] = useState(false); // State to handle popup visibility
   const [modalData, setModalData] = useState({
     show: false,
@@ -149,6 +150,10 @@ function Admin() {
       })
       .then((response) => {
         setBookings(response.data);
+        const finishedCount = response.data.filter(
+          (booking) => booking.isFinishWork === "Finished"
+        ).length;
+        setFinishedWorkCount(finishedCount);
       })
       .catch((error) => {
         console.error("Failed to fetch bookings:", error);
@@ -283,7 +288,7 @@ function Admin() {
               <p className="fcount">Total Bookings</p>
             </div>
             <div className="Farmercount">
-              <span className="count">{totalBookingsCount}</span>
+              <span className="count">{finishedWorkCount}</span>
               <p className="fcount">Finished Work</p>
             </div>
           </div>
@@ -430,3 +435,4 @@ function Admin() {
 }
 
 export default Admin;
+
