@@ -44,6 +44,7 @@
     margin-left: 70px;
     margin-top: 40px;
     box-shadow: 2px 3px 5px rgb(148, 147, 147); 
+    border: none;
 }
 #dash{
     font-size: 22px;
@@ -90,7 +91,7 @@
     
 }
 .slogan{
-    font-size: 20px;
+    font-size: 25px;
     margin-top: -50px;
 }
 span{
@@ -146,8 +147,9 @@ span{
     height: 130px;
     padding-top: 20px;
     border-radius: 10px;
-    box-shadow: 0 2px 4px ;
+    box-shadow: 0 2px 6px  ;
     font-weight: bold;
+    /* background-color:#3586a3; */
 
 }
 .count{
@@ -287,16 +289,19 @@ td{
 
 }
 #verification{
-    padding-top: 50px;
+    padding-top: 90px;
     margin-left: -1150px;
+    font-weight: bold;
 }
 #verificationmachine{
-    padding-top: 50px;
-    margin-left: -800px;
+    padding-top: 70px;
+    margin-left: -860px;
+    font-weight: bold;
 }
 .tablemachine{
     margin-top: 50px;
-    margin-left: 110px;
+    margin-left: 30px;
+    width: 97%;
 }
 
 .messagemachine{
@@ -353,6 +358,18 @@ td{
     padding-top: 5px;
 
 }
+#correct1{
+    font-size: 10px;
+    font-weight: bold;
+    height: 20px;
+    width: 20px;
+    background-color:var(--Buttons--backgroundcolor);
+    color: #fdfdfd;
+    border-radius: 50%;
+    padding-top: 5px;
+    margin-left: 10px;
+  
+}
 #wrong{
     font-size: 20px;
     font-weight: bold;
@@ -370,55 +387,82 @@ td{
 .vetype{
     width: 380px;
 }
+.address{
+    width: 450px;
+}
 .vetype1{
     width: 400px;
 }
 .TotalBooking{
-    width: 200px;
-    height: 80px;
     background-color:var(--backgroundcolor);
-    font-size: 18px;
+    width: 220px;
+    height: 130px;
+    font-size: 20px;
+    box-shadow: 0 4px 8px;
     border-radius: 10px;
-    padding-top: 10px;
+    padding-top: 30px;
     font-weight: bold;
     margin-left: 20px;
+    
 
 }
 .TotalBooking1{
-    width: 200px;
-    height: 80px;
     background-color:rgb(255, 255, 0);
-    font-size: 19px;
+    width: 220px;
+    height: 130px;
+    font-size: 20px;
+    box-shadow: 0 4px 8px;
     border-radius: 10px;
-    padding-top: 10px;
+    padding-top: 30px;
     font-weight: bold;
-    margin-left: 60px;
+    margin-left: 20px;
+
+    
+    
+
 
 
 }
 .TotalBooking2{
-    width: 200px;
-    height: 80px;
-    font-size: 18px;
+    width: 220px;
+    height: 130px;
+    font-size: 20px;
+    box-shadow: 0 4px 8px;
     border-radius: 10px;
-    padding-top: 10px;
-    background-color:rgb(120, 192, 120);
+    padding-top: 30px;
     font-weight: bold;
-    margin-left: 60px;
-
+    margin-left: 20px;
+    
+    background-color:rgb(120, 192, 120);
 
 
 
 }
 .TotalBooking3{
-    width: 200px;
-    height: 80px;
-    font-size: 18px;
+    width: 220px;
+    height: 130px;
+    font-size: 20px;
+    box-shadow: 0 4px 8px;
     border-radius: 10px;
-    padding-top: 10px;
-    background-color:rgb(216, 94, 94);
+    padding-top: 30px;
     font-weight: bold;
-    margin-left: 60px;
+    margin-left: 20px;
+    background-color:rgb(216, 94, 94);
+
+
+
+
+}
+.TotalBooking4{
+    width: 220px;
+    height: 130px;
+    font-size: 20px;
+    box-shadow: 0 4px 8px;
+    border-radius: 10px;
+    padding-top: 30px;
+    font-weight: bold;
+    margin-left: 20px;
+    background-color:rgb(28, 193, 235);
 
 
 
@@ -427,8 +471,8 @@ td{
 .fletotal{
     display: flex;
     justify-content: space-around;
-    margin-top: 0px;
-    margin-left: 50px;
+    margin-top: 40px;
+    margin-left: 0px;
 }
 .namemachine{
     width: 300px;
@@ -445,8 +489,9 @@ td{
   opacity: 0;
 }
 .farmertable{
-    margin-left: 110px;
+    margin-left: 10px;
     margin-top: 50px;
+    width: 100%;
 }
 .button-verify {
     padding: 8px 16px;
@@ -549,4 +594,15 @@ td{
     cursor: pointer;
   }
   
-  
+  .finish{
+    width: 70px;
+    height: 30px;
+    background-color:rgb(28, 193, 235);
+    border-radius: 5px;
+    font-size: 18px;
+    font-weight: bold;
+
+  }
+  .revewpanel{
+    width: 100px;
+  }

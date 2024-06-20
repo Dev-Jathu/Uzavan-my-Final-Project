@@ -44,6 +44,8 @@ const bookingSchema = new mongoose.Schema(
   isVerified: { type: String, default: 'Pending' } ,// 'Pending', 'Accepted', 'Denied'
   // status: { type: String, enum: ['pending', 'accepted', 'denied'], default: 'pending' },
     bookingDate: { type: Date, default: Date.now },
+    isFinishWork: { type: String, default: 'Pending' }, // New field
+
 
     
   },

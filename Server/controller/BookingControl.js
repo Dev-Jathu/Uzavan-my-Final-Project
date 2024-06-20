@@ -64,3 +64,22 @@ exports.updateBooking = (req, res) => {
     })
     .catch(err => res.status(400).json('Error: ' + err));
 };
+
+exports.updateFinishWorkStatus = async (req, res) => {
+  const { id } = req.params;
+  const { status } = req.body;
+
+  try {
+    const booking = await BookingModel.findById(id);
+    if (!booking) {
+      return res.status(404).json({ message: 'Booking not found' });
+    }
+
+    booking.isFinishWork = status;
+    await booking.save();
+
+    res.json({ message: 'Work status updated successfully', booking });
+  } catch (error) {
+    res.status(500).json({ message: 'Failed to update work status', error });
+  }
+};
