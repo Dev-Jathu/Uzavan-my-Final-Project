@@ -19,7 +19,7 @@ app.use(express.json());
 app.use(cookieParser());
 app.use(
   cors({
-    origin: ["https://uzavan.onrender.com"],
+    origin: ["https://stunning-kangaroo-fac2e6.netlify.app"],
     methods: ["GET", "POST", "PATCH", "DELETE", "PUT"],
     credentials: true,
   })
