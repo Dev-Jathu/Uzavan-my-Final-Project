@@ -19,7 +19,7 @@ app.use(express.json());
 app.use(cookieParser());
 app.use(
   cors({
-    origin: ["https://famous-figolla-55cf47.netlify.app/"],
+    origin: ["https://verdant-cendol-3b0007.netlify.app/"],
     // origin: ["https://uzhavan.netlify.app/"],
     methods: ["GET", "POST", "PATCH", "DELETE", "PUT"],
     credentials: true,
