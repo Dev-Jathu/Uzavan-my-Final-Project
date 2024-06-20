@@ -74,6 +74,9 @@
 }
 .subadresspara{
     font-weight: 600;
+    width: 250px;
+    margin-left: 100px;
+    margin-top: -10px;
 }
 .subadresspara1{
     font-weight: 600;

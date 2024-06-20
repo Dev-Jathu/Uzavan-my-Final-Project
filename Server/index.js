@@ -20,6 +20,7 @@ app.use(cookieParser());
 app.use(
   cors({
     origin: ["https://uzhavan.netlify.app"],
+    // origin: ["https://uzhavan.netlify.app"],
     // origin: ["https://uzhavan.netlify.app/"],
     methods: ["GET", "POST", "PATCH", "DELETE", "PUT"],
     credentials: true,

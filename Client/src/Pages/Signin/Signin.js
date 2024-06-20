@@ -92,23 +92,12 @@ function Signin() {
               onChange={(e) => setPassword(e.target.value)}
             />
             <br />
-            <div className="remember">
-              <input type="checkbox" value="lsRememberMe" id="rememberMe" />
-              <label htmlFor="rememberMe" className="rememberme">
-                Remember me
-              </label>
-              <label htmlFor="rememberMe" className="forget">
-                <a href="#">Forgot password</a>
-              </label>
-            </div>
+          
             <button type="submit" className="login">
               Login
             </button>
-            <a href="#">
-              <Button class="signgoogle" name="Sign in with Google" />
-            </a>
+            
           </form>
-          <img src={Gphoto} alt="Google Photo" className="Gphoto" />
           <h4 className="hedontacc">
             Don't have an account?{" "}
             <Link to="/join" className="signuppagelink">
