@@ -19,7 +19,7 @@ app.use(express.json());
 app.use(cookieParser());
 app.use(
   cors({
-    origin: ["uzhavan.netlify.app"],
+    origin: ["https://uzhavan.netlify.app/"],
     methods: ["GET", "POST", "PATCH", "DELETE", "PUT"],
     credentials: true,
   })
